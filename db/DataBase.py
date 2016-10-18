@@ -12,43 +12,37 @@ class DataBase:
         path = os.getcwd()
         self.conn = sqlite3.connect(path + "\\" + self.dbName)
         self.c = self.conn.cursor()
-        self.createDB()
+        self.create_db()
 
     # Create table
-    def createDB(self):
+    def create_db(self):
         self.c.execute('''CREATE TABLE IF NOT EXISTS Review
-             (id INTEGER PRIMARY KEY AUTOINCREMENT, review_text TEXT)''')
+             (categoryName TEXT,
+             subcategoryName TEXT,
+             compcategoryName TEXT,
+             reviewId INTEGER PRIMARY KEY,
+             rewiewPro TEXT,
+             reviewText TEXT,
+             agree INTEGER,
+             date TEXT)''')
         self.commit()
 
     # Insert new review to DB
-    def addReview(self, id, review_text):
-        self.c.execute('INSERT INTO Review (id, review_text) VALUES (?,?)', (id, review_text))
+    def add_review(self, categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date):
+        self.c.execute(
+            'INSERT INTO Review (categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date) '
+            'VALUES (?,?,?,?,?,?,?,?,?)',
+            (categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date))
         self.commit()
 
-    # if review exists
-    def isReviewNameExists(self, id, review_text):
-        if self.c.execute('SELECT COUNT(*) FROM Review WHERE id = ' + str(
-                id) + ' AND review_text = "' + review_text + '"').fetchone()[0] == 0:
-            # if review not exists
-            return False
-        # if review was found
-        return True
-
-    # check if the review already exist
-    def checkID(self, id):
-        if self.getReview(id) is None:
-            # if review not exists
-            return True
-        # if review was found
-        return False
-
     # get the review
-    def getReview(self, id):
-        review = self.c.execute('SELECT * FROM Review WHERE id = ' + str(id))
+    def get_review(self, reviewId):
+        review = self.c.execute('SELECT * FROM Review WHERE reviewId = ' + str(reviewId))
         return review.fetchone()
 
     # delete the review
-    def removeReview(self, id):
+    def remove_review(self, reviewId):
+        self.c.execute('DELETE FROM Review WHERE reviewId = ' + str(reviewId))
         self.commit()
 
     # destructor - close connection
