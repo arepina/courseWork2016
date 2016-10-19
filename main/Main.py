@@ -29,11 +29,16 @@ for item in categoriesList['items']:
                             reviews = market.model_review(modelItem['id'])[
                                 'modelOpinions']  # get the review list of each model
                             for reviewItem in reviews['opinion']:
-                                review = Review(reviewItem['pro'], reviewItem['text'], reviewItem['contra'],
-                                                reviewItem['id'], reviewItem['agree'], reviewItem['grade'],
-                                                reviewItem['visibility'], reviewItem['priceGrade'], reviewItem['anonymous'],
-                                                reviewItem['region'], reviewItem['date'], reviewItem['qualityGrade'],
-                                                reviewItem['convenienceGrade'], reviewItem['reject'], reviewItem['usageTime'])
+                                proItem = 'NULL'
+                                textItem = 'NULL'
+                                if 'pro' in reviewItem:
+                                    proItem = reviewItem['pro']
+                                if 'text' in reviewItem:
+                                    textItem = reviewItem['text']
+                                review = Review(proItem, textItem, reviewItem['id'],
+                                                reviewItem['agree'], reviewItem['grade'], reviewItem['visibility'],
+                                                reviewItem['anonymous'], reviewItem['date'],
+                                                reviewItem['reject'], reviewItem['usageTime'])
                                 print(modelItem['name'] + " " + str(review.id))
                                 dataBase.add_review("Компьютерная техника", "Компьютеры", modelItem['name'], review.id,
                                                     review.pro, review.text, review.agree,

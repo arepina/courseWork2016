@@ -31,7 +31,7 @@ class DataBase:
     def add_review(self, categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date):
         self.c.execute(
             'INSERT INTO Review (categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date) '
-            'VALUES (?,?,?,?,?,?,?,?,?)',
+            'VALUES (?,?,?,?,?,?,?,?)',
             (categoryName, subcategoryName, compcategoryName, reviewId, rewiewPro, reviewText, agree, date))
         self.commit()
 
