@@ -9,7 +9,7 @@ class DataBase:
     # constructor
     def __init__(self):
         import os
-        path = os.getcwd()
+        path = os.getcwd()  # todo think about moving the db to its folder
         self.conn = sqlite3.connect(path + "\\" + self.dbName)
         self.c = self.conn.cursor()
         self.create_db()
