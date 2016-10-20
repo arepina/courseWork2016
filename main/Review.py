@@ -1,5 +1,5 @@
 class Review(object):
-    def __init__(self, pro, text, id, agree, grade, visibility, anonymous, date, reject, usageTime):
+    def __init__(self, pro, text, id, agree, grade, visibility, anonymous, date, reject, usage_time):
         self.pro = pro
         self.text = text
         self.id = id
@@ -9,4 +9,4 @@ class Review(object):
         self.anonymous = anonymous
         self.date = date
         self.reject = reject
-        self.usageTime = usageTime
+        self.usageTime = usage_time

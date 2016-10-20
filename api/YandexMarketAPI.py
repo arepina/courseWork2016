@@ -26,14 +26,14 @@ class YandexMarketAPI(object):
     def make_url_categories(self, resource, format='json', version=API_VERSION, ip=IP):
         return 'https://api.content.market.yandex.ru/v%s/%s.%s?remote_ip=%s&fields=ALL&sort=NAME' % (version, resource, format, ip)
 
-    def make_url_subcategories(self, catId, resource, format='json', version=API_VERSION, ip=IP):
-        return 'https://api.content.market.yandex.ru/v%s/category/%s/%s.%s?remote_ip=%s&fields=ALL&sort=NAME' % (version, catId, resource, format, ip)
+    def make_url_subcategories(self, cat_id, resource, format='json', version=API_VERSION, ip=IP):
+        return 'https://api.content.market.yandex.ru/v%s/category/%s/%s.%s?remote_ip=%s&fields=ALL&sort=NAME' % (version, cat_id, resource, format, ip)
 
-    def make_url_models(self, catId, resource, format='json', version=API_VERSION, ip=IP):
-        return 'https://api.content.market.yandex.ru/v%s/category/%s/%s.%s?remote_ip=%s' % (version, catId, resource, format, ip)
+    def make_url_models(self, cat_id, resource, format='json', version=API_VERSION, ip=IP):
+        return 'https://api.content.market.yandex.ru/v%s/category/%s/%s.%s?remote_ip=%s' % (version, cat_id, resource, format, ip)
 
-    def make_url_reviews(self, modelId, resource, format='json', version=API_VERSION):
-        return 'https://api.content.market.yandex.ru/v%s/model/%s/%s.%s?sort=rank' % (version, modelId, resource, format)
+    def make_url_reviews(self, model_id, resource, format='json', version=API_VERSION):
+        return 'https://api.content.market.yandex.ru/v%s/model/%s/%s.%s?sort=rank' % (version, model_id, resource, format)
 
     def make_request_categories(self, resource, format='json', version=API_VERSION, params={}):
         url = self.make_url_categories(resource, format, version)
@@ -47,8 +47,8 @@ class YandexMarketAPI(object):
 
         return output
 
-    def make_request_subcategories(self, catId, resource, format='json', version=API_VERSION, params={}):
-            url = self.make_url_subcategories(catId, resource, format, version)
+    def make_request_subcategories(self, cat_id, resource, format='json', version=API_VERSION, params={}):
+            url = self.make_url_subcategories(cat_id, resource, format, version)
             params['Authorization'] = self.key
 
             response = requests.get(url, params=params, headers={'Authorization': self.key, 'Accept': '*/*'})
@@ -59,8 +59,8 @@ class YandexMarketAPI(object):
 
             return output
 
-    def make_request_models(self, catId, resource, format='json', version=API_VERSION, params={}):
-        url = self.make_url_models(catId, resource, format, version)
+    def make_request_models(self, cat_id, resource, format='json', version=API_VERSION, params={}):
+        url = self.make_url_models(cat_id, resource, format, version)
         params['Authorization'] = self.key
 
         response = requests.get(url, params=params, headers={'Authorization': self.key, 'Accept': '*/*'})
@@ -71,8 +71,8 @@ class YandexMarketAPI(object):
 
         return output
 
-    def make_model_reviews(self, modelId, resource, format='json', version=API_VERSION, params={}):
-        url = self.make_url_reviews(modelId, resource, format, version)
+    def make_model_reviews(self, model_id, resource, format='json', version=API_VERSION, params={}):
+        url = self.make_url_reviews(model_id, resource, format, version)
         params['Authorization'] = self.key
 
         response = requests.get(url, params=params, headers={'Authorization': self.key, 'Accept': '*/*'})
@@ -86,11 +86,11 @@ class YandexMarketAPI(object):
     def category(self):
         return self.make_request_categories('category')
 
-    def subcategory(self, catId):
-        return self.make_request_subcategories(catId, 'children')
+    def subcategory(self, cat_id):
+        return self.make_request_subcategories(cat_id, 'children')
 
-    def model(self, catId):
-        return self.make_request_models(catId, 'models')
+    def model(self, cat_id):
+        return self.make_request_models(cat_id, 'models')
 
-    def model_review(self, modelId):
-        return self.make_model_reviews(modelId, 'opinion')
+    def model_review(self, model_id):
+        return self.make_model_reviews(model_id, 'opinion')

@@ -31,10 +31,16 @@ for item in categoriesList['items']:
                             for reviewItem in reviews['opinion']:
                                 proItem = 'NULL'
                                 textItem = 'NULL'
-                                if 'pro' in reviewItem:
-                                    proItem = reviewItem['pro']
-                                if 'text' in reviewItem:
-                                    textItem = reviewItem['text']
+                                try:
+                                    if 'pro' in reviewItem:
+                                        proItem = reviewItem['pro']
+                                except SyntaxError:
+                                    pass
+                                try:
+                                    if 'text' in reviewItem:
+                                        textItem = reviewItem['text']
+                                except SyntaxError:
+                                    pass
                                 review = Review(proItem, textItem, reviewItem['id'],
                                                 reviewItem['agree'], reviewItem['grade'], reviewItem['visibility'],
                                                 reviewItem['anonymous'], reviewItem['date'],
