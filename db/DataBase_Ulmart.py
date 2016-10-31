@@ -17,15 +17,15 @@ class DataBase_Ulmart:
     # Create table
     def create_db(self):
         self.c.execute('''CREATE TABLE IF NOT EXISTS Review
-             (id INTEGER PRIMARY KEY AUTOINCREMENT, article TEXT, advantage TEXT, disadvantage TEXT, comment TEXT)''')
+             (id INTEGER PRIMARY KEY AUTOINCREMENT, category_name TEXT, subcategory_name TEXT, article TEXT, advantage TEXT, disadvantage TEXT, comment TEXT)''')
         self.commit()
 
     # Insert new review to DB
-    def add_review(self, article, advantage, disadvantage, comment):
+    def add_review(self, category_name, subcategory_name, article, advantage, disadvantage, comment):
         self.c.execute(
-            'INSERT INTO Review (article, advantage, disadvantage, comment) '
-            'VALUES (?, ?, ?, ?)',
-            (article, advantage, disadvantage, comment))
+            'INSERT INTO Review (category_name, subcategory_name, article, advantage, disadvantage, comment) '
+            'VALUES (?, ?, ?, ?, ?, ?)',
+            (category_name, subcategory_name, article, advantage, disadvantage, comment))
         self.commit()
 
 
