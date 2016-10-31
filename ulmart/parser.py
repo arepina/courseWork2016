@@ -9,14 +9,23 @@ def parse_reviews(start_link):
     with urllib.request.urlopen(start_link) as url:
         html = url.read()
     soup = BeautifulSoup(html, "lxml")
-    pages_finished = False
-    page_num = 1
-    while not pages_finished:
-        new_url = start_link + str(page_num)
-        page_num += 1
-        for title in soup.findAll("div", {"class": "b-product__art"}):  # get all products
+    products_num = soup.find("span", {"class": "text-sm text-muted"}).findAll("span")[1].text
+    if int(products_num) <= 30:
+        pages_num = 1
+    else:
+        pages_num = round(int(products_num) / 30)
+    nums = [x for x in range(1, pages_num)]
+    last_slash_num = start_link.rfind("/")
+    review_url = "https://www.ulmart.ru/catalogAdditional" + start_link[last_slash_num:]+ "?pageNum="
+    for num in nums:
+        new_url = review_url + str(num)
+        with urllib.request.urlopen(new_url) as url:
+            html = url.read()
+        soup = BeautifulSoup(html, "lxml")
+        all_products = soup.findAll("div", {"class": "b-product__art"})
+        for title in all_products:  # get all products
             article = title.find("span").text
-            print(article)
+            print("\t\t" + article)
             completed = False
             while not completed:
                 try:
@@ -64,7 +73,7 @@ def parse_sub_category(start_link):
         for li in ul.findAll("li", {"class": "b-list__item b-list__item_bigger "}):
             name = li.text
             name = name.replace("\n", "")
-            link = start_url + li.find('a', href=True)['href']
+            link = url_market + li.find('a', href=True)['href']
             print("\t" + link + " " + name)
             parse_reviews(link)
 
