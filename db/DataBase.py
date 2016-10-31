@@ -4,7 +4,7 @@ import sqlite3
 class DataBase:
     conn = None  # database
     c = None  # cursor
-    dbName = 'Review.db'
+    dbName = 'Review_Grab.db'
 
     # constructor
     def __init__(self):
