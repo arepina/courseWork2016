@@ -14,7 +14,7 @@ def parse_product(start_link, category_name, subcategory_name):
         pages_num = 1
     else:
         pages_num = round(int(products_num) / 30)
-    nums = [x for x in range(1, pages_num)]
+    nums = [x for x in range(1, pages_num + 1)]
     last_slash_num = start_link.rfind("/")
     review_url = "https://www.ulmart.ru/catalogAdditional" + start_link[last_slash_num:] + "?pageNum="
     for num in nums:  # look through all pages with products kept on page with start_link
@@ -25,12 +25,10 @@ def parse_product(start_link, category_name, subcategory_name):
         all_products = soup.findAll("div", {"class": "b-product__art"})
         for title in all_products:  # look through all products on a concrete page
             article = title.find("span").text
-            print("\t\t" + article)
             completed = False
             while not completed:  # get the reviews for each product item with unique article
                 try:
-                    reviews(article, category_name, subcategory_name)
-                    completed = True
+                    completed = reviews(article, category_name, subcategory_name)
                 except Exception as e:  # there was an error during the reviews parsing
                     print(str(e))
 
@@ -50,9 +48,14 @@ def reviews(article, category_name, subcategory_name):
         all_reviews_num = soup.find("div", {
             "class": "b-stars-wrap b-stars-wrap_theme_normal _big"}).find("span").find(
             "span").text  # get all reviews number
+        print("\t\t article = " + article + "\t all reviews num = " + all_reviews_num)
     except Exception as e:  # there was an error during the reviews parsing
-        print(str(e))
-        return  # case when there are no reviews at all for the product, so they can not be found
+        if soup.find("aside", {"class": "b-reviews__side"}).find("p").text == "Нет оценок":
+            print("\t\t article = " + article + "\t 0 отзывов")
+            return True  # case when there are no reviews at all for the product, so they can not be found
+        else:
+            print(str(e))
+            return False  # an error occured
     if int(all_reviews_num) <= 10:  # calculate the number of pages we have for reviews
         reviews_pages_num = 1
     else:
@@ -82,6 +85,8 @@ def reviews(article, category_name, subcategory_name):
                     com = review_part.find('div').text
             dataBase.add_review(category_name, subcategory_name, article, adv, dis,
                                 com)  # add the review to the data base
+        print("\t\t\t total = {}".format(dataBase.total()[0]))
+    return True
 
 
 def parse_sub_category(start_link, category_name):
@@ -95,6 +100,11 @@ def parse_sub_category(start_link, category_name):
             name = name.replace("\n", "")
             link = url_market + li.find('a', href=True)['href']
             print("\t" + link + " " + name)
+            if link == "https://www.ulmart.ru/catalog/brand_computers" \
+                    or link == "https://www.ulmart.ru/catalog/monobloks_pc" \
+                    or link == "https://www.ulmart.ru/catalog/platform_pc"\
+                    or link == "https://www.ulmart.ru/catalog/servers":
+                continue
             parse_product(link, category_name, name)  # get all products for each subcategory
 
 
@@ -109,6 +119,6 @@ def parse_categories():
 
 
 dataBase = DataBase_Ulmart()
-url_market = "https://www.ulmart.ru/"
+url_market = "https://www.ulmart.ru"
 start_url = "https://www.ulmart.ru/catalog/computers_notebooks"
 parse_categories()  # get categories

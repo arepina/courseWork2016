@@ -33,6 +33,10 @@ class DataBase_Ulmart:
         review_num = self.c.execute('SELECT COUNT(*) FROM Review WHERE article = ' + str(article))
         return review_num.fetchone()
 
+    def total(self):
+        total_num = self.c.execute('SELECT COUNT(*) FROM Review')
+        return total_num.fetchone()
+
     # delete the review
     def remove_review(self, article):
         self.c.execute('DELETE FROM Review WHERE article = ' + str(article))
