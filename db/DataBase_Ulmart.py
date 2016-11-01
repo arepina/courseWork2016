@@ -17,7 +17,7 @@ class DataBase_Ulmart:
     # Create table
     def create_db(self):
         self.c.execute('''CREATE TABLE IF NOT EXISTS Review
-             (id INTEGER PRIMARY KEY AUTOINCREMENT, category_name TEXT, subcategory_name TEXT, article TEXT, advantage TEXT, disadvantage TEXT, comment TEXT)''')
+             (category_name TEXT, subcategory_name TEXT, article TEXT, advantage TEXT, disadvantage TEXT, comment TEXT)''')
         self.commit()
 
     # Insert new review to DB
@@ -30,7 +30,7 @@ class DataBase_Ulmart:
 
 
     def reviews_num(self, article):
-        review_num = self.c.execute('SELECT COUNT(id) FROM Review WHERE Review.article = article GROUP BY Review.article')
+        review_num = self.c.execute('SELECT COUNT(*) FROM Review WHERE article = ' + str(article))
         return review_num.fetchone()
 
     # delete the review

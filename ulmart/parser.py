@@ -36,32 +36,52 @@ def parse_product(start_link, category_name, subcategory_name):
 
 
 def reviews(article, category_name, subcategory_name):
-    reviews_num = dataBase.reviews_num(article)  # check if we have already loaded the reviews in our data base
-    if reviews_num is not None:
-        reviews_num = reviews_num[0]  # we have
+    reviews_url = "https://www.ulmart.ru/goods/" + article + "/reviews"  # generate the url for the concrete product
+    with urllib.request.urlopen(reviews_url) as url:
+        html = url.read()
+    soup = BeautifulSoup(html, "lxml")
+    reviews_num_already_have = dataBase.reviews_num(
+        article)  # check if we have already loaded the reviews in our data base
+    if reviews_num_already_have is not None:
+        reviews_num_already_have = reviews_num_already_have[0]  # we have
     else:
-        reviews_num = 0  # we have not
-    new_url = "https://www.ulmart.ru/goods/" + article + "/reviews"
-    with urllib.request.urlopen(new_url) as url:
-        market_html = url.read()
-    soup = BeautifulSoup(market_html, "lxml")
-    product_reviews = soup.findAll("ul", {"class": "b-list b-list_theme_normal b-list_title-left b-list_review"})
-    if reviews_num == len(product_reviews):  # we have already downloaded all the reviews for this product
+        reviews_num_already_have = 0  # we have not
+    try:
+        all_reviews_num = soup.find("div", {
+            "class": "b-stars-wrap b-stars-wrap_theme_normal _big"}).find("span").find(
+            "span").text  # get all reviews number
+    except Exception as e:  # there was an error during the reviews parsing
+        print(str(e))
+        return  # case when there are no reviews at all for the product, so they can not be found
+    if int(all_reviews_num) <= 10:  # calculate the number of pages we have for reviews
+        reviews_pages_num = 1
+    else:
+        reviews_pages_num = round(int(all_reviews_num) / 10)
+    if reviews_num_already_have == int(all_reviews_num):  # we have already downloaded all the reviews for this product
         return
-    product_reviews = product_reviews[reviews_num:]  # slice array in case we already have several items for our product
-    for review in product_reviews:  # get all reviews from concrete product
-        adv = 'Null'
-        dis = 'Null'
-        com = 'Null'
-        for review_part in review.findAll("li", {"class": "b-list__item"}):  # parse the review parts
-            name = review_part.find('span').text
-            if name == "Достоинства":
-                adv = review_part.find('div').text
-            elif name == "Недостатки":
-                dis = review_part.find('div').text
-            elif name == "Общие впечатления":
-                com = review_part.find('div').text
-        dataBase.add_review(category_name, subcategory_name, article, adv, dis, com)  # add the review to the data base
+    if reviews_num_already_have != 0:
+        dataBase.remove_review(article)  # remove the unfinished product reviews to start filing it again
+    nums = [x for x in range(1, reviews_pages_num + 1)]
+    for num in nums:  # look through all pages with products kept on page with start_link
+        full_url = reviews_url + "/" + str(num)  # generate the full url for each reviews page
+        with urllib.request.urlopen(full_url) as url:  # load products for a concrete page
+            html = url.read()
+        soup = BeautifulSoup(html, "lxml")
+        reviews_on_page = soup.findAll("ul", {"class": "b-list b-list_theme_normal b-list_title-left b-list_review"})
+        for review in reviews_on_page:  # get all reviews from concrete product on concrete page
+            adv = 'Null'
+            dis = 'Null'
+            com = 'Null'
+            for review_part in review.findAll("li", {"class": "b-list__item"}):  # parse the review parts
+                name = review_part.find('span').text
+                if name == "Достоинства":
+                    adv = review_part.find('div').text
+                elif name == "Недостатки":
+                    dis = review_part.find('div').text
+                elif name == "Общие впечатления":
+                    com = review_part.find('div').text
+            dataBase.add_review(category_name, subcategory_name, article, adv, dis,
+                                com)  # add the review to the data base
 
 
 def parse_sub_category(start_link, category_name):
