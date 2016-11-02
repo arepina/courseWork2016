@@ -85,7 +85,6 @@ def reviews(article, category_name, subcategory_name):
                     com = review_part.find('div').text
             dataBase.add_review(category_name, subcategory_name, article, adv, dis,
                                 com)  # add the review to the data base
-        print("\t\t\t total = {}".format(dataBase.total()[0]))
     return True
 
 
@@ -103,7 +102,8 @@ def parse_sub_category(start_link, category_name):
             if link == "https://www.ulmart.ru/catalog/brand_computers" \
                     or link == "https://www.ulmart.ru/catalog/monobloks_pc" \
                     or link == "https://www.ulmart.ru/catalog/platform_pc"\
-                    or link == "https://www.ulmart.ru/catalog/servers":
+                    or link == "https://www.ulmart.ru/catalog/servers"\
+                    or link = "https://www.ulmart.ru/catalog/notebooks":
                 continue
             parse_product(link, category_name, name)  # get all products for each subcategory
 
