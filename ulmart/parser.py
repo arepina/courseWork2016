@@ -61,7 +61,7 @@ def reviews(article, category_name, subcategory_name):
     else:
         reviews_pages_num = round(int(all_reviews_num) / 10)
     if reviews_num_already_have == int(all_reviews_num):  # we have already downloaded all the reviews for this product
-        return
+        return True
     if reviews_num_already_have != 0:
         dataBase.remove_review(article)  # remove the unfinished product reviews to start filing it again
     nums = [x for x in range(1, reviews_pages_num + 1)]
@@ -99,12 +99,6 @@ def parse_sub_category(start_link, category_name):
             name = name.replace("\n", "")
             link = url_market + li.find('a', href=True)['href']
             print("\t" + link + " " + name)
-            if link == "https://www.ulmart.ru/catalog/brand_computers" \
-                    or link == "https://www.ulmart.ru/catalog/monobloks_pc" \
-                    or link == "https://www.ulmart.ru/catalog/platform_pc"\
-                    or link == "https://www.ulmart.ru/catalog/servers"\
-                    or link = "https://www.ulmart.ru/catalog/notebooks":
-                continue
             parse_product(link, category_name, name)  # get all products for each subcategory
 
 
@@ -121,4 +115,7 @@ def parse_categories():
 dataBase = DataBase_Ulmart()
 url_market = "https://www.ulmart.ru"
 start_url = "https://www.ulmart.ru/catalog/computers_notebooks"
-parse_categories()  # get categories
+#parse_categories()  # get categories
+parse_product("https://www.ulmart.ru/catalog/graphic_tablets", "Настольная периферия, устройства ввода", "Графические планшеты")
+parse_product("https://www.ulmart.ru/catalog/gamepads2", "Настольная периферия, устройства ввода", "Игровые манипуляторы")
+parse_product("https://www.ulmart.ru/catalog/webcam", "Настольная периферия, устройства ввода", "Веб-камеры")
