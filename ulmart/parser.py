@@ -116,6 +116,3 @@ dataBase = DataBase_Ulmart()
 url_market = "https://www.ulmart.ru"
 start_url = "https://www.ulmart.ru/catalog/computers_notebooks"
 #parse_categories()  # get categories
-parse_product("https://www.ulmart.ru/catalog/graphic_tablets", "Настольная периферия, устройства ввода", "Графические планшеты")
-parse_product("https://www.ulmart.ru/catalog/gamepads2", "Настольная периферия, устройства ввода", "Игровые манипуляторы")
-parse_product("https://www.ulmart.ru/catalog/webcam", "Настольная периферия, устройства ввода", "Веб-камеры")
