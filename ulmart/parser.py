@@ -115,4 +115,6 @@ def parse_categories():
 dataBase = DataBase_Ulmart()
 url_market = "https://www.ulmart.ru"
 start_url = "https://www.ulmart.ru/catalog/computers_notebooks"
-#parse_categories()  # get categories
+parse_categories()  # get categories
+
+
