@@ -60,24 +60,24 @@ class Aspects:
     def aspects_find(self):
         self.cursor_reviews.execute('SELECT * FROM Review')
         row = self.cursor_reviews.fetchone()
-        while row is not None:
+        while row is not None:  # iterate through all reviews
             print(str(row))
             article = str(row[2])
-            all_reviews_num = self.cursor_num.execute('SELECT COUNT(*) FROM Review WHERE article = ' + str(article)).fetchone()[0]
-            aspects_already_have = self.cursor_article.execute('SELECT COUNT(*) FROM Aspects WHERE article = ' + str(article)).fetchone()[0]
+            all_reviews_num = self.cursor_num.execute('SELECT COUNT(*) FROM Review WHERE article = ' + str(article)).fetchone()[0]  # number of reviews with concrete article
+            aspects_already_have = self.cursor_article.execute('SELECT COUNT(*) FROM Aspects WHERE article = ' + str(article)).fetchone()[0]  # number of reviews with concrete article we have already processed
             if aspects_already_have == all_reviews_num:  # we have already downloaded all the aspects for this product
                 row = self.cursor_reviews.fetchone()
                 continue
-            list_adv_aspects = self.api_aspects(self.process(str(row[3])))
-            list_dis_aspects = self.api_aspects(self.process(str(row[4])))
-            list_com_aspects = self.api_aspects(self.process(str(row[5])))
+            list_adv_aspects = self.aspects(self.syntatic_parsing(str(row[3])))  # load aspects for advantage
+            list_dis_aspects = self.aspects(self.syntatic_parsing(str(row[4])))  # load aspects for disadvantage
+            list_com_aspects = self.aspects(self.syntatic_parsing(str(row[5])))  # load aspects for comment
             str_adv_aspects = ';'.join(list_adv_aspects)
             str_dis_aspects = ';'.join(list_dis_aspects)
             str_com_aspects = ';'.join(list_com_aspects)
-            self.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            self.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)  # add found information to DB
             row = self.cursor_reviews.fetchone()
 
-    def process(self, review):
+    def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
         payload = {'text': str(review)}
         headers = {'Accept': 'application/json'}
         r = requests.post(self.url_syntatic_parsing, data=payload, headers=headers)
@@ -85,63 +85,68 @@ class Aspects:
             r = requests.post(self.url_syntatic_parsing, data=payload, headers=headers)
         return r.content.decode('utf8')
 
-    def api_aspects(self, part):
+    def aspects(self, part):  # find aspects in each review part
         list_aspects = []  # list with aspects
         print(part)
         data = json.loads(part)
         items = data['annotations']['syntax-relation']
         for item in items:  # iterate through words/word pairs in concrete review
             if 'parent' in item['value']:  # word pair
-                list_aspects = self.word_pair(data, item, items, list_aspects)
+                list_aspects = self.word_pair(data, item, items, list_aspects)  # look for aspect noun(parent) + word
             else:  # one word
-                list_aspects = self.one_word(item, data, list_aspects)
+                found = False
+                for aspect_item in list_aspects:
+                    if data['text'][item['start']:item['end']] in aspect_item:  # we have already found a better variant for these word
+                        found = True
+                        break
+                if not found:
+                    list_aspects = self.one_word(item, data, list_aspects)  # look for aspect noun(word)
         return list_aspects
 
     def one_word(self, item, data, list_aspects):
         start = item['start']
         end = item['end']
-        word_value = data['text'][start:end]
-        tag_pos = self.tag_part_of_speech(word_value)
+        word = data['text'][start:end]
+        tag_pos = self.tag_part_of_speech(word)  # detects part of speech tag for each word of a given text
         pos = json.loads(tag_pos)['annotations']['pos-token'][0]['value']['tag']
         if pos == 'S':  # our word is noun
-            list_aspects.append(word_value.lower())  # add an aspect noun(our word)
+            list_aspects.append(word.lower())  # add an aspect noun(our word)
         return list_aspects
 
-    def part_find(self, items, data, parent, parent_value, word_value, list_aspects):
-        for extra_item in items:
-            if 'parent' in extra_item['value']:
-                word_valueExtra = data['text'][extra_item['start']:extra_item['end']]
-                parentExtra = extra_item['value']['parent']
-                parent_valueExtra = data['text'][parentExtra['start']:parentExtra['end']]
-                if parentExtra['start'] == parent['start'] \
-                        and parentExtra['end'] == parent['end'] \
-                        and parent_value == parent_valueExtra:
-                    tag_pos_wordExtra = self.tag_part_of_speech(word_valueExtra)
+    def part_find(self, items, data, parent, parent_value, word, list_aspects):
+        for item in items:  # look through all words in review part
+            if 'parent' in item['value']:
+                word_valueExtra = data['text'][item['start']:item['end']]
+                parent_valueExtra = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
+                if item['value']['parent']['start'] == parent['start'] \
+                        and item['value']['parent']['end'] == parent['end'] \
+                        and parent_value == parent_valueExtra:  # the found word and word from parameters are the same
+                    tag_pos_wordExtra = self.tag_part_of_speech(word_valueExtra)  # detects part of speech tag for each word of a given text
                     pos_wordExtra = json.loads(tag_pos_wordExtra)['annotations']['pos-token'][0]['value']['tag']
-                    if pos_wordExtra == 'PART' and extra_item['value']['type'] != '2-компл':
-                        list_aspects.append(word_valueExtra.lower() + " " + parent_value.lower() + " " + word_value.lower())  # add an aspect noun(parent) + our word
-                        break
-        list_aspects.append(parent_value.lower() + " " + word_value.lower())  # add an aspect noun(parent) + our word
+                    if pos_wordExtra == 'PART' and item['value']['type'] != '2-компл':
+                        list_aspects.append(word_valueExtra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
+                        return list_aspects
+        list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
     
     def word_pair(self, data, item, items, list_aspects):
-        word_value = data['text'][item['start']:item['end']]
-        parent = item['value']['parent']
-        parent_value = data['text'][parent['start']:parent['end']]
-        tag_pos_parent = self.tag_part_of_speech(parent_value)
-        tag_pos_word = self.tag_part_of_speech(word_value)
+        word = data['text'][item['start']:item['end']]
+        parent = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
+        tag_pos_parent = self.tag_part_of_speech(parent)  # detects part of speech tag for each word of a given text
+        tag_pos_word = self.tag_part_of_speech(word)  # detects part of speech tag for each word of a given text
         pos_parent = json.loads(tag_pos_parent)['annotations']['pos-token'][0]['value']['tag']
         pos_word = json.loads(tag_pos_word)['annotations']['pos-token'][0]['value']['tag']
         if (pos_parent == 'S' and pos_word != 'PUNCT' and pos_word != 'CONJ' and pos_word != 'PR') \
                 or (pos_word == 'S' and pos_parent != 'PUNCT' and pos_parent != 'CONJ'):
-            # don't need punctuations, conjunctions, pretexts
-            if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or PART for V
-                list_aspects = self.part_find(items, data, parent, parent_value, word_value, list_aspects)
+            # don't need punctuations, conjunctions, pretexts as main words
+            # find pairs: S(parent) + smf or S(word) + smf
+            if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
+                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects)
             else:
-                list_aspects.append(parent_value.lower() + " " + word_value.lower())  # add an aspect noun(parent) + our word
+                list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
-    def tag_part_of_speech(self, parent):
+    def tag_part_of_speech(self, parent):  # detects part of speech tag for each word of a given text
         payload = {'text': str(parent)}
         headers = {'Accept': 'application/json'}
         r = requests.post(self.url_pos, data=payload, headers=headers)
@@ -150,5 +155,6 @@ class Aspects:
         return r.content.decode('utf8')
 
 
-aspects = Aspects()
-aspects.aspects_find()
+
+aspect = Aspects()
+aspect.aspects_find()
