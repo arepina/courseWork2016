@@ -13,14 +13,8 @@ class AspectsDB:
     cursor_num = None
     db_aspects_name = 'Aspects_Ulmart.db'
     db_reviews_name = 'Review_Ulmart.db'
-    api_key = "e68469466a70c5d3b8c8a91c091b12a35d8dd529"
-    url_syntatic_parsing = \
-        "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
-    url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
 
     def __init__(self):
-        self.url_syntatic_parsing += self.api_key
-        self.url_pos += self.api_key
         import os
         path = os.getcwd()
         self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
@@ -60,6 +54,14 @@ class AspectsDB:
 
 
 class Aspects:
+    api_key = "e68469466a70c5d3b8c8a91c091b12a35d8dd529"
+    url_syntatic_parsing = \
+        "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
+    url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
+
+    def __init__(self):
+        self.url_syntatic_parsing += self.api_key
+        self.url_pos += self.api_key
 
     def aspects_find(self):
         aspect_db.cursor_reviews.execute('SELECT * FROM Review')
