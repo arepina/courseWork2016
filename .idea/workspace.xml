@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DataBase_IDFHelper.db" afterPath="$PROJECT_DIR$/db/DataBase_IDFHelper.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/DataBase_IDFHelper.db-journal" afterPath="$PROJECT_DIR$/db/DataBase_IDFHelper.db-journal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
