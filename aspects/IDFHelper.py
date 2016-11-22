@@ -7,7 +7,7 @@ class IDFHelper:
     db = 'DataBase_IDFHelper.db'
     conn_r = None
     cursor_r = None
-    db_r = 'DataBase_Ulmart.db'
+    db_r = 'Review_Ulmart.db'
 
     def __init__(self):
         import os
@@ -41,18 +41,31 @@ class IDFHelper:
             self.counter(dis)
             com = str(row[5])
             self.counter(com)
+            row = self.cursor_r.fetchone()
 
     def counter(self, part):
         words = part.split(" ")
         for word in words:
-            n = self.cursor.execute('SELECT number FROM IDFHelper WHERE word = ' + str(word)).fetchone()[0]
-            if n == 0:  # the word is not in db
+            word = self.replacer(word).lower()
+            n = self.cursor.execute('SELECT number FROM IDFHelper WHERE word = ?', (word,)).fetchone()
+            if n is None:  # the word is not in db
                 self.cursor.execute('INSERT INTO IDFHelper (word, number) VALUES (?, ?)',(word, 1))
                 self.commit()
             else:  # the word is in db
                 self.cursor.execute(
-                'UPDATE IDFHelper SET number = ' + str(n + 1) + ' WHERE word = ' + str(word))
+                'UPDATE IDFHelper SET number = ? WHERE word = ?', (int(n[0]) + 1, word,))
                 self.commit()
+
+    def replacer(self, item):
+        item = item.replace(",", "")
+        item = item.replace(".", "")
+        item = item.replace(";", "")
+        item = item.replace("!", "")
+        item = item.replace("?", "")
+        item = item.replace(")", "")
+        item = item.replace("(", "")
+        item = item.replace(" ", "")
+        return item
 
 helper = IDFHelper()
 helper.process()
