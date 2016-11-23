@@ -33,14 +33,18 @@ class IDFHelper:
     def process(self):
         self.cursor_r.execute('SELECT * FROM Review')
         row = self.cursor_r.fetchone()
+        flag = False
         while row is not None:  # iterate through all reviews
-            print(str(row[2]))
-            adv = str(row[3])
-            self.counter(adv)
-            dis = str(row[4])
-            self.counter(dis)
-            com = str(row[5])
-            self.counter(com)
+            if str(row[2]) == "3877993":
+                flag = True
+            if flag:
+                print(str(row[2]))
+                adv = str(row[3])
+                self.counter(adv)
+                dis = str(row[4])
+                self.counter(dis)
+                com = str(row[5])
+                self.counter(com)
             row = self.cursor_r.fetchone()
 
     def counter(self, part):
