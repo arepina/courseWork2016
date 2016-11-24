@@ -51,11 +51,11 @@ class IDFHelper:
             word = self.replacer(word).lower()
             n = self.cursor.execute('SELECT number FROM IDFHelper WHERE word = ?', (word,)).fetchone()
             if n is None:  # the word is not in db
-                self.cursor.execute('INSERT INTO IDFHelper (word, number) VALUES (?, ?)',(word, 1))
+                self.cursor.execute('INSERT INTO IDFHelper (word, number) VALUES (?, ?)', (word, 1))
                 self.commit()
             else:  # the word is in db
                 self.cursor.execute(
-                'UPDATE IDFHelper SET number = ? WHERE word = ?', (int(n[0]) + 1, word,))
+                    'UPDATE IDFHelper SET number = ? WHERE word = ?', (int(n[0]) + 1, word,))
                 self.commit()
 
     def replacer(self, item):
@@ -67,6 +67,13 @@ class IDFHelper:
         item = item.replace(")", "")
         item = item.replace("(", "")
         item = item.replace(" ", "")
+        item = item.replace("™", "")
+        item = item.replace("®", "")
+        item = item.replace("*", "")
+        item = item.replace("-", "")
+        item = item.replace("\"", "")
+        item = item.replace("~", "")
+        item = item.replace("'", "")
         return item
 
     def cleaner(self):
@@ -77,26 +84,22 @@ class IDFHelper:
             print(item)
             item += 1
             s = str(row[0])
-            #arr = s.split("\n")
-            #if(len(arr) > 1):
-            if ">" in s or "-" in s or "<" in s:
-                new_word = str(row[0]).replace(">", "")
-                new_word = new_word.replace("-", "")
-                new_word = new_word.replace("<", "")
-                new_num = str(row[1])
-                n = self.extra_cursor.execute('SELECT number FROM IDFHelper WHERE word = ?', (new_word,)).fetchone()
-                if n is None:  # the word is not in db
-                    self.extra_cursor.execute('INSERT INTO IDFHelper (word, number) VALUES (?, ?)',(new_word, new_num))
-                    self.commit()
-                else:  # the word is in db
-                    self.extra_cursor.execute(
-                    'UPDATE IDFHelper SET number = ? WHERE word = ?', (int(n[0]) + int(new_num), new_word,))
-                    self.commit()
-                self.extra_cursor.execute('DELETE FROM IDFHelper WHERE word = ?', (str(row[0]),))
+            if s.isnumeric():
+                # new_word = s.replace("%", "")
+                # new_num = str(row[1])
+                # n = self.extra_cursor.execute('SELECT number FROM IDFHelper WHERE word = ?', (new_word,)).fetchone()
+                # if n is None:  # the word is not in db
+                #     self.extra_cursor.execute('INSERT INTO IDFHelper (word, number) VALUES (?, ?)', (new_word, new_num))
+                #     self.commit()
+                # else:  # the word is in db
+                #     self.extra_cursor.execute(
+                #         'UPDATE IDFHelper SET number = ? WHERE word = ?', (int(n[0]) + int(new_num), new_word,))
+                #     self.commit()
+                self.extra_cursor.execute('DELETE FROM IDFHelper WHERE word = ?', (s,))
                 self.commit()
             row = self.cursor.fetchone()
 
 
 helper = IDFHelper()
 helper.cleaner()
-#helper.process()
+# helper.process()

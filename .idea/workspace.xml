@@ -30,7 +30,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
     <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1479391262964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1479979673992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480004384419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -91,22 +91,22 @@
       <file leaf-file-name="IDFHelper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.388">
-              <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.684">
+              <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
               <folding>
-                <marker date="1479980458980" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
-                <marker date="1479980458980" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
-                <marker date="1479980458980" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
-                <marker date="1479980458980" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
-                <marker date="1479980458980" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
-                <marker date="1479980458980" expanded="true" signature="1776:1821" placeholder="UPDATE IDFHe... " />
-                <marker date="1479980458980" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-                <marker date="1479980458980" expanded="true" signature="2279:2302" placeholder="SELECT * FRO... IDFHelper" />
-                <marker date="1479980458980" expanded="true" signature="2279:2304" placeholder="SELECT * FRO... IDFHelper" />
-                <marker date="1479980458980" expanded="true" signature="2855:2898" placeholder="SELECT numbe... IDFHelper" />
-                <marker date="1479980458980" expanded="true" signature="3027:3077" placeholder="INSERT INTO IDFHelper... " />
-                <marker date="1479980458980" expanded="true" signature="3245:3291" placeholder="UPDATE IDFHe... " />
-                <marker date="1479980458980" expanded="true" signature="3410:3446" placeholder="DELETE FROM " />
+                <marker date="1480003087374" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
+                <marker date="1480003087374" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
+                <marker date="1480003087374" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
+                <marker date="1480003087374" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
+                <marker date="1480003087374" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
+                <marker date="1480003087374" expanded="true" signature="1781:1826" placeholder="UPDATE IDFHe... " />
+                <marker date="1480003087374" expanded="true" signature="1781:1827" placeholder="UPDATE IDFHe... " />
+                <marker date="1480003087374" expanded="true" signature="2544:2567" placeholder="SELECT * FRO... IDFHelper" />
+                <marker date="1480003087374" expanded="true" signature="2544:2569" placeholder="SELECT * FRO... IDFHelper" />
+                <marker date="1480003087374" expanded="true" signature="2927:2970" placeholder="SELECT numbe... IDFHelper" />
+                <marker date="1480003087374" expanded="true" signature="3103:3153" placeholder="INSERT INTO IDFHelper... " />
+                <marker date="1480003087374" expanded="true" signature="3334:3380" placeholder="UPDATE IDFHe... " />
+                <marker date="1480003087374" expanded="true" signature="3501:3537" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -205,8 +205,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -643,7 +643,7 @@
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2245827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2276176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4276316" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -653,7 +653,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5034843" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5017422" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -690,7 +690,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="307" />
+      <option name="time" value="316" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -705,6 +705,7 @@
         <watch expression="int(n[0]) + new_num" />
         <watch expression="int(n[0]) + int(new_num)" />
         <watch expression="str(row[0])" />
+        <watch expression="len(arr) &gt; 1" />
       </configuration>
     </watches-manager>
   </component>
@@ -722,19 +723,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479980458980" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
-            <marker date="1479980458980" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
-            <marker date="1479980458980" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1821" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="2279:2302" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2279:2304" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2855:2898" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="3027:3077" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="3245:3291" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="3410:3446" placeholder="DELETE FROM " />
+            <marker date="1480003087374" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
+            <marker date="1480003087374" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
+            <marker date="1480003087374" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1826" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1827" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="2544:2567" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2544:2569" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2927:2970" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="3103:3153" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="3334:3380" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="3501:3537" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -774,19 +775,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479980458980" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
-            <marker date="1479980458980" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
-            <marker date="1479980458980" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1821" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="2279:2302" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2279:2304" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2855:2898" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="3027:3077" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="3245:3291" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="3410:3446" placeholder="DELETE FROM " />
+            <marker date="1480003087374" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
+            <marker date="1480003087374" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
+            <marker date="1480003087374" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1826" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1827" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="2544:2567" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2544:2569" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2927:2970" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="3103:3153" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="3334:3380" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="3501:3537" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -826,19 +827,19 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479980458980" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
-            <marker date="1479980458980" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
-            <marker date="1479980458980" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1821" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="2279:2302" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2279:2304" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2855:2898" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="3027:3077" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="3245:3291" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="3410:3446" placeholder="DELETE FROM " />
+            <marker date="1480003087374" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
+            <marker date="1480003087374" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
+            <marker date="1480003087374" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1826" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1827" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="2544:2567" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2544:2569" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2927:2970" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="3103:3153" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="3334:3380" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="3501:3537" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -1200,22 +1201,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.388">
-          <caret line="84" column="46" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.684">
+          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
           <folding>
-            <marker date="1479980458980" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
-            <marker date="1479980458980" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
-            <marker date="1479980458980" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1821" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="2279:2302" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2279:2304" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="2855:2898" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1479980458980" expanded="true" signature="3027:3077" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1479980458980" expanded="true" signature="3245:3291" placeholder="UPDATE IDFHe... " />
-            <marker date="1479980458980" expanded="true" signature="3410:3446" placeholder="DELETE FROM " />
+            <marker date="1480003087374" expanded="true" signature="616:690" placeholder="CREATE TABLE... IF" />
+            <marker date="1480003087374" expanded="true" signature="885:905" placeholder="SELECT * FRO... Review" />
+            <marker date="1480003087374" expanded="true" signature="1436:1478" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1436:1479" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="1590:1640" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1826" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="1781:1827" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="2544:2567" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2544:2569" placeholder="SELECT * FRO... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="2927:2970" placeholder="SELECT numbe... IDFHelper" />
+            <marker date="1480003087374" expanded="true" signature="3103:3153" placeholder="INSERT INTO IDFHelper... " />
+            <marker date="1480003087374" expanded="true" signature="3334:3380" placeholder="UPDATE IDFHe... " />
+            <marker date="1480003087374" expanded="true" signature="3501:3537" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
