@@ -11,18 +11,22 @@ class AspectsDB:
     cursor_reviews = None
     cursor_article = None
     cursor_num = None
+    cursor_idfhelper = None
     db_aspects_name = 'Aspects_Ulmart.db'
     db_reviews_name = 'Review_Ulmart.db'
+    db_idfhelper = 'DataBase_IDFHelper.db'
 
     def __init__(self):
         import os
         path = os.getcwd()
         self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
         self.conn_reviews = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_name)
+        self.conn_idfhelper = sqlite3.connect(path + "\\..\\db\\" + self.db_idfhelper)
         self.cursor_aspects = self.conn_aspects.cursor()
         self.cursor_reviews = self.conn_reviews.cursor()
         self.cursor_article = self.conn_aspects.cursor()
         self.cursor_num = self.conn_reviews.cursor()
+        self.cursor_idfhelper = self.conn_idfhelper.cursor()
         self.create_aspects_db()
 
     # Create table
@@ -81,20 +85,31 @@ class Aspects:
             list_adv_aspects = self.aspects(self.syntatic_parsing(str(row[3])))  # load aspects for advantage
             list_dis_aspects = self.aspects(self.syntatic_parsing(str(row[4])))  # load aspects for disadvantage
             list_com_aspects = self.aspects(self.syntatic_parsing(str(row[5])))  # load aspects for comment
-            str_adv_aspects = ';'.join(list_adv_aspects)
-            str_dis_aspects = ';'.join(list_dis_aspects)
-            str_com_aspects = ';'.join(list_com_aspects)
+            # calculate td-idf value for each aspect
+            tdidf_adv = self.td_idf_process(list_adv_aspects, str(row[3]))
+            tdidf_dis = self.td_idf_process(list_dis_aspects, str(row[4]))
+            tdidf_com = self.td_idf_process(list_com_aspects, str(row[5]))
+            # join the results
+            str_adv_aspects = ';'.join(tdidf_adv)
+            str_dis_aspects = ';'.join(tdidf_dis)
+            str_com_aspects = ';'.join(tdidf_com)
             # add found information to DB
             aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row = aspect_db.cursor_reviews.fetchone()
 
-    @staticmethod
-    def syntatic_parsing(review):  # detects syntactic structure for each sentence of a given text
+    def td_idf_process(self, aspects_list, review_part):
+        result_list = []
+        for item in aspects_list:
+            value = self.tf_idf(item, review_part)
+            result_list.append(item + "{" + str(value) + "}")
+        return result_list
+
+    def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
         payload = {'text': str(review)}
         headers = {'Accept': 'application/json'}
-        r = requests.post(aspect_db.url_syntatic_parsing, data=payload, headers=headers)
+        r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
         while r.status_code != 200:
-            r = requests.post(aspect_db.url_syntatic_parsing, data=payload, headers=headers)
+            r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
         return r.content.decode('utf8')
 
     def aspects(self, part):  # find aspects in each review part
@@ -163,9 +178,9 @@ class Aspects:
     def tag_part_of_speech(self, parent):  # detects part of speech tag for each word of a given text
         payload = {'text': str(parent)}
         headers = {'Accept': 'application/json'}
-        r = requests.post(aspect_db.url_pos, data=payload, headers=headers)
+        r = requests.post(aspect.url_pos, data=payload, headers=headers)
         while r.status_code != 200:
-            r = requests.post(aspect_db.url_pos, data=payload, headers=headers)
+            r = requests.post(aspect.url_pos, data=payload, headers=headers)
         return r.content.decode('utf8')
 
     def tf_idf(self, word, review_part):
@@ -173,29 +188,23 @@ class Aspects:
         return td_idf_value
 
     def tf(self, word, review_part):
-        counter = 0
         words_review = review_part.split()
         words_num = len(words_review)
-        for item in words_review:
-            item = self.replacer(item)  # remove punctuation
-            if word == item:
-                counter += 1
+        counter = review_part.count(word)
         return counter / words_num
 
-    def idf(self, word):
-        counter = 0
+    def idf(self, word_list):
         all_reviews_num = 24093
-        aspect_db.cursor_num.execute('SELECT * FROM Review')
-        row = aspect_db.cursor_num.fetchone()
-        while row is not None:  # iterate through all reviews
-            adv = str(row[3])  # advantage
-            dis = str(row[4])  # disadvantage
-            com = str(row[5])  # comment
-            if word in adv or word in dis or word in com:
-                counter += 1
-            row = aspect_db.cursor_num.fetchone()
+        words = word_list.split(" ")
+        sum = 0
+        num = 0
+        for word in words:
+            counter = aspect_db.cursor_idfhelper.execute('SELECT number FROM IDFHelper WHERE word = ?', (word,)).fetchone()[0]
+            sum += int(counter)
+            num += 1
         import math
-        return math.log10(all_reviews_num / counter)
+        # if we get a usual word we will divide the sum by 1, else we will divide the sum by number of words in string
+        return math.log10(all_reviews_num / (sum / num))
 
     def replacer(self, item):
         item = item.replace(",", "")
@@ -206,6 +215,13 @@ class Aspects:
         item = item.replace(")", "")
         item = item.replace("(", "")
         item = item.replace(" ", "")
+        item = item.replace("™", "")
+        item = item.replace("®", "")
+        item = item.replace("*", "")
+        item = item.replace("-", "")
+        item = item.replace("\"", "")
+        item = item.replace("~", "")
+        item = item.replace("'", "")
         return item
 
 
