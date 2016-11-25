@@ -70,20 +70,19 @@ class Aspects:
     def __init__(self):
         self.url_syntatic_parsing += self.api_key
         self.url_pos += self.api_key
-        count = 0
         row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
         texts_arr = []
         while row is not None:  # iterate through all reviews
-            print(count)
-            count += 1
             texts_arr.append(str(row[0]))
             row = aspect_db.cursor_merged.fetchone()
         self.texts = TextCollection(texts_arr)  # add all values to text collection
 
     def aspects_find(self):
         row_aspect = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        count = 0
         while row_aspect is not None:  # iterate through all reviews
-            print(str(row_aspect))
+            print(count)
+            count += 1
             article = str(row_aspect[2])
             adv = str(row_aspect[3])
             dis = str(row_aspect[4])
@@ -107,8 +106,7 @@ class Aspects:
         result = []
         for aspect_item in aspects_list:
             value = self.texts.tf_idf(aspect_item, review_part)
-            sum = aspect_item + "{" + value + "}"
-            result.append(sum)
+            result.append(aspect_item + "{" + str(value) + "}")
         return result
 
     def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
@@ -187,23 +185,6 @@ class Aspects:
         while r.status_code != 200:
             r = requests.post(aspect.url_pos, data=payload, headers=headers)
         return r.content.decode('utf8')
-
-    # def merge_col(self):
-    #     aspect_db.cursor_reviews.execute('SELECT * FROM Review')
-    #     row = aspect_db.cursor_reviews.fetchone()
-    #     self.create_db()
-    #     count = 0
-    #     while row is not None:  # iterate through all reviews
-    #         print(count)
-    #         count += 1
-    #         sum = str(row[3]) + " " + str(row[4]) + " " + str(row[5])
-    #         aspect_db.cursor_merged.execute('INSERT INTO Reviews (textReview) VALUES (?)',(sum,))
-    #         aspect_db.conn_merged.commit()
-    #         row = aspect_db.cursor_reviews.fetchone()
-    #
-    # def create_db(self):
-    #     aspect_db.cursor_merged.execute('''CREATE TABLE IF NOT EXISTS Reviews(textReview TEXT)''')
-    #     aspect_db.conn_merged.commit()
 
 
 aspect_db = AspectsDB()
