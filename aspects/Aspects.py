@@ -1,32 +1,35 @@
 import json
-
+from nltk.text import TextCollection
 import requests
 import sqlite3
+import os
 
 
 class AspectsDB:
     conn_aspects = None
     conn_reviews = None
+    conn_merged = None
+
     cursor_aspects = None
     cursor_reviews = None
     cursor_article = None
-    cursor_num = None
-    cursor_idfhelper = None
+    cursor_merged = None
+
+    db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects_Ulmart.db'
     db_reviews_name = 'Review_Ulmart.db'
-    db_idfhelper = 'DataBase_IDFHelper.db'
 
     def __init__(self):
-        import os
         path = os.getcwd()
         self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
         self.conn_reviews = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_name)
-        self.conn_idfhelper = sqlite3.connect(path + "\\..\\db\\" + self.db_idfhelper)
+        self.conn_merged = sqlite3.connect(path + "\\..\\db\\" + self.db_merged_name)
+
+        self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
         self.cursor_reviews = self.conn_reviews.cursor()
         self.cursor_article = self.conn_aspects.cursor()
-        self.cursor_num = self.conn_reviews.cursor()
-        self.cursor_idfhelper = self.conn_idfhelper.cursor()
+
         self.create_aspects_db()
 
     # Create table
@@ -62,47 +65,51 @@ class Aspects:
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
+    texts = None
 
     def __init__(self):
         self.url_syntatic_parsing += self.api_key
         self.url_pos += self.api_key
+        count = 0
+        row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
+        texts_arr = []
+        while row is not None:  # iterate through all reviews
+            print(count)
+            count += 1
+            texts_arr.append(str(row[0]))
+            row = aspect_db.cursor_merged.fetchone()
+        self.texts = TextCollection(texts_arr)  # add all values to text collection
 
     def aspects_find(self):
-        aspect_db.cursor_reviews.execute('SELECT * FROM Review')
-        row = aspect_db.cursor_reviews.fetchone()
-        while row is not None:  # iterate through all reviews
-            print(str(row))
-            article = str(row[2])
-            all_reviews_num = \
-                aspect_db.cursor_num.execute('SELECT COUNT(*) FROM Review WHERE article = ' + str(article)).fetchone()[
-                    0]  # number of reviews with concrete article
-            aspects_already_have = \
-                aspect_db.cursor_article.execute('SELECT COUNT(*) FROM Aspects WHERE article = ' + str(article)).fetchone()[
-                    0]  # number of reviews with concrete article we have already processed
-            if aspects_already_have == all_reviews_num:  # we have already downloaded all the aspects for this product
-                row = aspect_db.cursor_reviews.fetchone()
-                continue
-            list_adv_aspects = self.aspects(self.syntatic_parsing(str(row[3])))  # load aspects for advantage
-            list_dis_aspects = self.aspects(self.syntatic_parsing(str(row[4])))  # load aspects for disadvantage
-            list_com_aspects = self.aspects(self.syntatic_parsing(str(row[5])))  # load aspects for comment
+        row_aspect = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        while row_aspect is not None:  # iterate through all reviews
+            print(str(row_aspect))
+            article = str(row_aspect[2])
+            adv = str(row_aspect[3])
+            dis = str(row_aspect[4])
+            com = str(row_aspect[5])
+            list_adv_aspects = self.aspects(self.syntatic_parsing(adv))  # load aspects for advantage
+            list_dis_aspects = self.aspects(self.syntatic_parsing(dis))  # load aspects for disadvantage
+            list_com_aspects = self.aspects(self.syntatic_parsing(com))  # load aspects for comment
             # calculate td-idf value for each aspect
-            tdidf_adv = self.td_idf_process(list_adv_aspects, str(row[3]))
-            tdidf_dis = self.td_idf_process(list_dis_aspects, str(row[4]))
-            tdidf_com = self.td_idf_process(list_com_aspects, str(row[5]))
+            tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
+            tdidf_dis = self.td_idf_calculate(list_dis_aspects, dis)
+            tdidf_com = self.td_idf_calculate(list_com_aspects, com)
             # join the results
             str_adv_aspects = ';'.join(tdidf_adv)
             str_dis_aspects = ';'.join(tdidf_dis)
             str_com_aspects = ';'.join(tdidf_com)
             # add found information to DB
             aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
-            row = aspect_db.cursor_reviews.fetchone()
+            row_aspect = aspect_db.cursor_reviews.fetchone()
 
-    def td_idf_process(self, aspects_list, review_part):
-        result_list = []
-        for item in aspects_list:
-            value = self.tf_idf(item, review_part)
-            result_list.append(item + "{" + str(value) + "}")
-        return result_list
+    def td_idf_calculate(self, aspects_list, review_part):
+        result = []
+        for aspect_item in aspects_list:
+            value = self.texts.tf_idf(aspect_item, review_part)
+            sum = aspect_item + "{" + value + "}"
+            result.append(sum)
+        return result
 
     def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
         payload = {'text': str(review)}
@@ -148,12 +155,10 @@ class Aspects:
                 if item['value']['parent']['start'] == parent['start'] \
                         and item['value']['parent']['end'] == parent['end'] \
                         and parent_value == parent_valueExtra:  # the found word and word from parameters are the same
-                    tag_pos_wordExtra = self.tag_part_of_speech(
-                        word_valueExtra)  # detects part of speech tag for each word of a given text
+                    tag_pos_wordExtra = self.tag_part_of_speech(word_valueExtra)  # detects part of speech tag for each word of a given text
                     pos_wordExtra = json.loads(tag_pos_wordExtra)['annotations']['pos-token'][0]['value']['tag']
                     if pos_wordExtra == 'PART' and item['value']['type'] != '2-компл':
-                        list_aspects.append(
-                            word_valueExtra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
+                        list_aspects.append(word_valueExtra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
                         return list_aspects
         list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
@@ -183,46 +188,22 @@ class Aspects:
             r = requests.post(aspect.url_pos, data=payload, headers=headers)
         return r.content.decode('utf8')
 
-    def tf_idf(self, word, review_part):
-        td_idf_value = self.tf(word, review_part) * self.idf(word)
-        return td_idf_value
-
-    def tf(self, word, review_part):
-        words_review = review_part.split()
-        words_num = len(words_review)
-        counter = review_part.count(word)
-        return counter / words_num
-
-    def idf(self, word_list):
-        all_reviews_num = 24093
-        words = word_list.split(" ")
-        sum = 0
-        num = 0
-        for word in words:
-            counter = aspect_db.cursor_idfhelper.execute('SELECT number FROM IDFHelper WHERE word = ?', (word,)).fetchone()[0]
-            sum += int(counter)
-            num += 1
-        import math
-        # if we get a usual word we will divide the sum by 1, else we will divide the sum by number of words in string
-        return math.log10(all_reviews_num / (sum / num))
-
-    def replacer(self, item):
-        item = item.replace(",", "")
-        item = item.replace(".", "")
-        item = item.replace(";", "")
-        item = item.replace("!", "")
-        item = item.replace("?", "")
-        item = item.replace(")", "")
-        item = item.replace("(", "")
-        item = item.replace(" ", "")
-        item = item.replace("™", "")
-        item = item.replace("®", "")
-        item = item.replace("*", "")
-        item = item.replace("-", "")
-        item = item.replace("\"", "")
-        item = item.replace("~", "")
-        item = item.replace("'", "")
-        return item
+    # def merge_col(self):
+    #     aspect_db.cursor_reviews.execute('SELECT * FROM Review')
+    #     row = aspect_db.cursor_reviews.fetchone()
+    #     self.create_db()
+    #     count = 0
+    #     while row is not None:  # iterate through all reviews
+    #         print(count)
+    #         count += 1
+    #         sum = str(row[3]) + " " + str(row[4]) + " " + str(row[5])
+    #         aspect_db.cursor_merged.execute('INSERT INTO Reviews (textReview) VALUES (?)',(sum,))
+    #         aspect_db.conn_merged.commit()
+    #         row = aspect_db.cursor_reviews.fetchone()
+    #
+    # def create_db(self):
+    #     aspect_db.cursor_merged.execute('''CREATE TABLE IF NOT EXISTS Reviews(textReview TEXT)''')
+    #     aspect_db.conn_merged.commit()
 
 
 aspect_db = AspectsDB()
