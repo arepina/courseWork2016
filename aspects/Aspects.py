@@ -61,7 +61,7 @@ class AspectsDB:
 
 
 class Aspects:
-    api_key = "e68469466a70c5d3b8c8a91c091b12a35d8dd529"
+    api_key = "fa3c91034c68f00fbb023fd1843e5b9ab7cbb747"
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
@@ -87,8 +87,11 @@ class Aspects:
             adv = str(row_aspect[3])
             dis = str(row_aspect[4])
             com = str(row_aspect[5])
+            import time
             list_adv_aspects = self.aspects(self.syntatic_parsing(adv))  # load aspects for advantage
+            time.sleep(1)
             list_dis_aspects = self.aspects(self.syntatic_parsing(dis))  # load aspects for disadvantage
+            time.sleep(1)
             list_com_aspects = self.aspects(self.syntatic_parsing(com))  # load aspects for comment
             # calculate td-idf value for each aspect
             tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
@@ -105,7 +108,7 @@ class Aspects:
     def td_idf_calculate(self, aspects_list, review_part):
         result = []
         for aspect_item in aspects_list:
-            value = self.texts.tf_idf(aspect_item, review_part)
+            value = self.texts.tf_idf(aspect_item, review_part.lower())
             result.append(aspect_item + "{" + str(value) + "}")
         return result
 
@@ -153,13 +156,18 @@ class Aspects:
                 or (pos_word == 'S' and pos_parent != 'PUNCT' and pos_parent != 'CONJ'):
             # don't need punctuations, conjunctions, pretexts as main words
             # find pairs: S(parent) + smf or S(word) + smf
+            start_par = item['value']['parent']['start']
+            start_word = item['start']
             if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
-                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr)
+                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr, start_par, start_word)
             else:
-                list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+                if start_par < start_word: # the word order is important in if-idf calculation
+                    list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+                else:
+                    list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
-    def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr):
+    def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr, start_par, start_word):
         for item in items:  # look through all words in review part
             if 'parent' in item['value']:
                 word_value_extra = data['text'][item['start']:item['end']]
@@ -169,9 +177,29 @@ class Aspects:
                         and parent_value == parent_value_extra:  # the found word and word from parameters are the same
                     pos_word_extra = pos_arr[word_value_extra]
                     if pos_word_extra == 'PART' and item['value']['type'] != '2-компл':
-                        list_aspects.append(word_value_extra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
+                        start_extra_word = item['start']
+                        sum = ""
+                        if start_word < start_par and start_word < start_extra_word: # the word order is important in if-idf calculation
+                            if start_extra_word < start_par:
+                                sum += word.lower() + " " + word_value_extra.lower() + " " + parent_value.lower()  # wep
+                            else:
+                                sum += word.lower() + " " + parent_value.lower() + " " + word_value_extra.lower()  # wpe
+                        elif start_par < start_extra_word and start_par < start_word:
+                            if start_word < start_extra_word:
+                                sum += parent_value.lower() + " " + word.lower() + " " + word_value_extra.lower()  # pwe
+                            else:
+                                sum += parent_value.lower() + " " + word_value_extra.lower() + " " + word.lower()  # pew
+                        elif start_extra_word < start_word and start_extra_word < start_par:
+                            if start_par < start_word:
+                                sum += word_value_extra.lower() + " " + parent_value.lower() + " " + word.lower()  # epw
+                            else:
+                                sum += word_value_extra.lower() + " " + word.lower() + " " + parent_value.lower()  # ewp
+                        list_aspects.append(sum)  # add an aspect part + noun(parent) + our word
                         return list_aspects
-        list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+        if start_par < start_word:  # the word order is important in if-idf calculation
+            list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+        else:
+            list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
     def parse_pos(self, pos_sentence):
