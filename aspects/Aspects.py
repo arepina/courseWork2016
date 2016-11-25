@@ -122,9 +122,10 @@ class Aspects:
         print(part)
         data = json.loads(part)
         items = data['annotations']['syntax-relation']
+        pos_arr = self.parse_pos(self.tag_part_of_speech(data['text']))
         for item in items:  # iterate through words/word pairs in concrete review
             if 'parent' in item['value']:  # word pair
-                list_aspects = self.word_pair(data, item, items, list_aspects)  # look for aspect noun(parent) + word
+                list_aspects = self.word_pair(data, item, items, list_aspects, pos_arr)  # look for aspect noun(parent) + word
             else:  # one word
                 found = False
                 for aspect_item in list_aspects:
@@ -132,54 +133,58 @@ class Aspects:
                         found = True
                         break
                 if not found:
-                    list_aspects = self.one_word(item, data, list_aspects)  # look for aspect noun(word)
+                    list_aspects = self.one_word(item, data, list_aspects, pos_arr)  # look for aspect noun(word)
         return list_aspects
 
-    def one_word(self, item, data, list_aspects):
+    def one_word(self, item, data, list_aspects, pos_arr):
         start = item['start']
         end = item['end']
         word = data['text'][start:end]
-        tag_pos = self.tag_part_of_speech(word)  # detects part of speech tag for each word of a given text
-        pos = json.loads(tag_pos)['annotations']['pos-token'][0]['value']['tag']
-        if pos == 'S':  # our word is noun
+        if pos_arr[word] == 'S':  # our word is noun
             list_aspects.append(word.lower())  # add an aspect noun(our word)
         return list_aspects
 
-    def part_find(self, items, data, parent, parent_value, word, list_aspects):
-        for item in items:  # look through all words in review part
-            if 'parent' in item['value']:
-                word_valueExtra = data['text'][item['start']:item['end']]
-                parent_valueExtra = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
-                if item['value']['parent']['start'] == parent['start'] \
-                        and item['value']['parent']['end'] == parent['end'] \
-                        and parent_value == parent_valueExtra:  # the found word and word from parameters are the same
-                    tag_pos_wordExtra = self.tag_part_of_speech(word_valueExtra)  # detects part of speech tag for each word of a given text
-                    pos_wordExtra = json.loads(tag_pos_wordExtra)['annotations']['pos-token'][0]['value']['tag']
-                    if pos_wordExtra == 'PART' and item['value']['type'] != '2-компл':
-                        list_aspects.append(word_valueExtra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
-                        return list_aspects
-        list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
-        return list_aspects
-
-    def word_pair(self, data, item, items, list_aspects):
+    def word_pair(self, data, item, items, list_aspects, pos_arr):
         word = data['text'][item['start']:item['end']]
         parent = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
-        tag_pos_parent = self.tag_part_of_speech(parent)  # detects part of speech tag for each word of a given text
-        tag_pos_word = self.tag_part_of_speech(word)  # detects part of speech tag for each word of a given text
-        pos_parent = json.loads(tag_pos_parent)['annotations']['pos-token'][0]['value']['tag']
-        pos_word = json.loads(tag_pos_word)['annotations']['pos-token'][0]['value']['tag']
+        pos_parent = pos_arr[parent]
+        pos_word = pos_arr[word]
         if (pos_parent == 'S' and pos_word != 'PUNCT' and pos_word != 'CONJ' and pos_word != 'PR') \
                 or (pos_word == 'S' and pos_parent != 'PUNCT' and pos_parent != 'CONJ'):
             # don't need punctuations, conjunctions, pretexts as main words
             # find pairs: S(parent) + smf or S(word) + smf
             if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
-                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects)
+                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr)
             else:
                 list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
-    def tag_part_of_speech(self, parent):  # detects part of speech tag for each word of a given text
-        payload = {'text': str(parent)}
+    def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr):
+        for item in items:  # look through all words in review part
+            if 'parent' in item['value']:
+                word_value_extra = data['text'][item['start']:item['end']]
+                parent_value_extra = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
+                if item['value']['parent']['start'] == parent['start'] \
+                        and item['value']['parent']['end'] == parent['end'] \
+                        and parent_value == parent_value_extra:  # the found word and word from parameters are the same
+                    pos_word_extra = pos_arr[word_value_extra]
+                    if pos_word_extra == 'PART' and item['value']['type'] != '2-компл':
+                        list_aspects.append(word_value_extra.lower() + " " + parent_value.lower() + " " + word.lower())  # add an aspect part + noun(parent) + our word
+                        return list_aspects
+        list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+        return list_aspects
+
+    def parse_pos(self, pos_sentence):
+        sentence = json.loads(pos_sentence)
+        pos_items = sentence['annotations']['pos-token']
+        result = {}
+        for item in pos_items:
+            text = sentence['text'][item['start']:item['end']]
+            result[text] = item['value']['tag']
+        return result
+
+    def tag_part_of_speech(self, item):  # detects part of speech tag for each word of a given text
+        payload = {'text': str(item)}
         headers = {'Accept': 'application/json'}
         r = requests.post(aspect.url_pos, data=payload, headers=headers)
         while r.status_code != 200:
