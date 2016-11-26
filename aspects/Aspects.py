@@ -108,7 +108,7 @@ class Aspects:
     def td_idf_calculate(self, aspects_list, review_part):
         result = []
         for aspect_item in aspects_list:
-            value = self.texts.tf_idf(aspect_item, review_part.lower())
+            value = self.texts.tf_idf(aspect_item.lower(), review_part.lower())
             result.append(aspect_item + "{" + str(value) + "}")
         return result
 
@@ -164,7 +164,7 @@ class Aspects:
                 if start_par < start_word: # the word order is important in if-idf calculation
                     list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
                 else:
-                    list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+                    list_aspects.append(word.lower() + " " + parent.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
     def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr, start_par, start_word):
@@ -199,7 +199,7 @@ class Aspects:
         if start_par < start_word:  # the word order is important in if-idf calculation
             list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
         else:
-            list_aspects.append(parent_value.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+            list_aspects.append(word.lower() + " " + parent_value.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
     def parse_pos(self, pos_sentence):
