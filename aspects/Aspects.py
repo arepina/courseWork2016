@@ -1,4 +1,6 @@
 import json
+
+import sys
 from nltk.text import TextCollection
 import requests
 import sqlite3
@@ -61,7 +63,7 @@ class AspectsDB:
 
 
 class Aspects:
-    api_key = "fa3c91034c68f00fbb023fd1843e5b9ab7cbb747"
+    api_key = "e68469466a70c5d3b8c8a91c091b12a35d8dd529"
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
@@ -83,16 +85,32 @@ class Aspects:
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
+           
             article = str(row_aspect[2])
             adv = str(row_aspect[3])
             dis = str(row_aspect[4])
             com = str(row_aspect[5])
             import time
-            list_adv_aspects = self.aspects(self.syntatic_parsing(adv))  # load aspects for advantage
             time.sleep(1)
-            list_dis_aspects = self.aspects(self.syntatic_parsing(dis))  # load aspects for disadvantage
+            adv_parsed = self.syntatic_parsing(adv)
+            while adv_parsed is None:
+                time.sleep(5)
+                adv_parsed = self.syntatic_parsing(adv)
+            list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
+
             time.sleep(1)
-            list_com_aspects = self.aspects(self.syntatic_parsing(com))  # load aspects for comment
+            dis_parsed = self.syntatic_parsing(dis)
+            while dis_parsed is None:
+                time.sleep(5)
+                dis_parsed = self.syntatic_parsing(dis)
+            list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
+
+            time.sleep(1)
+            com_parsed = self.syntatic_parsing(com)
+            while com_parsed is None:
+                time.sleep(5)
+                com_parsed = self.syntatic_parsing(com)
+            list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
             # calculate td-idf value for each aspect
             tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
             tdidf_dis = self.td_idf_calculate(list_dis_aspects, dis)
@@ -113,12 +131,19 @@ class Aspects:
         return result
 
     def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
-        payload = {'text': str(review)}
-        headers = {'Accept': 'application/json'}
-        r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
-        while r.status_code != 200:
+        try:
+            import time
+            time.sleep(1)
+            payload = {'text': str(review)}
+            headers = {'Accept': 'application/json'}
             r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
-        return r.content.decode('utf8')
+            while r.status_code != 200:
+                r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
+            return r.content.decode('utf8')
+        except Exception:
+            type, value, traceback = sys.exc_info()
+            print('Error opening %s: %s' % (value.filename, value.strerror))
+            return None
 
     def aspects(self, part):  # find aspects in each review part
         list_aspects = []  # list with aspects
