@@ -73,7 +73,7 @@ class Aspects:
         row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
         texts_arr = []
         while row is not None:  # iterate through all reviews
-            texts_arr.append(str(row[0]))
+            texts_arr.append(str(row[0]).lower())
             row = aspect_db.cursor_merged.fetchone()
         self.texts = TextCollection(texts_arr)  # add all values to text collection
 
