@@ -85,32 +85,42 @@ class Aspects:
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
-            if count >= 1890:
+            if count > 3063:
                 article = str(row_aspect[2])
                 adv = str(row_aspect[3])
                 dis = str(row_aspect[4])
                 com = str(row_aspect[5])
                 import time
-                time.sleep(3)
-                adv_parsed = self.syntatic_parsing(adv)
-                while adv_parsed is None:
-                    time.sleep(5)
+                time.sleep(4)
+                if len(adv) != 0:
                     adv_parsed = self.syntatic_parsing(adv)
-                list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
+                    while adv_parsed is None:
+                        time.sleep(5)
+                        adv_parsed = self.syntatic_parsing(adv)
+                    list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
+                else:
+                    list_adv_aspects = []
 
-                time.sleep(3)
-                dis_parsed = self.syntatic_parsing(dis)
-                while dis_parsed is None:
-                    time.sleep(5)
+                time.sleep(4)
+                if len(dis) != 0:
                     dis_parsed = self.syntatic_parsing(dis)
-                list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
+                    while dis_parsed is None:
+                        time.sleep(5)
+                        dis_parsed = self.syntatic_parsing(dis)
+                    list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
+                else:
+                    list_dis_aspects = []
 
-                time.sleep(3)
-                com_parsed = self.syntatic_parsing(com)
-                while com_parsed is None:
-                    time.sleep(5)
+                time.sleep(4)
+                if len(com) != 0:
                     com_parsed = self.syntatic_parsing(com)
-                list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
+                    while com_parsed is None:
+                        time.sleep(5)
+                        com_parsed = self.syntatic_parsing(com)
+                    list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
+                else:
+                    list_com_aspects = []
+
                 # calculate td-idf value for each aspect
                 tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
                 tdidf_dis = self.td_idf_calculate(list_dis_aspects, dis)
