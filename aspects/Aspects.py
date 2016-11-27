@@ -85,42 +85,42 @@ class Aspects:
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
-           
-            article = str(row_aspect[2])
-            adv = str(row_aspect[3])
-            dis = str(row_aspect[4])
-            com = str(row_aspect[5])
-            import time
-            time.sleep(1)
-            adv_parsed = self.syntatic_parsing(adv)
-            while adv_parsed is None:
-                time.sleep(5)
+            if count >= 1890:
+                article = str(row_aspect[2])
+                adv = str(row_aspect[3])
+                dis = str(row_aspect[4])
+                com = str(row_aspect[5])
+                import time
+                time.sleep(3)
                 adv_parsed = self.syntatic_parsing(adv)
-            list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
+                while adv_parsed is None:
+                    time.sleep(5)
+                    adv_parsed = self.syntatic_parsing(adv)
+                list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
 
-            time.sleep(1)
-            dis_parsed = self.syntatic_parsing(dis)
-            while dis_parsed is None:
-                time.sleep(5)
+                time.sleep(3)
                 dis_parsed = self.syntatic_parsing(dis)
-            list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
+                while dis_parsed is None:
+                    time.sleep(5)
+                    dis_parsed = self.syntatic_parsing(dis)
+                list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
 
-            time.sleep(1)
-            com_parsed = self.syntatic_parsing(com)
-            while com_parsed is None:
-                time.sleep(5)
+                time.sleep(3)
                 com_parsed = self.syntatic_parsing(com)
-            list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
-            # calculate td-idf value for each aspect
-            tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
-            tdidf_dis = self.td_idf_calculate(list_dis_aspects, dis)
-            tdidf_com = self.td_idf_calculate(list_com_aspects, com)
-            # join the results
-            str_adv_aspects = ';'.join(tdidf_adv)
-            str_dis_aspects = ';'.join(tdidf_dis)
-            str_com_aspects = ';'.join(tdidf_com)
-            # add found information to DB
-            aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+                while com_parsed is None:
+                    time.sleep(5)
+                    com_parsed = self.syntatic_parsing(com)
+                list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
+                # calculate td-idf value for each aspect
+                tdidf_adv = self.td_idf_calculate(list_adv_aspects, adv)
+                tdidf_dis = self.td_idf_calculate(list_dis_aspects, dis)
+                tdidf_com = self.td_idf_calculate(list_com_aspects, com)
+                # join the results
+                str_adv_aspects = ';'.join(tdidf_adv)
+                str_dis_aspects = ';'.join(tdidf_dis)
+                str_com_aspects = ';'.join(tdidf_com)
+                # add found information to DB
+                aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = aspect_db.cursor_reviews.fetchone()
 
     def td_idf_calculate(self, aspects_list, review_part):
@@ -141,7 +141,7 @@ class Aspects:
                 r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
             return r.content.decode('utf8')
         except Exception:
-            type, value, traceback = sys.exc_info()
+            type, value, traceback = sys.exc_info() #(<class 'requests.exceptions.ConnectionError'>, ConnectionError(ProtocolError('Connection aborted.', TimeoutError(10060, 'Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера', None, 10060, None)),), <traceback object at 0x0667AB48>)
             print('Error opening %s: %s' % (value.filename, value.strerror))
             return None
 
@@ -168,28 +168,31 @@ class Aspects:
         start = item['start']
         end = item['end']
         word = data['text'][start:end]
-        if pos_arr[word] == 'S':  # our word is noun
+        if pos_arr[str(word)] == 'S':  # our word is noun
             list_aspects.append(word.lower())  # add an aspect noun(our word)
         return list_aspects
 
     def word_pair(self, data, item, items, list_aspects, pos_arr):
-        word = data['text'][item['start']:item['end']]
-        parent = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
-        pos_parent = pos_arr[parent]
-        pos_word = pos_arr[word]
-        if (pos_parent == 'S' and pos_word != 'PUNCT' and pos_word != 'CONJ' and pos_word != 'PR') \
-                or (pos_word == 'S' and pos_parent != 'PUNCT' and pos_parent != 'CONJ'):
-            # don't need punctuations, conjunctions, pretexts as main words
-            # find pairs: S(parent) + smf or S(word) + smf
-            start_par = item['value']['parent']['start']
-            start_word = item['start']
-            if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
-                list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr, start_par, start_word)
-            else:
-                if start_par < start_word: # the word order is important in if-idf calculation
-                    list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+        try:
+            word = data['text'][item['start']:item['end']]
+            parent = data['text'][item['value']['parent']['start']:item['value']['parent']['end']]
+            pos_parent = pos_arr[str(parent)]
+            pos_word = pos_arr[str(word)]
+            if (pos_parent == 'S' and pos_word != 'PUNCT' and pos_word != 'CONJ' and pos_word != 'PR') \
+                    or (pos_word == 'S' and pos_parent != 'PUNCT' and pos_parent != 'CONJ'):
+                # don't need punctuations, conjunctions, pretexts as main words
+                # find pairs: S(parent) + smf or S(word) + smf
+                start_par = item['value']['parent']['start']
+                start_word = item['start']
+                if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
+                    list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr, start_par, start_word)
                 else:
-                    list_aspects.append(word.lower() + " " + parent.lower())  # add an aspect noun(parent) + our word
+                    if start_par < start_word: # the word order is important in if-idf calculation
+                        list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+                    else:
+                        list_aspects.append(word.lower() + " " + parent.lower())  # add an aspect noun(parent) + our word
+        except:
+            pass
         return list_aspects
 
     def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr, start_par, start_word):
@@ -200,7 +203,7 @@ class Aspects:
                 if item['value']['parent']['start'] == parent['start'] \
                         and item['value']['parent']['end'] == parent['end'] \
                         and parent_value == parent_value_extra:  # the found word and word from parameters are the same
-                    pos_word_extra = pos_arr[word_value_extra]
+                    pos_word_extra = pos_arr[str(word_value_extra)]
                     if pos_word_extra == 'PART' and item['value']['type'] != '2-компл':
                         start_extra_word = item['start']
                         sum = ""
