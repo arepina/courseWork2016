@@ -63,7 +63,7 @@ class AspectsDB:
 
 
 class Aspects:
-    api_key = "e68469466a70c5d3b8c8a91c091b12a35d8dd529"
+    api_key = "43de6ee952010c5e0870b999f2a1949183456c73"
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
@@ -90,32 +90,25 @@ class Aspects:
                 adv = str(row_aspect[3])
                 dis = str(row_aspect[4])
                 com = str(row_aspect[5])
-                import time
-                time.sleep(4)
                 if len(adv) != 0:
                     adv_parsed = self.syntatic_parsing(adv)
                     while adv_parsed is None:
-                        time.sleep(5)
                         adv_parsed = self.syntatic_parsing(adv)
                     list_adv_aspects = self.aspects(adv_parsed)  # load aspects for advantage
                 else:
                     list_adv_aspects = []
 
-                time.sleep(4)
                 if len(dis) != 0:
                     dis_parsed = self.syntatic_parsing(dis)
                     while dis_parsed is None:
-                        time.sleep(5)
                         dis_parsed = self.syntatic_parsing(dis)
                     list_dis_aspects = self.aspects(dis_parsed)  # load aspects for disadvantage
                 else:
                     list_dis_aspects = []
 
-                time.sleep(4)
                 if len(com) != 0:
                     com_parsed = self.syntatic_parsing(com)
                     while com_parsed is None:
-                        time.sleep(5)
                         com_parsed = self.syntatic_parsing(com)
                     list_com_aspects = self.aspects(com_parsed)  # load aspects for comment
                 else:
@@ -142,8 +135,6 @@ class Aspects:
 
     def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
         try:
-            import time
-            time.sleep(1)
             payload = {'text': str(review)}
             headers = {'Accept': 'application/json'}
             r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
