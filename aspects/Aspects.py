@@ -6,6 +6,8 @@ import requests
 import sqlite3
 import os
 
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 class AspectsDB:
     conn_aspects = None
@@ -249,6 +251,65 @@ class Aspects:
         return r.content.decode('utf8')
 
 
+class OneClassSVM:
+
+    def get_train_data(self):
+        row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
+        train_data = []
+        while row is not None:  # iterate through all reviews
+            train_data.append(str(row[0]).lower())
+            row = aspect_db.cursor_merged.fetchone()
+        return train_data
+
+    def get_test_data(self):
+        row = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
+        test_data = []
+        while row is not None:  # iterate through all reviews
+            aspect_arr = []
+            adv = str(row[1]).split(";")
+            for item in adv:
+                index = item.index("{")
+                aspect_arr.append(item[0:index])
+            dis = str(row[2]).split(";")
+            for item in dis:
+                index = item.index("{")
+                aspect_arr.append(item[0:index])
+            com = str(row[3]).split(";")
+            for item in com:
+                index = item.index("{")
+                aspect_arr.append(item[0:index])
+            test_data.append(aspect_arr)
+            row = aspect_db.cursor_merged.fetchone()
+        return test_data
+
+    def get_train_labels(self):
+        import glob
+        file_names = glob.glob("/productTres/Subcategories/*.txt")
+        train_labels = []
+        for name in file_names:
+            with open(name) as f:
+                train_labels.append(f.readlines())
+        return train_labels
+
+    def process(self, train_data, test_data, train_labels):
+        vectorizer = TfidfVectorizer(min_df=5,
+                             max_df = 0.8,
+                             sublinear_tf=True,
+                             use_idf=True)
+        train_vectors = vectorizer.fit_transform(train_data)
+        test_vectors = vectorizer.transform(test_data)
+
+        from sklearn import svm
+        classifier_rbf = svm.SVC()
+        classifier_rbf.fit(train_vectors, train_labels)
+        prediction_rbf = classifier_rbf.predict(test_vectors)
+
+
 aspect_db = AspectsDB()
 aspect = Aspects()
-aspect.aspects_find()
+oneclasssvm = OneClassSVM()
+train_labels = oneclasssvm.get_train_labels()
+train_data = oneclasssvm.get_train_data()
+test_data = oneclasssvm.get_test_data()
+oneclasssvm.process(train_data, test_data, train_labels)
+
