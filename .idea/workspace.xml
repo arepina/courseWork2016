@@ -2,43 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Aspects_Ulmart.db" afterPath="$PROJECT_DIR$/db/Aspects_Ulmart.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/GPS навигаторы.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/IP камеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/MP3-плееры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/NAS, DAS хранилища данных.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Wi-Fi адаптеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Беспроводные маршрутизаторы.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Веб-камеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Видеокамеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Виртуальная реальность.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Графические планшеты.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Диктофоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Диктофоны.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Зеркальные фотоаппараты.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Игровые манипуляторы.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Игровые приставки.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Клавиатуры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотоаппараты.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотопринтеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры-моноблоки.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мобильные телефоны.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мониторы.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Мыши.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мыши.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Ноутбуки.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Планшетные компьютеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Платформы для досборки.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Портативная акустика класса Hi-Fi.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Принтеры (МФУ).txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Ручные радиостанции.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Сканеры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Смарт-часы.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Телевизоры.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Точки доступа.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Фитнес-браслеты.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Фотоаппараты моментальной печати.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/productTrees/Subcategories files/Электронные книги.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Электронные книги.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/GPS навигаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/IP камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/MP3-плееры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/NAS, DAS хранилища данных.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Wi-Fi адаптеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Беспроводные маршрутизаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Веб-камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Видеокамеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Виртуальная реальность.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Графические планшеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Диктофоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Диктофоны.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Зеркальные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Игровые манипуляторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Игровые приставки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Клавиатуры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компактные фотопринтеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры-моноблоки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мобильные телефоны.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мониторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Мыши.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Мыши.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Ноутбуки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Планшетные компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Платформы для досборки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Портативная акустика класса Hi-Fi.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Принтеры (МФУ).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Ручные радиостанции.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Сканеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Смарт-часы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Телевизоры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Точки доступа.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Фитнес-браслеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Фотоаппараты моментальной печати.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Электронные книги.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Электронные книги.txt" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +65,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1480347135334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1480428036750" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480004384419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -92,28 +93,39 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6642729">
-              <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.1440678">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#2879#5058#0" expanded="false" />
-                <element signature="e#5127#5345#0" expanded="false" />
-                <element signature="e#5460#6411#0" expanded="false" />
-                <element signature="e#6486#7451#0" expanded="false" />
-                <element signature="e#7520#7770#0" expanded="false" />
-                <element signature="e#7847#9263#0" expanded="false" />
-                <element signature="e#9385#12018#0" expanded="false" />
-                <element signature="e#12067#12343#0" expanded="false" />
-                <element signature="e#12453#12757#0" expanded="false" />
-                <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-                <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-                <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-                <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-                <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-                <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-                <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
+                <element signature="e#170#2119#0" expanded="false" />
+                <element signature="e#2948#5127#0" expanded="false" />
+                <element signature="e#5529#6482#0" expanded="false" />
+                <element signature="e#6557#7593#0" expanded="false" />
+                <element signature="e#7662#7912#0" expanded="false" />
+                <element signature="e#7989#9514#0" expanded="false" />
+                <element signature="e#9636#12270#0" expanded="false" />
+                <element signature="e#12319#12595#0" expanded="false" />
+                <element signature="e#12705#13009#0" expanded="false" />
+                <element signature="e#13070#13359#0" expanded="false" />
+                <element signature="e#13398#14344#0" expanded="false" />
+                <marker date="1480428212159" expanded="true" signature="1210:1342" placeholder="CREATE TABLE... Aspects" />
+                <marker date="1480428212159" expanded="true" signature="1543:1662" placeholder="INSERT INTO Aspects... " />
+                <marker date="1480428212159" expanded="true" signature="2044:2080" placeholder="DELETE FROM " />
+                <marker date="1480428212159" expanded="true" signature="2604:2625" placeholder="SELECT * FRO... Reviews" />
+                <marker date="1480428212159" expanded="true" signature="2995:3015" placeholder="SELECT * FRO... Review" />
+                <marker date="1480428212159" expanded="true" signature="13109:13123" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1480428212159" expanded="true" signature="13109:13130" placeholder="SELECT * FRO... Reviews" />
+                <marker date="1480428212159" expanded="true" signature="13438:13459" placeholder="SELECT * FRO... Aspects" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fixes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -670,22 +682,22 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4276316" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31965813" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14529915" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31965813" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -709,8 +721,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/aspects/Aspects.py</url>
-          <line>309</line>
-          <option name="timeStamp" value="436" />
+          <line>339</line>
+          <option name="timeStamp" value="495" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Aspects.py</url>
+          <line>308</line>
+          <option name="timeStamp" value="496" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -720,59 +737,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="437" />
+      <option name="time" value="498" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="sys.exc_info()" />
-        <watch expression="requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers).status_code" language="Python" />
-        <watch expression="r.status_code" language="Python" />
-        <watch expression="pos_arr[parent]" />
-        <watch expression="data['text']" />
-        <watch expression="item['start']" />
-        <watch expression="item['end']" />
-        <watch expression="data['text'][130:140]" language="Python" />
-        <watch expression="data['text']" />
-        <watch expression="json.loads(part)" />
-        <watch expression="adv_parsed" />
+        <watch expression="item[0:index]" />
+        <watch expression="str(row[1])" />
+        <watch expression="len(adv)" />
+        <watch expression="item" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="107" selection-start-line="80" selection-start-column="11" selection-end-line="82" selection-end-column="107" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#2879#5058#0" expanded="false" />
-            <element signature="e#5127#5345#0" expanded="false" />
-            <element signature="e#5460#6411#0" expanded="false" />
-            <element signature="e#6486#7451#0" expanded="false" />
-            <element signature="e#7520#7770#0" expanded="false" />
-            <element signature="e#7847#9263#0" expanded="false" />
-            <element signature="e#9385#12018#0" expanded="false" />
-            <element signature="e#12067#12343#0" expanded="false" />
-            <element signature="e#12453#12757#0" expanded="false" />
-            <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-            <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-            <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -792,24 +768,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#2879#5058#0" expanded="false" />
-            <element signature="e#5127#5345#0" expanded="false" />
-            <element signature="e#5460#6411#0" expanded="false" />
-            <element signature="e#6486#7451#0" expanded="false" />
-            <element signature="e#7520#7770#0" expanded="false" />
-            <element signature="e#7847#9263#0" expanded="false" />
-            <element signature="e#9385#12018#0" expanded="false" />
-            <element signature="e#12067#12343#0" expanded="false" />
-            <element signature="e#12453#12757#0" expanded="false" />
-            <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-            <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-            <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
+            <element signature="e#170#2119#0" expanded="false" />
+            <element signature="e#2948#5127#0" expanded="false" />
+            <element signature="e#5529#6482#0" expanded="false" />
+            <element signature="e#6557#7593#0" expanded="false" />
+            <element signature="e#7662#7912#0" expanded="false" />
+            <element signature="e#7989#9514#0" expanded="false" />
+            <element signature="e#9636#12270#0" expanded="false" />
+            <element signature="e#12319#12595#0" expanded="false" />
+            <element signature="e#12705#13009#0" expanded="false" />
+            <element signature="e#13070#13359#0" expanded="false" />
+            <element signature="e#13398#14344#0" expanded="false" />
+            <marker date="1480428212159" expanded="true" signature="1210:1342" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="1543:1662" placeholder="INSERT INTO Aspects... " />
+            <marker date="1480428212159" expanded="true" signature="2044:2080" placeholder="DELETE FROM " />
+            <marker date="1480428212159" expanded="true" signature="2604:2625" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="2995:3015" placeholder="SELECT * FRO... Review" />
+            <marker date="1480428212159" expanded="true" signature="13109:13123" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="13109:13130" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="13438:13459" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
@@ -833,24 +810,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#2879#5058#0" expanded="false" />
-            <element signature="e#5127#5345#0" expanded="false" />
-            <element signature="e#5460#6411#0" expanded="false" />
-            <element signature="e#6486#7451#0" expanded="false" />
-            <element signature="e#7520#7770#0" expanded="false" />
-            <element signature="e#7847#9263#0" expanded="false" />
-            <element signature="e#9385#12018#0" expanded="false" />
-            <element signature="e#12067#12343#0" expanded="false" />
-            <element signature="e#12453#12757#0" expanded="false" />
-            <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-            <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-            <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
+            <element signature="e#170#2119#0" expanded="false" />
+            <element signature="e#2948#5127#0" expanded="false" />
+            <element signature="e#5529#6482#0" expanded="false" />
+            <element signature="e#6557#7593#0" expanded="false" />
+            <element signature="e#7662#7912#0" expanded="false" />
+            <element signature="e#7989#9514#0" expanded="false" />
+            <element signature="e#9636#12270#0" expanded="false" />
+            <element signature="e#12319#12595#0" expanded="false" />
+            <element signature="e#12705#13009#0" expanded="false" />
+            <element signature="e#13070#13359#0" expanded="false" />
+            <element signature="e#13398#14344#0" expanded="false" />
+            <marker date="1480428212159" expanded="true" signature="1210:1342" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="1543:1662" placeholder="INSERT INTO Aspects... " />
+            <marker date="1480428212159" expanded="true" signature="2044:2080" placeholder="DELETE FROM " />
+            <marker date="1480428212159" expanded="true" signature="2604:2625" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="2995:3015" placeholder="SELECT * FRO... Review" />
+            <marker date="1480428212159" expanded="true" signature="13109:13123" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="13109:13130" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="13438:13459" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
@@ -881,24 +859,25 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#2879#5058#0" expanded="false" />
-            <element signature="e#5127#5345#0" expanded="false" />
-            <element signature="e#5460#6411#0" expanded="false" />
-            <element signature="e#6486#7451#0" expanded="false" />
-            <element signature="e#7520#7770#0" expanded="false" />
-            <element signature="e#7847#9263#0" expanded="false" />
-            <element signature="e#9385#12018#0" expanded="false" />
-            <element signature="e#12067#12343#0" expanded="false" />
-            <element signature="e#12453#12757#0" expanded="false" />
-            <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-            <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-            <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
+            <element signature="e#170#2119#0" expanded="false" />
+            <element signature="e#2948#5127#0" expanded="false" />
+            <element signature="e#5529#6482#0" expanded="false" />
+            <element signature="e#6557#7593#0" expanded="false" />
+            <element signature="e#7662#7912#0" expanded="false" />
+            <element signature="e#7989#9514#0" expanded="false" />
+            <element signature="e#9636#12270#0" expanded="false" />
+            <element signature="e#12319#12595#0" expanded="false" />
+            <element signature="e#12705#13009#0" expanded="false" />
+            <element signature="e#13070#13359#0" expanded="false" />
+            <element signature="e#13398#14344#0" expanded="false" />
+            <marker date="1480428212159" expanded="true" signature="1210:1342" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="1543:1662" placeholder="INSERT INTO Aspects... " />
+            <marker date="1480428212159" expanded="true" signature="2044:2080" placeholder="DELETE FROM " />
+            <marker date="1480428212159" expanded="true" signature="2604:2625" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="2995:3015" placeholder="SELECT * FRO... Review" />
+            <marker date="1480428212159" expanded="true" signature="13109:13123" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="13109:13130" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="13438:13459" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
@@ -1064,13 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1801" column="0" selection-start-line="1801" selection-start-column="0" selection-end-line="1801" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -1127,17 +1099,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="92" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,29 +1135,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="395" column="0" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33224756">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6642729">
-          <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.1440678">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="9" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#2879#5058#0" expanded="false" />
-            <element signature="e#5127#5345#0" expanded="false" />
-            <element signature="e#5460#6411#0" expanded="false" />
-            <element signature="e#6486#7451#0" expanded="false" />
-            <element signature="e#7520#7770#0" expanded="false" />
-            <element signature="e#7847#9263#0" expanded="false" />
-            <element signature="e#9385#12018#0" expanded="false" />
-            <element signature="e#12067#12343#0" expanded="false" />
-            <element signature="e#12453#12757#0" expanded="false" />
-            <marker date="1480415633064" expanded="true" signature="1141:1273" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="1474:1593" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480415633064" expanded="true" signature="1975:2011" placeholder="DELETE FROM " />
-            <marker date="1480415633064" expanded="true" signature="2535:2556" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="2926:2946" placeholder="SELECT * FRO... Review" />
-            <marker date="1480415633064" expanded="true" signature="12857:12871" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480415633064" expanded="true" signature="12857:12878" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1480415633064" expanded="true" signature="13186:13207" placeholder="SELECT * FRO... Aspects" />
+            <element signature="e#170#2119#0" expanded="false" />
+            <element signature="e#2948#5127#0" expanded="false" />
+            <element signature="e#5529#6482#0" expanded="false" />
+            <element signature="e#6557#7593#0" expanded="false" />
+            <element signature="e#7662#7912#0" expanded="false" />
+            <element signature="e#7989#9514#0" expanded="false" />
+            <element signature="e#9636#12270#0" expanded="false" />
+            <element signature="e#12319#12595#0" expanded="false" />
+            <element signature="e#12705#13009#0" expanded="false" />
+            <element signature="e#13070#13359#0" expanded="false" />
+            <element signature="e#13398#14344#0" expanded="false" />
+            <marker date="1480428212159" expanded="true" signature="1210:1342" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="1543:1662" placeholder="INSERT INTO Aspects... " />
+            <marker date="1480428212159" expanded="true" signature="2044:2080" placeholder="DELETE FROM " />
+            <marker date="1480428212159" expanded="true" signature="2604:2625" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="2995:3015" placeholder="SELECT * FRO... Review" />
+            <marker date="1480428212159" expanded="true" signature="13109:13123" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480428212159" expanded="true" signature="13109:13130" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1480428212159" expanded="true" signature="13438:13459" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>

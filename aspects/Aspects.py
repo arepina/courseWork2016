@@ -1,12 +1,14 @@
 import json
 
 import sys
+
 from nltk.text import TextCollection
 import requests
 import sqlite3
 import os
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+from sklearn import svm
 
 
 class AspectsDB:
@@ -15,6 +17,7 @@ class AspectsDB:
     conn_merged = None
 
     cursor_aspects = None
+    cursor_aspects2 = None
     cursor_reviews = None
     cursor_article = None
     cursor_merged = None
@@ -31,6 +34,7 @@ class AspectsDB:
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
+        self.cursor_aspects2 = self.conn_aspects.cursor()
         self.cursor_reviews = self.conn_reviews.cursor()
         self.cursor_article = self.conn_aspects.cursor()
 
@@ -144,7 +148,7 @@ class Aspects:
                 r = requests.post(aspect.url_syntatic_parsing, data=payload, headers=headers)
             return r.content.decode('utf8')
         except Exception:
-            type, value, traceback = sys.exc_info() #(<class 'requests.exceptions.ConnectionError'>, ConnectionError(ProtocolError('Connection aborted.', TimeoutError(10060, 'Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера', None, 10060, None)),), <traceback object at 0x0667AB48>)
+            type, value, traceback = sys.exc_info()  # (<class 'requests.exceptions.ConnectionError'>, ConnectionError(ProtocolError('Connection aborted.', TimeoutError(10060, 'Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера', None, 10060, None)),), <traceback object at 0x0667AB48>)
             print('Error opening %s: %s' % (value.filename, value.strerror))
             return None
 
@@ -156,11 +160,13 @@ class Aspects:
         pos_arr = self.parse_pos(self.tag_part_of_speech(data['text']))
         for item in items:  # iterate through words/word pairs in concrete review
             if 'parent' in item['value']:  # word pair
-                list_aspects = self.word_pair(data, item, items, list_aspects, pos_arr)  # look for aspect noun(parent) + word
+                list_aspects = self.word_pair(data, item, items, list_aspects,
+                                              pos_arr)  # look for aspect noun(parent) + word
             else:  # one word
                 found = False
                 for aspect_item in list_aspects:
-                    if data['text'][item['start']:item['end']] in aspect_item:  # we have already found a better variant for these word
+                    if data['text'][item['start']:item[
+                        'end']] in aspect_item:  # we have already found a better variant for these word
                         found = True
                         break
                 if not found:
@@ -188,12 +194,15 @@ class Aspects:
                 start_par = item['value']['parent']['start']
                 start_word = item['start']
                 if pos_parent == 'PR' or pos_parent == 'V':  # try to find PART for PR or for V (не для *, не доделал *)
-                    list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects, pos_arr, start_par, start_word)
+                    list_aspects = self.part_find(items, data, item['value']['parent'], parent, word, list_aspects,
+                                                  pos_arr, start_par, start_word)
                 else:
-                    if start_par < start_word: # the word order is important in if-idf calculation
-                        list_aspects.append(parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
+                    if start_par < start_word:  # the word order is important in if-idf calculation
+                        list_aspects.append(
+                            parent.lower() + " " + word.lower())  # add an aspect noun(parent) + our word
                     else:
-                        list_aspects.append(word.lower() + " " + parent.lower())  # add an aspect noun(parent) + our word
+                        list_aspects.append(
+                            word.lower() + " " + parent.lower())  # add an aspect noun(parent) + our word
         except:
             pass
         return list_aspects
@@ -210,7 +219,7 @@ class Aspects:
                     if pos_word_extra == 'PART' and item['value']['type'] != '2-компл':
                         start_extra_word = item['start']
                         sum = ""
-                        if start_word < start_par and start_word < start_extra_word: # the word order is important in if-idf calculation
+                        if start_word < start_par and start_word < start_extra_word:  # the word order is important in if-idf calculation
                             if start_extra_word < start_par:
                                 sum += word.lower() + " " + word_value_extra.lower() + " " + parent_value.lower()  # wep
                             else:
@@ -266,25 +275,29 @@ class OneClassSVM:
         test_data = []
         while row is not None:  # iterate through all reviews
             aspect_arr = []
-            adv = str(row[1]).split(";")
-            for item in adv:
-                index = item.index("{")
-                aspect_arr.append(item[0:index])
-            dis = str(row[2]).split(";")
-            for item in dis:
-                index = item.index("{")
-                aspect_arr.append(item[0:index])
-            com = str(row[3]).split(";")
-            for item in com:
-                index = item.index("{")
-                aspect_arr.append(item[0:index])
+            if len(str(row[1])) != 0:
+                adv = str(row[1]).split(";")
+                for item in adv:
+                    index = item.index("{")
+                    aspect_arr.append(item[0:index])
+            if len(str(row[2])) != 0:
+                dis = str(row[2]).split(";")
+                for item in dis:
+                    index = item.index("{")
+                    aspect_arr.append(item[0:index])
+            if len(str(row[3])) != 0:
+                com = str(row[3]).split(";")
+                for item in com:
+                    index = item.index("{")
+                    aspect_arr.append(item[0:index])
             test_data.append(aspect_arr)
-            row = aspect_db.cursor_merged.fetchone()
+            row = aspect_db.cursor_aspects.fetchone()
         return test_data
 
     def get_train_labels(self):
         import glob
-        file_names = glob.glob("/productTres/Subcategories/*.txt")
+        path = os.getcwd()
+        file_names = glob.glob(path + "\\..\\productTrees\\Subcategories\\*.txt")
         train_labels = []
         for name in file_names:
             with open(name) as f:
@@ -292,17 +305,30 @@ class OneClassSVM:
         return train_labels
 
     def process(self, train_data, test_data, train_labels):
-        vectorizer = TfidfVectorizer(min_df=5,
-                             max_df = 0.8,
-                             sublinear_tf=True,
-                             use_idf=True)
-        train_vectors = vectorizer.fit_transform(train_data)
-        test_vectors = vectorizer.transform(test_data)
+        # fit the model
+        clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        clf.fit(train_data)
+        y_pred_train = clf.predict(train_data)
+        y_pred_test = clf.predict(test_data)
+        y_pred_outliers = clf.predict(train_labels)
+        n_error_train = y_pred_train[y_pred_train == -1].size
+        n_error_test = y_pred_test[y_pred_test == -1].size
+        n_error_outliers = y_pred_outliers[y_pred_outliers == 1].size
 
-        from sklearn import svm
-        classifier_rbf = svm.SVC()
-        classifier_rbf.fit(train_vectors, train_labels)
-        prediction_rbf = classifier_rbf.predict(test_vectors)
+
+        # vectorizer = TfidfVectorizer(min_df=5,
+        #                              max_df=0.8,
+        #                              sublinear_tf=True,
+        #                              use_idf=True)
+        # train_vectors = vectorizer.fit_transform(train_data)
+        # test_vectors = vectorizer.transform(test_data)
+        # classifier_rbf = svm.SVC()
+        # classifier_rbf.fit(train_vectors, train_labels)
+        # prediction_rbf = classifier_rbf.predict(test_vectors)
+
+        # clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        # clf.fit(train_data)
+        # pred_test = clf.predict(test_vectors)
 
 
 aspect_db = AspectsDB()
@@ -312,4 +338,3 @@ train_labels = oneclasssvm.get_train_labels()
 train_data = oneclasssvm.get_train_data()
 test_data = oneclasssvm.get_test_data()
 oneclasssvm.process(train_data, test_data, train_labels)
-
