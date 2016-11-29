@@ -2,13 +2,13 @@ import json
 
 import sys
 
-from nltk.text import TextCollection
+# from nltk.text import TextCollection
 import requests
 import sqlite3
 import os
 
-import numpy as np
 from sklearn import svm
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 class AspectsDB:
@@ -78,12 +78,12 @@ class Aspects:
     def __init__(self):
         self.url_syntatic_parsing += self.api_key
         self.url_pos += self.api_key
-        row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
-        texts_arr = []
-        while row is not None:  # iterate through all reviews
-            texts_arr.append(str(row[0]).lower())
-            row = aspect_db.cursor_merged.fetchone()
-        self.texts = TextCollection(texts_arr)  # add all values to text collection
+        # row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
+        # texts_arr = []
+        # while row is not None:  # iterate through all reviews
+        #     texts_arr.append(str(row[0]).lower())
+        #     row = aspect_db.cursor_merged.fetchone()
+        # self.texts = TextCollection(texts_arr)  # add all values to text collection
 
     def aspects_find(self):
         row_aspect = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
@@ -261,13 +261,13 @@ class Aspects:
 
 
 class OneClassSVM:
-
     def get_train_data(self):
         row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
         train_data = []
         while row is not None:  # iterate through all reviews
             train_data.append(str(row[0]).lower())
             row = aspect_db.cursor_merged.fetchone()
+        print("get_train_data")
         return train_data
 
     def get_test_data(self):
@@ -292,6 +292,7 @@ class OneClassSVM:
                     aspect_arr.append(item[0:index])
             test_data.append(aspect_arr)
             row = aspect_db.cursor_aspects.fetchone()
+        print("get_test_data")
         return test_data
 
     def get_train_labels(self):
@@ -302,33 +303,26 @@ class OneClassSVM:
         for name in file_names:
             with open(name) as f:
                 train_labels.append(f.readlines())
+        print("get_train_labels")
         return train_labels
 
     def process(self, train_data, test_data, train_labels):
+        vectorizer = TfidfVectorizer(min_df=5,
+                                     max_df=0.8,
+                                     sublinear_tf=True,
+                                     use_idf=True)
+        train_vectors = vectorizer.fit_transform(train_data)
+        test_vectors = vectorizer.transform(test_data)
+
         # fit the model
         clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-        clf.fit(train_data)
-        y_pred_train = clf.predict(train_data)
-        y_pred_test = clf.predict(test_data)
-        y_pred_outliers = clf.predict(train_labels)
-        n_error_train = y_pred_train[y_pred_train == -1].size
-        n_error_test = y_pred_test[y_pred_test == -1].size
-        n_error_outliers = y_pred_outliers[y_pred_outliers == 1].size
+        clf.fit(train_vectors)
+        pred_test = clf.predict(test_vectors)
 
-
-        # vectorizer = TfidfVectorizer(min_df=5,
-        #                              max_df=0.8,
-        #                              sublinear_tf=True,
-        #                              use_idf=True)
-        # train_vectors = vectorizer.fit_transform(train_data)
-        # test_vectors = vectorizer.transform(test_data)
         # classifier_rbf = svm.SVC()
         # classifier_rbf.fit(train_vectors, train_labels)
         # prediction_rbf = classifier_rbf.predict(test_vectors)
 
-        # clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-        # clf.fit(train_data)
-        # pred_test = clf.predict(test_vectors)
 
 
 aspect_db = AspectsDB()
