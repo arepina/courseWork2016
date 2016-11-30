@@ -310,6 +310,13 @@ class OneClassSVM:
             row_review = aspect_db.cursor_reviews.fetchone()
         return train_labels
 
+    def unarray(self, data):
+        unarrayed_data = []
+        for i in range(len(data)):
+            for item in data[i]:
+                unarrayed_data.append(item)
+        return unarrayed_data
+
     @staticmethod
     def process(train_data, train_labels, test_data):
         # fit the model
@@ -323,17 +330,12 @@ class OneClassSVM:
                                      use_idf=True)
         train_vectors = vectorizer.fit_transform(train_data)
         test_vectors = vectorizer.transform(test_data)
+        print("transformed")
         classifier_rbf = svm.SVC()
         classifier_rbf.fit(train_vectors, train_labels)
+        print("fit")
         prediction_rbf = classifier_rbf.predict(test_vectors)
         print(prediction_rbf)
-
-    def unarray(self, data):
-        unarrayed_data = []
-        for i in range(len(data)):
-            for item in data[i]:
-                unarrayed_data.append(item)
-        return unarrayed_data
 
 
 aspect_db = AspectsDB()
@@ -341,8 +343,10 @@ aspect = Aspects()
 one_class_svm = OneClassSVM()
 data = one_class_svm.get_data()
 labels = one_class_svm.get_labels(data)
-test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.8)
+print("got all the data")
+test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)
 test_data_unarrayed = one_class_svm.unarray(test_data)
 train_data_unarrayed = one_class_svm.unarray(train_data)
 train_labels_unarrayed = one_class_svm.unarray(train_labels)
+print("got all the unarrayed data")
 one_class_svm.process(train_data_unarrayed, train_labels_unarrayed, test_data_unarrayed)
