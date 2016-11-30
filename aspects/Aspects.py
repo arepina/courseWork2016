@@ -3,6 +3,7 @@ import json
 import sys
 
 # from nltk.text import TextCollection
+import numpy as np
 import requests
 import sqlite3
 import os
@@ -304,13 +305,22 @@ class OneClassSVM:
                 if item in ideal_labels[0][0]:
                     labels.append(1)
                 else:
-                    labels.append(0)
+                    labels.append(-1)
             count += 1
             train_labels.append(labels)
             row_review = aspect_db.cursor_reviews.fetchone()
         return train_labels
 
-    def unarray(self, data):
+    @staticmethod
+    def get_ideal_train_data(train_data, train_labels):
+        ideal_train_data = []
+        for i in range(len(train_labels)):
+            if train_labels[i] == 1:
+                ideal_train_data.append(train_data[i])
+        return ideal_train_data
+
+    @staticmethod
+    def unarray(data):
         unarrayed_data = []
         for i in range(len(data)):
             for item in data[i]:
@@ -318,24 +328,19 @@ class OneClassSVM:
         return unarrayed_data
 
     @staticmethod
-    def process(train_data, train_labels, test_data):
-        # fit the model
-        # clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-        # clf.fit(train_data, train_labels)
-        # prediction_test = clf.predict(test_data)
-        # print(prediction_test)
+    def train_and_predict(train_data, test_data):
         vectorizer = TfidfVectorizer(min_df=5,
                                      max_df=0.8,
                                      sublinear_tf=True,
                                      use_idf=True)
         train_vectors = vectorizer.fit_transform(train_data)
         test_vectors = vectorizer.transform(test_data)
-        print("transformed")
-        classifier_rbf = svm.SVC()
-        classifier_rbf.fit(train_vectors, train_labels)
-        print("fit")
+        classifier_rbf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        classifier_rbf.fit(train_vectors)
         prediction_rbf = classifier_rbf.predict(test_vectors)
-        print(prediction_rbf)
+        import numpy
+        a = numpy.asarray(prediction_rbf)
+        numpy.savetxt("predicted.csv", a, delimiter=",")
 
 
 aspect_db = AspectsDB()
@@ -343,10 +348,12 @@ aspect = Aspects()
 one_class_svm = OneClassSVM()
 data = one_class_svm.get_data()
 labels = one_class_svm.get_labels(data)
-print("got all the data")
 test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)
 test_data_unarrayed = one_class_svm.unarray(test_data)
 train_data_unarrayed = one_class_svm.unarray(train_data)
 train_labels_unarrayed = one_class_svm.unarray(train_labels)
-print("got all the unarrayed data")
-one_class_svm.process(train_data_unarrayed, train_labels_unarrayed, test_data_unarrayed)
+train_data_unarrayed = one_class_svm.get_ideal_train_data(train_data_unarrayed, train_labels_unarrayed)
+one_class_svm.train_and_predict(train_data_unarrayed, test_data_unarrayed)
+my_data = np.genfromtxt('predicted.csv', delimiter=',')
+print(my_data)
+
