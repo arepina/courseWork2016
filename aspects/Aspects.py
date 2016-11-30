@@ -9,6 +9,7 @@ import os
 
 from sklearn import svm
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
 
 
 class AspectsDB:
@@ -17,7 +18,6 @@ class AspectsDB:
     conn_merged = None
 
     cursor_aspects = None
-    cursor_aspects2 = None
     cursor_reviews = None
     cursor_article = None
     cursor_merged = None
@@ -34,7 +34,6 @@ class AspectsDB:
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
-        self.cursor_aspects2 = self.conn_aspects.cursor()
         self.cursor_reviews = self.conn_reviews.cursor()
         self.cursor_article = self.conn_aspects.cursor()
 
@@ -261,18 +260,11 @@ class Aspects:
 
 
 class OneClassSVM:
-    def get_train_data(self):
-        row = aspect_db.cursor_merged.execute('SELECT * FROM Reviews').fetchone()
-        train_data = []
-        while row is not None:  # iterate through all reviews
-            train_data.append(str(row[0]).lower())
-            row = aspect_db.cursor_merged.fetchone()
-        print("get_train_data")
-        return train_data
 
-    def get_test_data(self):
+    @staticmethod
+    def get_data():
         row = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
-        test_data = []
+        data = []
         while row is not None:  # iterate through all reviews
             aspect_arr = []
             if len(str(row[1])) != 0:
@@ -290,45 +282,67 @@ class OneClassSVM:
                 for item in com:
                     index = item.index("{")
                     aspect_arr.append(item[0:index])
-            test_data.append(aspect_arr)
+            data.append(aspect_arr)
             row = aspect_db.cursor_aspects.fetchone()
-        print("get_test_data")
-        return test_data
+        return data
 
-    def get_train_labels(self):
-        import glob
+    @staticmethod
+    def get_labels(data):
+        row_review = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         path = os.getcwd()
-        file_names = glob.glob(path + "\\..\\productTrees\\Subcategories\\*.txt")
         train_labels = []
-        for name in file_names:
-            with open(name) as f:
-                train_labels.append(f.readlines())
-        print("get_train_labels")
+        count = 0
+        while row_review is not None:
+            subcat_name = str(row_review[1])
+            file_path = path + "\\..\\productTrees\\Subcategories\\" + subcat_name + ".txt"
+            ideal_labels = []
+            labels = []
+            with open(file_path) as f:
+                ideal_labels.append(f.readlines())
+            ideal_labels[0][0] = ideal_labels[0][0].lower()
+            for item in data[count]:
+                if item in ideal_labels[0][0]:
+                    labels.append(1)
+                else:
+                    labels.append(0)
+            count += 1
+            train_labels.append(labels)
+            row_review = aspect_db.cursor_reviews.fetchone()
         return train_labels
 
-    def process(self, train_data, test_data, train_labels):
+    @staticmethod
+    def process(train_data, train_labels, test_data):
+        # fit the model
+        # clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
+        # clf.fit(train_data, train_labels)
+        # prediction_test = clf.predict(test_data)
+        # print(prediction_test)
         vectorizer = TfidfVectorizer(min_df=5,
                                      max_df=0.8,
                                      sublinear_tf=True,
                                      use_idf=True)
         train_vectors = vectorizer.fit_transform(train_data)
         test_vectors = vectorizer.transform(test_data)
+        classifier_rbf = svm.SVC()
+        classifier_rbf.fit(train_vectors, train_labels)
+        prediction_rbf = classifier_rbf.predict(test_vectors)
+        print(prediction_rbf)
 
-        # fit the model
-        clf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-        clf.fit(train_vectors)
-        pred_test = clf.predict(test_vectors)
-
-        # classifier_rbf = svm.SVC()
-        # classifier_rbf.fit(train_vectors, train_labels)
-        # prediction_rbf = classifier_rbf.predict(test_vectors)
-
+    def unarray(self, data):
+        unarrayed_data = []
+        for i in range(len(data)):
+            for item in data[i]:
+                unarrayed_data.append(item)
+        return unarrayed_data
 
 
 aspect_db = AspectsDB()
 aspect = Aspects()
-oneclasssvm = OneClassSVM()
-train_labels = oneclasssvm.get_train_labels()
-train_data = oneclasssvm.get_train_data()
-test_data = oneclasssvm.get_test_data()
-oneclasssvm.process(train_data, test_data, train_labels)
+one_class_svm = OneClassSVM()
+data = one_class_svm.get_data()
+labels = one_class_svm.get_labels(data)
+test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.8)
+test_data_unarrayed = one_class_svm.unarray(test_data)
+train_data_unarrayed = one_class_svm.unarray(train_data)
+train_labels_unarrayed = one_class_svm.unarray(train_labels)
+one_class_svm.process(train_data_unarrayed, train_labels_unarrayed, test_data_unarrayed)

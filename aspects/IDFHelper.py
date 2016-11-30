@@ -1,3 +1,4 @@
+import os
 import sqlite3
 
 
@@ -102,4 +103,6 @@ class IDFHelper:
 
 helper = IDFHelper()
 helper.cleaner()
-# helper.process()
+helper.process()
+
+
