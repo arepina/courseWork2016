@@ -12,6 +12,8 @@ from aspects.AspectsDB import AspectsDB
 from sklearn import svm
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+from aspects.IdealAspectsDB import IdealAspectsDB
+
 
 class Aspects:
     api_key = "43de6ee952010c5e0870b999f2a1949183456c73"
@@ -208,6 +210,36 @@ class Aspects:
             r = requests.post(aspect.url_pos, data=payload, headers=headers)
         return r.content.decode('utf8')
 
+    def move_ideal_aspects(self, ideal, ideal_aspects):
+        row_aspect = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
+        count = 0
+        while row_aspect is not None:  # iterate through all reviews
+            print(count)
+            count += 1
+            article = str(row_aspect[0])
+            adv = str(row_aspect[1])
+            dis = str(row_aspect[2])
+            com = str(row_aspect[3])
+            ideal_adv = self.get_ideal(adv, ideal_aspects)
+            ideal_dis = self.get_ideal(dis, ideal_aspects)
+            ideal_com = self.get_ideal(com, ideal_aspects)
+            # join the results
+            str_adv_aspects = ';'.join(ideal_adv)
+            str_dis_aspects = ';'.join(ideal_dis)
+            str_com_aspects = ';'.join(ideal_com)
+            ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            row_aspect = aspect_db.cursor_aspects.fetchone()
+
+    def get_ideal(self, part, ideal_aspects):
+        aspect_arr = []
+        if len(part) != 0:
+            splitted_part = part.split(";")
+            for item in splitted_part:
+                index = item.index("{")
+                if item[0:index] in ideal_aspects:
+                    aspect_arr.append(item[0:index])
+        return aspect_arr
+
 
 class OneClassSVM:
 
@@ -303,8 +335,10 @@ aspect_db = AspectsDB()  # aspects data base
 aspect = Aspects()  # find aspects with the help of ISP RAS API
 one_class_svm = OneClassSVM()
 data = one_class_svm.get_data()  # get only aspects from data base
-labels = one_class_svm.get_labels(data)  # get labels for all the aspects depends on their ideality
-test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)  # split the data (80% for training)
+# get labels for all the aspects depends on their ideality
+labels = one_class_svm.get_labels(data)
+# split the data (80% for training)
+test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)
 # unarray the 2D arrays and make them 1D
 test_data_unarrayed = one_class_svm.unarray(test_data)
 train_data_unarrayed = one_class_svm.unarray(train_data)
@@ -317,5 +351,6 @@ test_labels_unarrayed = one_class_svm.train_and_predict(train_data_unarrayed, te
 test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
 # now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
 ideal_aspects = test_data_unarrayed + train_data_unarrayed
-print(len(ideal_aspects))
+ideal = IdealAspectsDB()
+aspect.move_ideal_aspects(ideal, ideal_aspects)
 
