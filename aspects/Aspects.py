@@ -1,71 +1,16 @@
 import json
+import os
 
 import sys
 
 # from nltk.text import TextCollection
-import numpy as np
 import requests
-import sqlite3
-import os
 
-from sklearn import svm
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 
-
-class AspectsDB:
-    conn_aspects = None
-    conn_reviews = None
-    conn_merged = None
-
-    cursor_aspects = None
-    cursor_reviews = None
-    cursor_article = None
-    cursor_merged = None
-
-    db_merged_name = 'Merged.db'
-    db_aspects_name = 'Aspects_Ulmart.db'
-    db_reviews_name = 'Review_Ulmart.db'
-
-    def __init__(self):
-        path = os.getcwd()
-        self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
-        self.conn_reviews = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_name)
-        self.conn_merged = sqlite3.connect(path + "\\..\\db\\" + self.db_merged_name)
-
-        self.cursor_merged = self.conn_merged.cursor()
-        self.cursor_aspects = self.conn_aspects.cursor()
-        self.cursor_reviews = self.conn_reviews.cursor()
-        self.cursor_article = self.conn_aspects.cursor()
-
-        self.create_aspects_db()
-
-    # Create table
-    def create_aspects_db(self):
-        self.cursor_aspects.execute('''CREATE TABLE IF NOT EXISTS Aspects
-             (article TEXT, advantageAspects TEXT, disadvantageAspects TEXT, commentAspects TEXT)''')
-        self.commit()
-
-    # Insert new review to DB
-    def add_review(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
-        self.cursor_aspects.execute(
-            'INSERT INTO Aspects (article, advantageAspects, disadvantageAspects, commentAspects) '
-            'VALUES (?, ?, ?, ?)',
-            (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.commit()
-
-    # destructor - close connection
-    def __del__(self):
-        self.conn_aspects.close()
-        self.conn_reviews.close()
-
-    # commit
-    def commit(self):
-        self.conn_aspects.commit()
-
-    def delete_aspects(self, article):
-        self.cursor_aspects.execute('DELETE FROM Aspects WHERE article = ' + str(article))
-        self.commit()
+from aspects.AspectsDB import AspectsDB
+from sklearn import svm
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 class Aspects:
@@ -139,7 +84,8 @@ class Aspects:
             result.append(aspect_item + "{" + str(value) + "}")
         return result
 
-    def syntatic_parsing(self, review):  # detects syntactic structure for each sentence of a given text
+    @staticmethod
+    def syntatic_parsing(review):  # detects syntactic structure for each sentence of a given text
         try:
             payload = {'text': str(review)}
             headers = {'Accept': 'application/json'}
@@ -173,7 +119,8 @@ class Aspects:
                     list_aspects = self.one_word(item, data, list_aspects, pos_arr)  # look for aspect noun(word)
         return list_aspects
 
-    def one_word(self, item, data, list_aspects, pos_arr):
+    @staticmethod
+    def one_word(item, data, list_aspects, pos_arr):
         start = item['start']
         end = item['end']
         word = data['text'][start:end]
@@ -207,7 +154,8 @@ class Aspects:
             pass
         return list_aspects
 
-    def part_find(self, items, data, parent, parent_value, word, list_aspects, pos_arr, start_par, start_word):
+    @staticmethod
+    def part_find(items, data, parent, parent_value, word, list_aspects, pos_arr, start_par, start_word):
         for item in items:  # look through all words in review part
             if 'parent' in item['value']:
                 word_value_extra = data['text'][item['start']:item['end']]
@@ -251,7 +199,8 @@ class Aspects:
             result[text] = item['value']['tag']
         return result
 
-    def tag_part_of_speech(self, item):  # detects part of speech tag for each word of a given text
+    @staticmethod
+    def tag_part_of_speech(item):  # detects part of speech tag for each word of a given text
         payload = {'text': str(item)}
         headers = {'Accept': 'application/json'}
         r = requests.post(aspect.url_pos, data=payload, headers=headers)
@@ -312,12 +261,12 @@ class OneClassSVM:
         return train_labels
 
     @staticmethod
-    def get_ideal_train_data(train_data, train_labels):
-        ideal_train_data = []
-        for i in range(len(train_labels)):
-            if train_labels[i] == 1:
-                ideal_train_data.append(train_data[i])
-        return ideal_train_data
+    def get_ideal_data(data, labels):
+        ideal_data = []
+        for i in range(len(labels)):
+            if labels[i] == 1:
+                ideal_data.append(data[i])
+        return ideal_data
 
     @staticmethod
     def unarray(data):
@@ -338,22 +287,35 @@ class OneClassSVM:
         classifier_rbf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
         classifier_rbf.fit(train_vectors)
         prediction_rbf = classifier_rbf.predict(test_vectors)
-        import numpy
-        a = numpy.asarray(prediction_rbf)
-        numpy.savetxt("predicted.csv", a, delimiter=",")
+        return prediction_rbf
 
 
-aspect_db = AspectsDB()
-aspect = Aspects()
+class Synonyms:
+
+    def find_synoyms(self):
+        path = os.getcwd() + "\\..\\aspects\\synmaster.txt"
+        dictionary = []
+        with open(path) as f:
+            dictionary.append(f.readlines())
+
+
+aspect_db = AspectsDB()  # aspects data base
+aspect = Aspects()  # find aspects with the help of ISP RAS API
 one_class_svm = OneClassSVM()
-data = one_class_svm.get_data()
-labels = one_class_svm.get_labels(data)
-test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)
+data = one_class_svm.get_data()  # get only aspects from data base
+labels = one_class_svm.get_labels(data)  # get labels for all the aspects depends on their ideality
+test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)  # split the data (80% for training)
+# unarray the 2D arrays and make them 1D
 test_data_unarrayed = one_class_svm.unarray(test_data)
 train_data_unarrayed = one_class_svm.unarray(train_data)
 train_labels_unarrayed = one_class_svm.unarray(train_labels)
-train_data_unarrayed = one_class_svm.get_ideal_train_data(train_data_unarrayed, train_labels_unarrayed)
-one_class_svm.train_and_predict(train_data_unarrayed, test_data_unarrayed)
-my_data = np.genfromtxt('predicted.csv', delimiter=',')
-print(my_data)
+# get only ideal aspects from aspects list (label = 1) for train data
+train_data_unarrayed = one_class_svm.get_ideal_data(train_data_unarrayed, train_labels_unarrayed)
+# train the one-class SVM and predict the aspects
+test_labels_unarrayed = one_class_svm.train_and_predict(train_data_unarrayed, test_data_unarrayed)
+# get only ideal aspects from aspects list (label = 1) for test data
+test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
+# now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
+ideal_aspects = test_data_unarrayed + train_data_unarrayed
+print(len(ideal_aspects))
 

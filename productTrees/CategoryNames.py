@@ -38,5 +38,5 @@ class CategoryNames:
 
 
 category_names = CategoryNames()
-# category_names.site_directories_print()
+category_names.site_directories_print()
 category_names.sub_categories_print()
