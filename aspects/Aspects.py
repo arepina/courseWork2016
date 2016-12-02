@@ -192,7 +192,8 @@ class Aspects:
             list_aspects.append(word.lower() + " " + parent_value.lower())  # add an aspect noun(parent) + our word
         return list_aspects
 
-    def parse_pos(self, pos_sentence):
+    @staticmethod
+    def parse_pos(pos_sentence):
         sentence = json.loads(pos_sentence)
         pos_items = sentence['annotations']['pos-token']
         result = {}
@@ -230,7 +231,8 @@ class Aspects:
             ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = aspect_db.cursor_aspects.fetchone()
 
-    def get_ideal(self, part, ideal_aspects):
+    @staticmethod
+    def get_ideal(part, ideal_aspects):
         aspect_arr = []
         if len(part) != 0:
             splitted_part = part.split(";")
@@ -324,11 +326,42 @@ class OneClassSVM:
 
 class Synonyms:
 
-    def find_synoyms(self):
+    def find_synoyms(self, ideal):
         path = os.getcwd() + "\\..\\aspects\\synmaster.txt"
         dictionary = []
         with open(path) as f:
             dictionary.append(f.readlines())
+        row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
+        count = 0
+        while row_aspect is not None:  # iterate through all reviews
+            print(count)
+            count += 1
+            article = str(row_aspect[0])
+            adv = str(row_aspect[1])
+            dis = str(row_aspect[2])
+            com = str(row_aspect[3])
+            ideal_adv = self.remove_synonyms(adv, dictionary)
+            ideal_dis = self.remove_synonyms(dis, dictionary)
+            ideal_com = self.remove_synonyms(com, dictionary)
+            # join the results
+            str_adv_aspects = ';'.join(ideal_adv)
+            str_dis_aspects = ';'.join(ideal_dis)
+            str_com_aspects = ';'.join(ideal_com)
+            ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            row_aspect = aspect_db.cursor_aspects.fetchone()
+
+    @staticmethod
+    def remove_synonyms(part, dictionary):
+        part_with_no_synonyms = []
+        if len(part) != 0:
+            aspects = part.split(";")
+            for i in range(len(aspects)):
+                dict_str = dictionary[aspects[i]]
+                j = i + 1
+                for j in range(len(aspects)):
+                    # todo check if there are any equal aspects
+                    r = 42
+        return part_with_no_synonyms
 
 
 aspect_db = AspectsDB()  # aspects data base
@@ -352,5 +385,7 @@ test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_lab
 # now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
 ideal_aspects = test_data_unarrayed + train_data_unarrayed
 ideal = IdealAspectsDB()
+# got only ideal aspects in the db
 aspect.move_ideal_aspects(ideal, ideal_aspects)
+synonyms = Synonyms()
 
