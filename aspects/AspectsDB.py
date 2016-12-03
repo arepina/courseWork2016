@@ -8,6 +8,7 @@ class AspectsDB:
     conn_merged = None
 
     cursor_aspects = None
+    cursor_aspects2 = None
     cursor_reviews = None
     cursor_article = None
     cursor_merged = None
@@ -24,6 +25,7 @@ class AspectsDB:
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
+        self.cursor_aspects2 = self.conn_aspects.cursor()
         self.cursor_reviews = self.conn_reviews.cursor()
         self.cursor_article = self.conn_aspects.cursor()
 

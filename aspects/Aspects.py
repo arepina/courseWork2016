@@ -26,34 +26,33 @@ class Aspects:
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
-            if count > 14347:
-                article = str(row_aspect[2])
-                adv = str(row_aspect[3])
-                dis = str(row_aspect[4])
-                com = str(row_aspect[5])
-                if len(adv) != 0:
-                    adv_parsed = self.syntatic_parsing(adv)
-                    list_adv_aspects = self.aspects_find(adv_parsed)  # load aspects for advantage
-                else:
-                    list_adv_aspects = []
+            article = str(row_aspect[2])
+            adv = str(row_aspect[3])
+            dis = str(row_aspect[4])
+            com = str(row_aspect[5])
+            if len(adv) != 0:
+                adv_parsed = self.syntatic_parsing(adv)
+                list_adv_aspects = self.aspects_find(adv_parsed)  # load aspects for advantage
+            else:
+                list_adv_aspects = []
 
-                if len(dis) != 0:
-                    dis_parsed = self.syntatic_parsing(dis)
-                    list_dis_aspects = self.aspects_find(dis_parsed)  # load aspects for disadvantage
-                else:
-                    list_dis_aspects = []
+            if len(dis) != 0:
+                dis_parsed = self.syntatic_parsing(dis)
+                list_dis_aspects = self.aspects_find(dis_parsed)  # load aspects for disadvantage
+            else:
+                list_dis_aspects = []
 
-                if len(com) != 0:
-                    com_parsed = self.syntatic_parsing(com)
-                    list_com_aspects = self.aspects_find(com_parsed)  # load aspects for comment
-                else:
-                    list_com_aspects = []
-                # join the results
-                str_adv_aspects = ';'.join(list_adv_aspects)
-                str_dis_aspects = ';'.join(list_dis_aspects)
-                str_com_aspects = ';'.join(list_com_aspects)
-                # add found information to DB
-                aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            if len(com) != 0:
+                com_parsed = self.syntatic_parsing(com)
+                list_com_aspects = self.aspects_find(com_parsed)  # load aspects for comment
+            else:
+                list_com_aspects = []
+            # join the results
+            str_adv_aspects = ';'.join(list_adv_aspects)
+            str_dis_aspects = ';'.join(list_dis_aspects)
+            str_com_aspects = ';'.join(list_com_aspects)
+            # add found information to DB
+            aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = aspect_db.cursor_reviews.fetchone()
 
     @staticmethod
@@ -178,9 +177,8 @@ class Aspects:
         if len(part) != 0:
             splitted_part = part.split(";")
             for item in splitted_part:
-                index = item.index("{")
-                if item[0:index] in ideal_aspects:
-                    aspect_arr.append(item[0:index])
+                if item in ideal_aspects:
+                    aspect_arr.append(item)
         return aspect_arr
 
 
@@ -195,18 +193,15 @@ class OneClassSVM:
             if len(str(row[1])) != 0:
                 adv = str(row[1]).split(";")
                 for item in adv:
-                    index = item.index("{")
-                    aspect_arr.append(item[0:index])
+                    aspect_arr.append(item)
             if len(str(row[2])) != 0:
                 dis = str(row[2]).split(";")
                 for item in dis:
-                    index = item.index("{")
-                    aspect_arr.append(item[0:index])
+                    aspect_arr.append(item)
             if len(str(row[3])) != 0:
                 com = str(row[3]).split(";")
                 for item in com:
-                    index = item.index("{")
-                    aspect_arr.append(item[0:index])
+                    aspect_arr.append(item)
             data.append(aspect_arr)
             row = aspect_db.cursor_aspects.fetchone()
         return data
@@ -313,7 +308,7 @@ data = one_class_svm.get_data()  # get only aspects from data base
 # get labels for all the aspects depends on their ideality
 labels = one_class_svm.get_labels(data)
 # split the data (80% for training)
-test_data, train_data, test_labels, train_labels = train_test_split(data, labels, test_size=0.2)
+train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=0.2)
 # unarray the 2D arrays and make them 1D
 test_data_unarrayed = one_class_svm.unarray(test_data)
 train_data_unarrayed = one_class_svm.unarray(train_data)
@@ -330,4 +325,13 @@ ideal = IdealAspectsDB()
 # got only ideal aspects in the db
 aspect.move_ideal_aspects(ideal, ideal_aspects)
 synonyms = Synonyms()
+
+#len(data, labels) = 24093
+#len(train_data, train_labels) = 19274
+#len(test_data, test_labels) = 4819
+#len(train_data_unarrayed) = 619286
+#len(test_data_unarrayed) = 154951
+#len(ideal_train_data_unarrayed) = 46149
+#len(ideal_test_data_unarrayed) = 124709
+#len(ideal_aspects) = 170858
 
