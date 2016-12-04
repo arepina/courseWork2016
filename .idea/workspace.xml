@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aspects/Unnecessary.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/IdealAspects_Ulmart_with_synonyms.db" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Aspects_Ulmart.db" afterPath="$PROJECT_DIR$/db/Aspects_Ulmart.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aspects/PMIHelper.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aspects/predicted.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aspects/synmaster.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IdealAspects_Ulmart.db" afterPath="$PROJECT_DIR$/db/IdealAspects_Ulmart.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/AspectsDB.py" afterPath="$PROJECT_DIR$/aspects/AspectsDB.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/IdealAspectsDB.py" afterPath="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,8 +24,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/courseWork2016$yandex_market_from_model.coverage" NAME="yandex-market-from-model Coverage Results" MODIFIED="1477230736177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
+    <SUITE FILE_PATH="coverage/courseWork2016$PMIHelper.coverage" NAME="PMIHelper Coverage Results" MODIFIED="1480854204281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$CategoryNames.coverage" NAME="CategoryNames Coverage Results" MODIFIED="1478883274021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/productTrees" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$IdealAspectsDB.coverage" NAME="IdealAspectsDB Coverage Results" MODIFIED="1480856588513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1476965083294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
@@ -33,7 +36,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1480711227642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1480856866793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480709670037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
@@ -62,8 +65,8 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9503818">
-              <caret line="262" column="6" selection-start-line="262" selection-start-column="6" selection-end-line="262" selection-end-column="6" />
+            <state vertical-scroll-proportion="-1.083871">
+              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#735#2214#0" expanded="false" />
@@ -77,22 +80,35 @@
                 <element signature="e#9993#10145#0" expanded="false" />
                 <element signature="e#10196#10357#0" expanded="false" />
                 <element signature="e#10435#10953#0" expanded="false" />
-                <marker date="1480711460597" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
-                <marker date="1480711460597" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1480711460597" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1480711460597" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
-                <marker date="1480711460597" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
+                <element signature="e#12068#12638#0" expanded="false" />
+                <marker date="1480856782915" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
+                <marker date="1480856782915" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1480856782915" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1480856782915" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
+                <marker date="1480856782915" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fixes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py">
+      <file leaf-file-name="IdealAspectsDB.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="404" column="27" selection-start-line="404" selection-start-column="27" selection-end-line="404" selection-end-column="27" />
-              <folding />
+              <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
+              <folding>
+                <element signature="e#524#718#0" expanded="false" />
+                <element signature="e#851#1122#0" expanded="false" />
+                <element signature="e#1191#1216#0" expanded="false" />
+                <element signature="e#1261#1287#0" expanded="false" />
+                <marker date="1480856907219" expanded="true" signature="555:692" placeholder="CREATE TABLE... IdealAspects" />
+                <marker date="1480856907219" expanded="true" signature="893:1017" placeholder="INSERT INTO IdealAspects... " />
+                <marker date="1480856907219" expanded="true" signature="1365:1391" placeholder="SELECT * FRO... IdealAspects" />
+                <marker date="1480856907219" expanded="true" signature="1743:1830" placeholder="UPDATE Ideal... " />
+                <marker date="1480856907219" expanded="true" signature="2007:2100" placeholder="UPDATE Ideal... " />
+                <marker date="1480856907219" expanded="true" signature="2277:2360" placeholder="UPDATE Ideal... " />
+                <marker date="1480856907219" expanded="true" signature="3030:3056" placeholder="SELECT * FRO... IdealAspects" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,10 +170,11 @@
         <option value="$PROJECT_DIR$/productTrees/CategoryNames.py" />
         <option value="$PROJECT_DIR$/ulmart/Parser.py" />
         <option value="$PROJECT_DIR$/aspects/OneClassSVM.py" />
-        <option value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
         <option value="$PROJECT_DIR$/aspects/AspectsDB.py" />
         <option value="$PROJECT_DIR$/aspects/Unnecessary.py" />
+        <option value="$PROJECT_DIR$/aspects/PMIHelper.py" />
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
+        <option value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
       </list>
     </option>
   </component>
@@ -197,6 +214,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,8 +264,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,24 +286,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.Aspects">
-    <configuration default="false" name="CategoryNames" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/productTrees" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="courseWork2016" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/productTrees/CategoryNames.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="Aspects" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -323,24 +322,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Example" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scikit" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="courseWork2016" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scikit/Example.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="Unnecessary" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -355,6 +336,42 @@
       <module name="courseWork2016" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aspects/Unnecessary.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PMIHelper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aspects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="courseWork2016" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aspects/PMIHelper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="IdealAspectsDB" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aspects" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="courseWork2016" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -553,19 +570,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.CategoryNames" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Aspects" />
-      <item index="2" class="java.lang.String" itemvalue="Python.IDFHelper" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Example" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Unnecessary" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Aspects" />
+      <item index="1" class="java.lang.String" itemvalue="Python.IDFHelper" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Unnecessary" />
+      <item index="3" class="java.lang.String" itemvalue="Python.PMIHelper" />
+      <item index="4" class="java.lang.String" itemvalue="Python.IdealAspectsDB" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Aspects" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Unnecessary" />
-        <item index="2" class="java.lang.String" itemvalue="Python.IDFHelper" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Example" />
-        <item index="4" class="java.lang.String" itemvalue="Python.CategoryNames" />
+        <item index="1" class="java.lang.String" itemvalue="Python.IdealAspectsDB" />
+        <item index="2" class="java.lang.String" itemvalue="Python.PMIHelper" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Unnecessary" />
+        <item index="4" class="java.lang.String" itemvalue="Python.IDFHelper" />
       </list>
     </recent_temporary>
   </component>
@@ -592,26 +609,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2685325" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4068376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50427353" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42222223" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -654,6 +671,16 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/PMIHelper.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="663" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Aspects.py</url>
+          <line>336</line>
+          <option name="timeStamp" value="674" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -662,49 +689,23 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="653" />
+      <option name="time" value="676" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="data" />
-        <watch expression="train_data_unarrayed" />
-        <watch expression="len(train_data)" language="Python" />
-        <watch expression="len(test_data)" language="Python" />
-        <watch expression="len(train_data_unarrayed)" language="Python" />
-        <watch expression="len(test_data_unarrayed)" language="Python" />
-        <watch expression="len(ideal_aspects)" language="Python" />
-        <watch expression="len(data)" language="Python" />
-        <watch expression="len(train_labels)" language="Python" />
+        <watch expression="aspects[i]" />
+        <watch expression="aspects[j]" />
+        <watch expression="self.cursor_extra.execute('SELECT numberAll FROM PMIHelper WHERE aspect = ?', (item,))" />
+        <watch expression="self.cursor_extra.execute('SELECT numberAll FROM PMIHelper WHERE aspect = ?', (item,)).fetchone()" />
+        <watch expression="dict[&quot;fdf&quot;]" language="Python" />
+        <watch expression="arr[i] " />
+        <watch expression=" arr[j]" />
+        <watch expression="new_str" />
+        <watch expression="part" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#735#2214#0" expanded="false" />
-            <element signature="e#2341#3317#0" expanded="false" />
-            <element signature="e#6220#6496#0" expanded="false" />
-            <element signature="e#6618#6922#0" expanded="false" />
-            <element signature="e#7932#8169#0" expanded="false" />
-            <element signature="e#8196#10953#0" expanded="false" />
-            <element signature="e#8238#9010#0" expanded="false" />
-            <element signature="e#9064#9927#0" expanded="false" />
-            <element signature="e#9993#10145#0" expanded="false" />
-            <element signature="e#10196#10357#0" expanded="false" />
-            <element signature="e#10435#10953#0" expanded="false" />
-            <marker date="1480711460597" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -743,11 +744,12 @@
             <element signature="e#9993#10145#0" expanded="false" />
             <element signature="e#10196#10357#0" expanded="false" />
             <element signature="e#10435#10953#0" expanded="false" />
-            <marker date="1480711460597" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
+            <element signature="e#12068#12638#0" expanded="false" />
+            <marker date="1480856782915" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
+            <marker date="1480856782915" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480856782915" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480856782915" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
+            <marker date="1480856782915" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
           </folding>
         </state>
       </provider>
@@ -1033,19 +1035,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35114503">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.610687">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,18 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <marker date="1480709669998" expanded="true" signature="427:448" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480709669998" expanded="true" signature="791:830" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:836" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:846" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:847" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:852" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:871" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="791:873" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="1047:1135" placeholder="UPDATE Aspec... " />
-            <marker date="1480709669998" expanded="true" signature="1309:1387" placeholder="UPDATE Aspec... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1072,33 +1053,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.83587784">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="93" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/PMIHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="70" selection-start-line="66" selection-start-column="42" selection-end-line="67" selection-end-column="70" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#1057#1246#0" expanded="false" />
-            <element signature="e#1714#1773#0" expanded="false" />
-            <element signature="e#1893#1997#0" expanded="false" />
-            <marker date="1480708595996" expanded="true" signature="1088:1220" placeholder="CREATE TABLE... IF" />
-            <marker date="1480708595996" expanded="true" signature="1421:1540" placeholder="INSERT INTO Aspects... " />
-            <marker date="1480708595996" expanded="true" signature="1922:1958" placeholder="DELETE FROM " />
+            <marker date="1480854457932" expanded="true" signature="644:759" placeholder="CREATE TABLE... IF" />
+            <marker date="1480854457932" expanded="true" signature="973:999" placeholder="SELECT * FRO... IdealAspects" />
+            <marker date="1480854457932" expanded="true" signature="1740:1757" placeholder="SELECT numbe... " />
+            <marker date="1480854457932" expanded="true" signature="1740:1788" placeholder="SELECT numbe... PMIHelper" />
+            <marker date="1480854457932" expanded="true" signature="1900:1986" placeholder="INSERT INTO PMIHelper... " />
+            <marker date="1480854457932" expanded="true" signature="2123:2209" placeholder="INSERT INTO PMIHelper... " />
+            <marker date="1480854457932" expanded="true" signature="2325:2376" placeholder="UPDATE PMIHe... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33206108">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
           <folding>
-            <marker date="1480611643065" expanded="true" signature="470:607" placeholder="CREATE TABLE... IdealAspects" />
-            <marker date="1480611643065" expanded="true" signature="808:932" placeholder="INSERT INTO IdealAspects... " />
+            <element signature="e#524#718#0" expanded="false" />
+            <element signature="e#851#1122#0" expanded="false" />
+            <element signature="e#1191#1216#0" expanded="false" />
+            <element signature="e#1261#1287#0" expanded="false" />
+            <marker date="1480856907219" expanded="true" signature="555:692" placeholder="CREATE TABLE... IdealAspects" />
+            <marker date="1480856907219" expanded="true" signature="893:1017" placeholder="INSERT INTO IdealAspects... " />
+            <marker date="1480856907219" expanded="true" signature="1365:1391" placeholder="SELECT * FRO... IdealAspects" />
+            <marker date="1480856907219" expanded="true" signature="1743:1830" placeholder="UPDATE Ideal... " />
+            <marker date="1480856907219" expanded="true" signature="2007:2100" placeholder="UPDATE Ideal... " />
+            <marker date="1480856907219" expanded="true" signature="2277:2360" placeholder="UPDATE Ideal... " />
+            <marker date="1480856907219" expanded="true" signature="3030:3056" placeholder="SELECT * FRO... IdealAspects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9503818">
-          <caret line="262" column="6" selection-start-line="262" selection-start-column="6" selection-end-line="262" selection-end-column="6" />
+        <state vertical-scroll-proportion="-1.083871">
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#735#2214#0" expanded="false" />
@@ -1112,11 +1117,12 @@
             <element signature="e#9993#10145#0" expanded="false" />
             <element signature="e#10196#10357#0" expanded="false" />
             <element signature="e#10435#10953#0" expanded="false" />
-            <marker date="1480711460597" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1480711460597" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
-            <marker date="1480711460597" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
+            <element signature="e#12068#12638#0" expanded="false" />
+            <marker date="1480856782915" expanded="true" signature="782:802" placeholder="SELECT * FRO... Review" />
+            <marker date="1480856782915" expanded="true" signature="7035:7056" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480856782915" expanded="true" signature="8278:8299" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1480856782915" expanded="true" signature="9111:9131" placeholder="SELECT * FRO... Review" />
+            <marker date="1480856782915" expanded="true" signature="11218:11244" placeholder="SELECT * FRO... IdealAspects" />
           </folding>
         </state>
       </provider>

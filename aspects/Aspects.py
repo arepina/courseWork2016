@@ -276,15 +276,29 @@ class Synonyms:
             adv = str(row_aspect[1])
             dis = str(row_aspect[2])
             com = str(row_aspect[3])
-            ideal_adv = self.remove_synonyms(adv, dictionary)
-            ideal_dis = self.remove_synonyms(dis, dictionary)
-            ideal_com = self.remove_synonyms(com, dictionary)
+            ideal_adv = self.build_trees(adv)
+            ideal_dis = self.build_trees(dis)
+            ideal_com = self.build_trees(com)
             # join the results
             str_adv_aspects = ';'.join(ideal_adv)
             str_dis_aspects = ';'.join(ideal_dis)
             str_com_aspects = ';'.join(ideal_com)
             ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = aspect_db.cursor_aspects.fetchone()
+
+    @staticmethod
+    def build_trees(part):
+        tree = []
+        if len(part) != 0:
+            aspects = part.split(";")
+            for i in range(len(aspects)):
+                if len(aspects[i].split(" ")) == 1:  # 1 word
+                    for j in range(i + 1, len(aspects)):
+                        if aspects[i] in aspects[j] and len(aspects[j].split(" ")) != 1:  # not 1 word:
+                            str_without_item = aspects[j].replace(aspects[i], "")
+                            new_str = aspects[i] + "{" + str_without_item + "}"
+                            tree.append(new_str)
+        return tree
 
     @staticmethod
     def remove_synonyms(part, dictionary):
@@ -324,13 +338,15 @@ ideal_aspects = test_data_unarrayed + train_data_unarrayed
 ideal = IdealAspectsDB()
 # got only ideal aspects in the db
 aspect.move_ideal_aspects(ideal, ideal_aspects)
-synonyms = Synonyms()
+# synonyms = Synonyms()
+# synonyms.build_trees("комп;компьютер;хороший компьютер;компьютер супер;привет")
 
 #len(data, labels) = 24093
 #len(train_data, train_labels) = 19274
 #len(test_data, test_labels) = 4819
 #len(train_data_unarrayed) = 619286
 #len(test_data_unarrayed) = 154951
+#len(all_aspects) = 774237
 #len(ideal_train_data_unarrayed) = 46149
 #len(ideal_test_data_unarrayed) = 124709
 #len(ideal_aspects) = 170858
