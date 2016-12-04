@@ -1,4 +1,5 @@
 from aspects.AspectsDB import AspectsDB
+from aspects.IdealAspectsDB import IdealAspectsDB
 
 
 def updater(part):
@@ -12,8 +13,9 @@ def updater(part):
         return new_aspect
     return ''
 
-aspect_db = AspectsDB()  # aspects data base
-row_aspect = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
+
+ideal = IdealAspectsDB()  # aspects data base
+row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
 count = 0
 while row_aspect is not None:  # iterate through all reviews
     print(count)
@@ -24,20 +26,20 @@ while row_aspect is not None:  # iterate through all reviews
     com = str(row_aspect[3])
     new_adv = updater(adv)
     if new_adv != adv:
-        aspect_db.cursor_aspects2.execute(
-            'UPDATE Aspects SET advantageAspects = ? WHERE article = ? and advantageAspects = ?',
+        ideal.cursor_aspects2.execute(
+            'UPDATE IdealAspects SET advantageAspects = ? WHERE article = ? and advantageAspects = ?',
             (new_adv, article, adv,))
-        aspect_db.commit()
+        ideal.conn_aspects.commit()
     new_dis = updater(dis)
     if new_dis != dis:
-        aspect_db.cursor_aspects2.execute(
-            'UPDATE Aspects SET disadvantageAspects = ? WHERE article = ? and disadvantageAspects = ?',
+        ideal.cursor_aspects2.execute(
+            'UPDATE IdealAspects SET disadvantageAspects = ? WHERE article = ? and disadvantageAspects = ?',
             (new_dis, article, dis,))
-        aspect_db.commit()
+        ideal.conn_aspects.commit()
     new_com = updater(com)
     if new_com != com:
-        aspect_db.cursor_aspects2.execute(
-            'UPDATE Aspects SET commentAspects = ? WHERE article = ? and commentAspects = ?',
+        ideal.cursor_aspects2.execute(
+            'UPDATE IdealAspects SET commentAspects = ? WHERE article = ? and commentAspects = ?',
             (new_com, article, com,))
-        aspect_db.commit()
-    row_aspect = aspect_db.cursor_aspects.fetchone()
+        ideal.conn_aspects.commit()
+    row_aspect = ideal.cursor_aspects.fetchone()

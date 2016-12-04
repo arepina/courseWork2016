@@ -22,7 +22,7 @@ class PMI:
 
     def create_db(self):
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS PMIHelper
-                 (article INT, aspect TEXT, numberInReview INT, numberAll INT)''')
+                 (article INT, aspect TEXT, numberInReview INT)''')
         self.commit()
 
     def __del__(self):
@@ -55,17 +55,20 @@ class PMI:
                 else:
                     dict[asp] += 1
         for item in dict:
-            numAll = self.cursor_extra.execute('SELECT numberAll FROM PMIHelper WHERE aspect = ?', (item,)).fetchone()
-            if numAll == None:
-                self.cursor.execute(
-                    'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
-                    (article, item, dict[item], int(1),))
-            else:
-                self.cursor.execute(
-                    'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
-                    (article, item, dict[item], int(numAll[0]) + 1,))
-                self.cursor_extra.execute('UPDATE PMIHelper SET numberAll = ? WHERE aspect = ?',
-                                          (int(numAll[0]) + 1, item,))
+            self.cursor.execute(
+                    'INSERT INTO PMIHelper (article, aspect, numberInReview) VALUES (?, ?,  ?)',
+                    (article, item, dict[item],))
+            # numAll = self.cursor_extra.execute('SELECT numberAll FROM PMIHelper WHERE aspect = ?', (item,)).fetchone()
+            # if numAll == None:
+            #     self.cursor.execute(
+            #         'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
+            #         (article, item, dict[item], int(1),))
+            # else:
+            #     self.cursor.execute(
+            #         'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
+            #         (article, item, dict[item], int(numAll[0]) + 1,))
+            #     self.cursor_extra.execute('UPDATE PMIHelper SET numberAll = ? WHERE aspect = ?',
+            #                               (int(numAll[0]) + 1, item,))
             self.commit()
 
 

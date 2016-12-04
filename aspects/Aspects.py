@@ -5,9 +5,10 @@ import requests
 from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.feature_extraction.text import TfidfVectorizer
-
+import re
 from aspects.IdealAspectsDB import IdealAspectsDB
 from aspects.AspectsDB import AspectsDB
+
 
 class Aspects:
     api_key = "43de6ee952010c5e0870b999f2a1949183456c73"
@@ -263,12 +264,8 @@ class OneClassSVM:
 class Synonyms:
 
     def find_synoyms(self, ideal):
-        path = os.getcwd() + "\\..\\aspects\\synmaster.txt"
-        dictionary = []
-        with open(path) as f:
-            dictionary.append(f.readlines())
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
-        count = 0
+        count = 1
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
@@ -276,70 +273,85 @@ class Synonyms:
             adv = str(row_aspect[1])
             dis = str(row_aspect[2])
             com = str(row_aspect[3])
-            ideal_adv = self.build_trees(adv)
-            ideal_dis = self.build_trees(dis)
-            ideal_com = self.build_trees(com)
-            # join the results
-            str_adv_aspects = ';'.join(ideal_adv)
-            str_dis_aspects = ';'.join(ideal_dis)
-            str_com_aspects = ';'.join(ideal_com)
-            ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
-            row_aspect = aspect_db.cursor_aspects.fetchone()
+            tree_adv = self.build_trees(adv)
+            tree_dis = self.build_trees(dis)
+            tree_com = self.build_trees(com)
+            adv_items = ';'.join('{}{}'.format(key, val) for key, val in tree_adv.items())
+            dis_items = ';'.join('{}{}'.format(key, val) for key, val in tree_dis.items())
+            com_items = ';'.join('{}{}'.format(key, val) for key, val in tree_com.items())
+            ideal.add_review(article, adv_items, dis_items, com_items)
+            row_aspect = ideal.cursor_aspects.fetchone()
 
     @staticmethod
-    def build_trees(part):
-        tree = []
+    def find_whole_word(w):
+        return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
+
+    def build_trees(self, part):
+        tree = {}
         if len(part) != 0:
             aspects = part.split(";")
             for i in range(len(aspects)):
-                if len(aspects[i].split(" ")) == 1:  # 1 word
+                if len(aspects[i].split(" ")) == 1:
+                    flag = False
+                    for item in tree:
+                        if self.find_whole_word(aspects[i])(item) and flag == False:
+                            flag = True
+                            tree.pop(item, None)
+                            str_without_item = item.replace(aspects[i], "").strip()
+                            tree[aspects[i]] = "{" + str_without_item + "}"
                     for j in range(i + 1, len(aspects)):
-                        if aspects[i] in aspects[j] and len(aspects[j].split(" ")) != 1:  # not 1 word:
-                            str_without_item = aspects[j].replace(aspects[i], "")
-                            new_str = aspects[i] + "{" + str_without_item + "}"
-                            tree.append(new_str)
+                        if self.find_whole_word(aspects[i])(aspects[j]) and len(aspects[j].split(" ")) != 1:
+                            flag = True
+                            str_without_item = aspects[j].replace(aspects[i], "").strip()
+                            if aspects[i] not in tree:
+                                tree[aspects[i]] = "{" + str_without_item + "}"
+                            else:
+                                tree[aspects[i]] = tree[aspects[i]][1:len(tree[aspects[i]]) - 1]
+                                tree[aspects[i]] = "{" + tree[aspects[i]] + "," + str_without_item + "}"
+                    if not flag:
+                        tree[aspects[i]] = ""
+                else:
+                    words = aspects[i].split(" ")
+                    for w in words:
+                        flag = False
+                        for item in tree:
+                            if self.find_whole_word(w)(item):
+                                flag = True
+                        if not flag:
+                            tree[aspects[i]] = ""
+                        else:
+                            break
         return tree
-
-    @staticmethod
-    def remove_synonyms(part, dictionary):
-        part_with_no_synonyms = []
-        if len(part) != 0:
-            aspects = part.split(";")
-            for i in range(len(aspects)):
-                dict_str = dictionary[aspects[i]]
-                j = i + 1
-                for j in range(len(aspects)):
-                    # todo check if there are any equal aspects
-                    r = 42
-        return part_with_no_synonyms
 
 
 aspect_db = AspectsDB()  # aspects data base
 aspect = Aspects()
 #aspect.process()  # find aspects with the help of ISP RAS API
-one_class_svm = OneClassSVM()
-data = one_class_svm.get_data()  # get only aspects from data base
-# get labels for all the aspects depends on their ideality
-labels = one_class_svm.get_labels(data)
-# split the data (80% for training)
-train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=0.2)
-# unarray the 2D arrays and make them 1D
-test_data_unarrayed = one_class_svm.unarray(test_data)
-train_data_unarrayed = one_class_svm.unarray(train_data)
-train_labels_unarrayed = one_class_svm.unarray(train_labels)
-# get only ideal aspects from aspects list (label = 1) for train data
-train_data_unarrayed = one_class_svm.get_ideal_data(train_data_unarrayed, train_labels_unarrayed)
-# train the one-class SVM and predict the aspects
-test_labels_unarrayed = one_class_svm.train_and_predict(train_data_unarrayed, test_data_unarrayed)
-# get only ideal aspects from aspects list (label = 1) for test data
-test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
-# now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
-ideal_aspects = test_data_unarrayed + train_data_unarrayed
+# one_class_svm = OneClassSVM()
+# data = one_class_svm.get_data()  # get only aspects from data base
+# # get labels for all the aspects depends on their ideality
+# labels = one_class_svm.get_labels(data)
+# # split the data (80% for training)
+# train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=0.2)
+# # unarray the 2D arrays and make them 1D
+# test_data_unarrayed = one_class_svm.unarray(test_data)
+# train_data_unarrayed = one_class_svm.unarray(train_data)
+# train_labels_unarrayed = one_class_svm.unarray(train_labels)
+# # get only ideal aspects from aspects list (label = 1) for train data
+# train_data_unarrayed = one_class_svm.get_ideal_data(train_data_unarrayed, train_labels_unarrayed)
+# # train the one-class SVM and predict the aspects
+# test_labels_unarrayed = one_class_svm.train_and_predict(train_data_unarrayed, test_data_unarrayed)
+# # get only ideal aspects from aspects list (label = 1) for test data
+# test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
+# # now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
+# ideal_aspects = test_data_unarrayed + train_data_unarrayed
 ideal = IdealAspectsDB()
-# got only ideal aspects in the db
-aspect.move_ideal_aspects(ideal, ideal_aspects)
-# synonyms = Synonyms()
-# synonyms.build_trees("комп;компьютер;хороший компьютер;компьютер супер;привет")
+# ideal.count_aspects()
+# # got only ideal aspects in the db
+# aspect.move_ideal_aspects(ideal, ideal_aspects)
+synonyms = Synonyms()
+synonyms.find_synoyms(ideal)
+
 
 #len(data, labels) = 24093
 #len(train_data, train_labels) = 19274
@@ -349,5 +361,7 @@ aspect.move_ideal_aspects(ideal, ideal_aspects)
 #len(all_aspects) = 774237
 #len(ideal_train_data_unarrayed) = 46149
 #len(ideal_test_data_unarrayed) = 124709
-#len(ideal_aspects) = 170858
+#len(ideal_aspects_dictionary) = 170858
+#len(ideal_aspects) = 540571
+#len(grouped aspects) = 421715
 
