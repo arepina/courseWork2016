@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Review_Ulmart.db" afterPath="$PROJECT_DIR$/db/Review_Ulmart.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Sentence.db" afterPath="$PROJECT_DIR$/db/Sentence.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Sentence.py" afterPath="$PROJECT_DIR$/aspects/Sentence.py" />
     </list>
@@ -32,7 +34,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1481213120439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1481223400906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
@@ -62,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#806#926#0" expanded="false" />
@@ -75,8 +77,8 @@
                 <element signature="e#6821#7125#0" expanded="false" />
                 <element signature="e#7191#8053#0" expanded="false" />
                 <element signature="e#8121#8358#0" expanded="false" />
-                <marker date="1481212792664" expanded="true" signature="999:1019" placeholder="SELECT * FRO... Review" />
-                <marker date="1481212792664" expanded="true" signature="7231:7252" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1481219508458" expanded="true" signature="999:1019" placeholder="SELECT * FRO... Review" />
+                <marker date="1481219508458" expanded="true" signature="7231:7252" placeholder="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -86,11 +88,10 @@
         <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3888889">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#1819#2097#0" expanded="false" />
-                <marker date="1481219270827" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
+                <marker date="1481223291654" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
               </folding>
             </state>
           </provider>
@@ -656,6 +657,11 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Sentence.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="736" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -664,7 +670,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="728" />
+      <option name="time" value="737" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1055,7 +1061,7 @@
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#806#926#0" expanded="false" />
@@ -1068,8 +1074,8 @@
             <element signature="e#6821#7125#0" expanded="false" />
             <element signature="e#7191#8053#0" expanded="false" />
             <element signature="e#8121#8358#0" expanded="false" />
-            <marker date="1481212792664" expanded="true" signature="999:1019" placeholder="SELECT * FRO... Review" />
-            <marker date="1481212792664" expanded="true" signature="7231:7252" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1481219508458" expanded="true" signature="999:1019" placeholder="SELECT * FRO... Review" />
+            <marker date="1481219508458" expanded="true" signature="7231:7252" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
@@ -1077,11 +1083,10 @@
     <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3888889">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#1819#2097#0" expanded="false" />
-            <marker date="1481219270827" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
+            <marker date="1481223291654" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
           </folding>
         </state>
       </provider>
