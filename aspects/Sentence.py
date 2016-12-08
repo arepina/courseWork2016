@@ -14,7 +14,7 @@ class Sentence:
         while row_aspect is not None:  # iterate through all reviews
             print(count)
             count += 1
-            if count > 8284:
+            if count > 14226:
                 article = str(row_aspect[2])
                 adv = str(row_aspect[3]).strip()
                 review = ""

@@ -11,7 +11,7 @@ from aspects.Synonyms import Synonyms
 
 
 class Aspects:
-    api_key = "43de6ee952010c5e0870b999f2a1949183456c73"
+    api_key = "ddc0a2af0c348980199903f65e7b083f162160b7"
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
