@@ -1,13 +1,13 @@
 import json
-import os
 import requests
 
 from sklearn.model_selection import train_test_split
-from sklearn import svm
-from sklearn.feature_extraction.text import TfidfVectorizer
-import re
+from sklearn.feature_extraction.text import CountVectorizer
 from aspects.IdealAspectsDB import IdealAspectsDB
-from aspects.AspectsDB import AspectsDB
+from aspects.DB import DB
+from aspects.OneClassSVM import OneClassSVM
+from aspects.Sentence import Sentence
+from aspects.Synonyms import Synonyms
 
 
 class Aspects:
@@ -15,14 +15,16 @@ class Aspects:
     url_syntatic_parsing = \
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
+    url_sentence = "http://api.ispras.ru/texterra/v3.1/nlp/sentence?filtering=KEEPING&class=sentence&apikey="
     texts = None
 
     def __init__(self):
         self.url_syntatic_parsing += self.api_key
         self.url_pos += self.api_key
+        self.url_sentence += self.api_key
 
     def process(self):
-        row_aspect = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        row_aspect = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         count = 0
         while row_aspect is not None:  # iterate through all reviews
             print(count)
@@ -53,8 +55,8 @@ class Aspects:
             str_dis_aspects = ';'.join(list_dis_aspects)
             str_com_aspects = ';'.join(list_com_aspects)
             # add found information to DB
-            aspect_db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
-            row_aspect = aspect_db.cursor_reviews.fetchone()
+            db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            row_aspect = db.cursor_reviews.fetchone()
 
     @staticmethod
     def syntatic_parsing(review):  # detects syntactic structure for each sentence of a given text
@@ -153,7 +155,7 @@ class Aspects:
         return r.content.decode('utf8')
 
     def move_ideal_aspects(self, ideal, ideal_aspects):
-        row_aspect = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
+        row_aspect = db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
         count = 0
         while row_aspect is not None:  # iterate through all reviews
             print(count)
@@ -170,7 +172,7 @@ class Aspects:
             str_dis_aspects = ';'.join(ideal_dis)
             str_com_aspects = ';'.join(ideal_com)
             ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
-            row_aspect = aspect_db.cursor_aspects.fetchone()
+            row_aspect = db.cursor_aspects.fetchone()
 
     @staticmethod
     def get_ideal(part, ideal_aspects):
@@ -183,154 +185,24 @@ class Aspects:
         return aspect_arr
 
 
-class OneClassSVM:
+class PMI:
 
     @staticmethod
-    def get_data():
-        row = aspect_db.cursor_aspects.execute('SELECT * FROM Aspects').fetchone()
-        data = []
-        while row is not None:  # iterate through all reviews
-            aspect_arr = []
-            if len(str(row[1])) != 0:
-                adv = str(row[1]).split(";")
-                for item in adv:
-                    aspect_arr.append(item)
-            if len(str(row[2])) != 0:
-                dis = str(row[2]).split(";")
-                for item in dis:
-                    aspect_arr.append(item)
-            if len(str(row[3])) != 0:
-                com = str(row[3]).split(";")
-                for item in com:
-                    aspect_arr.append(item)
-            data.append(aspect_arr)
-            row = aspect_db.cursor_aspects.fetchone()
-        return data
-
-    @staticmethod
-    def get_labels(data):
-        row_review = aspect_db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
-        path = os.getcwd()
-        train_labels = []
-        count = 0
-        while row_review is not None:
-            subcat_name = str(row_review[1])
-            file_path = path + "\\..\\productTrees\\Subcategories\\" + subcat_name + ".txt"
-            ideal_labels = []
-            labels = []
-            with open(file_path) as f:
-                ideal_labels.append(f.readlines())
-            ideal_labels[0][0] = ideal_labels[0][0].lower()
-            for item in data[count]:
-                if item in ideal_labels[0][0]:
-                    labels.append(1)
-                else:
-                    labels.append(-1)
-            count += 1
-            train_labels.append(labels)
-            row_review = aspect_db.cursor_reviews.fetchone()
-        return train_labels
-
-    @staticmethod
-    def get_ideal_data(data, labels):
-        ideal_data = []
-        for i in range(len(labels)):
-            if labels[i] == 1:
-                ideal_data.append(data[i])
-        return ideal_data
-
-    @staticmethod
-    def unarray(data):
-        unarrayed_data = []
-        for i in range(len(data)):
-            for item in data[i]:
-                unarrayed_data.append(item)
-        return unarrayed_data
-
-    @staticmethod
-    def train_and_predict(train_data, test_data):
-        vectorizer = TfidfVectorizer(min_df=5,
-                                     max_df=0.8,
-                                     sublinear_tf=True,
-                                     use_idf=True)
-        train_vectors = vectorizer.fit_transform(train_data)
-        test_vectors = vectorizer.transform(test_data)
-        classifier_rbf = svm.OneClassSVM(nu=0.1, kernel="rbf", gamma=0.1)
-        classifier_rbf.fit(train_vectors)
-        prediction_rbf = classifier_rbf.predict(test_vectors)
-        return prediction_rbf
+    def process(corpus):
+        v_count = CountVectorizer(min_df=5, max_df=0.8)
+        matrix = v_count.fit(corpus)
+        return matrix
 
 
-class Synonyms:
-
-    def find_synoyms(self, ideal):
-        row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
-        count = 1
-        while row_aspect is not None:  # iterate through all reviews
-            print(count)
-            count += 1
-            article = str(row_aspect[0])
-            adv = str(row_aspect[1])
-            dis = str(row_aspect[2])
-            com = str(row_aspect[3])
-            tree_adv = self.build_trees(adv)
-            tree_dis = self.build_trees(dis)
-            tree_com = self.build_trees(com)
-            adv_items = ';'.join('{}{}'.format(key, val) for key, val in tree_adv.items())
-            dis_items = ';'.join('{}{}'.format(key, val) for key, val in tree_dis.items())
-            com_items = ';'.join('{}{}'.format(key, val) for key, val in tree_com.items())
-            ideal.add_review(article, adv_items, dis_items, com_items)
-            row_aspect = ideal.cursor_aspects.fetchone()
-
-    @staticmethod
-    def find_whole_word(w):
-        return re.compile(r'\b({0})\b'.format(w), flags=re.IGNORECASE).search
-
-    def build_trees(self, part):
-        tree = {}
-        if len(part) != 0:
-            aspects = part.split(";")
-            for i in range(len(aspects)):
-                if len(aspects[i].split(" ")) == 1:
-                    flag = False
-                    for item in tree:
-                        if self.find_whole_word(aspects[i])(item) and flag == False:
-                            flag = True
-                            tree.pop(item, None)
-                            str_without_item = item.replace(aspects[i], "").strip()
-                            tree[aspects[i]] = "{" + str_without_item + "}"
-                    for j in range(i + 1, len(aspects)):
-                        if self.find_whole_word(aspects[i])(aspects[j]) and len(aspects[j].split(" ")) != 1:
-                            flag = True
-                            str_without_item = aspects[j].replace(aspects[i], "").strip()
-                            if aspects[i] not in tree:
-                                tree[aspects[i]] = "{" + str_without_item + "}"
-                            else:
-                                tree[aspects[i]] = tree[aspects[i]][1:len(tree[aspects[i]]) - 1]
-                                tree[aspects[i]] = "{" + tree[aspects[i]] + "," + str_without_item + "}"
-                    if not flag:
-                        tree[aspects[i]] = ""
-                else:
-                    words = aspects[i].split(" ")
-                    for w in words:
-                        flag = False
-                        for item in tree:
-                            if self.find_whole_word(w)(item):
-                                flag = True
-                        if not flag:
-                            tree[aspects[i]] = ""
-                        else:
-                            break
-        return tree
-
-
-aspect_db = AspectsDB()  # aspects data base
+db = DB()  # data base
 aspect = Aspects()
-#aspect.process()  # find aspects with the help of ISP RAS API
+sentence = Sentence(db)
+sentence.process(db, aspect)
+# aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
-# data = one_class_svm.get_data()  # get only aspects from data base
+# data = one_class_svm.get_data(db)  # get only aspects from data base
 # # get labels for all the aspects depends on their ideality
-# labels = one_class_svm.get_labels(data)
+# labels = one_class_svm.get_labels(data, db)
 # # split the data (80% for training)
 # train_data, test_data, train_labels, test_labels = train_test_split(data, labels, test_size=0.2)
 # # unarray the 2D arrays and make them 1D
@@ -345,12 +217,12 @@ aspect = Aspects()
 # test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
 # # now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
 # ideal_aspects = test_data_unarrayed + train_data_unarrayed
-ideal = IdealAspectsDB()
+# ideal = IdealAspectsDB()
 # ideal.count_aspects()
 # # got only ideal aspects in the db
 # aspect.move_ideal_aspects(ideal, ideal_aspects)
-synonyms = Synonyms()
-synonyms.find_synoyms(ideal)
+# synonyms = Synonyms()
+# synonyms.find_synonyms(ideal)
 
 
 #len(data, labels) = 24093

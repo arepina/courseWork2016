@@ -108,6 +108,3 @@ class IdealAspectsDB:
                 aspects_num += len(arr)
             row = self.cursor_trees.fetchone()
         print(aspects_num)
-
-i = IdealAspectsDB()
-i.count_aspects()

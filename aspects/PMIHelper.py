@@ -58,19 +58,20 @@ class PMI:
             self.cursor.execute(
                     'INSERT INTO PMIHelper (article, aspect, numberInReview) VALUES (?, ?,  ?)',
                     (article, item, dict[item],))
-            # numAll = self.cursor_extra.execute('SELECT numberAll FROM PMIHelper WHERE aspect = ?', (item,)).fetchone()
-            # if numAll == None:
-            #     self.cursor.execute(
-            #         'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
-            #         (article, item, dict[item], int(1),))
-            # else:
-            #     self.cursor.execute(
-            #         'INSERT INTO PMIHelper (article, aspect, numberInReview, numberAll) VALUES (?, ?, ?, ?)',
-            #         (article, item, dict[item], int(numAll[0]) + 1,))
-            #     self.cursor_extra.execute('UPDATE PMIHelper SET numberAll = ? WHERE aspect = ?',
-            #                               (int(numAll[0]) + 1, item,))
             self.commit()
 
 
-pmi = PMI()
-pmi.calculate()
+
+
+
+# pmi = PMI()
+# pmi.calculate()
+import nltk
+from nltk.collocations import *
+from nltk.tokenize import word_tokenize
+
+text = "this is a foo bar bar black sheep  foo bar bar black sheep foo bar bar black sheep shep bar bar black sentence"
+bigram_measures = nltk.collocations.BigramAssocMeasures()
+finder = BigramCollocationFinder.from_words(word_tokenize(text))
+for i in finder.score_ngrams(bigram_measures.pmi):
+    print(i)

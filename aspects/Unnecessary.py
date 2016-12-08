@@ -1,4 +1,4 @@
-from aspects.AspectsDB import AspectsDB
+from aspects.DB import DB
 from aspects.IdealAspectsDB import IdealAspectsDB
 
 
