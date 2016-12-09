@@ -188,16 +188,76 @@ class Aspects:
 class PMI:
 
     @staticmethod
+    def get_all_reviews_corpus():
+        reviews = []
+        row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        while row_review is not None:
+            adv = str(row_review[3])
+            dis = str(row_review[4])
+            com = str(row_review[5])
+            review = adv + " " + dis + " " + com
+            reviews.append(review.lower())
+            row_review = db.cursor_reviews.fetchone()
+        return reviews
+
+    @staticmethod
+    def get_all_sentences_corpus():
+        sentences = []
+        row_sentence = db.cursor_sentence.execute('SELECT * FROM Sentences').fetchone()
+        while row_sentence is not None:
+            sentence = str(row_sentence[1])
+            sentences.append(sentence)
+            row_sentence = db.cursor_sentence.fetchone()
+        return sentences
+
+    @staticmethod
     def process(corpus):
-        v_count = CountVectorizer(min_df=5, max_df=0.8)
-        matrix = v_count.fit(corpus)
+        vectorizer = CountVectorizer(min_df=5, max_df=0.8)
+        matrix = vectorizer.fit_transform(corpus)
         return matrix
+
+    def add_one_word_aspects(self):
+        row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
+        while row_aspect is not None:
+            article = str(row_aspect[0])
+            adv = str(row_aspect[1])
+            list_adv_aspects = self.create_one_word_list(adv)
+            dis = str(row_aspect[2])
+            list_dis_aspects = self.create_one_word_list(dis)
+            com = str(row_aspect[3])
+            list_com_aspects = self.create_one_word_list(com)
+            str_adv_aspects = ';'.join(list_adv_aspects)
+            str_dis_aspects = ';'.join(list_dis_aspects)
+            str_com_aspects = ';'.join(list_com_aspects)
+            # add found information to DB
+            db.add_one_word_aspects(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
+            row_aspect = ideal.cursor_aspects.fetchone()
+
+    @staticmethod
+    def create_one_word_list(part):
+        if len(part) != 0:
+            arr = []
+            items = part.split(";")
+            for item in items:
+                words = item.split(" ")
+                if len(words) > 1:
+                    arr.append(words.join("_"))
+                else:
+                    arr.append(words)
+            return arr
 
 
 db = DB()  # data base
 aspect = Aspects()
-sentence = Sentence(db)
-sentence.process(db, aspect)
+ideal = IdealAspectsDB()
+db.create_aspects_one_word_db()
+pmi = PMI()
+pmi.add_one_word_aspects()
+reviews_corpus = pmi.get_all_reviews_corpus()
+sentences_corpus = pmi.get_all_sentences_corpus()
+reviews_matrix = pmi.process(reviews_corpus)
+sentences_matrix = pmi.process(sentences_corpus)
+r = 555
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base
@@ -217,13 +277,13 @@ sentence.process(db, aspect)
 # test_data_unarrayed = one_class_svm.get_ideal_data(test_data_unarrayed, test_labels_unarrayed)
 # # now the sum of test_data_unarrayed and train_data_unarrayed have only ideal aspects
 # ideal_aspects = test_data_unarrayed + train_data_unarrayed
-# ideal = IdealAspectsDB()
-# ideal.count_aspects()
+# ideal.count_aspects()  # number of idel aspects
 # # got only ideal aspects in the db
 # aspect.move_ideal_aspects(ideal, ideal_aspects)
 # synonyms = Synonyms()
-# synonyms.find_synonyms(ideal)
-
+# synonyms.find_synonyms(ideal)  # find and group the synonyms
+# sentence = Sentence(db)
+# sentence.process(db, aspect)  # create a db with all sentences from reviews
 
 #len(data, labels) = 24093
 #len(train_data, train_labels) = 19274

@@ -9,26 +9,26 @@ class Sentence:
         db.create_sentence_db()
 
     def process(self, db, aspect):
-        row_aspect = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         count = 0
-        while row_aspect is not None:  # iterate through all reviews
+        while row_review is not None:  # iterate through all reviews
             print(count)
             count += 1
-            article = str(row_aspect[2])
-            adv = str(row_aspect[3]).strip()
+            article = str(row_review[2])
+            adv = str(row_review[3]).strip()
             review = ""
             if len(adv) != 0:
                 review += adv
                 if adv[len(adv) - 1] != "." and adv[len(adv) - 1] != "!" and adv[len(adv) - 1] != "?":
                     review += "."
-            dis = str(row_aspect[4]).strip()
+            dis = str(row_review[4]).strip()
             if len(dis) != 0:
                 if len(review) != 0:
                     review += " "
                 review += dis
                 if dis[len(dis) - 1] != "." and dis[len(dis) - 1] != "!" and dis[len(dis) - 1] != "?":
                     review += "."
-            com = str(row_aspect[5]).strip()
+            com = str(row_review[5]).strip()
             if len(com) != 0:
                 if len(review) != 0:
                     review += " "
@@ -40,7 +40,7 @@ class Sentence:
             for sentence in sentences:
                 if sentence != ".":
                     db.add_sentence(article, sentence)
-            row_aspect = db.cursor_reviews.fetchone()
+            row_review = db.cursor_reviews.fetchone()
 
     @staticmethod
     def clean_sentences(sentences_from_api):
