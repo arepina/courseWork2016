@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Review_Ulmart.db" afterPath="$PROJECT_DIR$/db/Review_Ulmart.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Sentence.db" afterPath="$PROJECT_DIR$/db/Sentence.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Sentence.py" afterPath="$PROJECT_DIR$/aspects/Sentence.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,10 +84,10 @@
         <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.3888889">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1481223291654" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
+                <marker date="1481270430921" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
               </folding>
             </state>
           </provider>
@@ -657,11 +653,6 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/Sentence.py</url>
-          <line>43</line>
-          <option name="timeStamp" value="736" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1083,10 +1074,10 @@
     <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3888889">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1481223291654" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
+            <marker date="1481270430921" expanded="true" signature="192:212" placeholder="SELECT * FRO... Review" />
           </folding>
         </state>
       </provider>
