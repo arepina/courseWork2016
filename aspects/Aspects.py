@@ -235,6 +235,44 @@ class PMI:
             db.add_one_word_aspects(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = ideal.cursor_aspects.fetchone()
 
+    def add_one_word_reviews(self):
+        row = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        row_aspect = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
+        count = 0
+        while row is not None:
+            print(count)
+            count += 1
+            article = str(row[2])
+            adv = str(row[3]).lower()
+            adv_aspect = str(row_aspect[1])
+            adv = self.process_review(adv, adv_aspect)
+            dis = str(row[4]).lower()
+            dis_aspect = str(row_aspect[2])
+            dis = self.process_review(dis, dis_aspect)
+            com = str(row[5]).lower()
+            com_aspect = str(row_aspect[3])
+            com = self.process_review(com, com_aspect)
+            db.add_one_word_review(article, adv, dis, com)
+            row = db.cursor_reviews.fetchone()
+            row_aspect = db.cursor_aspects_one_word.fetchone()
+
+    @staticmethod
+    def process_review(part, aspects):
+        if len(aspects) != 0:
+                items = aspects.split(";")
+                for item in items:
+                    old_words = item.split("_")
+                    if len(old_words) > 1:
+                        for word in old_words:
+                            part = part.replace(word, "", 1)  # remove the 1st entry of aspect word
+                    else:
+                        part = part.replace(old_words[0], "", 1)
+                    if len(part) == 0 or part[len(part) - 1] == " " or part[len(part) - 1] == "_":
+                        part += item
+                    else:
+                        part += " " + item
+        return part
+
     @staticmethod
     def create_one_word_list(part):
         if len(part) != 0:
@@ -253,14 +291,15 @@ class PMI:
 db = DB()  # data base
 aspect = Aspects()
 ideal = IdealAspectsDB()
-db.create_aspects_one_word_db()
+db.create_reviews_one_word_db()
 pmi = PMI()
-pmi.add_one_word_aspects()
-reviews_corpus = pmi.get_all_reviews_corpus()
-sentences_corpus = pmi.get_all_sentences_corpus()
-reviews_matrix = pmi.process(reviews_corpus)
-sentences_matrix = pmi.process(sentences_corpus)
-r = 555
+pmi.add_one_word_reviews()
+
+# reviews_corpus = pmi.get_all_reviews_corpus()
+# sentences_corpus = pmi.get_all_sentences_corpus()
+# reviews_matrix = pmi.process(reviews_corpus)
+# sentences_matrix = pmi.process(sentences_corpus)
+
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base

@@ -6,10 +6,10 @@ class IDFHelper:
     conn = None
     cursor = None
     extra_cursor = None
-    db = 'DataBase_IDFHelper.db'
+    db = 'IDFHelper.db'
     conn_r = None
     cursor_r = None
-    db_r = 'Review_Ulmart.db'
+    db_r = 'Reviews.db'
 
     def __init__(self):
         import os
