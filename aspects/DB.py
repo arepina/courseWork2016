@@ -40,14 +40,14 @@ class DB:
         self.cursor_aspects_one_word = self.conn_aspects_one_word.cursor()
 
     def create_aspects_one_word_db(self):
-        self.cursor_aspects.execute('''CREATE TABLE IF NOT EXISTS Aspects
+        self.cursor_aspects_one_word.execute('''CREATE TABLE IF NOT EXISTS Aspects
              (article TEXT, advantageAspects TEXT, disadvantageAspects TEXT, commentAspects TEXT)''')
-        self.commit()
+        self.conn_aspects_one_word.commit()
 
     def create_aspects_db(self):
         self.cursor_aspects.execute('''CREATE TABLE IF NOT EXISTS Aspects
              (article TEXT, advantageAspects TEXT, disadvantageAspects TEXT, commentAspects TEXT)''')
-        self.commit()
+        self.conn_aspects.commit()
 
     def create_sentence_db(self):
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences
@@ -63,10 +63,10 @@ class DB:
             'INSERT INTO Aspects (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.commit()
+        self.conn_aspects.commit()
 
     def add_one_word_aspects(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
-        self.cursor_aspects.execute(
+        self.conn_aspects_one_word.execute(
             'INSERT INTO Aspects (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
@@ -77,11 +77,7 @@ class DB:
         self.conn_aspects.close()
         self.conn_reviews.close()
 
-    # commit
-    def commit(self):
-        self.conn_aspects.commit()
-
     def delete_aspects(self, article):
         self.cursor_aspects.execute('DELETE FROM Aspects WHERE article = ' + str(article))
-        self.commit()
+        self.conn_aspects.commit()
 

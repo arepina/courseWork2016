@@ -218,7 +218,10 @@ class PMI:
 
     def add_one_word_aspects(self):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
+        count = 0
         while row_aspect is not None:
+            print(count)
+            count += 1
             article = str(row_aspect[0])
             adv = str(row_aspect[1])
             list_adv_aspects = self.create_one_word_list(adv)
@@ -229,7 +232,6 @@ class PMI:
             str_adv_aspects = ';'.join(list_adv_aspects)
             str_dis_aspects = ';'.join(list_dis_aspects)
             str_com_aspects = ';'.join(list_com_aspects)
-            # add found information to DB
             db.add_one_word_aspects(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = ideal.cursor_aspects.fetchone()
 
@@ -241,10 +243,11 @@ class PMI:
             for item in items:
                 words = item.split(" ")
                 if len(words) > 1:
-                    arr.append(words.join("_"))
+                    arr.append("_".join(words))
                 else:
-                    arr.append(words)
+                    arr.append(words[0])
             return arr
+        return ""
 
 
 db = DB()  # data base
@@ -296,4 +299,3 @@ r = 555
 #len(ideal_aspects_dictionary) = 170858
 #len(ideal_aspects) = 540571
 #len(grouped aspects) = 421715
-
