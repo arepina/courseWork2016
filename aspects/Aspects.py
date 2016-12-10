@@ -190,14 +190,14 @@ class PMI:
     @staticmethod
     def get_all_reviews_corpus():
         reviews = []
-        row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        row_review = db.cursor_reviews_one_word.execute('SELECT * FROM Reviews').fetchone()
         while row_review is not None:
             adv = str(row_review[3])
             dis = str(row_review[4])
             com = str(row_review[5])
             review = adv + " " + dis + " " + com
-            reviews.append(review.lower())
-            row_review = db.cursor_reviews.fetchone()
+            reviews.append(review)
+            row_review = db.cursor_reviews_one_word.fetchone()
         return reviews
 
     @staticmethod
@@ -216,7 +216,7 @@ class PMI:
         matrix = vectorizer.fit_transform(corpus)
         return matrix
 
-    def add_one_word_aspects(self):
+    def one_word_aspects(self):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
         count = 0
         while row_aspect is not None:
@@ -235,7 +235,7 @@ class PMI:
             db.add_one_word_aspects(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = ideal.cursor_aspects.fetchone()
 
-    def add_one_word_reviews(self):
+    def one_word_reviews(self):
         row = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         row_aspect = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
         count = 0
@@ -255,6 +255,35 @@ class PMI:
             db.add_one_word_review(article, adv, dis, com)
             row = db.cursor_reviews.fetchone()
             row_aspect = db.cursor_aspects_one_word.fetchone()
+
+    def one_word_sentences(self):
+        row = db.cursor_sentence.execute('SELECT * FROM Sentences').fetchone()
+        row_aspect = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
+        count = 0
+        val = 0
+        while row is not None:
+            print(count)
+            count += 1
+            if count > 72279:
+                r = 333
+            article = str(row[0])
+            sentence = str(row[1]).lower()
+            sentence = sentence[0:len(sentence) - 1]  # remove the dot
+            aspect = ""
+            if val == 0:
+                aspect = str(row_aspect[1])
+                val = 1
+            elif val == 1:
+                aspect = str(row_aspect[2])
+                val = 2
+            elif val == 2:
+                aspect = str(row_aspect[3])
+                val = 0
+                row_aspect = db.cursor_aspects_one_word.fetchone()
+            sentence = self.process_review(sentence, aspect)
+            sentence += "."
+            db.add_one_word_sentence(article, sentence)
+            row = db.cursor_sentence.fetchone()
 
     @staticmethod
     def process_review(part, aspects):
@@ -291,15 +320,14 @@ class PMI:
 db = DB()  # data base
 aspect = Aspects()
 ideal = IdealAspectsDB()
-db.create_reviews_one_word_db()
+db.create_sentences_one_word_db()
 pmi = PMI()
-pmi.add_one_word_reviews()
+pmi.one_word_sentences()
 
 # reviews_corpus = pmi.get_all_reviews_corpus()
 # sentences_corpus = pmi.get_all_sentences_corpus()
 # reviews_matrix = pmi.process(reviews_corpus)
 # sentences_matrix = pmi.process(sentences_corpus)
-
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base
