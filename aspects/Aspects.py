@@ -188,7 +188,6 @@ class Aspects:
 
 
 class PMI:
-
     @staticmethod
     def get_all_reviews_corpus():
         reviews = []
@@ -236,14 +235,14 @@ class PMI:
             if len(com) != 0:
                 items = com.split(";")
                 for item in items:
-                   if item not in vocabulary:
+                    if item not in vocabulary:
                         vocabulary[item] = count
                         count += 1
             row = db.cursor_aspects_one_word.fetchone()
         return vocabulary
 
     @staticmethod
-    def process(corpus, vocabulary):
+    def get_matrix(corpus, vocabulary):
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         return np.array(matrix, dtype=np.object)
@@ -291,18 +290,18 @@ class PMI:
     @staticmethod
     def process_review(part, aspects):
         if len(aspects) != 0:
-                items = aspects.split(";")
-                for item in items:
-                    old_words = item.split("_")
-                    if len(old_words) > 1:
-                        for word in old_words:
-                            part = part.replace(word, "", 1)  # remove the 1st entry of aspect word
-                    else:
-                        part = part.replace(old_words[0], "", 1)
-                    if len(part) == 0 or part[len(part) - 1] == " " or part[len(part) - 1] == "_":
-                        part += item
-                    else:
-                        part += " " + item
+            items = aspects.split(";")
+            for item in items:
+                old_words = item.split("_")
+                if len(old_words) > 1:
+                    for word in old_words:
+                        part = part.replace(word, "", 1)  # remove the 1st entry of aspect word
+                else:
+                    part = part.replace(old_words[0], "", 1)
+                if len(part) == 0 or part[len(part) - 1] == " " or part[len(part) - 1] == "_":
+                    part += item
+                else:
+                    part += " " + item
         return part
 
     @staticmethod
@@ -319,6 +318,33 @@ class PMI:
             return arr
         return ""
 
+    @staticmethod
+    def calculate_pmi(matrix, is_review, vocabulary):
+        for i in range(len(vocabulary)):
+            for j in range(i + 1, len(vocabulary)):
+                aspect1 = [key for key, value in vocabulary.items() if value == i][0]
+                aspect2 = [key for key, value in vocabulary.items() if value == j][0]
+                col1 = matrix[:, i]
+                num1 = 0  # ai1 > 0
+                for value in col1:
+                    if value != 0:
+                        num1 += 1
+                col2 = matrix[:, j]
+                num2 = 0  # ai2 > 0
+                for value in col2:
+                    if value != 0:
+                        num2 += 1
+                both_num = 0  # ai1 > 0 ai2 > 0
+                for k in range(len(matrix[:, i])):
+                    if matrix[:, i][k] != 0 and matrix[:, j][k] != 0:
+                        both_num += 1
+                from math import log
+                pmi_val = log(both_num / (num1 * num2))
+                if is_review:
+                    db.add_pmi_review(aspect1, aspect2, num1, num2, both_num, pmi_val)
+                else:
+                    db.add_pmi_sentence(aspect1, aspect2, num1, num2, both_num, pmi_val)
+
 
 db = DB()  # data base
 aspect = Aspects()
@@ -326,8 +352,12 @@ pmi = PMI()
 vocabulary = pmi.get_vocabulary()
 reviews_corpus = pmi.get_all_reviews_corpus()
 sentences_corpus = pmi.get_all_sentences_corpus()
-reviews_matrix = pmi.process(reviews_corpus, vocabulary)
-sentences_matrix = pmi.process(sentences_corpus, vocabulary)
+reviews_matrix = pmi.get_matrix(reviews_corpus, vocabulary)
+sentences_matrix = pmi.get_matrix(sentences_corpus, vocabulary)
+db.create_pmi_review_db()
+pmi.calculate_pmi(reviews_matrix, True, vocabulary)
+db.create_pmi_sentence_db()
+pmi.calculate_pmi(sentences_matrix, False, vocabulary)
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base
@@ -355,15 +385,15 @@ sentences_matrix = pmi.process(sentences_corpus, vocabulary)
 # sentence = Sentence(db)
 # sentence.process(db, aspect)  # create a db with all sentences from reviews
 
-#len(data, labels) = 24093
-#len(train_data, train_labels) = 19274
-#len(test_data, test_labels) = 4819
-#len(train_data_unarrayed) = 619286
-#len(test_data_unarrayed) = 154951
-#len(all_aspects) = 774237
-#len(ideal_train_data_unarrayed) = 46149
-#len(ideal_test_data_unarrayed) = 124709
-#len(ideal_aspects_dictionary) = 170858
-#len(ideal_aspects) = 540571
-#len(grouped aspects) = 421715
-#len(vocabulary) = 45442
+# len(data, labels) = 24093
+# len(train_data, train_labels) = 19274
+# len(test_data, test_labels) = 4819
+# len(train_data_unarrayed) = 619286
+# len(test_data_unarrayed) = 154951
+# len(all_aspects) = 774237
+# len(ideal_train_data_unarrayed) = 46149
+# len(ideal_test_data_unarrayed) = 124709
+# len(ideal_aspects_dictionary) = 170858
+# len(ideal_aspects) = 540571
+# len(grouped aspects) = 421715
+# len(vocabulary) = 45442
