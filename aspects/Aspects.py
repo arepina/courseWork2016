@@ -256,35 +256,6 @@ class PMI:
             row = db.cursor_reviews.fetchone()
             row_aspect = db.cursor_aspects_one_word.fetchone()
 
-    def one_word_sentences(self):
-        row = db.cursor_sentence.execute('SELECT * FROM Sentences').fetchone()
-        row_aspect = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
-        count = 0
-        val = 0
-        while row is not None:
-            print(count)
-            count += 1
-            if count > 72279:
-                r = 333
-            article = str(row[0])
-            sentence = str(row[1]).lower()
-            sentence = sentence[0:len(sentence) - 1]  # remove the dot
-            aspect = ""
-            if val == 0:
-                aspect = str(row_aspect[1])
-                val = 1
-            elif val == 1:
-                aspect = str(row_aspect[2])
-                val = 2
-            elif val == 2:
-                aspect = str(row_aspect[3])
-                val = 0
-                row_aspect = db.cursor_aspects_one_word.fetchone()
-            sentence = self.process_review(sentence, aspect)
-            sentence += "."
-            db.add_one_word_sentence(article, sentence)
-            row = db.cursor_sentence.fetchone()
-
     @staticmethod
     def process_review(part, aspects):
         if len(aspects) != 0:
@@ -319,11 +290,12 @@ class PMI:
 
 db = DB()  # data base
 aspect = Aspects()
-ideal = IdealAspectsDB()
 db.create_sentences_one_word_db()
-pmi = PMI()
-pmi.one_word_sentences()
+sentence = Sentence()
+sentence.process_one_word(db, aspect)
 
+
+# pmi = PMI()
 # reviews_corpus = pmi.get_all_reviews_corpus()
 # sentences_corpus = pmi.get_all_sentences_corpus()
 # reviews_matrix = pmi.process(reviews_corpus)
