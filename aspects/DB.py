@@ -10,6 +10,7 @@ class DB:
     conn_aspects_one_word = None
     conn_reviews_one_word = None
     conn_sentences_one_word = None
+    conn_pmi = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -20,6 +21,7 @@ class DB:
     cursor_aspects_one_word = None
     cursor_reviews_one_word = None
     cursor_sentences_one_word = None
+    cursor_pmi = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -28,6 +30,7 @@ class DB:
     db_aspects_one_word_name = 'Aspects_One_Word.db'
     db_reviews_one_word_name = 'Reviews_One_Word.db'
     db_sentences_one_word_name = 'Sentences_One_Word.db'
+    db_pmi_name = 'PMI.db'
 
     def __init__(self):
         path = os.getcwd()
@@ -38,6 +41,7 @@ class DB:
         self.conn_aspects_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_one_word_name)
         self.conn_reviews_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_one_word_name)
         self.conn_sentences_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
+        self.conn_pmi = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_name)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -48,6 +52,12 @@ class DB:
         self.cursor_aspects_one_word = self.conn_aspects_one_word.cursor()
         self.cursor_reviews_one_word = self.conn_reviews_one_word.cursor()
         self.cursor_sentences_one_word = self.conn_sentences_one_word.cursor()
+        self.cursor_pmi = self.conn_pmi.cursor()
+
+    def create_pmi_db(self):
+        self.cursor_pmi.execute('''CREATE TABLE IF NOT EXISTS PMI
+             (aspect1 TEXT, aspect2 TEXT, aspect1Num INT, aspect2Num INT, bothNum INT)''')
+        self.conn_pmi.commit()
 
     def create_aspects_one_word_db(self):
         self.cursor_aspects_one_word.execute('''CREATE TABLE IF NOT EXISTS Aspects
@@ -73,6 +83,10 @@ class DB:
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences
              (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_pmi(self, aspect1, aspect2, num1, num2, both_num):
+        self.cursor_pmi.execute('INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum) VALUES (?, ?, ?, ?, ?)',(aspect1, aspect2, num1, num2, both_num))
+        self.conn_pmi.commit()
 
     def add_sentence(self, article, sentence):
         self.cursor_sentence.execute('INSERT INTO Sentences (article, sentence) VALUES (?, ?)',(article, sentence))

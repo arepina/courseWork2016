@@ -1,4 +1,6 @@
 import json
+
+import numpy as np
 import requests
 
 from sklearn.model_selection import train_test_split
@@ -192,9 +194,9 @@ class PMI:
         reviews = []
         row_review = db.cursor_reviews_one_word.execute('SELECT * FROM Reviews').fetchone()
         while row_review is not None:
-            adv = str(row_review[3])
-            dis = str(row_review[4])
-            com = str(row_review[5])
+            adv = str(row_review[1])
+            dis = str(row_review[2])
+            com = str(row_review[3])
             review = adv + " " + dis + " " + com
             reviews.append(review)
             row_review = db.cursor_reviews_one_word.fetchone()
@@ -203,18 +205,48 @@ class PMI:
     @staticmethod
     def get_all_sentences_corpus():
         sentences = []
-        row_sentence = db.cursor_sentence.execute('SELECT * FROM Sentences').fetchone()
+        row_sentence = db.cursor_sentences_one_word.execute('SELECT * FROM Sentences').fetchone()
         while row_sentence is not None:
             sentence = str(row_sentence[1])
             sentences.append(sentence)
-            row_sentence = db.cursor_sentence.fetchone()
+            row_sentence = db.cursor_sentences_one_word.fetchone()
         return sentences
 
     @staticmethod
-    def process(corpus):
-        vectorizer = CountVectorizer(min_df=5, max_df=0.8)
+    def get_vocabulary():
+        vocabulary = {}
+        row = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
+        count = 0
+        while row is not None:
+            adv = str(row[1])
+            if len(adv) != 0:
+                items = adv.split(";")
+                for item in items:
+                    if item not in vocabulary:
+                        vocabulary[item] = count
+                        count += 1
+            dis = str(row[2])
+            if len(dis) != 0:
+                items = dis.split(";")
+                for item in items:
+                    if item not in vocabulary:
+                        vocabulary[item] = count
+                        count += 1
+            com = str(row[3])
+            if len(com) != 0:
+                items = com.split(";")
+                for item in items:
+                   if item not in vocabulary:
+                        vocabulary[item] = count
+                        count += 1
+            row = db.cursor_aspects_one_word.fetchone()
+        return vocabulary
+
+    @staticmethod
+    def process(corpus, vocabulary):
+        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
-        return matrix
+        return np.array(matrix, dtype=np.object)
 
     def one_word_aspects(self):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
@@ -290,16 +322,12 @@ class PMI:
 
 db = DB()  # data base
 aspect = Aspects()
-db.create_sentences_one_word_db()
-sentence = Sentence()
-sentence.process_one_word(db, aspect)
-
-
-# pmi = PMI()
-# reviews_corpus = pmi.get_all_reviews_corpus()
-# sentences_corpus = pmi.get_all_sentences_corpus()
-# reviews_matrix = pmi.process(reviews_corpus)
-# sentences_matrix = pmi.process(sentences_corpus)
+pmi = PMI()
+vocabulary = pmi.get_vocabulary()
+reviews_corpus = pmi.get_all_reviews_corpus()
+sentences_corpus = pmi.get_all_sentences_corpus()
+reviews_matrix = pmi.process(reviews_corpus, vocabulary)
+sentences_matrix = pmi.process(sentences_corpus, vocabulary)
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base
@@ -338,3 +366,4 @@ sentence.process_one_word(db, aspect)
 #len(ideal_aspects_dictionary) = 170858
 #len(ideal_aspects) = 540571
 #len(grouped aspects) = 421715
+#len(vocabulary) = 45442
