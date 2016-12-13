@@ -334,15 +334,9 @@ class PMI:
                 aspect1 = keys_list[i]
                 aspect2 = keys_list[j]
                 col1 = matrix[:, i].toarray().ravel()
-                num1 = 0  # ai1 > 0
-                for value in col1:
-                    if value != 0:
-                        num1 += 1
+                num1 = sum(row > 0 for row in col1)
                 col2 = matrix[:, j].toarray().ravel()
-                num2 = 0  # ai2 > 0
-                for value in col2:
-                    if value != 0:
-                        num2 += 1
+                num2 = sum(row > 0 for row in col2)
                 both_num = 0  # ai1 > 0 ai2 > 0
                 for k in range(len(matrix[:, i].toarray().ravel())):
                     if col1[k] != 0 and col2[k] != 0:
