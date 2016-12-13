@@ -21,6 +21,7 @@ class DB:
     cursor_sentence = None
     cursor_aspects_one_word = None
     cursor_reviews_one_word = None
+    cursor_reviews_one_word_update = None
     cursor_sentences_one_word = None
     cursor_pmi_review = None
     cursor_pmi_sentence = None
@@ -55,6 +56,7 @@ class DB:
         self.cursor_sentence = self.conn_sentence.cursor()
         self.cursor_aspects_one_word = self.conn_aspects_one_word.cursor()
         self.cursor_reviews_one_word = self.conn_reviews_one_word.cursor()
+        self.cursor_reviews_one_word_update = self.conn_reviews_one_word.cursor()
         self.cursor_sentences_one_word = self.conn_sentences_one_word.cursor()
         self.cursor_pmi_review = self.conn_pmi_review.cursor()
         self.cursor_pmi_sentence = self.conn_pmi_sentence.cursor()
