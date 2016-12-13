@@ -327,19 +327,24 @@ class PMI:
             for j in range(i + 1, len(matrix_terms)):
                 print("\t" + str(in_count))
                 in_count += 1
-                both_num = 0  # ai1 > 0 ai2 > 0
-                for k in range(matrix[:, i].shape[0]):
-                    if matrix[:, i][k] != 0 and matrix[:, j][k] != 0:
-                        both_num += 1
+                col1 = np.array(np.transpose(matrix[:,i]))
+                col2 = np.array(np.transpose(matrix[:,j]))
+                # col1 = np.array([1, 0, 2, 0, 8])
+                # col2 = np.array([1, 0, 2, 0, 8])
+                both_num = np.count_nonzero(col1*col2)
+
                 if both_num == 0:  # independent
                     pmi_val = 0
                 else:
                     from math import log
                     pmi_val = log(both_num / (int(final_matrix[1][i]) * int(final_matrix[1][j])))
                 if is_review:
-                    db.add_pmi_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j], both_num, pmi_val)
+                    db.add_pmi_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
+                                      both_num, pmi_val)
                 else:
-                    db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j], both_num, pmi_val)
+                    db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
+                                        both_num, pmi_val)
+
 
 
 db = DB()  # data base
