@@ -321,12 +321,18 @@ class PMI:
     @staticmethod
     def calculate_pmi(matrix, is_review, vocabulary):
         count = 0
-        for i in range(len(vocabulary)):
+        import operator
+        vocabulary = dict(sorted(vocabulary.items(), key=operator.itemgetter(1)))
+        keys_list = list(vocabulary.keys())
+        for i in range(len(keys_list)):
             print(count)
             count += 1
-            for j in range(i + 1, len(vocabulary)):
-                aspect1 = [key for key, value in vocabulary.items() if value == i][0]
-                aspect2 = [key for key, value in vocabulary.items() if value == j][0]
+            in_count = 0
+            for j in range(i + 1, len(keys_list)):
+                print("\t" + str(in_count))
+                in_count += 1
+                aspect1 = keys_list[i]
+                aspect2 = keys_list[j]
                 col1 = matrix[:, i].toarray().ravel()
                 num1 = 0  # ai1 > 0
                 for value in col1:
