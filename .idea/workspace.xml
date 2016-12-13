@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/PMI.db" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Aspects_One_Word.db" afterPath="$PROJECT_DIR$/db/Aspects_One_Word.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IdealAspects_Trees.db" afterPath="$PROJECT_DIR$/db/IdealAspects_Trees.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/IdealAspects_Ulmart.db" afterPath="$PROJECT_DIR$/db/IdealAspects_Ulmart.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/PMI_Review.db" afterPath="$PROJECT_DIR$/db/PMI_Review.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +36,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1481450917683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1481625533510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
@@ -60,8 +65,8 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44262296">
-              <caret line="328" column="34" selection-start-line="328" selection-start-column="34" selection-end-line="328" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.18072289">
+              <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#379#8378#0" expanded="false" />
@@ -78,21 +83,20 @@
                 <element signature="e#8141#8378#0" expanded="false" />
                 <element signature="e#8452#8875#0" expanded="false" />
                 <element signature="e#8939#9266#0" expanded="false" />
-                <element signature="e#9320#10346#0" expanded="false" />
-                <element signature="e#10414#10586#0" expanded="false" />
-                <element signature="e#10628#11476#0" expanded="false" />
-                <element signature="e#11518#12387#0" expanded="false" />
-                <element signature="e#12454#13059#0" expanded="false" />
-                <element signature="e#13123#13456#0" expanded="false" />
-                <marker date="1481451343117" expanded="true" signature="1019:1039" placeholder="SELECT * FRO... Review" />
-                <marker date="1481451343117" expanded="true" signature="7251:7272" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1481451343117" expanded="true" signature="8522:8542" placeholder="SELECT * FRO... Review" />
-                <marker date="1481451343117" expanded="true" signature="8522:8543" placeholder="SELECT * FRO... Reviews" />
-                <marker date="1481451343117" expanded="true" signature="9015:9038" placeholder="SELECT * FRO... Sentences" />
-                <marker date="1481451343117" expanded="true" signature="9386:9407" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1481451343117" expanded="true" signature="10671:10697" placeholder="SELECT * FRO... IdealAspects" />
-                <marker date="1481451343117" expanded="true" signature="11551:11571" placeholder="SELECT * FRO... Review" />
-                <marker date="1481451343117" expanded="true" signature="11642:11663" placeholder="SELECT * FRO... Aspects" />
+                <element signature="e#9320#10424#0" expanded="false" />
+                <element signature="e#10679#11527#0" expanded="false" />
+                <element signature="e#11569#12438#0" expanded="false" />
+                <element signature="e#12505#13110#0" expanded="false" />
+                <element signature="e#13174#13507#0" expanded="false" />
+                <marker date="1481623246314" expanded="true" signature="1019:1039" placeholder="SELECT * FRO... Review" />
+                <marker date="1481623246314" expanded="true" signature="7251:7272" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1481623246314" expanded="true" signature="8522:8542" placeholder="SELECT * FRO... Review" />
+                <marker date="1481623246314" expanded="true" signature="8522:8543" placeholder="SELECT * FRO... Reviews" />
+                <marker date="1481623246314" expanded="true" signature="9015:9038" placeholder="SELECT * FRO... Sentences" />
+                <marker date="1481623246314" expanded="true" signature="9386:9407" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1481623246314" expanded="true" signature="10722:10748" placeholder="SELECT * FRO... IdealAspects" />
+                <marker date="1481623246314" expanded="true" signature="11602:11622" placeholder="SELECT * FRO... Review" />
+                <marker date="1481623246314" expanded="true" signature="11693:11714" placeholder="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -599,7 +603,7 @@
     <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22837633" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25417298" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,7 +613,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.421875" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5190972" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -658,6 +662,11 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Aspects.py</url>
+          <line>364</line>
+          <option name="timeStamp" value="806" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -666,12 +675,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="787" />
+      <option name="time" value="812" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="reviews_matrix" />
-        <watch expression="matrix[:,i]" />
+        <watch expression="matrix[0].toarray()" language="Python" />
+        <watch expression="matrix[1].toarray()" language="Python" />
+        <watch expression="matrix[2].toarray()" language="Python" />
+        <watch expression="matrix[24090].toarray()" language="Python" />
+        <watch expression="len(matrix[:, i].toarray().ravel())" />
       </configuration>
     </watches-manager>
   </component>
@@ -967,11 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44444445">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <marker date="1481188212815" expanded="true" signature="461:487" placeholder="SELECT * FRO... IdealAspects" />
-            <marker date="1481188212815" expanded="true" signature="1092:1185" placeholder="UPDATE Ideal... " />
-            <marker date="1481188212815" expanded="true" signature="1364:1447" placeholder="UPDATE Ideal... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -979,9 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2777778">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <marker date="1481190266103" expanded="true" signature="104:130" placeholder="SELECT * FRO... IdealAspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -989,14 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.127451">
           <caret line="72" column="60" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="60" />
-          <folding>
-            <element signature="e#68#826#0" expanded="false" />
-            <element signature="e#884#1751#0" expanded="false" />
-            <element signature="e#1817#1969#0" expanded="false" />
-            <element signature="e#2020#2181#0" expanded="false" />
-            <marker date="1481190412490" expanded="true" signature="101:122" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1481190412490" expanded="true" signature="924:944" placeholder="SELECT * FRO... Review" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1004,15 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3888889">
           <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <marker date="1481354209008" expanded="true" signature="611:685" placeholder="CREATE TABLE... IDFHelper" />
-            <marker date="1481354209008" expanded="true" signature="880:900" placeholder="SELECT * FRO... Review" />
-            <marker date="1481354209008" expanded="true" signature="1431:1474" placeholder="SELECT numbe... IDFHelper" />
-            <marker date="1481354209008" expanded="true" signature="1585:1635" placeholder="INSERT INTO IDFHelper... " />
-            <marker date="1481354209008" expanded="true" signature="1776:1822" placeholder="UPDATE IDFHe... " />
-            <marker date="1481354209008" expanded="true" signature="2539:2562" placeholder="SELECT * FRO... IDFHelper" />
-            <marker date="1481354209008" expanded="true" signature="3496:3532" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,13 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#100#1560#0" expanded="false" />
-            <marker date="1481379478526" expanded="true" signature="140:160" placeholder="SELECT * FRO... Review" />
-            <marker date="1481379478526" expanded="true" signature="1654:1674" placeholder="SELECT * FRO... Review" />
-            <marker date="1481379478526" expanded="true" signature="1745:1766" placeholder="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,18 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
-          <folding>
-            <element signature="e#1651#2788#0" expanded="false" />
-            <element signature="e#2839#3277#0" expanded="false" />
-            <element signature="e#3316#3994#0" expanded="false" />
-            <marker date="1481188274894" expanded="true" signature="826:963" placeholder="CREATE TABLE... IdealAspects" />
-            <marker date="1481188274894" expanded="true" signature="1168:1292" placeholder="INSERT INTO IdealAspects... " />
-            <marker date="1481188274894" expanded="true" signature="1686:1712" placeholder="SELECT * FRO... IdealAspects" />
-            <marker date="1481188274894" expanded="true" signature="2064:2151" placeholder="UPDATE Ideal... " />
-            <marker date="1481188274894" expanded="true" signature="2328:2421" placeholder="UPDATE Ideal... " />
-            <marker date="1481188274894" expanded="true" signature="2598:2681" placeholder="UPDATE Ideal... " />
-            <marker date="1481188274894" expanded="true" signature="3349:3375" placeholder="SELECT * FRO... IdealAspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,43 +1035,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="74" selection-start-line="102" selection-start-column="74" selection-end-line="102" selection-end-column="74" />
-          <folding>
-            <element signature="e#3185#3405#0" expanded="false" />
-            <element signature="e#3457#3677#0" expanded="false" />
-            <element signature="e#3731#3902#0" expanded="false" />
-            <element signature="e#3945#4147#0" expanded="false" />
-            <element signature="e#4191#4342#0" expanded="false" />
-            <element signature="e#5059#5203#0" expanded="false" />
-            <element signature="e#5306#5585#0" expanded="false" />
-            <element signature="e#5698#5993#0" expanded="false" />
-            <element signature="e#6105#6400#0" expanded="false" />
-            <element signature="e#6466#6668#0" expanded="false" />
-            <element signature="e#6737#6796#0" expanded="false" />
-            <element signature="e#6845#6962#0" expanded="false" />
-            <marker date="1481449205808" expanded="true" signature="2705:2834" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481449205808" expanded="true" signature="2960:3089" placeholder="CREATE TABLE... PMI" />
-            <marker date="1481449205808" expanded="true" signature="3225:3357" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481449205808" expanded="true" signature="3497:3629" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481449205808" expanded="true" signature="3773:3852" placeholder="CREATE TABLE... Reviews" />
-            <marker date="1481449205808" expanded="true" signature="3976:4108" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481449205808" expanded="true" signature="4223:4302" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481449205808" expanded="true" signature="4472:4570" placeholder="INSERT INTO Sentences... " />
-            <marker date="1481449205808" expanded="true" signature="4803:4901" placeholder="INSERT INTO PMI... " />
-            <marker date="1481449205808" expanded="true" signature="5089:5130" placeholder="INSERT INTO Sentences... " />
-            <marker date="1481449205808" expanded="true" signature="5089:5144" placeholder="INSERT INTO Sentences... " />
-            <marker date="1481449205808" expanded="true" signature="5348:5467" placeholder="INSERT INTO Aspects... " />
-            <marker date="1481449205808" expanded="true" signature="5747:5866" placeholder="INSERT INTO Aspects... " />
-            <marker date="1481449205808" expanded="true" signature="6154:6273" placeholder="INSERT INTO Aspects... " />
-            <marker date="1481449205808" expanded="true" signature="6517:6587" placeholder="INSERT INTO Reviews... " />
-            <marker date="1481449205808" expanded="true" signature="6874:6910" placeholder="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44262296">
-          <caret line="328" column="34" selection-start-line="328" selection-start-column="34" selection-end-line="328" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.18072289">
+          <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#379#8378#0" expanded="false" />
@@ -1122,21 +1058,20 @@
             <element signature="e#8141#8378#0" expanded="false" />
             <element signature="e#8452#8875#0" expanded="false" />
             <element signature="e#8939#9266#0" expanded="false" />
-            <element signature="e#9320#10346#0" expanded="false" />
-            <element signature="e#10414#10586#0" expanded="false" />
-            <element signature="e#10628#11476#0" expanded="false" />
-            <element signature="e#11518#12387#0" expanded="false" />
-            <element signature="e#12454#13059#0" expanded="false" />
-            <element signature="e#13123#13456#0" expanded="false" />
-            <marker date="1481451343117" expanded="true" signature="1019:1039" placeholder="SELECT * FRO... Review" />
-            <marker date="1481451343117" expanded="true" signature="7251:7272" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1481451343117" expanded="true" signature="8522:8542" placeholder="SELECT * FRO... Review" />
-            <marker date="1481451343117" expanded="true" signature="8522:8543" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1481451343117" expanded="true" signature="9015:9038" placeholder="SELECT * FRO... Sentences" />
-            <marker date="1481451343117" expanded="true" signature="9386:9407" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1481451343117" expanded="true" signature="10671:10697" placeholder="SELECT * FRO... IdealAspects" />
-            <marker date="1481451343117" expanded="true" signature="11551:11571" placeholder="SELECT * FRO... Review" />
-            <marker date="1481451343117" expanded="true" signature="11642:11663" placeholder="SELECT * FRO... Aspects" />
+            <element signature="e#9320#10424#0" expanded="false" />
+            <element signature="e#10679#11527#0" expanded="false" />
+            <element signature="e#11569#12438#0" expanded="false" />
+            <element signature="e#12505#13110#0" expanded="false" />
+            <element signature="e#13174#13507#0" expanded="false" />
+            <marker date="1481623246314" expanded="true" signature="1019:1039" placeholder="SELECT * FRO... Review" />
+            <marker date="1481623246314" expanded="true" signature="7251:7272" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1481623246314" expanded="true" signature="8522:8542" placeholder="SELECT * FRO... Review" />
+            <marker date="1481623246314" expanded="true" signature="8522:8543" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1481623246314" expanded="true" signature="9015:9038" placeholder="SELECT * FRO... Sentences" />
+            <marker date="1481623246314" expanded="true" signature="9386:9407" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1481623246314" expanded="true" signature="10722:10748" placeholder="SELECT * FRO... IdealAspects" />
+            <marker date="1481623246314" expanded="true" signature="11602:11622" placeholder="SELECT * FRO... Review" />
+            <marker date="1481623246314" expanded="true" signature="11693:11714" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>

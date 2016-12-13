@@ -217,25 +217,25 @@ class PMI:
         row = db.cursor_aspects_one_word.execute('SELECT * FROM Aspects').fetchone()
         count = 0
         while row is not None:
-            adv = str(row[1])
+            adv = str(row[1]).strip()
             if len(adv) != 0:
                 items = adv.split(";")
                 for item in items:
-                    if item not in vocabulary:
+                    if item not in vocabulary and len(item) > 0:
                         vocabulary[item] = count
                         count += 1
-            dis = str(row[2])
+            dis = str(row[2]).strip()
             if len(dis) != 0:
                 items = dis.split(";")
                 for item in items:
-                    if item not in vocabulary:
+                    if item not in vocabulary and len(item) > 0:
                         vocabulary[item] = count
                         count += 1
-            com = str(row[3])
+            com = str(row[3]).strip()
             if len(com) != 0:
                 items = com.split(";")
                 for item in items:
-                    if item not in vocabulary:
+                    if item not in vocabulary and len(item) > 0:
                         vocabulary[item] = count
                         count += 1
             row = db.cursor_aspects_one_word.fetchone()
@@ -245,7 +245,7 @@ class PMI:
     def get_matrix(corpus, vocabulary):
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
-        return np.array(matrix, dtype=np.object)
+        return matrix
 
     def one_word_aspects(self):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
@@ -320,26 +320,32 @@ class PMI:
 
     @staticmethod
     def calculate_pmi(matrix, is_review, vocabulary):
+        count = 0
         for i in range(len(vocabulary)):
+            print(count)
+            count += 1
             for j in range(i + 1, len(vocabulary)):
                 aspect1 = [key for key, value in vocabulary.items() if value == i][0]
                 aspect2 = [key for key, value in vocabulary.items() if value == j][0]
-                col1 = matrix[:, i]
+                col1 = matrix[:, i].toarray().ravel()
                 num1 = 0  # ai1 > 0
                 for value in col1:
                     if value != 0:
                         num1 += 1
-                col2 = matrix[:, j]
+                col2 = matrix[:, j].toarray().ravel()
                 num2 = 0  # ai2 > 0
                 for value in col2:
                     if value != 0:
                         num2 += 1
                 both_num = 0  # ai1 > 0 ai2 > 0
-                for k in range(len(matrix[:, i])):
-                    if matrix[:, i][k] != 0 and matrix[:, j][k] != 0:
+                for k in range(len(matrix[:, i].toarray().ravel())):
+                    if col1[k] != 0 and col2[k] != 0:
                         both_num += 1
-                from math import log
-                pmi_val = log(both_num / (num1 * num2))
+                if both_num == 0:  # independent
+                    pmi_val = 0
+                else:
+                    from math import log
+                    pmi_val = log(both_num / (num1 * num2))
                 if is_review:
                     db.add_pmi_review(aspect1, aspect2, num1, num2, both_num, pmi_val)
                 else:
@@ -396,4 +402,4 @@ pmi.calculate_pmi(sentences_matrix, False, vocabulary)
 # len(ideal_aspects_dictionary) = 170858
 # len(ideal_aspects) = 540571
 # len(grouped aspects) = 421715
-# len(vocabulary) = 45442
+# len(vocabulary) = 45435
