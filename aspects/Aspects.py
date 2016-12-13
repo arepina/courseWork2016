@@ -327,12 +327,9 @@ class PMI:
             for j in range(i + 1, len(matrix_terms)):
                 print("\t" + str(in_count))
                 in_count += 1
-                col1 = np.array(np.transpose(matrix[:,i]))
-                col2 = np.array(np.transpose(matrix[:,j]))
-                # col1 = np.array([1, 0, 2, 0, 8])
-                # col2 = np.array([1, 0, 2, 0, 8])
-                both_num = np.count_nonzero(col1*col2)
-
+                col1 = np.array(np.array(matrix[:, i].T.toarray()))
+                col2 = np.array(np.array(matrix[:, j].T.toarray()))
+                both_num = np.count_nonzero(col1 * col2)
                 if both_num == 0:  # independent
                     pmi_val = 0
                 else:
@@ -344,7 +341,6 @@ class PMI:
                 else:
                     db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
                                         both_num, pmi_val)
-
 
 
 db = DB()  # data base
