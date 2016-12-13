@@ -241,12 +241,6 @@ class PMI:
             row = db.cursor_aspects_one_word.fetchone()
         return vocabulary
 
-    @staticmethod
-    def get_matrix(corpus, vocabulary):
-        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
-        matrix = vectorizer.fit_transform(corpus)
-        return matrix
-
     def one_word_aspects(self):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
         count = 0
@@ -319,37 +313,33 @@ class PMI:
         return ""
 
     @staticmethod
-    def calculate_pmi(matrix, is_review, vocabulary):
+    def calculate_pmi(corpus, is_review, vocabulary):
+        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
+        matrix = vectorizer.fit_transform(corpus)
         count = 0
-        import operator
-        vocabulary = dict(sorted(vocabulary.items(), key=operator.itemgetter(1)))
-        keys_list = list(vocabulary.keys())
-        for i in range(len(keys_list)):
+        matrix_terms = np.array(vectorizer.get_feature_names())
+        matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()
+        final_matrix = np.array([matrix_terms, matrix_freq])
+        for i in range(len(matrix_terms)):
             print(count)
             count += 1
             in_count = 0
-            for j in range(i + 1, len(keys_list)):
+            for j in range(i + 1, len(matrix_terms)):
                 print("\t" + str(in_count))
                 in_count += 1
-                aspect1 = keys_list[i]
-                aspect2 = keys_list[j]
-                col1 = matrix[:, i].toarray().ravel()
-                num1 = sum(row > 0 for row in col1)
-                col2 = matrix[:, j].toarray().ravel()
-                num2 = sum(row > 0 for row in col2)
                 both_num = 0  # ai1 > 0 ai2 > 0
-                for k in range(len(matrix[:, i].toarray().ravel())):
-                    if col1[k] != 0 and col2[k] != 0:
+                for k in range(matrix[:, i].shape[0]):
+                    if matrix[:, i][k] != 0 and matrix[:, j][k] != 0:
                         both_num += 1
                 if both_num == 0:  # independent
                     pmi_val = 0
                 else:
                     from math import log
-                    pmi_val = log(both_num / (num1 * num2))
+                    pmi_val = log(both_num / (int(final_matrix[1][i]) * int(final_matrix[1][j])))
                 if is_review:
-                    db.add_pmi_review(aspect1, aspect2, num1, num2, both_num, pmi_val)
+                    db.add_pmi_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j], both_num, pmi_val)
                 else:
-                    db.add_pmi_sentence(aspect1, aspect2, num1, num2, both_num, pmi_val)
+                    db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j], both_num, pmi_val)
 
 
 db = DB()  # data base
@@ -358,12 +348,10 @@ pmi = PMI()
 vocabulary = pmi.get_vocabulary()
 reviews_corpus = pmi.get_all_reviews_corpus()
 sentences_corpus = pmi.get_all_sentences_corpus()
-reviews_matrix = pmi.get_matrix(reviews_corpus, vocabulary)
-sentences_matrix = pmi.get_matrix(sentences_corpus, vocabulary)
 db.create_pmi_review_db()
-pmi.calculate_pmi(reviews_matrix, True, vocabulary)
+pmi.calculate_pmi(reviews_corpus, True, vocabulary)
 db.create_pmi_sentence_db()
-pmi.calculate_pmi(sentences_matrix, False, vocabulary)
+pmi.calculate_pmi(sentences_corpus, False, vocabulary)
 # aspect.process()  # find aspects with the help of ISP RAS API
 # one_class_svm = OneClassSVM()
 # data = one_class_svm.get_data(db)  # get only aspects from data base
