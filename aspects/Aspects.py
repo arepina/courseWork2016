@@ -183,23 +183,34 @@ class Aspects:
 class Splitter:
     def process(self):
         row_review = db.cursor_reviews_one_word.execute('SELECT * FROM Reviews').fetchone()
+        count = 0
         while row_review is not None:
+            print(count)
+            count += 1
             article = str(row_review[0])
             adv_before = str(row_review[1])
             adv = self.clean(adv_before, article)
             adv = " ".join(adv.split())
+            if adv_before != adv:
+                db.cursor_reviews_one_word_update.execute(
+                    'UPDATE Reviews SET advantageAspects = ? WHERE advantageAspects = ?',
+                    (adv, adv_before, ))
+                db.conn_reviews_one_word.commit()
             dis_before = str(row_review[2])
             dis = self.clean(dis_before, article)
             dis = " ".join(dis.split())
+            if dis_before != dis:
+                db.cursor_reviews_one_word_update.execute(
+                    'UPDATE Reviews SET disadvantageAspects = ? WHERE disadvantageAspects = ?',
+                    (dis, dis_before, ))
+                db.conn_reviews_one_word.commit()
             com_before = str(row_review[3])
             com = self.clean(com_before, article)
             com = " ".join(com.split())
-            review_before = adv_before + " " + dis_before + " " + com_before
-            review = adv + " " + dis + " " + com
-            if review_before != review:
+            if com_before != com:
                 db.cursor_reviews_one_word_update.execute(
-                    'UPDATE Reviews SET advantageAspects = ? and disadvantageAspects = ? and commentAspects = ? WHERE advantageAspects = ? and disadvantageAspects = ? and commentAspects = ?',
-                    (adv, dis, com, adv_before, dis_before, com_before))
+                    'UPDATE Reviews SET commentAspects = ? WHERE commentAspects = ?',
+                    (com, com_before, ))
                 db.conn_reviews_one_word.commit()
             row_review = db.cursor_reviews_one_word.fetchone()
 
@@ -207,14 +218,27 @@ class Splitter:
     def clean(part, article):
         new_part = ""
         words = part.strip().split(" ")
+        words = filter(None, words)
         for word in words:
+            if word[0] == "_":
+                if len(word) == 1:
+                    word = ""
+                else:
+                    word = word[1:]
+            if len(word) > 0 and word[len(word) - 1] == "_":
+                word = word[0:len(word) - 1]
+            if word.isdigit():
+                word = ""
             if word.count("_") > 1:
                 under_words = word.split("_")
                 if len(under_words) == 3:
                     new_str = under_words[0] + "_" + under_words[1] + " " + under_words[1] + "_" + under_words[2]
+                elif len(under_words) == 4:
+                    new_str = under_words[0] + "_" + under_words[1] + " " + under_words[1] + "_" + under_words[2] + " " + under_words[2] + "_" + under_words[3]
+                elif len(under_words) == 7:
+                    new_str = under_words[0] + "_" + under_words[1] + " " + under_words[1] + "_" + under_words[2] + " " + under_words[2] + "_" + under_words[3] + " " + under_words[3] + "_" + under_words[4] + " " + under_words[4] + "_" + under_words[5] + " " + under_words[5] + "_" + under_words[6]
                 else:
-                    new_str = word
-                    print(article)
+                    new_str = ""
                 new_part += new_str + " "
             else:
                 new_part += word + " "
