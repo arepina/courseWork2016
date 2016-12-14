@@ -23,6 +23,7 @@ class DB:
     cursor_reviews_one_word = None
     cursor_reviews_one_word_update = None
     cursor_sentences_one_word = None
+    cursor_sentences_one_word_update = None
     cursor_pmi_review = None
     cursor_pmi_sentence = None
 
@@ -45,6 +46,7 @@ class DB:
         self.conn_aspects_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_one_word_name)
         self.conn_reviews_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_one_word_name)
         self.conn_sentences_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
+        self.cursor_sentences_one_word_update = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
         self.conn_pmi_review = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_review_name)
         self.conn_pmi_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_sentence_name)
 
