@@ -132,8 +132,8 @@ class PMI:
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         count = 0
-        matrix_terms = np.array(vectorizer.get_feature_names())
-        matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()
+        matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
+        matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
         final_matrix = np.array([matrix_terms, matrix_freq])
         for i in range(len(matrix_terms)):
             print(count)
