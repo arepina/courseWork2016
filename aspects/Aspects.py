@@ -219,15 +219,14 @@ class Splitter:
         while row_sentence is not None:
             print(count)
             count += 1
-            if count > 140891:
-                sentence_before = str(row_sentence[1])
-                sentence = self.clean(sentence_before)
-                sentence = " ".join(sentence.split())
-                if sentence_before != sentence:
-                    db.cursor_sentences_one_word_update.execute(
-                        'UPDATE Sentences SET sentence = ? WHERE sentence = ?',
-                        (sentence, sentence_before,))
-                    db.conn_reviews_one_word.commit()
+            sentence_before = str(row_sentence[1])
+            sentence = self.clean(sentence_before)
+            sentence = " ".join(sentence.split())
+            if sentence_before != sentence:
+                db.cursor_sentences_one_word_update.execute(
+                    'UPDATE Sentences SET sentence = ? WHERE sentence = ?',
+                    (sentence, sentence_before,))
+                db.conn_reviews_one_word.commit()
             row_sentence = db.cursor_sentences_one_word.fetchone()
 
     @staticmethod
