@@ -12,6 +12,8 @@ class DB:
     conn_sentences_one_word = None
     conn_pmi_review = None
     conn_pmi_sentence = None
+    conn_pmi_ideal_review = None
+    conn_pmi_ideal_sentence = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -26,6 +28,8 @@ class DB:
     cursor_sentences_one_word_update = None
     cursor_pmi_review = None
     cursor_pmi_sentence = None
+    cursor_pmi_ideal_review = None
+    cursor_pmi_ideal_sentence = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -36,6 +40,8 @@ class DB:
     db_sentences_one_word_name = 'Sentences_One_Word.db'
     db_pmi_review_name = 'PMI_Review.db'
     db_pmi_sentence_name = 'PMI_Sentence.db'
+    db_pmi_ideal_review_name = 'PMI_Ideal_Review.db'
+    db_pmi_ideal_sentence_name = 'PMI_Ideal_Sentence.db'
 
     def __init__(self):
         path = os.getcwd()
@@ -49,6 +55,8 @@ class DB:
         self.cursor_sentences_one_word_update = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
         self.conn_pmi_review = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_review_name)
         self.conn_pmi_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_sentence_name)
+        self.conn_pmi_ideal_review = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_ideal_review_name)
+        self.conn_pmi_ideal_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_ideal_sentence_name)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -62,6 +70,18 @@ class DB:
         self.cursor_sentences_one_word = self.conn_sentences_one_word.cursor()
         self.cursor_pmi_review = self.conn_pmi_review.cursor()
         self.cursor_pmi_sentence = self.conn_pmi_sentence.cursor()
+        self.cursor_pmi_ideal_review = self.conn_pmi_ideal_review.cursor()
+        self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
+
+    def create_pmi_ideal_review_db(self):
+        self.cursor_pmi_ideal_review.execute('''CREATE TABLE IF NOT EXISTS PMI
+             (aspect1 TEXT, aspect2 TEXT, aspect1Num INT, aspect2Num INT, bothNum INT, pmi DOUBLE)''')
+        self.conn_pmi_ideal_review.commit()
+
+    def create_pmi_ideal_sentence_db(self):
+        self.cursor_pmi_ideal_sentence.execute('''CREATE TABLE IF NOT EXISTS PMI
+             (aspect1 TEXT, aspect2 TEXT, aspect1Num INT, aspect2Num INT, bothNum INT, pmi DOUBLE)''')
+        self.conn_pmi_ideal_sentence.commit()
 
     def create_pmi_review_db(self):
         self.cursor_pmi_review.execute('''CREATE TABLE IF NOT EXISTS PMI
@@ -97,6 +117,18 @@ class DB:
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences
              (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_pmi_ideal_review(self, aspect1, aspect2, num1, num2, both_num, pmi):
+        self.cursor_pmi_ideal_review.execute(
+            'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
+            (aspect1, aspect2, num1, num2, both_num, pmi))
+        self.conn_pmi_ideal_review.commit()
+
+    def add_pmi_ideal_sentence(self, aspect1, aspect2, num1, num2, both_num, pmi):
+        self.cursor_pmi_ideal_sentence.execute(
+            'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
+            (aspect1, aspect2, num1, num2, both_num, pmi))
+        self.conn_pmi_ideal_sentence.commit()
 
     def add_pmi_review(self, aspect1, aspect2, num1, num2, both_num, pmi):
         self.cursor_pmi_review.execute(

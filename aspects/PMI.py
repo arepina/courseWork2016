@@ -4,6 +4,26 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 class PMI:
     @staticmethod
+    def get_all_ideal_aspects_from_train_files():
+        import os
+        ideal_aspects_from_file = {}
+        path = os.getcwd()
+        filenames = os.listdir(path + "\\..\\productTrees\\Subcategories")
+        os.chdir(path + "\\..\\productTrees\\Subcategories")
+        count = 0
+        for filename in filenames:
+            with open(filename) as f:
+                lines = f.readlines()
+            arr = lines[0].split(";")
+            for val in arr:
+                val = val.replace(" ", "_").lower()
+                val = val.replace(",_", "_")
+                if val not in ideal_aspects_from_file:
+                    ideal_aspects_from_file[val] = count
+                    count += 1
+        return ideal_aspects_from_file
+
+    @staticmethod
     def get_all_reviews_corpus(db):
         reviews = []
         row_review = db.cursor_reviews_one_word.execute('SELECT * FROM Reviews').fetchone()
@@ -128,7 +148,7 @@ class PMI:
         return ""
 
     @staticmethod
-    def calculate_pmi(corpus, is_review, vocabulary, db):
+    def calculate_pmi(corpus, which_part, vocabulary, db):
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         count = 0
@@ -150,9 +170,16 @@ class PMI:
                 else:
                     from math import log
                     pmi_val = log(both_num / (int(final_matrix[1][i]) * int(final_matrix[1][j])))
-                if is_review:
+                if which_part == 0:
                     db.add_pmi_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
                                       both_num, pmi_val)
-                else:
+                elif which_part == 1:
                     db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
                                         both_num, pmi_val)
+                elif which_part == 2:
+                    db.add_pmi_ideal_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
+                                        both_num, pmi_val)
+                else:
+                    db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
+                                        both_num, pmi_val)
+

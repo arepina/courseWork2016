@@ -214,13 +214,18 @@ aspect = Aspects()
 # sp.process_reviews()
 # sp.process_sentences()
 pmi = PMI()
-vocabulary = pmi.get_vocabulary(db)
-# reviews_corpus = pmi.get_all_reviews_corpus(db)
+reviews_corpus = pmi.get_all_reviews_corpus(db)
 sentences_corpus = pmi.get_all_sentences_corpus(db)
+ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
+db.create_pmi_ideal_review_db()
+pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
+db.create_pmi_ideal_sentence_db()
+pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
+# vocabulary = pmi.get_vocabulary(db)
 # db.create_pmi_review_db()
-# pmi.calculate_pmi(reviews_corpus, True, vocabulary, db)  # 1 2007
-db.create_pmi_sentence_db()
-pmi.calculate_pmi(sentences_corpus, False, vocabulary, db)
+# pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)  # 1 2007
+# db.create_pmi_sentence_db()
+# pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)  # 1 83
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
