@@ -178,8 +178,7 @@ class PMI:
                                         both_num, pmi_val)
                 elif which_part == 2:
                     db.add_pmi_ideal_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                        both_num, pmi_val)
+                                            both_num, pmi_val)
                 else:
                     db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                        both_num, pmi_val)
-
+                                              both_num, pmi_val)
