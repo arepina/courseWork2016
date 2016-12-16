@@ -122,25 +122,21 @@ class DB:
         self.cursor_pmi_ideal_review.execute(
             'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
             (aspect1, aspect2, num1, num2, both_num, pmi))
-        self.conn_pmi_ideal_review.commit()
 
     def add_pmi_ideal_sentence(self, aspect1, aspect2, num1, num2, both_num, pmi):
         self.cursor_pmi_ideal_sentence.execute(
             'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
             (aspect1, aspect2, num1, num2, both_num, pmi))
-        self.conn_pmi_ideal_sentence.commit()
 
     def add_pmi_review(self, aspect1, aspect2, num1, num2, both_num, pmi):
         self.cursor_pmi_review.execute(
             'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
             (aspect1, aspect2, num1, num2, both_num, pmi))
-        self.conn_pmi_review.commit()
 
     def add_pmi_sentence(self, aspect1, aspect2, num1, num2, both_num, pmi):
         self.cursor_pmi_sentence.execute(
             'INSERT INTO PMI (aspect1, aspect2, aspect1Num, aspect2Num, bothNum, pmi) VALUES (?, ?, ?, ?, ?, ?)',
             (aspect1, aspect2, num1, num2, both_num, pmi))
-        self.conn_pmi_sentence.commit()
 
     def add_sentence(self, article, sentence):
         self.cursor_sentence.execute('INSERT INTO Sentences (article, sentence) VALUES (?, ?)', (article, sentence))

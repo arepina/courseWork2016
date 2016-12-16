@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import requests
 from aspects.DB import DB
@@ -214,18 +215,26 @@ aspect = Aspects()
 # sp.process_reviews()
 # sp.process_sentences()
 pmi = PMI()
-reviews_corpus = pmi.get_all_reviews_corpus(db)
-sentences_corpus = pmi.get_all_sentences_corpus(db)
-# ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
-# db.create_pmi_ideal_review_db()
-# pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
-# db.create_pmi_ideal_sentence_db()
-# pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
-vocabulary = pmi.get_vocabulary(db)
-db.create_pmi_review_db()
-pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)  # 1 2007
-db.create_pmi_sentence_db()
-pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)  # 1 83
+reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
+sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
+ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
+start = datetime.now()  # ideal aspects from file + reviews
+db.create_pmi_ideal_review_db()
+pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
+db.conn_pmi_ideal_review.commit()
+print(datetime.now() - start)
+start = datetime.now()  # ideal aspects from file + sentences
+db.create_pmi_ideal_sentence_db()
+pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
+db.conn_pmi_ideal_sentence.commit()
+print(datetime.now() - start)
+# vocabulary = pmi.get_vocabulary(db)
+# db.create_pmi_review_db()
+# pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)  # 1 2007
+# db.conn_pmi_review.commit()
+# db.create_pmi_sentence_db()
+# pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)  # 1 83
+# db.conn_pmi_sentence.commit()
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
