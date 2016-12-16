@@ -140,35 +140,30 @@ class DB:
 
     def add_sentence(self, article, sentence):
         self.cursor_sentence.execute('INSERT INTO Sentences (article, sentence) VALUES (?, ?)', (article, sentence))
-        self.conn_sentence.commit()
 
     def add_review(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
         self.cursor_aspects.execute(
             'INSERT INTO Aspects (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.conn_aspects.commit()
 
     def add_one_word_aspects(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
         self.conn_aspects_one_word.execute(
             'INSERT INTO Aspects (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.conn_aspects_one_word.commit()
 
     def add_one_word_review(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
         self.conn_reviews_one_word.execute(
             'INSERT INTO Reviews (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.conn_reviews_one_word.commit()
 
     def add_one_word_sentence(self, article, sentence):
         self.conn_sentences_one_word.execute(
             'INSERT INTO Sentences (article, sentence) '
             'VALUES (?, ?)',
             (article, sentence))
-        self.conn_sentences_one_word.commit()
 
     # destructor - close connection
     def __del__(self):

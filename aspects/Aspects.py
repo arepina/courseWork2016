@@ -53,6 +53,7 @@ class Aspects:
             # add found information to DB
             db.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = db.cursor_reviews.fetchone()
+        db.conn_aspects.commit()
 
     @staticmethod
     def syntatic_parsing(review):  # detects syntactic structure for each sentence of a given text
@@ -169,6 +170,7 @@ class Aspects:
             str_com_aspects = ';'.join(ideal_com)
             ideal.add_review(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = db.cursor_aspects.fetchone()
+        ideal.conn_aspects.commit()
 
     @staticmethod
     def get_ideal(part, ideal_aspects):
@@ -217,24 +219,32 @@ aspect = Aspects()
 pmi = PMI()
 reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
 sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
-ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
-start = datetime.now()  # ideal aspects from file + reviews
-db.create_pmi_ideal_review_db()
-pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
-db.conn_pmi_ideal_review.commit()
+# ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
+# start = datetime.now()  # ideal aspects from file + reviews
+# print(start)
+# db.create_pmi_ideal_review_db()
+# pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
+# db.conn_pmi_ideal_review.commit()
+# print(datetime.now() - start)
+# start = datetime.now()  # ideal aspects from file + sentences
+# print(start)
+# db.create_pmi_ideal_sentence_db()
+# pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
+# db.conn_pmi_ideal_sentence.commit()
+# print(datetime.now() - start)
+vocabulary = pmi.get_vocabulary(db)
+start = datetime.now()  # ideal aspects + reviews
+print(start)
+db.create_pmi_review_db()
+pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
+db.conn_pmi_review.commit()
 print(datetime.now() - start)
-start = datetime.now()  # ideal aspects from file + sentences
-db.create_pmi_ideal_sentence_db()
-pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
-db.conn_pmi_ideal_sentence.commit()
-print(datetime.now() - start)
-# vocabulary = pmi.get_vocabulary(db)
-# db.create_pmi_review_db()
-# pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)  # 1 2007
-# db.conn_pmi_review.commit()
+# start = datetime.now()  # ideal aspects + sentences
+# print(start)
 # db.create_pmi_sentence_db()
-# pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)  # 1 83
+# pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
 # db.conn_pmi_sentence.commit()
+# print(datetime.now() - start)
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274

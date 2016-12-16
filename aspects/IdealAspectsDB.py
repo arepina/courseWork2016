@@ -7,7 +7,7 @@ class IdealAspectsDB:
     conn_aspects_trees = None
 
     cursor_aspects = None
-    cursor_aspects2 = None
+    cursor_aspects_update = None
     cursor_trees = None
 
     db_aspects_name_trees = 'IdealAspects_Trees.db'
@@ -18,32 +18,27 @@ class IdealAspectsDB:
         self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
         self.conn_aspects_trees = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name_trees)
         self.cursor_aspects = self.conn_aspects.cursor()
-        self.cursor_aspects2 = self.conn_aspects.cursor()
+        self.cursor_aspects_update = self.conn_aspects.cursor()
         self.cursor_trees = self.conn_aspects_trees.cursor()
         self.create_aspects_db()
 
     # Create table
     def create_aspects_db(self):
-        self.conn_aspects_trees.execute('''CREATE TABLE IF NOT EXISTS IdealAspects
+        self.conn_aspects.execute('''CREATE TABLE IF NOT EXISTS IdealAspects
              (article TEXT, advantageAspects TEXT, disadvantageAspects TEXT, commentAspects TEXT)''')
-        self.commit()
+        self.conn_aspects.commit()
 
     # Insert new review to DB
     def add_review(self, article, advantage_aspects, disadvantage_aspects, comment_aspects):
-        self.conn_aspects_trees.execute(
+        self.conn_aspects.execute(
             'INSERT INTO IdealAspects (article, advantageAspects, disadvantageAspects, commentAspects) '
             'VALUES (?, ?, ?, ?)',
             (article, advantage_aspects, disadvantage_aspects, comment_aspects))
-        self.commit()
 
     # destructor - close connection
     def __del__(self):
         self.conn_aspects_trees.close()
         self.conn_aspects.close()
-
-    # commit
-    def commit(self):
-        self.conn_aspects_trees.commit()
 
     def remove_duplicates(self):
         row = self.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
@@ -57,18 +52,22 @@ class IdealAspectsDB:
             com = str(row[3])
             new_str = self.process(adv)
             if new_str != adv:
-                self.cursor_aspects2.execute('UPDATE IdealAspects SET advantageAspects = ? WHERE article = ? and advantageAspects = ?', (new_str, article, adv,))
-                self.commit()
-
+                self.cursor_aspects_update.execute(
+                    'UPDATE IdealAspects SET advantageAspects = ? WHERE article = ? AND advantageAspects = ?',
+                    (new_str, article, adv,))
+                self.conn_aspects.commit()
             new_str = self.process(dis)
             if new_str != dis:
-                self.cursor_aspects2.execute('UPDATE IdealAspects SET disadvantageAspects = ? WHERE article = ? and disadvantageAspects = ?', (new_str, article, dis,))
-                self.commit()
-
+                self.cursor_aspects_update.execute(
+                    'UPDATE IdealAspects SET disadvantageAspects = ? WHERE article = ? AND disadvantageAspects = ?',
+                    (new_str, article, dis,))
+                self.conn_aspects.commit()
             new_str = self.process(com)
             if new_str != com:
-                self.cursor_aspects2.execute('UPDATE IdealAspects SET commentAspects = ? WHERE article = ? and commentAspects = ?', (new_str, article, com,))
-                self.commit()
+                self.cursor_aspects_update.execute(
+                    'UPDATE IdealAspects SET commentAspects = ? WHERE article = ? AND commentAspects = ?',
+                    (new_str, article, com,))
+                self.conn_aspects.commit()
             row = self.cursor_aspects.fetchone()
 
     @staticmethod
@@ -88,7 +87,7 @@ class IdealAspectsDB:
         return ""
 
     def count_aspects(self):
-        row = self.cursor_trees.execute('SELECT * FROM IdealAspects').fetchone()
+        row = self.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
         count = 0
         aspects_num = 0
         while row is not None:
@@ -106,5 +105,5 @@ class IdealAspectsDB:
             if len(com) != 0:
                 arr = com.split(";")
                 aspects_num += len(arr)
-            row = self.cursor_trees.fetchone()
+            row = self.cursor_aspects.fetchone()
         print(aspects_num)

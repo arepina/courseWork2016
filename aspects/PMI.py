@@ -94,6 +94,7 @@ class PMI:
             str_com_aspects = ';'.join(list_com_aspects)
             db.add_one_word_aspects(article, str_adv_aspects, str_dis_aspects, str_com_aspects)
             row_aspect = ideal.cursor_aspects.fetchone()
+        db.conn_aspects_one_word.commit()
 
     def one_word_reviews(self, db):
         row = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
@@ -115,6 +116,7 @@ class PMI:
             db.add_one_word_review(article, adv, dis, com)
             row = db.cursor_reviews.fetchone()
             row_aspect = db.cursor_aspects_one_word.fetchone()
+        db.conn_reviews_one_word.commit()
 
     @staticmethod
     def process_review(part, aspects):

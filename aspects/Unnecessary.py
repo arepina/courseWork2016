@@ -26,19 +26,19 @@ while row_aspect is not None:  # iterate through all reviews
     com = str(row_aspect[3])
     new_adv = updater(adv)
     if new_adv != adv:
-        ideal.cursor_aspects2.execute(
+        ideal.cursor_aspects_update.execute(
             'UPDATE IdealAspects SET advantageAspects = ? WHERE article = ? and advantageAspects = ?',
             (new_adv, article, adv,))
         ideal.conn_aspects.commit()
     new_dis = updater(dis)
     if new_dis != dis:
-        ideal.cursor_aspects2.execute(
+        ideal.cursor_aspects_update.execute(
             'UPDATE IdealAspects SET disadvantageAspects = ? WHERE article = ? and disadvantageAspects = ?',
             (new_dis, article, dis,))
         ideal.conn_aspects.commit()
     new_com = updater(com)
     if new_com != com:
-        ideal.cursor_aspects2.execute(
+        ideal.cursor_aspects_update.execute(
             'UPDATE IdealAspects SET commentAspects = ? WHERE article = ? and commentAspects = ?',
             (new_com, article, com,))
         ideal.conn_aspects.commit()

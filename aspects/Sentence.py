@@ -38,6 +38,7 @@ class Sentence:
                 if sentence != ".":
                     db.add_sentence(article, sentence)
             row_review = db.cursor_reviews.fetchone()
+        db.conn_sentence.commit()
 
     def process_one_word(self, db, aspect):
         row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
@@ -93,6 +94,7 @@ class Sentence:
                     db.add_one_word_sentence(article, sentence.lower())
             row_review = db.cursor_reviews.fetchone()
             row_aspect = db.cursor_aspects_one_word.fetchone()
+        db.conn_sentences_one_word.commit()
 
     @staticmethod
     def process_review(part, aspects):
