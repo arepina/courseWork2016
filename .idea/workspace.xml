@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/PMI_Review.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/PMI_Sentence.db" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/PMI_Ideal_Review.db" afterPath="$PROJECT_DIR$/db/PMI_Ideal_Review.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/PMI_Ideal_Sentence.db" afterPath="$PROJECT_DIR$/db/PMI_Ideal_Sentence.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/IdealAspectsDB.py" afterPath="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/PMI.py" afterPath="$PROJECT_DIR$/aspects/PMI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Sentence.py" afterPath="$PROJECT_DIR$/aspects/Sentence.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Unnecessary.py" afterPath="$PROJECT_DIR$/aspects/Unnecessary.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/PMI_Review.db" afterPath="$PROJECT_DIR$/db/PMI_Review.db" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,25 +14,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$yandex_market_from_model.coverage" NAME="yandex-market-from-model Coverage Results" MODIFIED="1477230736177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1476965083294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
     <SUITE FILE_PATH="coverage/courseWork2016$PMIHelper.coverage" NAME="PMIHelper Coverage Results" MODIFIED="1481117729759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$CategoryNames.coverage" NAME="CategoryNames Coverage Results" MODIFIED="1478883274021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/productTrees" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$IdealAspectsDB.coverage" NAME="IdealAspectsDB Coverage Results" MODIFIED="1480876222077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1476965083294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
-    <SUITE FILE_PATH="coverage/courseWork2016$azure.coverage" NAME="azure Coverage Results" MODIFIED="1478367995304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$YandexMarketParser.coverage" NAME="YandexMarketParser Coverage Results" MODIFIED="1477849470811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
-    <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1481899457083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1482941594425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
+    <SUITE FILE_PATH="coverage/courseWork2016$yandex_market_from_model.coverage" NAME="yandex-market-from-model Coverage Results" MODIFIED="1477230736177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
+    <SUITE FILE_PATH="coverage/courseWork2016$YandexMarketParser.coverage" NAME="YandexMarketParser Coverage Results" MODIFIED="1477849470811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
+    <SUITE FILE_PATH="coverage/courseWork2016$CategoryNames.coverage" NAME="CategoryNames Coverage Results" MODIFIED="1478883274021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/productTrees" />
+    <SUITE FILE_PATH="coverage/courseWork2016$azure.coverage" NAME="azure Coverage Results" MODIFIED="1478367995304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$IdealAspectsDB.coverage" NAME="IdealAspectsDB Coverage Results" MODIFIED="1480876222077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -68,76 +58,78 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+            <state relative-caret-position="165">
+              <caret line="236" column="17" lean-forward="true" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1481900178108" expanded="true" signature="774:794" placeholder="SELECT * FRO... Review" />
-                <marker date="1481900178108" expanded="true" signature="7039:7060" placeholder="SELECT * FRO... Aspects" />
+                <marker date="1482922594000" expanded="true" signature="774:794" ph="SELECT * FRO... Review" />
+                <marker date="1482922594000" expanded="true" signature="7039:7060" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+            <state relative-caret-position="250">
+              <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
               <folding>
-                <element signature="e#915#1338#0" expanded="false" />
-                <element signature="e#1404#1731#0" expanded="false" />
-                <element signature="e#1787#2891#0" expanded="false" />
-                <marker date="1481899859904" expanded="true" signature="985:1006" placeholder="SELECT * FRO... Reviews" />
-                <marker date="1481899859904" expanded="true" signature="1480:1503" placeholder="SELECT * FRO... Sentences" />
-                <marker date="1481899859904" expanded="true" signature="1853:1874" placeholder="SELECT * FRO... Aspects" />
-                <marker date="1481899859904" expanded="true" signature="2987:3013" placeholder="SELECT * FRO... IdealAspects" />
-                <marker date="1481899859904" expanded="true" signature="3913:3933" placeholder="SELECT * FRO... Review" />
-                <marker date="1481899859904" expanded="true" signature="4004:4025" placeholder="SELECT * FRO... Aspects" />
+                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#946#1369#0" expanded="false" />
+                <element signature="e#1435#1762#0" expanded="false" />
+                <element signature="e#1818#2922#0" expanded="false" />
+                <marker date="1482941556000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
+                <marker date="1482941556000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
+                <marker date="1482941556000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
+                <marker date="1482941556000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
+                <marker date="1482941556000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
+                <marker date="1482941556000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DB.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334">
-              <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
+            <state relative-caret-position="99">
+              <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
               <folding>
-                <element signature="e#4122#4327#0" expanded="false" />
-                <element signature="e#4375#4584#0" expanded="false" />
-                <element signature="e#4636#4856#0" expanded="false" />
-                <element signature="e#4908#5128#0" expanded="false" />
-                <element signature="e#5182#5353#0" expanded="false" />
-                <element signature="e#5396#5598#0" expanded="false" />
-                <element signature="e#5642#5793#0" expanded="false" />
-                <element signature="e#5884#6094#0" expanded="false" />
-                <element signature="e#6187#6399#0" expanded="false" />
-                <element signature="e#6484#6688#0" expanded="false" />
-                <element signature="e#6775#6981#0" expanded="false" />
-                <element signature="e#7038#7146#0" expanded="false" />
-                <element signature="e#7249#7493#0" expanded="false" />
-                <element signature="e#7606#7857#0" expanded="false" />
-                <marker date="1481899859913" expanded="true" signature="3624:3753" placeholder="CREATE TABLE... PMI" />
-                <marker date="1481899859913" expanded="true" signature="3897:4026" placeholder="CREATE TABLE... IF" />
-                <marker date="1481899859913" expanded="true" signature="4156:4285" placeholder="CREATE TABLE... PMI" />
-                <marker date="1481899859913" expanded="true" signature="4411:4540" placeholder="CREATE TABLE... PMI" />
-                <marker date="1481899859913" expanded="true" signature="4676:4808" placeholder="CREATE TABLE... Aspects" />
-                <marker date="1481899859913" expanded="true" signature="4948:5080" placeholder="CREATE TABLE... Reviews" />
-                <marker date="1481899859913" expanded="true" signature="5224:5303" placeholder="CREATE TABLE... Sentences" />
-                <marker date="1481899859913" expanded="true" signature="5427:5559" placeholder="CREATE TABLE... Aspects" />
-                <marker date="1481899859913" expanded="true" signature="5674:5753" placeholder="CREATE TABLE... Sentences" />
-                <marker date="1481899859913" expanded="true" signature="5935:6033" placeholder="INSERT INTO PMI... " />
-                <marker date="1481899859913" expanded="true" signature="6240:6338" placeholder="INSERT INTO PMI... " />
-                <marker date="1481899859913" expanded="true" signature="6529:6627" placeholder="INSERT INTO PMI... " />
-                <marker date="1481899859913" expanded="true" signature="6822:6920" placeholder="INSERT INTO PMI... " />
-                <marker date="1481899859913" expanded="true" signature="7068:7123" placeholder="INSERT INTO Sentences... " />
-                <marker date="1481899859913" expanded="true" signature="7291:7410" placeholder="INSERT INTO Aspects... " />
-                <marker date="1481899859913" expanded="true" signature="7655:7774" placeholder="INSERT INTO Aspects... " />
-                <marker date="1481899859913" expanded="true" signature="8018:8137" placeholder="INSERT INTO Reviews... " />
-                <marker date="1481899859913" expanded="true" signature="8337:8407" placeholder="INSERT INTO Sentences... " />
-                <marker date="1481899859913" expanded="true" signature="8648:8684" placeholder="DELETE FROM " />
+                <element signature="e#4339#4548#0" expanded="false" />
+                <element signature="e#4600#4820#0" expanded="false" />
+                <element signature="e#4872#5092#0" expanded="false" />
+                <element signature="e#5146#5317#0" expanded="false" />
+                <element signature="e#5360#5562#0" expanded="false" />
+                <element signature="e#5606#5757#0" expanded="false" />
+                <element signature="e#5848#6058#0" expanded="false" />
+                <element signature="e#6151#6363#0" expanded="false" />
+                <element signature="e#6448#6652#0" expanded="false" />
+                <element signature="e#6739#6945#0" expanded="false" />
+                <element signature="e#7002#7110#0" expanded="false" />
+                <element signature="e#7213#7457#0" expanded="false" />
+                <element signature="e#7570#7821#0" expanded="false" />
+                <element signature="e#7933#8184#0" expanded="false" />
+                <element signature="e#8250#8406#0" expanded="false" />
+                <marker date="1482921792000" expanded="true" signature="3588:3717" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="3861:3990" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="4120:4249" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="4375:4504" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="4640:4772" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="4912:5044" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="5188:5267" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="5391:5523" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="5638:5717" ph="CREATE TABLE... IF" />
+                <marker date="1482921792000" expanded="true" signature="5899:5997" ph="INSERT INTO PMI... " />
+                <marker date="1482921792000" expanded="true" signature="6204:6302" ph="INSERT INTO PMI... " />
+                <marker date="1482921792000" expanded="true" signature="6493:6591" ph="INSERT INTO PMI... " />
+                <marker date="1482921792000" expanded="true" signature="6786:6884" ph="INSERT INTO PMI... " />
+                <marker date="1482921792000" expanded="true" signature="7032:7087" ph="INSERT INTO Sentences... " />
+                <marker date="1482921792000" expanded="true" signature="7255:7374" ph="INSERT INTO Aspects... " />
+                <marker date="1482921792000" expanded="true" signature="7619:7738" ph="INSERT INTO Aspects... " />
+                <marker date="1482921792000" expanded="true" signature="7982:8101" ph="INSERT INTO Reviews... " />
+                <marker date="1482921792000" expanded="true" signature="8301:8371" ph="INSERT INTO Sentences... " />
+                <marker date="1482921792000" expanded="true" signature="8612:8648" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -152,6 +144,14 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>\\</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -205,36 +205,30 @@
         <option value="$PROJECT_DIR$/aspects/OneClassSVM.py" />
         <option value="$PROJECT_DIR$/aspects/IDFHelper.py" />
         <option value="$PROJECT_DIR$/aspects/Splitter.py" />
-        <option value="$PROJECT_DIR$/aspects/Aspects.py" />
         <option value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
-        <option value="$PROJECT_DIR$/aspects/PMI.py" />
-        <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/Sentence.py" />
+        <option value="$PROJECT_DIR$/aspects/DB.py" />
+        <option value="$PROJECT_DIR$/aspects/Aspects.py" />
+        <option value="$PROJECT_DIR$/aspects/PMI.py" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="y" value="23" />
     <option name="width" value="1378" />
     <option name="height" value="735" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -247,64 +241,15 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseWork2016" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aspects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="last_opened_file_path" value="D:/market_parser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -430,6 +375,12 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -479,7 +430,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="courseWork2016" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -488,8 +453,9 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -620,7 +586,9 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -629,6 +597,7 @@
       <changelist id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="" />
       <created>1476460984458</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1476460984458</updated>
     </task>
     <servers />
@@ -643,26 +612,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="0" y="23" width="1378" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27314112" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2611111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3263889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40554592" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4054054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5381944" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5375375" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3263889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -685,6 +654,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42114386" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -713,434 +685,298 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="906" />
+      <option name="time" value="928" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="matrix_terms[i]" />
         <watch expression="matrix_terms[j]" />
+        <watch expression="path + &quot;/../db/&quot; + self.db_aspects_name" language="Python" />
+        <watch expression="100 % 1000" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="50" column="26" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="50" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="26" selection-start-line="3" selection-start-column="0" selection-end-line="50" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="25" column="107" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="107" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="107" />
+        <state relative-caret-position="0">
+          <caret line="27" column="89" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="89" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
+        <state relative-caret-position="0">
+          <caret line="27" column="89" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="89" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
+        <state relative-caret-position="0">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/733f1c5f-f6a2-4f1f-b5e1-c01f8246a341/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33144477">
-          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/733f1c5f-f6a2-4f1f-b5e1-c01f8246a341/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/scrapy/item.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33275864">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/grab/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="228" column="14" selection-start-line="228" selection-start-column="14" selection-end-line="228" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/selection/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33076924">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/bs4/element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1277" column="0" selection-start-line="1277" selection-start-column="0" selection-end-line="1277" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="747" column="0" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/ssl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="577" column="0" selection-start-line="577" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="575" column="0" selection-start-line="575" selection-start-column="0" selection-end-line="575" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/sessions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="337" column="0" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/packages/urllib3/util/connection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/733f1c5f-f6a2-4f1f-b5e1-c01f8246a341/console.sql" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/json/__init__.py" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/733f1c5f-f6a2-4f1f-b5e1-c01f8246a341/console.sql" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/scrapy/item.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/grab/base.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/selection/base.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/urllib/request.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/bs4/element.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/codecs.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/ssl.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/utils.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/sessions.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/packages/urllib3/util/connection.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/api.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="395" column="0" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/svm/classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33206108">
-          <caret line="1001" column="8" selection-start-line="1001" selection-start-column="8" selection-end-line="1001" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/validation.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/__init__.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/base.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/svm/classes.py" />
     <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2208259">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/category_links.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6337522">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6409336">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="404" column="27" selection-start-line="404" selection-start-column="27" selection-end-line="404" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd_vars.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33118972">
-          <caret line="347" column="0" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd_vars.py" />
     <entry file="file://$PROJECT_DIR$/aspects/Synonyms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2777778">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/feature_extraction/text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/feature_extraction/text.py" />
     <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Splitter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="51" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="51" />
+        <state relative-caret-position="0">
+          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67823344">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5362776">
-          <caret line="36" column="38" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62222224">
-          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="107" column="37" lean-forward="false" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
           <folding>
-            <marker date="1481900178112" expanded="true" signature="832:969" placeholder="CREATE TABLE... IdealAspects" />
-            <marker date="1481900178112" expanded="true" signature="1181:1305" placeholder="INSERT INTO IdealAspects... " />
-            <marker date="1481900178112" expanded="true" signature="1600:1626" placeholder="SELECT * FRO... IdealAspects" />
-            <marker date="1481900178112" expanded="true" signature="2005:2092" placeholder="UPDATE Ideal... " />
-            <marker date="1481900178112" expanded="true" signature="2328:2421" placeholder="UPDATE Ideal... " />
-            <marker date="1481900178112" expanded="true" signature="2657:2740" placeholder="UPDATE Ideal... " />
-            <marker date="1481900178112" expanded="true" signature="3443:3469" placeholder="SELECT * FRO... IdealAspects" />
+            <element signature="e#4339#4548#0" expanded="false" />
+            <element signature="e#4600#4820#0" expanded="false" />
+            <element signature="e#4872#5092#0" expanded="false" />
+            <element signature="e#5146#5317#0" expanded="false" />
+            <element signature="e#5360#5562#0" expanded="false" />
+            <element signature="e#5606#5757#0" expanded="false" />
+            <element signature="e#5848#6058#0" expanded="false" />
+            <element signature="e#6151#6363#0" expanded="false" />
+            <element signature="e#6448#6652#0" expanded="false" />
+            <element signature="e#6739#6945#0" expanded="false" />
+            <element signature="e#7002#7110#0" expanded="false" />
+            <element signature="e#7213#7457#0" expanded="false" />
+            <element signature="e#7570#7821#0" expanded="false" />
+            <element signature="e#7933#8184#0" expanded="false" />
+            <element signature="e#8250#8406#0" expanded="false" />
+            <marker date="1482921792000" expanded="true" signature="3588:3717" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="3861:3990" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="4120:4249" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="4375:4504" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="4640:4772" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="4912:5044" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="5188:5267" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="5391:5523" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="5638:5717" ph="CREATE TABLE... IF" />
+            <marker date="1482921792000" expanded="true" signature="5899:5997" ph="INSERT INTO PMI... " />
+            <marker date="1482921792000" expanded="true" signature="6204:6302" ph="INSERT INTO PMI... " />
+            <marker date="1482921792000" expanded="true" signature="6493:6591" ph="INSERT INTO PMI... " />
+            <marker date="1482921792000" expanded="true" signature="6786:6884" ph="INSERT INTO PMI... " />
+            <marker date="1482921792000" expanded="true" signature="7032:7087" ph="INSERT INTO Sentences... " />
+            <marker date="1482921792000" expanded="true" signature="7255:7374" ph="INSERT INTO Aspects... " />
+            <marker date="1482921792000" expanded="true" signature="7619:7738" ph="INSERT INTO Aspects... " />
+            <marker date="1482921792000" expanded="true" signature="7982:8101" ph="INSERT INTO Reviews... " />
+            <marker date="1482921792000" expanded="true" signature="8301:8371" ph="INSERT INTO Sentences... " />
+            <marker date="1482921792000" expanded="true" signature="8612:8648" ph="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/scipy/sparse/csr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
+        <state relative-caret-position="165">
+          <caret line="236" column="17" lean-forward="true" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1481900178108" expanded="true" signature="774:794" placeholder="SELECT * FRO... Review" />
-            <marker date="1481900178108" expanded="true" signature="7039:7060" placeholder="SELECT * FRO... Aspects" />
+            <marker date="1482922594000" expanded="true" signature="774:794" ph="SELECT * FRO... Review" />
+            <marker date="1482922594000" expanded="true" signature="7039:7060" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="10" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="10" />
+        <state relative-caret-position="250">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
           <folding>
-            <element signature="e#915#1338#0" expanded="false" />
-            <element signature="e#1404#1731#0" expanded="false" />
-            <element signature="e#1787#2891#0" expanded="false" />
-            <marker date="1481899859904" expanded="true" signature="985:1006" placeholder="SELECT * FRO... Reviews" />
-            <marker date="1481899859904" expanded="true" signature="1480:1503" placeholder="SELECT * FRO... Sentences" />
-            <marker date="1481899859904" expanded="true" signature="1853:1874" placeholder="SELECT * FRO... Aspects" />
-            <marker date="1481899859904" expanded="true" signature="2987:3013" placeholder="SELECT * FRO... IdealAspects" />
-            <marker date="1481899859904" expanded="true" signature="3913:3933" placeholder="SELECT * FRO... Review" />
-            <marker date="1481899859904" expanded="true" signature="4004:4025" placeholder="SELECT * FRO... Aspects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7694445">
-          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-          <folding>
-            <marker date="1481899859919" expanded="true" signature="140:160" placeholder="SELECT * FRO... Review" />
-            <marker date="1481899859919" expanded="true" signature="1688:1708" placeholder="SELECT * FRO... Review" />
-            <marker date="1481899859919" expanded="true" signature="1779:1800" placeholder="SELECT * FRO... Aspects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="140" column="13" selection-start-line="140" selection-start-column="13" selection-end-line="140" selection-end-column="13" />
-          <folding>
-            <element signature="e#4122#4327#0" expanded="false" />
-            <element signature="e#4375#4584#0" expanded="false" />
-            <element signature="e#4636#4856#0" expanded="false" />
-            <element signature="e#4908#5128#0" expanded="false" />
-            <element signature="e#5182#5353#0" expanded="false" />
-            <element signature="e#5396#5598#0" expanded="false" />
-            <element signature="e#5642#5793#0" expanded="false" />
-            <element signature="e#5884#6094#0" expanded="false" />
-            <element signature="e#6187#6399#0" expanded="false" />
-            <element signature="e#6484#6688#0" expanded="false" />
-            <element signature="e#6775#6981#0" expanded="false" />
-            <element signature="e#7038#7146#0" expanded="false" />
-            <element signature="e#7249#7493#0" expanded="false" />
-            <element signature="e#7606#7857#0" expanded="false" />
-            <marker date="1481899859913" expanded="true" signature="3624:3753" placeholder="CREATE TABLE... PMI" />
-            <marker date="1481899859913" expanded="true" signature="3897:4026" placeholder="CREATE TABLE... IF" />
-            <marker date="1481899859913" expanded="true" signature="4156:4285" placeholder="CREATE TABLE... PMI" />
-            <marker date="1481899859913" expanded="true" signature="4411:4540" placeholder="CREATE TABLE... PMI" />
-            <marker date="1481899859913" expanded="true" signature="4676:4808" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481899859913" expanded="true" signature="4948:5080" placeholder="CREATE TABLE... Reviews" />
-            <marker date="1481899859913" expanded="true" signature="5224:5303" placeholder="CREATE TABLE... Sentences" />
-            <marker date="1481899859913" expanded="true" signature="5427:5559" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1481899859913" expanded="true" signature="5674:5753" placeholder="CREATE TABLE... Sentences" />
-            <marker date="1481899859913" expanded="true" signature="5935:6033" placeholder="INSERT INTO PMI... " />
-            <marker date="1481899859913" expanded="true" signature="6240:6338" placeholder="INSERT INTO PMI... " />
-            <marker date="1481899859913" expanded="true" signature="6529:6627" placeholder="INSERT INTO PMI... " />
-            <marker date="1481899859913" expanded="true" signature="6822:6920" placeholder="INSERT INTO PMI... " />
-            <marker date="1481899859913" expanded="true" signature="7068:7123" placeholder="INSERT INTO Sentences... " />
-            <marker date="1481899859913" expanded="true" signature="7291:7410" placeholder="INSERT INTO Aspects... " />
-            <marker date="1481899859913" expanded="true" signature="7655:7774" placeholder="INSERT INTO Aspects... " />
-            <marker date="1481899859913" expanded="true" signature="8018:8137" placeholder="INSERT INTO Reviews... " />
-            <marker date="1481899859913" expanded="true" signature="8337:8407" placeholder="INSERT INTO Sentences... " />
-            <marker date="1481899859913" expanded="true" signature="8648:8684" placeholder="DELETE FROM " />
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#946#1369#0" expanded="false" />
+            <element signature="e#1435#1762#0" expanded="false" />
+            <element signature="e#1818#2922#0" expanded="false" />
+            <marker date="1482941556000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
+            <marker date="1482941556000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
+            <marker date="1482941556000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
+            <marker date="1482941556000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
+            <marker date="1482941556000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
+            <marker date="1482941556000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>

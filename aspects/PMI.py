@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -149,23 +151,21 @@ class PMI:
             return arr
         return ""
 
-    @staticmethod
-    def calculate_pmi(corpus, which_part, vocabulary, db):
+    def calculate_pmi(self, corpus, which_part, vocabulary, db):
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         count = 0
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
         matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
         final_matrix = np.array([matrix_terms, matrix_freq])
+        col_array = self.create_col_array(matrix, len(matrix_terms))
         for i in range(len(matrix_terms)):
             print(count)
             count += 1
-            in_count = 0
+            start = datetime.now()
             for j in range(i + 1, len(matrix_terms)):
-                print("\t" + str(in_count))
-                in_count += 1
-                col1 = np.array(np.array(matrix[:, i].T.toarray()))
-                col2 = np.array(np.array(matrix[:, j].T.toarray()))
+                col1 = col_array[i]
+                col2 = col_array[j]
                 both_num = np.count_nonzero(col1 * col2)
                 if both_num == 0:  # independent
                     pmi_val = 0
@@ -180,7 +180,19 @@ class PMI:
                                         both_num, pmi_val)
                 elif which_part == 2:
                     db.add_pmi_ideal_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                            both_num, pmi_val)
+                                        both_num, pmi_val)
                 else:
                     db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                              both_num, pmi_val)
+                                          both_num, pmi_val)
+            print(datetime.now() - start)
+            if count % 1000 == 0:
+                db.conn_pmi_review.commit()
+
+    @staticmethod
+    def create_col_array(matrix, matrix_terms_len):
+        array = []
+        from nltk.compat import xrange
+        for i in xrange(matrix_terms_len):
+            col = np.array(matrix[:, i].T.toarray())
+            array.append(col)
+        return np.array(array)

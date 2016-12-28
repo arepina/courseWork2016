@@ -233,12 +233,9 @@ sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
 # db.conn_pmi_ideal_sentence.commit()
 # print(datetime.now() - start)
 vocabulary = pmi.get_vocabulary(db)
-start = datetime.now()  # ideal aspects + reviews
-print(start)
 db.create_pmi_review_db()
 pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
 db.conn_pmi_review.commit()
-print(datetime.now() - start)
 # start = datetime.now()  # ideal aspects + sentences
 # print(start)
 # db.create_pmi_sentence_db()
