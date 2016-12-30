@@ -233,15 +233,12 @@ sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
 # db.conn_pmi_ideal_sentence.commit()
 # print(datetime.now() - start)
 vocabulary = pmi.get_vocabulary(db)
-db.create_pmi_review_db()
-pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
-db.conn_pmi_review.commit()
-# start = datetime.now()  # ideal aspects + sentences
-# print(start)
-# db.create_pmi_sentence_db()
-# pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
-# db.conn_pmi_sentence.commit()
-# print(datetime.now() - start)
+# db.create_pmi_review_db()
+# pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
+# db.conn_pmi_review.commit()
+db.create_pmi_sentence_db()
+pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
+db.conn_pmi_sentence.commit()
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
@@ -255,3 +252,4 @@ db.conn_pmi_review.commit()
 # len(ideal_aspects) = 540571
 # len(grouped aspects) = 421715
 # len(vocabulary) = 45435
+# len(pmi_review) = 1032146895
