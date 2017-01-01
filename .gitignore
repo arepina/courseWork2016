@@ -1,0 +1,3 @@
+#ignore too large db
+db/PMI_Review.db
+db/PMI_Sentence.db
