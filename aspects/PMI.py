@@ -159,6 +159,7 @@ class PMI:
         matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
         final_matrix = np.array([matrix_terms, matrix_freq])
         col_array = self.create_col_array(matrix, len(matrix_terms))
+        col_array = np.array(col_array)  #  will crash here because of : Process finished with exit code 137 (interrupted by signal 9: SIGKILL)
         for i in range(len(matrix_terms)):
             print(count)
             count += 1
@@ -186,7 +187,7 @@ class PMI:
                                           both_num, pmi_val)
             print(datetime.now() - start)
             if count % 1000 == 0:
-                db.conn_pmi_review.commit()
+                db.conn_pmi_sentence.commit()
 
     @staticmethod
     def create_col_array(matrix, matrix_terms_len):
@@ -195,4 +196,4 @@ class PMI:
         for i in xrange(matrix_terms_len):
             col = np.array(matrix[:, i].T.toarray())
             array.append(col)
-        return np.array(array)
+        return array
