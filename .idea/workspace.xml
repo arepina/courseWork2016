@@ -2,46 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/courseWork2016.iml" afterPath="$PROJECT_DIR$/.idea/courseWork2016.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/Path_Weight.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories/Графические планшеты.txt" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,7 +27,7 @@
     <SUITE FILE_PATH="coverage/courseWork2016$CategoryNames.coverage" NAME="CategoryNames Coverage Results" MODIFIED="1478883274021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/productTrees" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
     <SUITE FILE_PATH="coverage/courseWork2016$IdealAspectsDB.coverage" NAME="IdealAspectsDB Coverage Results" MODIFIED="1480876222077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1483375474424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1483380886435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
     <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
     <SUITE FILE_PATH="coverage/courseWork2016$azure.coverage" NAME="azure Coverage Results" MODIFIED="1478367995304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
@@ -101,17 +67,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1483374028439" expanded="true" signature="702:722" placeholder="SELECT * FRO... Review" />
+                <marker date="1483374028439" expanded="true" signature="7051:7072" placeholder="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.36820084">
+              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -119,12 +86,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4620253">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+              <folding>
+                <marker date="1483380910930" expanded="true" signature="1073:1127" placeholder="SELECT * FRO... Weight" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +104,8 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
-                <marker date="1483374030213" expanded="true" signature="0:109" placeholder="import ..." />
+                <marker date="1483374030213" expanded="true" signature="1016:1037" placeholder="SELECT * FRO... Reviews" />
+                <marker date="1483374030213" expanded="true" signature="1511:1534" placeholder="SELECT * FRO... Sentences" />
               </folding>
             </state>
           </provider>
@@ -145,27 +115,29 @@
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <caret line="62" column="66" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
               <folding>
-                <marker date="1483374029833" expanded="true" signature="3588:3717" placeholder="CREATE TABLE... PMI" />
-                <marker date="1483374029833" expanded="true" signature="3861:3990" placeholder="CREATE TABLE... PMI" />
-                <marker date="1483374029833" expanded="true" signature="4120:4249" placeholder="CREATE TABLE... PMI" />
-                <marker date="1483374029833" expanded="true" signature="4375:4504" placeholder="CREATE TABLE... PMI" />
-                <marker date="1483374029833" expanded="true" signature="4640:4772" placeholder="CREATE TABLE... Aspects" />
-                <marker date="1483374029833" expanded="true" signature="4912:5044" placeholder="CREATE TABLE... Reviews" />
-                <marker date="1483374029833" expanded="true" signature="5188:5267" placeholder="CREATE TABLE... Sentences" />
-                <marker date="1483374029833" expanded="true" signature="5391:5523" placeholder="CREATE TABLE... Aspects" />
-                <marker date="1483374029833" expanded="true" signature="5638:5717" placeholder="CREATE TABLE... Sentences" />
-                <marker date="1483374029833" expanded="true" signature="5899:5997" placeholder="INSERT INTO PMI... " />
-                <marker date="1483374029833" expanded="true" signature="6204:6302" placeholder="INSERT INTO PMI... " />
-                <marker date="1483374029833" expanded="true" signature="6493:6591" placeholder="INSERT INTO PMI... " />
-                <marker date="1483374029833" expanded="true" signature="6786:6884" placeholder="INSERT INTO PMI... " />
-                <marker date="1483374029833" expanded="true" signature="7032:7087" placeholder="INSERT INTO Sentences... " />
-                <marker date="1483374029833" expanded="true" signature="7255:7374" placeholder="INSERT INTO Aspects... " />
-                <marker date="1483374029833" expanded="true" signature="7619:7738" placeholder="INSERT INTO Aspects... " />
-                <marker date="1483374029833" expanded="true" signature="7982:8101" placeholder="INSERT INTO Reviews... " />
-                <marker date="1483374029833" expanded="true" signature="8301:8371" placeholder="INSERT INTO Sentences... " />
-                <marker date="1483374029833" expanded="true" signature="8612:8648" placeholder="DELETE FROM " />
+                <marker date="1483380401512" expanded="true" signature="3866:3953" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483380401512" expanded="true" signature="4088:4217" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483380401512" expanded="true" signature="4361:4490" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483380401512" expanded="true" signature="4620:4749" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483380401512" expanded="true" signature="4875:5004" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483380401512" expanded="true" signature="5140:5272" placeholder="CREATE TABLE... Aspects" />
+                <marker date="1483380401512" expanded="true" signature="5412:5544" placeholder="CREATE TABLE... Reviews" />
+                <marker date="1483380401512" expanded="true" signature="5688:5767" placeholder="CREATE TABLE... Sentences" />
+                <marker date="1483380401512" expanded="true" signature="5891:6023" placeholder="CREATE TABLE... Aspects" />
+                <marker date="1483380401512" expanded="true" signature="6138:6217" placeholder="CREATE TABLE... Sentences" />
+                <marker date="1483380401512" expanded="true" signature="6375:6437" placeholder="INSERT INTO PMI... " />
+                <marker date="1483380401512" expanded="true" signature="6621:6719" placeholder="INSERT INTO PMI... " />
+                <marker date="1483380401512" expanded="true" signature="6926:7024" placeholder="INSERT INTO PMI... " />
+                <marker date="1483380401512" expanded="true" signature="7215:7313" placeholder="INSERT INTO PMI... " />
+                <marker date="1483380401512" expanded="true" signature="7508:7606" placeholder="INSERT INTO PMI... " />
+                <marker date="1483380401512" expanded="true" signature="7754:7809" placeholder="INSERT INTO Sentences... " />
+                <marker date="1483380401512" expanded="true" signature="7977:8096" placeholder="INSERT INTO Aspects... " />
+                <marker date="1483380401512" expanded="true" signature="8341:8460" placeholder="INSERT INTO Aspects... " />
+                <marker date="1483380401512" expanded="true" signature="8704:8823" placeholder="INSERT INTO Reviews... " />
+                <marker date="1483380401512" expanded="true" signature="9023:9093" placeholder="INSERT INTO Sentences... " />
+                <marker date="1483380401512" expanded="true" signature="9334:9370" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -251,11 +223,11 @@
         <option value="$PROJECT_DIR$/aspects/Splitter.py" />
         <option value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
         <option value="$PROJECT_DIR$/aspects/Sentence.py" />
-        <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
-        <option value="$PROJECT_DIR$/aspects/Main.py" />
+        <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
+        <option value="$PROJECT_DIR$/aspects/Main.py" />
       </list>
     </option>
   </component>
@@ -687,11 +659,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40381283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40381283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5372617" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5372617" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -744,9 +716,14 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="965" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/aspects/Main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="963" />
+          <line>9</line>
+          <option name="timeStamp" value="969" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -756,9 +733,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="964" />
+      <option name="time" value="971" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="all_files_content[33]" language="Python" />
+        <watch expression="all_files_content[i]" />
+        <watch expression="all_files_content[i].split(&quot;;&quot;)" />
+        <watch expression="str(all_files_content[i]).split(&quot;;&quot;)" />
+        <watch expression="str(all_files_content[i])" />
+        <watch expression="str(all_files_content[i]).replace(&quot;[\\'&quot;, &quot;&quot;)" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
@@ -964,7 +950,38 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
-            <marker date="1483374030213" expanded="true" signature="0:109" placeholder="import ..." />
+            <marker date="1483374030213" expanded="true" signature="1016:1037" placeholder="SELECT * FRO... Reviews" />
+            <marker date="1483374030213" expanded="true" signature="1511:1534" placeholder="SELECT * FRO... Sentences" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="66" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
+          <folding>
+            <marker date="1483380401512" expanded="true" signature="3866:3953" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483380401512" expanded="true" signature="4088:4217" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483380401512" expanded="true" signature="4361:4490" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483380401512" expanded="true" signature="4620:4749" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483380401512" expanded="true" signature="4875:5004" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483380401512" expanded="true" signature="5140:5272" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1483380401512" expanded="true" signature="5412:5544" placeholder="CREATE TABLE... Reviews" />
+            <marker date="1483380401512" expanded="true" signature="5688:5767" placeholder="CREATE TABLE... Sentences" />
+            <marker date="1483380401512" expanded="true" signature="5891:6023" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1483380401512" expanded="true" signature="6138:6217" placeholder="CREATE TABLE... Sentences" />
+            <marker date="1483380401512" expanded="true" signature="6375:6437" placeholder="INSERT INTO PMI... " />
+            <marker date="1483380401512" expanded="true" signature="6621:6719" placeholder="INSERT INTO PMI... " />
+            <marker date="1483380401512" expanded="true" signature="6926:7024" placeholder="INSERT INTO PMI... " />
+            <marker date="1483380401512" expanded="true" signature="7215:7313" placeholder="INSERT INTO PMI... " />
+            <marker date="1483380401512" expanded="true" signature="7508:7606" placeholder="INSERT INTO PMI... " />
+            <marker date="1483380401512" expanded="true" signature="7754:7809" placeholder="INSERT INTO Sentences... " />
+            <marker date="1483380401512" expanded="true" signature="7977:8096" placeholder="INSERT INTO Aspects... " />
+            <marker date="1483380401512" expanded="true" signature="8341:8460" placeholder="INSERT INTO Aspects... " />
+            <marker date="1483380401512" expanded="true" signature="8704:8823" placeholder="INSERT INTO Reviews... " />
+            <marker date="1483380401512" expanded="true" signature="9023:9093" placeholder="INSERT INTO Sentences... " />
+            <marker date="1483380401512" expanded="true" signature="9334:9370" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -974,54 +991,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1483374029833" expanded="true" signature="3588:3717" placeholder="CREATE TABLE... PMI" />
-            <marker date="1483374029833" expanded="true" signature="3861:3990" placeholder="CREATE TABLE... PMI" />
-            <marker date="1483374029833" expanded="true" signature="4120:4249" placeholder="CREATE TABLE... PMI" />
-            <marker date="1483374029833" expanded="true" signature="4375:4504" placeholder="CREATE TABLE... PMI" />
-            <marker date="1483374029833" expanded="true" signature="4640:4772" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1483374029833" expanded="true" signature="4912:5044" placeholder="CREATE TABLE... Reviews" />
-            <marker date="1483374029833" expanded="true" signature="5188:5267" placeholder="CREATE TABLE... Sentences" />
-            <marker date="1483374029833" expanded="true" signature="5391:5523" placeholder="CREATE TABLE... Aspects" />
-            <marker date="1483374029833" expanded="true" signature="5638:5717" placeholder="CREATE TABLE... Sentences" />
-            <marker date="1483374029833" expanded="true" signature="5899:5997" placeholder="INSERT INTO PMI... " />
-            <marker date="1483374029833" expanded="true" signature="6204:6302" placeholder="INSERT INTO PMI... " />
-            <marker date="1483374029833" expanded="true" signature="6493:6591" placeholder="INSERT INTO PMI... " />
-            <marker date="1483374029833" expanded="true" signature="6786:6884" placeholder="INSERT INTO PMI... " />
-            <marker date="1483374029833" expanded="true" signature="7032:7087" placeholder="INSERT INTO Sentences... " />
-            <marker date="1483374029833" expanded="true" signature="7255:7374" placeholder="INSERT INTO Aspects... " />
-            <marker date="1483374029833" expanded="true" signature="7619:7738" placeholder="INSERT INTO Aspects... " />
-            <marker date="1483374029833" expanded="true" signature="7982:8101" placeholder="INSERT INTO Reviews... " />
-            <marker date="1483374029833" expanded="true" signature="8301:8371" placeholder="INSERT INTO Sentences... " />
-            <marker date="1483374029833" expanded="true" signature="8612:8648" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <marker date="1483374028439" expanded="true" signature="702:722" placeholder="SELECT * FRO... Review" />
+            <marker date="1483374028439" expanded="true" signature="7051:7072" placeholder="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4620253">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <marker date="1483380910930" expanded="true" signature="1073:1127" placeholder="SELECT * FRO... Weight" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36820084">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

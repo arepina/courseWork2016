@@ -14,6 +14,7 @@ class DB:
     conn_pmi_sentence = None
     conn_pmi_ideal_review = None
     conn_pmi_ideal_sentence = None
+    conn_path_weight = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -30,6 +31,7 @@ class DB:
     cursor_pmi_sentence = None
     cursor_pmi_ideal_review = None
     cursor_pmi_ideal_sentence = None
+    cursor_path_weight = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -42,21 +44,23 @@ class DB:
     db_pmi_sentence_name = 'PMI_Sentence.db'
     db_pmi_ideal_review_name = 'PMI_Ideal_Review.db'
     db_pmi_ideal_sentence_name = 'PMI_Ideal_Sentence.db'
+    db_path_weight = "Path_Weight.db"
 
     def __init__(self):
         path = os.getcwd()
-        self.conn_aspects = sqlite3.connect(path + "/../db/" + self.db_aspects_name)
-        self.conn_reviews = sqlite3.connect(path + "/../db/" + self.db_reviews_name)
-        self.conn_merged = sqlite3.connect(path + "/../db/" + self.db_merged_name)
-        self.conn_sentence = sqlite3.connect(path + "/../db/" + self.db_sentence_name)
-        self.conn_aspects_one_word = sqlite3.connect(path + "/../db/" + self.db_aspects_one_word_name)
-        self.conn_reviews_one_word = sqlite3.connect(path + "/../db/" + self.db_reviews_one_word_name)
-        self.conn_sentences_one_word = sqlite3.connect(path + "/../db/" + self.db_sentences_one_word_name)
-        self.cursor_sentences_one_word_update = sqlite3.connect(path + "/../db/" + self.db_sentences_one_word_name)
-        self.conn_pmi_review = sqlite3.connect(path + "/../db/" + self.db_pmi_review_name)
-        self.conn_pmi_sentence = sqlite3.connect(path + "/../db/" + self.db_pmi_sentence_name)
-        self.conn_pmi_ideal_review = sqlite3.connect(path + "/../db/" + self.db_pmi_ideal_review_name)
-        self.conn_pmi_ideal_sentence = sqlite3.connect(path + "/../db/" + self.db_pmi_ideal_sentence_name)
+        self.conn_aspects = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_name)
+        self.conn_reviews = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_name)
+        self.conn_merged = sqlite3.connect(path + "\\..\\db\\" + self.db_merged_name)
+        self.conn_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_sentence_name)
+        self.conn_aspects_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_aspects_one_word_name)
+        self.conn_reviews_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_reviews_one_word_name)
+        self.conn_sentences_one_word = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
+        self.cursor_sentences_one_word_update = sqlite3.connect(path + "\\..\\db\\" + self.db_sentences_one_word_name)
+        self.conn_pmi_review = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_review_name)
+        self.conn_pmi_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_sentence_name)
+        self.conn_pmi_ideal_review = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_ideal_review_name)
+        self.conn_pmi_ideal_sentence = sqlite3.connect(path + "\\..\\db\\" + self.db_pmi_ideal_sentence_name)
+        self.conn_path_weight = sqlite3.connect(path + "\\..\\db\\" + self.db_path_weight)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -72,6 +76,12 @@ class DB:
         self.cursor_pmi_sentence = self.conn_pmi_sentence.cursor()
         self.cursor_pmi_ideal_review = self.conn_pmi_ideal_review.cursor()
         self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
+        self.cursor_path_weight = self.conn_path_weight.cursor()
+
+    def create_path_weight_db(self):
+        self.cursor_path_weight.execute('''CREATE TABLE IF NOT EXISTS Weight
+             (aspect1 TEXT, aspect2 TEXT, weight INT)''')
+        self.conn_path_weight.commit()
 
     def create_pmi_ideal_review_db(self):
         self.cursor_pmi_ideal_review.execute('''CREATE TABLE IF NOT EXISTS PMI
@@ -117,6 +127,11 @@ class DB:
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences
              (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_path_weight(self, aspect1, aspect2, weight):
+        self.cursor_pmi_ideal_review.execute(
+            'INSERT INTO Weight (aspect1, aspect2, weight) VALUES (?, ?, ?)',
+            (aspect1, aspect2, weight))
 
     def add_pmi_ideal_review(self, aspect1, aspect2, num1, num2, both_num, pmi):
         self.cursor_pmi_ideal_review.execute(

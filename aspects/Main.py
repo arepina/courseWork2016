@@ -3,10 +3,10 @@ from aspects.DB import DB
 from aspects.PMI import PMI
 from aspects.SemanticDistanceLearning import SemanticDistanceLearning
 
-
-semantic_learning = SemanticDistanceLearning()
-semantic_learning.ground_truth_distance()
 db = DB()  # data base
+# semantic_learning = SemanticDistanceLearning()
+# db.create_path_weight_db()
+# semantic_learning.ground_truth_distance(db)
 aspect = Aspects()
 # aspect.process(aspect, db)  # find aspects with the help of ISP RAS API
 # clean the data with the help of unnecessary class
