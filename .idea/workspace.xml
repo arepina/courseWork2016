@@ -2,10 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aspects/Main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/courseWork2016.iml" afterPath="$PROJECT_DIR$/.idea/courseWork2016.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,24 +53,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1483373363241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$yandex_market_from_model.coverage" NAME="yandex-market-from-model Coverage Results" MODIFIED="1477230736177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
     <SUITE FILE_PATH="coverage/courseWork2016$PMIHelper.coverage" NAME="PMIHelper Coverage Results" MODIFIED="1481117729759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1483373357143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
-    <SUITE FILE_PATH="coverage/courseWork2016$yandex_market_from_model.coverage" NAME="yandex-market-from-model Coverage Results" MODIFIED="1477230736177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
-    <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
-    <SUITE FILE_PATH="coverage/courseWork2016$YandexMarketParser.coverage" NAME="YandexMarketParser Coverage Results" MODIFIED="1477849470811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
     <SUITE FILE_PATH="coverage/courseWork2016$CategoryNames.coverage" NAME="CategoryNames Coverage Results" MODIFIED="1478883274021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/productTrees" />
-    <SUITE FILE_PATH="coverage/courseWork2016$azure.coverage" NAME="azure Coverage Results" MODIFIED="1478367995304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser__2_.coverage" NAME="parser (2) Coverage Results" MODIFIED="1478191469942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
     <SUITE FILE_PATH="coverage/courseWork2016$IdealAspectsDB.coverage" NAME="IdealAspectsDB Coverage Results" MODIFIED="1480876222077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
-    <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1483375474424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser__1_.coverage" NAME="parser (1) Coverage Results" MODIFIED="1477903536624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eldorado" />
+    <SUITE FILE_PATH="coverage/courseWork2016$parser.coverage" NAME="parser Coverage Results" MODIFIED="1477852666080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvideo" />
+    <SUITE FILE_PATH="coverage/courseWork2016$azure.coverage" NAME="azure Coverage Results" MODIFIED="1478367995304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$YandexMarketParser.coverage" NAME="YandexMarketParser Coverage Results" MODIFIED="1477849470811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parsing" />
+    <SUITE FILE_PATH="coverage/courseWork2016$a.coverage" NAME="a Coverage Results" MODIFIED="1478258225423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ulmart" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Grabber.coverage" NAME="Grabber Coverage Results" MODIFIED="1477742302952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/grab" />
     <SUITE FILE_PATH="coverage/courseWork2016$DataBase.coverage" NAME="DataBase Coverage Results" MODIFIED="1476462878682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Aspects.coverage" NAME="Aspects Coverage Results" MODIFIED="1483373357143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$IDFHelper.coverage" NAME="IDFHelper Coverage Results" MODIFIED="1480501737058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -61,14 +98,10 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#662#2201#0" expanded="false" />
-                <element signature="e#2336#3312#0" expanded="false" />
-                <marker date="1483372216000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
-                <marker date="1483372216000" expanded="true" signature="7051:7072" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -77,8 +110,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -89,8 +122,8 @@
       <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.4620253">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -99,19 +132,10 @@
       <file leaf-file-name="PMI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="25" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#946#1369#0" expanded="false" />
-                <element signature="e#1435#1762#0" expanded="false" />
-                <element signature="e#1818#2922#0" expanded="false" />
-                <marker date="1483295362000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
-                <marker date="1483295362000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
-                <marker date="1483295362000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
-                <marker date="1483295362000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
-                <marker date="1483295362000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
-                <marker date="1483295362000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
+                <marker date="1483374030213" expanded="true" signature="0:109" placeholder="import ..." />
               </folding>
             </state>
           </provider>
@@ -120,42 +144,28 @@
       <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
-                <element signature="e#4339#4548#0" expanded="false" />
-                <element signature="e#4600#4820#0" expanded="false" />
-                <element signature="e#4872#5092#0" expanded="false" />
-                <element signature="e#5146#5317#0" expanded="false" />
-                <element signature="e#5360#5562#0" expanded="false" />
-                <element signature="e#5606#5757#0" expanded="false" />
-                <element signature="e#5848#6058#0" expanded="false" />
-                <element signature="e#6151#6363#0" expanded="false" />
-                <element signature="e#6448#6652#0" expanded="false" />
-                <element signature="e#7002#7110#0" expanded="false" />
-                <element signature="e#7213#7457#0" expanded="false" />
-                <element signature="e#7570#7821#0" expanded="false" />
-                <element signature="e#7933#8184#0" expanded="false" />
-                <element signature="e#8250#8406#0" expanded="false" />
-                <marker date="1482921792000" expanded="true" signature="3588:3717" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="3861:3990" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="4120:4249" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="4375:4504" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="4640:4772" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="4912:5044" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="5188:5267" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="5391:5523" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="5638:5717" ph="CREATE TABLE... IF" />
-                <marker date="1482921792000" expanded="true" signature="5899:5997" ph="INSERT INTO PMI... " />
-                <marker date="1482921792000" expanded="true" signature="6204:6302" ph="INSERT INTO PMI... " />
-                <marker date="1482921792000" expanded="true" signature="6493:6591" ph="INSERT INTO PMI... " />
-                <marker date="1482921792000" expanded="true" signature="6786:6884" ph="INSERT INTO PMI... " />
-                <marker date="1482921792000" expanded="true" signature="7032:7087" ph="INSERT INTO Sentences... " />
-                <marker date="1482921792000" expanded="true" signature="7255:7374" ph="INSERT INTO Aspects... " />
-                <marker date="1482921792000" expanded="true" signature="7619:7738" ph="INSERT INTO Aspects... " />
-                <marker date="1482921792000" expanded="true" signature="7982:8101" ph="INSERT INTO Reviews... " />
-                <marker date="1482921792000" expanded="true" signature="8301:8371" ph="INSERT INTO Sentences... " />
-                <marker date="1482921792000" expanded="true" signature="8612:8648" ph="DELETE FROM " />
+                <marker date="1483374029833" expanded="true" signature="3588:3717" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483374029833" expanded="true" signature="3861:3990" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483374029833" expanded="true" signature="4120:4249" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483374029833" expanded="true" signature="4375:4504" placeholder="CREATE TABLE... PMI" />
+                <marker date="1483374029833" expanded="true" signature="4640:4772" placeholder="CREATE TABLE... Aspects" />
+                <marker date="1483374029833" expanded="true" signature="4912:5044" placeholder="CREATE TABLE... Reviews" />
+                <marker date="1483374029833" expanded="true" signature="5188:5267" placeholder="CREATE TABLE... Sentences" />
+                <marker date="1483374029833" expanded="true" signature="5391:5523" placeholder="CREATE TABLE... Aspects" />
+                <marker date="1483374029833" expanded="true" signature="5638:5717" placeholder="CREATE TABLE... Sentences" />
+                <marker date="1483374029833" expanded="true" signature="5899:5997" placeholder="INSERT INTO PMI... " />
+                <marker date="1483374029833" expanded="true" signature="6204:6302" placeholder="INSERT INTO PMI... " />
+                <marker date="1483374029833" expanded="true" signature="6493:6591" placeholder="INSERT INTO PMI... " />
+                <marker date="1483374029833" expanded="true" signature="6786:6884" placeholder="INSERT INTO PMI... " />
+                <marker date="1483374029833" expanded="true" signature="7032:7087" placeholder="INSERT INTO Sentences... " />
+                <marker date="1483374029833" expanded="true" signature="7255:7374" placeholder="INSERT INTO Aspects... " />
+                <marker date="1483374029833" expanded="true" signature="7619:7738" placeholder="INSERT INTO Aspects... " />
+                <marker date="1483374029833" expanded="true" signature="7982:8101" placeholder="INSERT INTO Reviews... " />
+                <marker date="1483374029833" expanded="true" signature="8301:8371" placeholder="INSERT INTO Sentences... " />
+                <marker date="1483374029833" expanded="true" signature="8612:8648" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -164,17 +174,9 @@
       <file leaf-file-name="IdealAspectsDB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="89" column="55" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="82" />
-              <folding>
-                <marker date="1482233294000" expanded="true" signature="832:969" ph="CREATE TABLE... IdealAspects" />
-                <marker date="1482233294000" expanded="true" signature="1181:1305" ph="INSERT INTO IdealAspects... " />
-                <marker date="1482233294000" expanded="true" signature="1600:1626" ph="SELECT * FRO... IdealAspects" />
-                <marker date="1482233294000" expanded="true" signature="2005:2092" ph="UPDATE Ideal... " />
-                <marker date="1482233294000" expanded="true" signature="2328:2421" ph="UPDATE Ideal... " />
-                <marker date="1482233294000" expanded="true" signature="2657:2740" ph="UPDATE Ideal... " />
-                <marker date="1482233294000" expanded="true" signature="3443:3469" ph="SELECT * FRO... IdealAspects" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="89" column="55" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="82" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -257,20 +259,25 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="146" />
-    <option name="y" value="27" />
+    <option name="x" value="-7" />
     <option name="width" value="1378" />
     <option name="height" value="735" />
   </component>
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
     <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -291,6 +298,12 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="courseWork2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="courseWork2016" />
@@ -326,6 +339,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -451,12 +465,6 @@
       <option name="OPTIONS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -506,21 +514,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <module name="courseWork2016" />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -529,9 +523,8 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
-      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -662,9 +655,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -673,7 +664,6 @@
       <changelist id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="" />
       <created>1476460984458</created>
       <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
       <updated>1476460984458</updated>
     </task>
     <servers />
@@ -688,26 +678,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="146" y="27" width="1378" height="735" extended-state="0" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26052248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26479515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42735043" sideWeight="0.5060514" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32582584" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4054054" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40381283" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5375375" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5372617" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32582584" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -753,6 +743,11 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="963" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -761,85 +756,93 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="963" />
+      <option name="time" value="964" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+    <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="107" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="55" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="89" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="107" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="89" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="89" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="89" selection-start-line="24" selection-start-column="15" selection-end-line="27" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -859,8 +862,8 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/requests/api.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="395" column="0" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -870,29 +873,29 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/svm/classes.py" />
     <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/category_links.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/parser.py">
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -900,156 +903,114 @@
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd_vars.py" />
     <entry file="file://$PROJECT_DIR$/aspects/Synonyms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/feature_extraction/text.py" />
     <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Splitter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="40" column="10" lean-forward="false" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/scipy/sparse/csr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="453" column="0" lean-forward="false" selection-start-line="453" selection-start-column="0" selection-end-line="453" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="89" column="55" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="82" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="832:969" ph="CREATE TABLE... IdealAspects" />
-            <marker date="1482233294000" expanded="true" signature="1181:1305" ph="INSERT INTO IdealAspects... " />
-            <marker date="1482233294000" expanded="true" signature="1600:1626" ph="SELECT * FRO... IdealAspects" />
-            <marker date="1482233294000" expanded="true" signature="2005:2092" ph="UPDATE Ideal... " />
-            <marker date="1482233294000" expanded="true" signature="2328:2421" ph="UPDATE Ideal... " />
-            <marker date="1482233294000" expanded="true" signature="2657:2740" ph="UPDATE Ideal... " />
-            <marker date="1482233294000" expanded="true" signature="3443:3469" ph="SELECT * FRO... IdealAspects" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="89" column="55" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="25" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#946#1369#0" expanded="false" />
-            <element signature="e#1435#1762#0" expanded="false" />
-            <element signature="e#1818#2922#0" expanded="false" />
-            <marker date="1483295362000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
-            <marker date="1483295362000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
-            <marker date="1483295362000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
-            <marker date="1483295362000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
-            <marker date="1483295362000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
-            <marker date="1483295362000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-          <folding>
-            <element signature="e#4339#4548#0" expanded="false" />
-            <element signature="e#4600#4820#0" expanded="false" />
-            <element signature="e#4872#5092#0" expanded="false" />
-            <element signature="e#5146#5317#0" expanded="false" />
-            <element signature="e#5360#5562#0" expanded="false" />
-            <element signature="e#5606#5757#0" expanded="false" />
-            <element signature="e#5848#6058#0" expanded="false" />
-            <element signature="e#6151#6363#0" expanded="false" />
-            <element signature="e#6448#6652#0" expanded="false" />
-            <element signature="e#7002#7110#0" expanded="false" />
-            <element signature="e#7213#7457#0" expanded="false" />
-            <element signature="e#7570#7821#0" expanded="false" />
-            <element signature="e#7933#8184#0" expanded="false" />
-            <element signature="e#8250#8406#0" expanded="false" />
-            <marker date="1482921792000" expanded="true" signature="3588:3717" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="3861:3990" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="4120:4249" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="4375:4504" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="4640:4772" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="4912:5044" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="5188:5267" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="5391:5523" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="5638:5717" ph="CREATE TABLE... IF" />
-            <marker date="1482921792000" expanded="true" signature="5899:5997" ph="INSERT INTO PMI... " />
-            <marker date="1482921792000" expanded="true" signature="6204:6302" ph="INSERT INTO PMI... " />
-            <marker date="1482921792000" expanded="true" signature="6493:6591" ph="INSERT INTO PMI... " />
-            <marker date="1482921792000" expanded="true" signature="6786:6884" ph="INSERT INTO PMI... " />
-            <marker date="1482921792000" expanded="true" signature="7032:7087" ph="INSERT INTO Sentences... " />
-            <marker date="1482921792000" expanded="true" signature="7255:7374" ph="INSERT INTO Aspects... " />
-            <marker date="1482921792000" expanded="true" signature="7619:7738" ph="INSERT INTO Aspects... " />
-            <marker date="1482921792000" expanded="true" signature="7982:8101" ph="INSERT INTO Reviews... " />
-            <marker date="1482921792000" expanded="true" signature="8301:8371" ph="INSERT INTO Sentences... " />
-            <marker date="1482921792000" expanded="true" signature="8612:8648" ph="DELETE FROM " />
+            <marker date="1483374030213" expanded="true" signature="0:109" placeholder="import ..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#662#2201#0" expanded="false" />
-            <element signature="e#2336#3312#0" expanded="false" />
-            <marker date="1483372216000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
-            <marker date="1483372216000" expanded="true" signature="7051:7072" ph="SELECT * FRO... Aspects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1483374029833" expanded="true" signature="3588:3717" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483374029833" expanded="true" signature="3861:3990" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483374029833" expanded="true" signature="4120:4249" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483374029833" expanded="true" signature="4375:4504" placeholder="CREATE TABLE... PMI" />
+            <marker date="1483374029833" expanded="true" signature="4640:4772" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1483374029833" expanded="true" signature="4912:5044" placeholder="CREATE TABLE... Reviews" />
+            <marker date="1483374029833" expanded="true" signature="5188:5267" placeholder="CREATE TABLE... Sentences" />
+            <marker date="1483374029833" expanded="true" signature="5391:5523" placeholder="CREATE TABLE... Aspects" />
+            <marker date="1483374029833" expanded="true" signature="5638:5717" placeholder="CREATE TABLE... Sentences" />
+            <marker date="1483374029833" expanded="true" signature="5899:5997" placeholder="INSERT INTO PMI... " />
+            <marker date="1483374029833" expanded="true" signature="6204:6302" placeholder="INSERT INTO PMI... " />
+            <marker date="1483374029833" expanded="true" signature="6493:6591" placeholder="INSERT INTO PMI... " />
+            <marker date="1483374029833" expanded="true" signature="6786:6884" placeholder="INSERT INTO PMI... " />
+            <marker date="1483374029833" expanded="true" signature="7032:7087" placeholder="INSERT INTO Sentences... " />
+            <marker date="1483374029833" expanded="true" signature="7255:7374" placeholder="INSERT INTO Aspects... " />
+            <marker date="1483374029833" expanded="true" signature="7619:7738" placeholder="INSERT INTO Aspects... " />
+            <marker date="1483374029833" expanded="true" signature="7982:8101" placeholder="INSERT INTO Reviews... " />
+            <marker date="1483374029833" expanded="true" signature="8301:8371" placeholder="INSERT INTO Sentences... " />
+            <marker date="1483374029833" expanded="true" signature="8612:8648" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -1058,8 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.4620253">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding />
         </state>
       </provider>

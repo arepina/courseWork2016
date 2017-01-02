@@ -2,8 +2,6 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Sqlite (Xerial) - Review.db" uuid="733f1c5f-f6a2-4f1f-b5e1-c01f8246a341">
-      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
