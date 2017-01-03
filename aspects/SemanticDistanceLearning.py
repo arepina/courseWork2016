@@ -1,32 +1,37 @@
-
-
 class SemanticDistanceLearning:
 
     def ground_truth_distance(self, db):
         import os
         path = os.getcwd()
-        filenames = os.listdir(path + "\\..\\productTrees\\Subcategories old")
-        os.chdir(path + "\\..\\productTrees\\Subcategories")
+        filenames = os.listdir(path + "/../productTrees/Subcategories old")
+        os.chdir(path + "/../productTrees/Subcategories")
         all_files_content = []
         for filename in filenames:  # load the aspects from all files
             with open(filename) as f:
                 all_files_content.append(f.readlines())
-        os.chdir(path + "\\..\\productTrees\\Subcategories old")
+        os.chdir(path + "/../productTrees/Subcategories old")
         i = 0
         for filename in filenames:  # iterate through all the files to calculate the path weights
             f = open(filename)
-            file_content = str(all_files_content[i]).split(";")
+            file_content = str(all_files_content[i]).split(";")  # list with ideal aspects for concrete topic
             for i in range(0, len(file_content)):
                 node = file_content[i]
                 for j in range(i + 1, len(file_content)):
                     next_node = file_content[j]
-                    path_weight = self.find_path(node, next_node, filename)
-                    try_to_find_same_row = db.cursor_path_weight.execute("SELECT * FROM Weight WHERE aspect1 = ? AND aspect2 = ?", (node, next_node,))
+                    path_weight = self.find_path(node, next_node, filename)  # the min path weight between 2 words
+                    try_to_find_same_row = db.cursor_path_weight.execute(
+                        "SELECT weight FROM Weight WHERE aspect1 = ? AND aspect2 = ?", (node, next_node,))
                     if try_to_find_same_row is None:
                         db.add_path_weight(node, next_node, path_weight)
+                        db.conn_path_weight.commit()
                     else:
-                        # compare the deep and overwrite the min
-                        r = 42
+                        # compare the deep and overwrite the min if needed
+                        weight_in_db = try_to_find_same_row.fetchone()[0]
+                        if weight_in_db > path_weight:
+                            db.cursor_path_weight.execute(
+                                "UPDATE Weight WHERE aspect1 = ? AND aspect2 = ? SET weight = ?", (node, next_node, path_weight,))
+                            db.conn_path_weight.commit()
+
             i += 1
             f.close()
 
@@ -56,3 +61,21 @@ class SemanticDistanceLearning:
             return 2
         else:
             return deep_num_node + deep_num_node_next
+
+    def calculate_distance(self, pmi_review, pmi_sentence, db):
+        import numpy as np
+        f = np.array([[pmi_review, pmi_sentence]])  # pmi's vector
+        d = self.vector_with_ground_truth_distances(db)
+        i = np.diag(d)  # identity metric
+        nu = 0.4
+        w = np.power(f.T * f + nu * i, -1) * (f.T * d)
+        return w
+
+    @staticmethod
+    def vector_with_ground_truth_distances(db):
+        row = db.cursor_path_weight.execute("SELECT * FROM Weight").fetchone()
+        vector = []
+        while row is not None:
+            vector.append(row[2])
+            row = db.cursor_path_weight.fetchone()
+        return vector
