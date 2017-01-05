@@ -3,39 +3,32 @@ class SemanticDistanceLearning:
     def ground_truth_distance(self, db):
         import os
         path = os.getcwd()
-        filenames = os.listdir(path + "/../productTrees/Subcategories old")
-        os.chdir(path + "/../productTrees/Subcategories")
+        filenames = os.listdir(path + "\\..\\productTrees\\Subcategories old")
+        os.chdir(path + "\\..\\productTrees\\Subcategories")
         all_files_content = []
         for filename in filenames:  # load the aspects from all files
             with open(filename) as f:
                 all_files_content.append(f.readlines())
-        os.chdir(path + "/../productTrees/Subcategories old")
-        i = 0
+        os.chdir(path + "\\..\\productTrees\\Subcategories old")
+        count = 0
         for filename in filenames:  # iterate through all the files to calculate the path weights
             f = open(filename)
-            file_content = str(all_files_content[i]).split(";")  # list with ideal aspects for concrete topic
+            print(filename)
+            file_content = str(all_files_content[count]).split(";")  # list with ideal aspects for concrete topic
+            file_content[0] = file_content[0][2:]
+            file_content[len(file_content) - 1] = file_content[len(file_content) - 1][:len(file_content[len(file_content) - 1]) - 2]
             for i in range(0, len(file_content)):
                 node = file_content[i]
                 for j in range(i + 1, len(file_content)):
                     next_node = file_content[j]
                     path_weight = self.find_path(node, next_node, filename)  # the min path weight between 2 words
-                    try_to_find_same_row = db.cursor_path_weight.execute(
-                        "SELECT weight FROM Weight WHERE aspect1 = ? AND aspect2 = ?", (node, next_node,))
-                    if try_to_find_same_row is None:
-                        db.add_path_weight(node, next_node, path_weight)
-                        db.conn_path_weight.commit()
-                    else:
-                        # compare the deep and overwrite the min if needed
-                        weight_in_db = try_to_find_same_row.fetchone()[0]
-                        if weight_in_db > path_weight:
-                            db.cursor_path_weight.execute(
-                                "UPDATE Weight WHERE aspect1 = ? AND aspect2 = ? SET weight = ?", (node, next_node, path_weight,))
-                            db.conn_path_weight.commit()
-
-            i += 1
+                    db.add_path_weight(filename, node, next_node, path_weight)
+                    db.conn_path_weight.commit()
+            count += 1
             f.close()
 
-    def find_path(self, node, next_node, filename):
+    @staticmethod
+    def find_path(node, next_node, filename):
         with open(filename) as f:
             content = f.readlines()
         parent_name = ""
@@ -46,7 +39,7 @@ class SemanticDistanceLearning:
             arr = line.split(";")
             word1 = arr[0]
             word2 = arr[1]
-            deep_num = arr[2]
+            deep_num = int(arr[2].replace("\n", ""))
             if node == word1:
                 parent_name = word2
                 deep_num_node = deep_num
@@ -57,8 +50,14 @@ class SemanticDistanceLearning:
             deep_num_node = 1
         if len(parent_name_next) == 0:
             deep_num_node_next = 1
+        if filename.replace(".txt", "") == next_node:
+            deep_num_node_next = 0
+        if filename.replace(".txt", "") == node:
+            deep_num_node = 0
         if parent_name == parent_name_next:
             return 2
+        elif parent_name_next == node:
+            return 1
         else:
             return deep_num_node + deep_num_node_next
 

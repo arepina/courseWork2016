@@ -4,9 +4,6 @@ from aspects.PMI import PMI
 from aspects.SemanticDistanceLearning import SemanticDistanceLearning
 
 db = DB()  # data base
-# semantic_learning = SemanticDistanceLearning()
-# db.create_path_weight_db()
-# semantic_learning.ground_truth_distance(db)
 aspect = Aspects()
 # aspect.process(aspect, db)  # find aspects with the help of ISP RAS API
 # clean the data with the help of unnecessary class
@@ -62,6 +59,9 @@ vocabulary = pmi.get_vocabulary(db)
 db.create_pmi_sentence_db()
 pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
 db.conn_pmi_sentence.commit()
+# semantic_learning = SemanticDistanceLearning()
+# db.create_path_weight_db()
+# semantic_learning.ground_truth_distance(db)
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
