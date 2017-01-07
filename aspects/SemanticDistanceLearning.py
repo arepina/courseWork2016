@@ -90,5 +90,6 @@ class SemanticDistanceLearning:
             pmi_sentence = float(row_sentence[5])
             w = self.calculate_distance(pmi_review, pmi_sentence, db)
             #todo smf here
+            #todo undersatnd the logic of eq.(1)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()

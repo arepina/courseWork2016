@@ -151,7 +151,7 @@ class PMI:
             return arr
         return ""
 
-    def calculate_pmi(self, corpus, which_part, vocabulary, db):
+    def calculate_pmi_review(self, corpus, which_part, vocabulary, db):
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         count = 0
@@ -159,6 +159,7 @@ class PMI:
         matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
         final_matrix = np.array([matrix_terms, matrix_freq])
         col_array = self.create_col_array(matrix, len(matrix_terms))
+        col_array = np.array(col_array)
         from math import log
         for i in range(len(matrix_terms)):
             print(count)
@@ -180,10 +181,80 @@ class PMI:
                                         both_num, pmi_val)
                 elif which_part == 2:
                     db.add_pmi_ideal_review(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                        both_num, pmi_val)
+                                            both_num, pmi_val)
                 else:
                     db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
-                                          both_num, pmi_val)
+                                              both_num, pmi_val)
+            print(datetime.now() - start)
+            if count % 1000 == 0:
+                db.conn_pmi_sentence.commit()
+
+    def calculate_pmi_sentence(self, corpus, vocabulary, db):
+        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
+        matrix = vectorizer.fit_transform(corpus)
+        count = 0
+        matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
+        matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
+        final_matrix = np.array([matrix_terms, matrix_freq])
+        col_array = self.create_col_array(matrix, len(matrix_terms))
+        col_array1 = np.array(col_array[:5000])
+        col_array2 = np.array(col_array[5000:10000])
+        col_array3 = np.array(col_array[10000:15000])
+        col_array4 = np.array(col_array[15000:20000])
+        col_array5 = np.array(col_array[20000:25000])
+        col_array6 = np.array(col_array[25000:30000])
+        col_array7 = np.array(col_array[30000:35000])
+        col_array8 = np.array(col_array[35000:40000])
+        col_array9 = np.array(col_array[40000:])
+        from math import log
+        for i in range(len(matrix_terms)):
+            print(count)
+            count += 1
+            start = datetime.now()
+            for j in range(i + 1, len(matrix_terms)):
+                if i < 5000:
+                    col1 = col_array1[i]
+                elif i < 10000:
+                    col1 = col_array2[i - 5000]
+                elif i < 15000:
+                    col1 = col_array3[i - 10000]
+                elif i < 20000:
+                    col1 = col_array4[i - 15000]
+                elif i < 25000:
+                    col1 = col_array5[i - 20000]
+                elif i < 30000:
+                    col1 = col_array6[i - 25000]
+                elif i < 35000:
+                    col1 = col_array7[i - 30000]
+                elif i < 40000:
+                    col1 = col_array8[i - 35000]
+                else:
+                    col1 = col_array9[i - 40000]
+                if j < 5000:
+                    col2 = col_array1[j]
+                elif j < 10000:
+                    col2 = col_array2[j - 5000]
+                elif j < 15000:
+                    col2 = col_array3[j - 10000]
+                elif j < 20000:
+                    col2 = col_array4[j - 15000]
+                elif j < 25000:
+                    col2 = col_array5[j - 20000]
+                elif j < 30000:
+                    col2 = col_array6[j - 25000]
+                elif j < 35000:
+                    col2 = col_array7[j - 30000]
+                elif j < 40000:
+                    col2 = col_array8[j - 35000]
+                else:
+                    col2 = col_array9[j - 40000]
+                both_num = np.count_nonzero(col1 * col2)
+                if both_num == 0:  # independent
+                    pmi_val = 0
+                else:
+                    pmi_val = log(both_num / (int(final_matrix[1][i]) * int(final_matrix[1][j])))
+                db.add_pmi_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
+                                    both_num, pmi_val)
             print(datetime.now() - start)
             if count % 1000 == 0:
                 db.conn_pmi_sentence.commit()
