@@ -1,15 +1,15 @@
 class SemanticDistanceLearning:
 
-    def ground_truth_distance(self, db):
+    def calculate_ground_truth_distance(self, db):
         import os
         path = os.getcwd()
-        filenames = os.listdir(path + "\\..\\productTrees\\Subcategories old")
-        os.chdir(path + "\\..\\productTrees\\Subcategories")
+        filenames = os.listdir(path + "/../productTrees/Subcategories old")
+        os.chdir(path + "/../productTrees/Subcategories")
         all_files_content = []
         for filename in filenames:  # load the aspects from all files
             with open(filename) as f:
                 all_files_content.append(f.readlines())
-        os.chdir(path + "\\..\\productTrees\\Subcategories old")
+        os.chdir(path + "/../productTrees/Subcategories old")
         count = 0
         for filename in filenames:  # iterate through all the files to calculate the path weights
             f = open(filename)
@@ -65,7 +65,8 @@ class SemanticDistanceLearning:
         import numpy as np
         f = np.array([[pmi_review, pmi_sentence]])  # pmi's vector
         d = self.vector_with_ground_truth_distances(db)
-        i = np.diag(d)  # identity metric
+        matrix_size = 2
+        i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
         w = np.power(f.T * f + nu * i, -1) * (f.T * d)
         return w
@@ -75,6 +76,19 @@ class SemanticDistanceLearning:
         row = db.cursor_path_weight.execute("SELECT * FROM Weight").fetchone()
         vector = []
         while row is not None:
-            vector.append(row[2])
+            vector.append(int(row[2]))
             row = db.cursor_path_weight.fetchone()
         return vector
+
+    def process_semantic_distance_learning(self, db):
+        row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
+        row_sentence = db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
+        while row_review is not None:
+            aspect1 = str(row_review[0])
+            aspect2 = str(row_review[1])
+            pmi_review = float(row_review[5])
+            pmi_sentence = float(row_sentence[5])
+            w = self.calculate_distance(pmi_review, pmi_sentence, db)
+            #todo smf here
+            row_review = db.cursor_pmi_review.fetchone()
+            row_sentence = db.cursor_pmi_sentence.fetchone()

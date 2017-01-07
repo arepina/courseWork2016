@@ -1,7 +1,6 @@
 from aspects.Aspects import Aspects
 from aspects.DB import DB
 from aspects.PMI import PMI
-from aspects.SemanticDistanceLearning import SemanticDistanceLearning
 
 db = DB()  # data base
 aspect = Aspects()
@@ -37,7 +36,7 @@ aspect = Aspects()
 # sp.process_reviews()
 # sp.process_sentences()
 pmi = PMI()
-reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
+# reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
 sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
 # ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
 # start = datetime.now()  # ideal aspects from file + reviews
@@ -61,7 +60,7 @@ pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
 db.conn_pmi_sentence.commit()
 # semantic_learning = SemanticDistanceLearning()
 # db.create_path_weight_db()
-# semantic_learning.ground_truth_distance(db)
+# semantic_learning.calculate_ground_truth_distance(db)
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
