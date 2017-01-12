@@ -10,8 +10,8 @@ class PMI:
         import os
         ideal_aspects_from_file = {}
         path = os.getcwd()
-        filenames = os.listdir(path + "\\..\\productTrees\\Subcategories")
-        os.chdir(path + "\\..\\productTrees\\Subcategories")
+        filenames = os.listdir(path + "/../productTrees/Subcategories")
+        os.chdir(path + "/../productTrees/Subcategories")
         count = 0
         for filename in filenames:
             with open(filename) as f:

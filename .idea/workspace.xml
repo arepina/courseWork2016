@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/PMI.py" afterPath="$PROJECT_DIR$/aspects/PMI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +59,7 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
+            <state relative-caret-position="2190">
               <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding>
                 <marker date="1483468891000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
@@ -75,8 +72,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="56" column="19" lean-forward="false" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+            <state relative-caret-position="-30">
+              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -84,18 +81,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DB.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2130">
+              <caret line="143" column="39" lean-forward="false" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
+              <folding>
+                <marker date="1483872360000" expanded="true" signature="4139:4233" ph="CREATE TABLE... Weight" />
+                <marker date="1483872360000" expanded="true" signature="4364:4466" ph="CREATE TABLE... Weight" />
+                <marker date="1483872360000" expanded="true" signature="4601:4730" ph="CREATE TABLE... PMI" />
+                <marker date="1483872360000" expanded="true" signature="4874:5003" ph="CREATE TABLE... PMI" />
+                <marker date="1483872360000" expanded="true" signature="5133:5262" ph="CREATE TABLE... PMI" />
+                <marker date="1483872360000" expanded="true" signature="5388:5517" ph="CREATE TABLE... PMI" />
+                <marker date="1483872360000" expanded="true" signature="5653:5785" ph="CREATE TABLE... Aspects" />
+                <marker date="1483872360000" expanded="true" signature="5925:6057" ph="CREATE TABLE... Reviews" />
+                <marker date="1483872360000" expanded="true" signature="6201:6280" ph="CREATE TABLE... Sentences" />
+                <marker date="1483872360000" expanded="true" signature="6404:6536" ph="CREATE TABLE... Aspects" />
+                <marker date="1483872360000" expanded="true" signature="6651:6730" ph="CREATE TABLE... Sentences" />
+                <marker date="1483872360000" expanded="true" signature="6898:6964" ph="INSERT INTO Weight... " />
+                <marker date="1483872360000" expanded="true" signature="7131:7206" ph="INSERT INTO Weight... " />
+                <marker date="1483872360000" expanded="true" signature="7400:7498" ph="INSERT INTO PMI... " />
+                <marker date="1483872360000" expanded="true" signature="7705:7803" ph="INSERT INTO PMI... " />
+                <marker date="1483872360000" expanded="true" signature="7994:8092" ph="INSERT INTO PMI... " />
+                <marker date="1483872360000" expanded="true" signature="8287:8385" ph="INSERT INTO PMI... " />
+                <marker date="1483872360000" expanded="true" signature="8533:8588" ph="INSERT INTO Sentences... " />
+                <marker date="1483872360000" expanded="true" signature="8756:8875" ph="INSERT INTO Aspects... " />
+                <marker date="1483872360000" expanded="true" signature="9120:9239" ph="INSERT INTO Aspects... " />
+                <marker date="1483872360000" expanded="true" signature="9483:9602" ph="INSERT INTO Reviews... " />
+                <marker date="1483872360000" expanded="true" signature="9802:9872" ph="INSERT INTO Sentences... " />
+                <marker date="1483872360000" expanded="true" signature="10113:10149" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="153" column="21" lean-forward="false" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
+            <state relative-caret-position="150">
+              <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
               <folding>
-                <marker date="1484206798000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
-                <marker date="1484206798000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
-                <marker date="1484206798000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
-                <marker date="1484206798000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
-                <marker date="1484206798000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
-                <marker date="1484206798000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
+                <marker date="1484215891000" expanded="true" signature="1010:1031" ph="SELECT * FRO... Reviews" />
+                <marker date="1484215891000" expanded="true" signature="1505:1528" ph="SELECT * FRO... Sentences" />
+                <marker date="1484215891000" expanded="true" signature="1878:1899" ph="SELECT * FRO... Aspects" />
+                <marker date="1484215891000" expanded="true" signature="3012:3038" ph="SELECT * FRO... IdealAspects" />
+                <marker date="1484215891000" expanded="true" signature="3938:3958" ph="SELECT * FRO... Review" />
+                <marker date="1484215891000" expanded="true" signature="4029:4050" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -113,8 +144,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\\</find>
       <find>calculate_pmi_review</find>
+      <find>\\</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -175,8 +206,8 @@
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
         <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
-        <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/Main.py" />
+        <option value="$PROJECT_DIR$/aspects/PMI.py" />
       </list>
     </option>
   </component>
@@ -871,7 +902,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="2190">
           <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
             <marker date="1483468891000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
@@ -880,9 +911,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="90" column="37" lean-forward="false" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <marker date="1484215891000" expanded="true" signature="1010:1031" ph="SELECT * FRO... Reviews" />
+            <marker date="1484215891000" expanded="true" signature="1505:1528" ph="SELECT * FRO... Sentences" />
+            <marker date="1484215891000" expanded="true" signature="1878:1899" ph="SELECT * FRO... Aspects" />
+            <marker date="1484215891000" expanded="true" signature="3012:3038" ph="SELECT * FRO... IdealAspects" />
+            <marker date="1484215891000" expanded="true" signature="3938:3958" ph="SELECT * FRO... Review" />
+            <marker date="1484215891000" expanded="true" signature="4029:4050" ph="SELECT * FRO... Aspects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
+        <state relative-caret-position="2130">
           <caret line="143" column="39" lean-forward="false" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
           <folding>
             <marker date="1483872360000" expanded="true" signature="4139:4233" ph="CREATE TABLE... Weight" />
@@ -908,46 +971,6 @@
             <marker date="1483872360000" expanded="true" signature="9483:9602" ph="INSERT INTO Reviews... " />
             <marker date="1483872360000" expanded="true" signature="9802:9872" ph="INSERT INTO Sentences... " />
             <marker date="1483872360000" expanded="true" signature="10113:10149" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="90" column="37" lean-forward="false" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-          <folding>
-            <element signature="e#92#1474#0" expanded="false" />
-            <element signature="e#1548#2619#0" expanded="false" />
-            <element signature="e#2693#3014#0" expanded="false" />
-            <marker date="1483872360000" expanded="true" signature="3127:3147" ph="SELECT * FRO... Weight" />
-            <marker date="1483872360000" expanded="true" signature="3430:3447" ph="SELECT * FRO... PMI" />
-            <marker date="1483872360000" expanded="true" signature="3516:3533" ph="SELECT * FRO... PMI" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="56" column="19" lean-forward="false" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="153" column="21" lean-forward="false" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
-          <folding>
-            <marker date="1484206798000" expanded="true" signature="1016:1037" ph="SELECT * FRO... Reviews" />
-            <marker date="1484206798000" expanded="true" signature="1511:1534" ph="SELECT * FRO... Sentences" />
-            <marker date="1484206798000" expanded="true" signature="1884:1905" ph="SELECT * FRO... Aspects" />
-            <marker date="1484206798000" expanded="true" signature="3018:3044" ph="SELECT * FRO... IdealAspects" />
-            <marker date="1484206798000" expanded="true" signature="3944:3964" ph="SELECT * FRO... Review" />
-            <marker date="1484206798000" expanded="true" signature="4035:4056" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
