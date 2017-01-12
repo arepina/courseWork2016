@@ -1,6 +1,7 @@
 from aspects.Aspects import Aspects
 from aspects.DB import DB
 from aspects.PMI import PMI
+from aspects.SemanticDistanceLearning import SemanticDistanceLearning
 
 db = DB()  # data base
 aspect = Aspects()
@@ -42,25 +43,27 @@ sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
 # start = datetime.now()  # ideal aspects from file + reviews
 # print(start)
 # db.create_pmi_ideal_review_db()
-# pmi.calculate_pmi_review(reviews_corpus, 2, ideal_aspects_from_train_files, db)
+# pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
 # db.conn_pmi_ideal_review.commit()
 # print(datetime.now() - start)
 # start = datetime.now()  # ideal aspects from file + sentences
 # print(start)
 # db.create_pmi_ideal_sentence_db()
-# pmi.calculate_pmi_review(sentences_corpus, 3, ideal_aspects_from_train_files, db)
+# pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
 # db.conn_pmi_ideal_sentence.commit()
 # print(datetime.now() - start)
 vocabulary = pmi.get_vocabulary(db)
 # db.create_pmi_review_db()
-# pmi.calculate_pmi_review(reviews_corpus, 0, vocabulary, db)
+# pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
 # db.conn_pmi_review.commit()
 db.create_pmi_sentence_db()
-pmi.calculate_pmi_sentence(sentences_corpus, vocabulary, db)
+pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
 db.conn_pmi_sentence.commit()
-# semantic_learning = SemanticDistanceLearning()
+semantic_learning = SemanticDistanceLearning()
 # db.create_path_weight_db()
 # semantic_learning.calculate_ground_truth_distance(db)
+db.create_semantic_distance_db()
+semantic_learning.process_semantic_distance_learning(db)
 
 # len(data, labels) = 24093
 # len(train_data, train_labels) = 19274
