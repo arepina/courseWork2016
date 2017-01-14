@@ -14,3 +14,4 @@ db/Reviews.db filter=lfs diff=lfs merge=lfs -text
 db/Reviews_One_Word.db filter=lfs diff=lfs merge=lfs -text
 db/Sentence.db filter=lfs diff=lfs merge=lfs -text
 db/Sentences_One_Word.db filter=lfs diff=lfs merge=lfs -text
+aspects/pmi_review.txt filter=lfs diff=lfs merge=lfs -text

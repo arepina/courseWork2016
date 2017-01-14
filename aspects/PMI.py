@@ -189,7 +189,6 @@ class PMI:
             if count % 1000 == 0:
                 db.conn_pmi_sentence.commit()
 
-
     @staticmethod
     def create_col_array(matrix, matrix_terms_len):
         array = []
@@ -198,3 +197,20 @@ class PMI:
             col = np.array(matrix[:, i].T.toarray())
             array.append(col)
         return array
+
+    @staticmethod
+    def move_pmi_review_db_to_file(db):
+        row = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
+        f = open('pmi_review.txt', 'w')
+        count = 0
+        while row is not None:
+            count += 1
+            aspect1 = str(row[0])
+            aspect2 = str(row[1])
+            pmi_review = float(row[5])
+            s = aspect1 + ";" + aspect2 + ";" + str(pmi_review) + "\n"
+            f.write(s)
+            row = db.cursor_pmi_review.fetchone()
+            if count % 100000 == 0:
+                print(count)
+        f.close()

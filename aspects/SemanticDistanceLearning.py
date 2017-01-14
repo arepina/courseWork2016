@@ -88,9 +88,8 @@ class SemanticDistanceLearning:
             aspect2 = str(row_review[1])
             pmi_review = float(row_review[5])
             pmi_sentence = float(row_sentence[5])
-            w = self.calculate_distance(pmi_review, pmi_sentence, db)
-            # todo undersatnd the logic of eq.(1)
-            d = w * pmi_review + w * pmi_sentence
+            w = self.calculate_distance(pmi_review, pmi_sentence, db)  # will return a vector with two values
+            d = w[0] * pmi_review + w[1] * pmi_sentence
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()

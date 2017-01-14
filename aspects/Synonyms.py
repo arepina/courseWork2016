@@ -1,3 +1,6 @@
+import re
+
+
 class Synonyms:
 
     def find_synonyms(self, ideal):
