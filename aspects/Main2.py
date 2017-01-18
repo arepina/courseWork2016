@@ -1,4 +1,4 @@
-from aspects.Aspects import Aspects
+from aspects import Aspects
 
-aspect = Aspects()
+aspect = Aspects.Aspects()
 print(42)
