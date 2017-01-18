@@ -1,5 +1,5 @@
-from aspects import Aspects
-import os
-print(os.getcwd())
-aspect = Aspects.Aspects()
+from aspects.AllAspects import Aspects
+
+aspect = Aspects()
+aspect.replacer("fkfkdf/")
 print(42)

@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 
-from aspects.Aspects import Aspects
+from aspects.AllAspects import Aspects
 from aspects.DB import DB
 from aspects.IdealAspectsDB import IdealAspectsDB
 from aspects.OneClassSVM import OneClassSVM
