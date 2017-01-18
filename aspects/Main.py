@@ -1,13 +1,13 @@
 from sklearn.model_selection import train_test_split
 
-from aspects.AllAspects import Aspects
-from aspects.DB import DB
-from aspects.IdealAspectsDB import IdealAspectsDB
-from aspects.OneClassSVM import OneClassSVM
-from aspects.PMI import PMI
-from aspects.SemanticDistanceLearning import SemanticDistanceLearning
-from aspects.Sentence import Sentence
-from aspects.Splitter import Splitter
+from AllAspects import Aspects
+from DB import DB
+from IdealAspectsDB import IdealAspectsDB
+from OneClassSVM import OneClassSVM
+from PMI import PMI
+from SemanticDistanceLearning import SemanticDistanceLearning
+from Sentence import Sentence
+from Splitter import Splitter
 
 
 def aspects_process():
