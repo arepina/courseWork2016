@@ -159,7 +159,7 @@ class PMI:
         matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
         final_matrix = np.array([matrix_terms, matrix_freq])
         col_array = self.create_col_array(matrix, len(matrix_terms))
-        #col_array = np.array(col_array)
+        col_array = np.array(col_array)
         from math import log
         for i in range(len(matrix_terms)):
             print(count)
