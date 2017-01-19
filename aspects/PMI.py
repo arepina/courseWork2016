@@ -186,7 +186,7 @@ class PMI:
                     db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
                                               both_num, pmi_val)
             print(datetime.now() - start)
-            if count % 1000 == 0:
+            if count % 200 == 0:
                 db.conn_pmi_sentence.commit()
 
     @staticmethod
