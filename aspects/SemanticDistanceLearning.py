@@ -76,13 +76,14 @@ class SemanticDistanceLearning:
         row = db.cursor_path_weight.execute("SELECT * FROM Weight").fetchone()
         vector = []
         while row is not None:
-            vector.append(int(row[2]))
+            vector.append(int(row[3]))
             row = db.cursor_path_weight.fetchone()
         return vector
 
     def process_semantic_distance_learning(self, db):
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
-        row_sentence = db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
+        # todo change here later db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
+        row_sentence = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
         while row_review is not None:
             aspect1 = str(row_review[0])
             aspect2 = str(row_review[1])

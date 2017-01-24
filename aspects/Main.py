@@ -91,8 +91,8 @@ aspect = Aspects()
 # aspects_process()
 # sentence_process()
 # split_process()
-pmi_process()
-# semantic_learning_process()
+# pmi_process()
+semantic_learning_process()
 
 
 # Sizes data
