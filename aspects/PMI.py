@@ -26,6 +26,31 @@ class PMI:
         return ideal_aspects_from_file
 
     @staticmethod
+    def iterate_ideal_aspects_files(pmi, reviews_corpus, sentences_corpus, db):
+        import os
+        path = os.getcwd()
+        filenames = os.listdir(path + "/../productTrees/Subcategories")
+        os.chdir(path + "/../productTrees/Subcategories")
+        count = 0
+        for filename in filenames:
+            ideal_aspects_from_file = {}
+            with open(filename) as f:
+                lines = f.readlines()
+            arr = lines[0].split(";")
+            for val in arr:
+                val = val.replace(" ", "_").lower()
+                val = val.replace(",_", "_")
+                if val not in ideal_aspects_from_file:
+                    ideal_aspects_from_file[val] = count
+                    count += 1
+            # ideal aspects from file + reviews
+            pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_file, db)
+            db.conn_pmi_ideal_review.commit()
+            # ideal aspects from file + sentences
+            pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_file, db)
+            db.conn_pmi_ideal_sentence.commit()
+
+    @staticmethod
     def get_all_reviews_corpus(db):
         reviews = []
         row_review = db.cursor_reviews_one_word.execute('SELECT * FROM Reviews').fetchone()

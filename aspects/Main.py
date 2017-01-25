@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 
-from aspects.AllAspects import Aspects
+from aspects.Aspects import Aspects
 from aspects.DB import DB
 from aspects.IdealAspectsDB import IdealAspectsDB
 from aspects.OneClassSVM import OneClassSVM
@@ -53,29 +53,31 @@ def split_process():
 
 def pmi_process():
     pmi = PMI()
-    # reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
+    reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
     sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
-    # ideal_aspects_from_train_files = pmi.get_all_ideal_aspects_from_train_files()
-    # start = datetime.now()  # ideal aspects from file + reviews
-    # print(start)
-    # db.create_pmi_ideal_review_db()
-    # pmi.calculate_pmi(reviews_corpus, 2, ideal_aspects_from_train_files, db)
-    # db.conn_pmi_ideal_review.commit()
-    # print(datetime.now() - start)
-    # start = datetime.now()  # ideal aspects from file + sentences
-    # print(start)
-    # db.create_pmi_ideal_sentence_db()
-    # pmi.calculate_pmi(sentences_corpus, 3, ideal_aspects_from_train_files, db)
-    # db.conn_pmi_ideal_sentence.commit()
-    # print(datetime.now() - start)
+    # pmi_ideal(pmi, reviews_corpus, sentences_corpus) # ideal
     vocabulary = pmi.get_vocabulary(db)
-    # db.create_pmi_review_db()
-    # pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
-    # db.conn_pmi_review.commit()
-    # pmi.move_pmi_review_db_to_file(db)
+    # pmi_review(pmi, reviews_corpus, vocabulary)
+    pmi_sentence(pmi, sentences_corpus, vocabulary)
+
+
+def pmi_review(pmi, reviews_corpus, vocabulary):
+    db.create_pmi_review_db()
+    pmi.calculate_pmi(reviews_corpus, 0, vocabulary, db)
+    db.conn_pmi_review.commit()
+    pmi.move_pmi_review_db_to_file(db)
+
+
+def pmi_sentence(pmi, sentences_corpus, vocabulary):
     db.create_pmi_sentence_db()
     pmi.calculate_pmi(sentences_corpus, 1, vocabulary, db)
     db.conn_pmi_sentence.commit()
+
+
+def pmi_ideal(pmi, reviews_corpus, sentences_corpus):
+    db.create_pmi_ideal_review_db()
+    db.create_pmi_ideal_sentence_db()
+    pmi.iterate_ideal_aspects_files(pmi, reviews_corpus, sentences_corpus, db)
 
 
 def semantic_learning_process():

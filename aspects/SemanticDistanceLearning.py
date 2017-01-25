@@ -61,14 +61,26 @@ class SemanticDistanceLearning:
         else:
             return deep_num_node + deep_num_node_next
 
-    def calculate_distance(self, pmi_review, pmi_sentence, db):
+    def calculate_distance(self, db):
+        row_review_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
+        row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
+        pmis_arr = []
         import numpy as np
-        f = np.array([[pmi_review, pmi_sentence]])  # pmi's vector
+        while row_review_ideal is not None:
+            all_pmis = []
+            pmi_r = float(row_review_ideal[5])
+            pmi_s = float(row_sentence_ideal[5])
+            all_pmis.append(pmi_r)
+            all_pmis.append(pmi_s)
+            pmis_arr.append(all_pmis)
+            row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
+            row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
+        f = np.array(pmis_arr)  # pmi's vector
         d = self.vector_with_ground_truth_distances(db)
         matrix_size = 2
         i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
-        w = np.power(f.T * f + nu * i, -1) * (f.T * d)
+        w = np.power(np.dot(f.T,f) + nu * i, -1) * (np.dot(f.T,d))
         return w
 
     @staticmethod
@@ -84,12 +96,12 @@ class SemanticDistanceLearning:
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
         # todo change here later db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
         row_sentence = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
+        w = self.calculate_distance(db)  # will return a vector with two values
         while row_review is not None:
             aspect1 = str(row_review[0])
             aspect2 = str(row_review[1])
             pmi_review = float(row_review[5])
             pmi_sentence = float(row_sentence[5])
-            w = self.calculate_distance(pmi_review, pmi_sentence, db)  # will return a vector with two values
             d = w[0] * pmi_review + w[1] * pmi_sentence
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
