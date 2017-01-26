@@ -82,10 +82,10 @@ def pmi_ideal(pmi, reviews_corpus, sentences_corpus):
 
 def semantic_learning_process():
     semantic_learning = SemanticDistanceLearning()
-    db.create_path_weight_db()
-    semantic_learning.calculate_ground_truth_distance(db)
-    # db.create_semantic_distance_db()
-    # semantic_learning.process_semantic_distance_learning(db)
+    # db.create_path_weight_db()
+    # semantic_learning.calculate_ground_truth_distance(db)
+    db.create_semantic_distance_db()
+    semantic_learning.process_semantic_distance_learning(db)
 
 
 db = DB()  # data base
@@ -93,8 +93,8 @@ aspect = Aspects()
 # aspects_process()
 # sentence_process()
 # split_process()
-pmi_process()
-# semantic_learning_process()
+# pmi_process()
+semantic_learning_process()
 
 
 # Sizes data

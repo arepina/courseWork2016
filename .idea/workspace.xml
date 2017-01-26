@@ -2,42 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/PMI.py" afterPath="$PROJECT_DIR$/aspects/PMI.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1485368406988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1485416140020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
     <SUITE FILE_PATH="coverage/courseWork2016$PMIHelper.coverage" NAME="PMIHelper Coverage Results" MODIFIED="1481117729759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
@@ -91,45 +58,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-              <folding>
-                <marker date="1483872360000" expanded="true" signature="4139:4233" ph="CREATE TABLE... Weight" />
-                <marker date="1483872360000" expanded="true" signature="4364:4466" ph="CREATE TABLE... Weight" />
-                <marker date="1483872360000" expanded="true" signature="4601:4730" ph="CREATE TABLE... PMI" />
-                <marker date="1483872360000" expanded="true" signature="4874:5003" ph="CREATE TABLE... PMI" />
-                <marker date="1483872360000" expanded="true" signature="5133:5262" ph="CREATE TABLE... PMI" />
-                <marker date="1483872360000" expanded="true" signature="5388:5517" ph="CREATE TABLE... PMI" />
-                <marker date="1483872360000" expanded="true" signature="5653:5785" ph="CREATE TABLE... Aspects" />
-                <marker date="1483872360000" expanded="true" signature="5925:6057" ph="CREATE TABLE... Reviews" />
-                <marker date="1483872360000" expanded="true" signature="6201:6280" ph="CREATE TABLE... Sentences" />
-                <marker date="1483872360000" expanded="true" signature="6404:6536" ph="CREATE TABLE... Aspects" />
-                <marker date="1483872360000" expanded="true" signature="6651:6730" ph="CREATE TABLE... Sentences" />
-                <marker date="1483872360000" expanded="true" signature="6898:6964" ph="INSERT INTO Weight... " />
-                <marker date="1483872360000" expanded="true" signature="7131:7206" ph="INSERT INTO Weight... " />
-                <marker date="1483872360000" expanded="true" signature="7400:7498" ph="INSERT INTO PMI... " />
-                <marker date="1483872360000" expanded="true" signature="7705:7803" ph="INSERT INTO PMI... " />
-                <marker date="1483872360000" expanded="true" signature="7994:8092" ph="INSERT INTO PMI... " />
-                <marker date="1483872360000" expanded="true" signature="8287:8385" ph="INSERT INTO PMI... " />
-                <marker date="1483872360000" expanded="true" signature="8533:8588" ph="INSERT INTO Sentences... " />
-                <marker date="1483872360000" expanded="true" signature="8756:8875" ph="INSERT INTO Aspects... " />
-                <marker date="1483872360000" expanded="true" signature="9120:9239" ph="INSERT INTO Aspects... " />
-                <marker date="1483872360000" expanded="true" signature="9483:9602" ph="INSERT INTO Reviews... " />
-                <marker date="1483872360000" expanded="true" signature="9802:9872" ph="INSERT INTO Sentences... " />
-                <marker date="1483872360000" expanded="true" signature="10113:10149" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+            <state relative-caret-position="278">
+              <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -137,22 +70,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
+      <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+            <state relative-caret-position="271">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding>
-                <element signature="e#199#876#0" expanded="false" />
-                <element signature="e#6015#6620#0" expanded="false" />
-                <marker date="1485377802000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
-                <marker date="1485377802000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
-                <marker date="1485377802000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
-                <marker date="1485377802000" expanded="true" signature="4144:4170" ph="SELECT * FRO... IdealAspects" />
-                <marker date="1485377802000" expanded="true" signature="5070:5090" ph="SELECT * FRO... Review" />
-                <marker date="1485377802000" expanded="true" signature="5161:5182" ph="SELECT * FRO... Aspects" />
-                <marker date="1485377802000" expanded="true" signature="9461:9478" ph="SELECT * FRO... PMI" />
+                <element signature="e#1548#2619#0" expanded="false" />
+                <marker date="1485416140000" expanded="true" signature="2722:2739" ph="SELECT * FRO... PMI" />
+                <marker date="1485416140000" expanded="true" signature="2820:2837" ph="SELECT * FRO... PMI" />
+                <marker date="1485416140000" expanded="true" signature="3717:3737" ph="SELECT * FRO... Weight" />
+                <marker date="1485416140000" expanded="true" signature="4020:4037" ph="SELECT * FRO... PMI" />
+                <marker date="1485416140000" expanded="true" signature="4200:4217" ph="SELECT * FRO... PMI" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="defmatrix.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/matrixlib/defmatrix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -234,9 +174,9 @@
         <option value="$PROJECT_DIR$/aspects/Synonyms.py" />
         <option value="$PROJECT_DIR$/aspects/_init_.py" />
         <option value="$PROJECT_DIR$/aspects/Main2.py" />
-        <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
-        <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/PMI.py" />
+        <option value="$PROJECT_DIR$/aspects/Main.py" />
+        <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
       </list>
     </option>
   </component>
@@ -701,7 +641,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="133" y="84" width="1023" height="735" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639296" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -713,7 +653,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4099099" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4099099" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -910,18 +850,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/pmi_review.txt" />
     <entry file="file://$PROJECT_DIR$/aspects/Main2.py" />
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/matrixlib/defmatrix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="337" column="0" lean-forward="false" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/_init_.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-337">
           <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,15 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-952">
           <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="611:685" ph="CREATE TABLE... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="880:900" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1431:1474" ph="SELECT numbe... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="1585:1635" ph="INSERT INTO IDFHelper... " />
-            <marker date="1482233294000" expanded="true" signature="1776:1822" ph="UPDATE IDFHe... " />
-            <marker date="1482233294000" expanded="true" signature="2539:2562" ph="SELECT * FRO... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="3496:3532" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -953,7 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
           <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,13 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <element signature="e#100#1594#0" expanded="false" />
-            <element signature="e#1648#4298#0" expanded="false" />
-            <marker date="1482233294000" expanded="true" signature="140:160" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1688:1708" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1779:1800" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -975,14 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-202">
           <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="109:130" ph="SELECT * FRO... Reviews" />
-            <marker date="1482233294000" expanded="true" signature="487:553" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="885:957" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="1289:1351" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="1606:1629" ph="SELECT * FRO... Sentences" />
-            <marker date="1482233294000" expanded="true" signature="2027:2079" ph="UPDATE Sente... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -990,9 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-37">
           <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <marker date="1484321218000" expanded="true" signature="116:142" ph="SELECT * FRO... IdealAspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,10 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <marker date="1482233295000" expanded="true" signature="379:420" ph="SELECT DISTI... Review" />
-            <marker date="1482233295000" expanded="true" signature="614:658" ph="SELECT DISTI... Review" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,9 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="1382:1465" ph="UPDATE Ideal... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1021,20 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="150" column="59" lean-forward="false" selection-start-line="150" selection-start-column="59" selection-end-line="150" selection-end-column="59" />
-          <folding>
-            <element signature="e#662#2201#0" expanded="false" />
-            <element signature="e#2336#3312#0" expanded="false" />
-            <element signature="e#3400#4080#0" expanded="false" />
-            <element signature="e#4149#4406#0" expanded="false" />
-            <element signature="e#4476#5543#0" expanded="false" />
-            <element signature="e#5595#6170#0" expanded="false" />
-            <element signature="e#6231#6507#0" expanded="false" />
-            <element signature="e#6637#6941#0" expanded="false" />
-            <element signature="e#7011#7909#0" expanded="false" />
-            <element signature="e#7977#8214#0" expanded="false" />
-            <marker date="1483468891000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
-            <marker date="1483468891000" expanded="true" signature="7051:7072" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1048,7 +930,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
+        <state relative-caret-position="1335">
           <caret line="90" column="20" lean-forward="false" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
           <folding>
             <marker date="1483872360000" expanded="true" signature="4139:4233" ph="CREATE TABLE... Weight" />
@@ -1078,31 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
-          <folding>
-            <element signature="e#1548#2619#0" expanded="false" />
-            <marker date="1485367335000" expanded="true" signature="2722:2739" ph="SELECT * FRO... PMI" />
-            <marker date="1485367335000" expanded="true" signature="2820:2837" ph="SELECT * FRO... PMI" />
-            <marker date="1485367335000" expanded="true" signature="3723:3743" ph="SELECT * FRO... Weight" />
-            <marker date="1485367335000" expanded="true" signature="4026:4043" ph="SELECT * FRO... PMI" />
-            <marker date="1485367335000" expanded="true" signature="4206:4223" ph="SELECT * FRO... PMI" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -1117,6 +974,39 @@
             <marker date="1485377802000" expanded="true" signature="5070:5090" ph="SELECT * FRO... Review" />
             <marker date="1485377802000" expanded="true" signature="5161:5182" ph="SELECT * FRO... Aspects" />
             <marker date="1485377802000" expanded="true" signature="9461:9478" ph="SELECT * FRO... PMI" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/matrixlib/defmatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="e#1548#2619#0" expanded="false" />
+            <marker date="1485416140000" expanded="true" signature="2722:2739" ph="SELECT * FRO... PMI" />
+            <marker date="1485416140000" expanded="true" signature="2820:2837" ph="SELECT * FRO... PMI" />
+            <marker date="1485416140000" expanded="true" signature="3717:3737" ph="SELECT * FRO... Weight" />
+            <marker date="1485416140000" expanded="true" signature="4020:4037" ph="SELECT * FRO... PMI" />
+            <marker date="1485416140000" expanded="true" signature="4200:4217" ph="SELECT * FRO... PMI" />
           </folding>
         </state>
       </provider>

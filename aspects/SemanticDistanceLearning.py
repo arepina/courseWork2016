@@ -80,7 +80,7 @@ class SemanticDistanceLearning:
         matrix_size = 2
         i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
-        w = np.power(np.dot(f.T,f) + nu * i, -1) * (np.dot(f.T,d))
+        w = np.power(np.dot(f.T,f) + nu * i, -1) * (f.T * d)
         return w
 
     @staticmethod
