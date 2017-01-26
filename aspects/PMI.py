@@ -31,8 +31,9 @@ class PMI:
         path = os.getcwd()
         filenames = os.listdir(path + "/../productTrees/Subcategories")
         os.chdir(path + "/../productTrees/Subcategories")
-        count = 0
         for filename in filenames:
+            print(filename)
+            count = 0
             ideal_aspects_from_file = {}
             with open(filename) as f:
                 lines = f.readlines()

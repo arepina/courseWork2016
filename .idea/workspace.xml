@@ -3,6 +3,41 @@
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/PMI.py" afterPath="$PROJECT_DIR$/aspects/PMI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/GPS навигаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/IP камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/MP3-плееры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/NAS, DAS хранилища данных.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Wi-Fi адаптеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Беспроводные маршрутизаторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Веб-камеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Видеокамеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Виртуальная реальность.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Графические планшеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Зеркальные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые манипуляторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Игровые приставки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Каталог диктофонов.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотоаппараты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компактные фотопринтеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры-моноблоки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мобильные телефоны.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мониторы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Мыши и клавиатуры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ноутбуки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Планшетные компьютеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Платформы для досборки.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Портативная акустика класса Hi-Fi.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Принтеры (МФУ).txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Ручные радиостанции.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Сканеры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Смарт-часы.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Телевизоры.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Точки доступа.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фитнес-браслеты.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Фотоаппараты моментальной печати.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" afterPath="$PROJECT_DIR$/productTrees/Subcategories old/Электронные книги и чехлы.txt" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,13 +128,10 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="50">
+              <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#2814#2967#0" expanded="false" />
-                <element signature="e#3027#3147#0" expanded="false" />
-                <element signature="e#3396#3633#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -108,18 +140,18 @@
       <file leaf-file-name="PMI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            <state relative-caret-position="118">
+              <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding>
                 <element signature="e#199#876#0" expanded="false" />
-                <element signature="e#5983#6588#0" expanded="false" />
-                <marker date="1485368270000" expanded="true" signature="2110:2131" ph="SELECT * FRO... Reviews" />
-                <marker date="1485368270000" expanded="true" signature="2605:2628" ph="SELECT * FRO... Sentences" />
-                <marker date="1485368270000" expanded="true" signature="2978:2999" ph="SELECT * FRO... Aspects" />
-                <marker date="1485368270000" expanded="true" signature="4112:4138" ph="SELECT * FRO... IdealAspects" />
-                <marker date="1485368270000" expanded="true" signature="5038:5058" ph="SELECT * FRO... Review" />
-                <marker date="1485368270000" expanded="true" signature="5129:5150" ph="SELECT * FRO... Aspects" />
-                <marker date="1485368270000" expanded="true" signature="9429:9446" ph="SELECT * FRO... PMI" />
+                <element signature="e#6015#6620#0" expanded="false" />
+                <marker date="1485377802000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+                <marker date="1485377802000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+                <marker date="1485377802000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+                <marker date="1485377802000" expanded="true" signature="4144:4170" ph="SELECT * FRO... IdealAspects" />
+                <marker date="1485377802000" expanded="true" signature="5070:5090" ph="SELECT * FRO... Review" />
+                <marker date="1485377802000" expanded="true" signature="5161:5182" ph="SELECT * FRO... Aspects" />
+                <marker date="1485377802000" expanded="true" signature="9461:9478" ph="SELECT * FRO... PMI" />
               </folding>
             </state>
           </provider>
@@ -681,7 +713,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4099099" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4099099" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,16 +779,6 @@
           <url>file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py</url>
           <line>83</line>
           <option name="timeStamp" value="1044" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/PMI.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="1047" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/PMI.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="1048" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1073,31 +1095,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state relative-caret-position="50">
+          <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#2814#2967#0" expanded="false" />
-            <element signature="e#3027#3147#0" expanded="false" />
-            <element signature="e#3396#3633#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        <state relative-caret-position="118">
+          <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding>
             <element signature="e#199#876#0" expanded="false" />
-            <element signature="e#5983#6588#0" expanded="false" />
-            <marker date="1485368270000" expanded="true" signature="2110:2131" ph="SELECT * FRO... Reviews" />
-            <marker date="1485368270000" expanded="true" signature="2605:2628" ph="SELECT * FRO... Sentences" />
-            <marker date="1485368270000" expanded="true" signature="2978:2999" ph="SELECT * FRO... Aspects" />
-            <marker date="1485368270000" expanded="true" signature="4112:4138" ph="SELECT * FRO... IdealAspects" />
-            <marker date="1485368270000" expanded="true" signature="5038:5058" ph="SELECT * FRO... Review" />
-            <marker date="1485368270000" expanded="true" signature="5129:5150" ph="SELECT * FRO... Aspects" />
-            <marker date="1485368270000" expanded="true" signature="9429:9446" ph="SELECT * FRO... PMI" />
+            <element signature="e#6015#6620#0" expanded="false" />
+            <marker date="1485377802000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+            <marker date="1485377802000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+            <marker date="1485377802000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+            <marker date="1485377802000" expanded="true" signature="4144:4170" ph="SELECT * FRO... IdealAspects" />
+            <marker date="1485377802000" expanded="true" signature="5070:5090" ph="SELECT * FRO... Review" />
+            <marker date="1485377802000" expanded="true" signature="5161:5182" ph="SELECT * FRO... Aspects" />
+            <marker date="1485377802000" expanded="true" signature="9461:9478" ph="SELECT * FRO... PMI" />
           </folding>
         </state>
       </provider>

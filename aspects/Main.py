@@ -53,12 +53,12 @@ def split_process():
 
 def pmi_process():
     pmi = PMI()
-    reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
+    # reviews_corpus = pmi.get_all_reviews_corpus(db)  # reviews
     sentences_corpus = pmi.get_all_sentences_corpus(db)  # sentences
-    pmi_ideal(pmi, reviews_corpus, sentences_corpus)  # ideal
-    # vocabulary = pmi.get_vocabulary(db)
+    # pmi_ideal(pmi, reviews_corpus, sentences_corpus)  # ideal
+    vocabulary = pmi.get_vocabulary(db)
     # pmi_review(pmi, reviews_corpus, vocabulary)
-    # pmi_sentence(pmi, sentences_corpus, vocabulary)
+    pmi_sentence(pmi, sentences_corpus, vocabulary)
 
 
 def pmi_review(pmi, reviews_corpus, vocabulary):
@@ -82,10 +82,10 @@ def pmi_ideal(pmi, reviews_corpus, sentences_corpus):
 
 def semantic_learning_process():
     semantic_learning = SemanticDistanceLearning()
-    # db.create_path_weight_db()
-    # semantic_learning.calculate_ground_truth_distance(db)
-    db.create_semantic_distance_db()
-    semantic_learning.process_semantic_distance_learning(db)
+    db.create_path_weight_db()
+    semantic_learning.calculate_ground_truth_distance(db)
+    # db.create_semantic_distance_db()
+    # semantic_learning.process_semantic_distance_learning(db)
 
 
 db = DB()  # data base
