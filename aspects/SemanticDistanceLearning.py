@@ -76,11 +76,11 @@ class SemanticDistanceLearning:
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
         f = np.array(pmis_arr)  # pmi's vector
-        d = self.vector_with_ground_truth_distances(db)
+        d = np.array(self.vector_with_ground_truth_distances(db))
         matrix_size = 2
         i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
-        w = np.power(np.dot(f.T,f) + nu * i, -1) * (f.T * d)
+        w = np.dot(np.power(np.dot(f.T, f) + nu * i, -1), np.dot(f.T, d))
         return w
 
     @staticmethod
@@ -96,7 +96,8 @@ class SemanticDistanceLearning:
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
         # todo change here later db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
         row_sentence = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
-        w = self.calculate_distance(db)  # will return a vector with two values
+        import numpy as np
+        w = np.array(self.calculate_distance(db))[0]  # will return a vector with two values
         while row_review is not None:
             aspect1 = str(row_review[0])
             aspect2 = str(row_review[1])
