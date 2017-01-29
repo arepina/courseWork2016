@@ -16,6 +16,7 @@ class DB:
     conn_pmi_ideal_sentence = None
     conn_path_weight = None
     conn_semantic_distance = None
+    conn_context = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -34,6 +35,7 @@ class DB:
     cursor_pmi_ideal_sentence = None
     cursor_path_weight = None
     cursor_semantic_disctance = None
+    cursor_context = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -48,6 +50,7 @@ class DB:
     db_pmi_ideal_sentence_name = 'PMI_Ideal_Sentence.db'
     db_path_weight = "Path_Weight.db"
     db_semantic_distance = "Semantic_Distance.db"
+    db_context = "Context.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -65,6 +68,7 @@ class DB:
         self.conn_pmi_ideal_sentence = sqlite3.connect(path + "/../db/" + self.db_pmi_ideal_sentence_name)
         self.conn_path_weight = sqlite3.connect(path + "/../db/" + self.db_path_weight)
         self.conn_semantic_distance = sqlite3.connect(path + "/../db/" + self.db_semantic_distance)
+        self.conn_context = sqlite3.connect(path + "/../db/" + self.db_context)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -82,6 +86,12 @@ class DB:
         self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
         self.cursor_path_weight = self.conn_path_weight.cursor()
         self.cursor_semantic_disctance = self.conn_semantic_distance.cursor()
+        self.cursor_context = self.conn_context.cursor()
+
+    def create_context_db(self):
+        self.cursor_context.execute('''CREATE TABLE IF NOT EXISTS Context
+                        (aspect TEXT, context TEXT)''')
+        self.conn_context.commit()
 
     def create_semantic_distance_db(self):
         self.cursor_semantic_disctance.execute('''CREATE TABLE IF NOT EXISTS Distance
@@ -137,6 +147,11 @@ class DB:
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences
              (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_context(self, aspect, context):
+        self.cursor_context.execute(
+            'INSERT INTO Context (aspect, context) VALUES (?, ?)',
+            (aspect, context))
 
     def add_semantic_distance(self, aspect1, aspect2, distance):
         self.cursor_semantic_disctance.execute(
