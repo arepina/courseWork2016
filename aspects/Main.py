@@ -1,4 +1,3 @@
-import re
 from sklearn.model_selection import train_test_split
 
 from aspects.Aspects import Aspects
@@ -23,7 +22,7 @@ class Main:
         # self.aspects_process()
         # self.sentence_process()
         # self.split_process()
-        # self.pmi_process()
+        self.pmi_process()
         # self.semantic_learning_process()
         self.contextual_features()
 
@@ -68,7 +67,7 @@ class Main:
     def pmi_process(self):
         pmi = PMI()
         # reviews_corpus = pmi.get_all_reviews_corpus(self.db)  # reviews
-        sentences_corpus = pmi.get_all_sentences_corpus(self.db)  # sentences
+        # sentences_corpus = pmi.get_all_sentences_corpus(self.db)  # sentences
         # pmi_ideal(pmi, reviews_corpus, sentences_corpus)  # ideal
         self.vocabulary = pmi.get_vocabulary(self.db)
         # self.pmi_review(pmi, reviews_corpus, self.vocabulary)
