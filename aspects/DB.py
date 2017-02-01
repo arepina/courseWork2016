@@ -17,6 +17,8 @@ class DB:
     conn_path_weight = None
     conn_semantic_distance = None
     conn_context = None
+    conn_global_context = None
+    conn_local_context = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -34,8 +36,10 @@ class DB:
     cursor_pmi_ideal_review = None
     cursor_pmi_ideal_sentence = None
     cursor_path_weight = None
-    cursor_semantic_disctance = None
+    cursor_semantic_distance = None
     cursor_context = None
+    cursor_global_context = None
+    cursor_local_context = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -51,6 +55,8 @@ class DB:
     db_path_weight = "Path_Weight.db"
     db_semantic_distance = "Semantic_Distance.db"
     db_context = "Context.db"
+    db_global_context = "Global_Context.db"
+    db_local_context = "Local_Context.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -69,6 +75,8 @@ class DB:
         self.conn_path_weight = sqlite3.connect(path + "/../db/" + self.db_path_weight)
         self.conn_semantic_distance = sqlite3.connect(path + "/../db/" + self.db_semantic_distance)
         self.conn_context = sqlite3.connect(path + "/../db/" + self.db_context)
+        self.conn_global_context = sqlite3.connect(path + "/../db/" + self.db_global_context)
+        self.conn_local_context = sqlite3.connect(path + "/../db/" + self.db_local_context)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -85,8 +93,20 @@ class DB:
         self.cursor_pmi_ideal_review = self.conn_pmi_ideal_review.cursor()
         self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
         self.cursor_path_weight = self.conn_path_weight.cursor()
-        self.cursor_semantic_disctance = self.conn_semantic_distance.cursor()
+        self.cursor_semantic_distance = self.conn_semantic_distance.cursor()
         self.cursor_context = self.conn_context.cursor()
+        self.cursor_global_context = self.conn_global_context.cursor()
+        self.cursor_local_context = self.conn_local_context.cursor()
+
+    def create_context_global_db(self):
+        self.cursor_global_context.execute('''CREATE TABLE IF NOT EXISTS Context
+                        (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
+        self.conn_global_context.commit()
+
+    def create_context_local_db(self):
+        self.cursor_local_context.execute('''CREATE TABLE IF NOT EXISTS Context
+                        (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
+        self.conn_local_context.commit()
 
     def create_context_db(self):
         self.cursor_context.execute('''CREATE TABLE IF NOT EXISTS Context
@@ -94,7 +114,7 @@ class DB:
         self.conn_context.commit()
 
     def create_semantic_distance_db(self):
-        self.cursor_semantic_disctance.execute('''CREATE TABLE IF NOT EXISTS Distance
+        self.cursor_semantic_distance.execute('''CREATE TABLE IF NOT EXISTS Distance
                 (aspect1 TEXT, aspect2 TEXT, distance INT)''')
         self.conn_semantic_distance.commit()
 
@@ -148,13 +168,23 @@ class DB:
              (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
 
+    def add_context_global(self, aspect1, aspect2, kl_divergence):
+        self.cursor_global_context.execute(
+            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
+            (aspect1, aspect2, kl_divergence))
+
+    def add_context_local(self, aspect1, aspect2, kl_divergence):
+        self.cursor_local_context.execute(
+            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
+            (aspect1, aspect2, kl_divergence))
+
     def add_context(self, aspect, context):
         self.cursor_context.execute(
             'INSERT INTO Context (aspect, context) VALUES (?, ?)',
             (aspect, context))
 
     def add_semantic_distance(self, aspect1, aspect2, distance):
-        self.cursor_semantic_disctance.execute(
+        self.cursor_semantic_distance.execute(
             'INSERT INTO Distance (aspect1, aspect2, distance) VALUES (?, ?, ?)',
             (aspect1, aspect2, distance))
 

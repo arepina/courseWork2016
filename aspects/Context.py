@@ -1,15 +1,13 @@
-import nltk
 import numpy as np
-from nltk import ngrams
-from sklearn.feature_extraction.text import CountVectorizer
+import sklearn.feature_extraction.text
 
 
 class Context:
     def process(self, db, vocabulary):
         db.create_context_db()
         reviews = self.get_reviews(db)
-        # self.form_global_db(db, vocabulary, reviews)
-        self.global_context(vocabulary, db)
+        self.form_global_db(db, vocabulary, reviews)
+        self.global_context(db)
         self.local_context(vocabulary, db, reviews)
 
     @staticmethod
@@ -40,7 +38,7 @@ class Context:
                     words = review.split(' ')
                     aspect_indexes = np.where(np.array(words) == clear_aspect)[0]
                     for index in aspect_indexes:
-                        # if there is no 2 left or no 2 right words make their str empty = _
+                        # todo what to do if there is no 2 left or no 2 right words make their str empty = _
                         if index - 1 < 0:
                             left_1 = "_"
                         else:
@@ -67,27 +65,52 @@ class Context:
         # todo calculate the kl-divergence for local context
         pass
 
+    def global_context(self, db):
+        aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
+        context_db = {}
+        count = 0
+        db.create_context_global_db()
+        # count_vect = CountVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
+        ngram_size = 1
+        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(ngram_size, ngram_size))
+        while aspect_row is not None:
+            aspect = str(aspect_row[0])
+            context = str(aspect_row[1])
+            context_db[count] = [aspect, context]
+            aspect_row = db.cursor_context.fetchone()
+        for i in range(len(context_db)):
+            for j in range(i + 1, len(context_db)):
+                aspect1 = context_db[i][0]
+                aspect2 = context_db[j][0]
+                aspect1_context = context_db[i][1]
+                aspect2_context = context_db[j][1]
+                vectorizer.fit(aspect1_context)  # build ngram dictionary
+                ngram1 = vectorizer.transform(aspect1_context)  # get ngram
+                vectorizer.fit(aspect2_context)  # build ngram dictionary
+                ngram2 = vectorizer.transform(aspect2_context)  # get ngram
+                # tokens1 = nltk.word_tokenize(aspect1_context)  # we first tokenize the text corpus
+                # tokens2 = nltk.word_tokenize(aspect2_context)  # we first tokenize the text corpus
+                # model1 = self.unigram(tokens1)  # construct the unigram language model
+                # x1 = count_vect.fit_transform(doc[:-1] for doc in model1)
+                # model2 = self.unigram(tokens2)  # construct the unigram language model
+                # x2 = count_vect.fit_transform(doc[:-1] for doc in model2)
+                # calculate the kl-divergence for global context
+                kl_diver = self.kl_divergence(ngram1.toarray(), ngram2.toarray())
+                db.add_context_global(aspect1, aspect2, kl_diver)
+            db.conn_global_context.commit()
+
     @staticmethod
-    def global_context(vocabulary, db):
-        # aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
-        # while aspect_row is not None:
-        #     aspect = str(aspect_row[0])
-        #     context = str(aspect_row[1])
-        #     tokenize = nltk.word_tokenize(context)
-        #     four_grams = ngrams(tokenize, 4)
-        #     vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
-        #     matrix = vectorizer.fit_transform(four_grams)
-        #     matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
-        #     matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
-        #     # todo calculate the kl-divergence for global context
-        #     aspect_row = db.cursor_context.fetchone()
-        context = str("a b c d e f g h i g k l")
-        tokenize = nltk.word_tokenize(context)
-        four_grams = ngrams(tokenize, 4)
-        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
-        matrix = vectorizer.fit_transform(four_grams)
-        matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
-        matrix_freq = np.asarray(matrix.sum(axis=0)).ravel()  # number of each aspect
+    def unigram(tokens):
+        model = np.collections.defaultdict(lambda: 0.01)
+        for f in tokens:
+            try:
+                model[f] += 1
+            except KeyError:
+                model[f] = 1
+                continue
+        for word in model:
+            model[word] /= float(len(model))
+        return model
 
     @staticmethod
     def kl_divergence(p, q):
