@@ -66,24 +66,26 @@ class Context:
         pass
 
     def global_context(self, db):
-        aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
-        context_db = {}
-        count = 0
-        db.create_context_global_db()
-        # count_vect = CountVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
         ngram_size = 1
+        count = 0
+        context_for_aspects_dict = {}
+        db.create_context_global_db()
         vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(ngram_size, ngram_size))
+        # count_vect = CountVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
+        aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
-            context_db[count] = [aspect, context]
+            context_for_aspects_dict[count] = [aspect, context]
             aspect_row = db.cursor_context.fetchone()
-        for i in range(len(context_db)):
-            for j in range(i + 1, len(context_db)):
-                aspect1 = context_db[i][0]
-                aspect2 = context_db[j][0]
-                aspect1_context = context_db[i][1]
-                aspect2_context = context_db[j][1]
+            count += 1
+        for i in range(len(context_for_aspects_dict)):
+            for j in range(i + 1, len(context_for_aspects_dict)):
+                aspect1 = context_for_aspects_dict[i][0]
+                aspect2 = context_for_aspects_dict[j][0]
+                # the strs with many 4-words substrs which were calculated in form_global_db method for each aspect
+                aspect1_context = context_for_aspects_dict[i][1]
+                aspect2_context = context_for_aspects_dict[j][1]
                 vectorizer.fit(aspect1_context)  # build ngram dictionary
                 ngram1 = vectorizer.transform(aspect1_context)  # get ngram
                 vectorizer.fit(aspect2_context)  # build ngram dictionary
@@ -95,7 +97,7 @@ class Context:
                 # model2 = self.unigram(tokens2)  # construct the unigram language model
                 # x2 = count_vect.fit_transform(doc[:-1] for doc in model2)
                 # calculate the kl-divergence for global context
-                kl_diver = self.kl_divergence(ngram1.toarray(), ngram2.toarray())
+                kl_diver = self.kl_divergence(ngram1.toarray(), ngram2.toarray()) # send two unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
 

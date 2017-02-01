@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,15 +79,15 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-570">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="93" column="63" lean-forward="false" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#373#794#0" expanded="false" />
                 <element signature="e#871#2558#0" expanded="false" />
                 <element signature="e#2622#2687#0" expanded="false" />
-                <marker date="1485965570000" expanded="true" signature="434:454" ph="SELECT * FRO... Review" />
-                <marker date="1485965570000" expanded="true" signature="2771:2792" ph="SELECT * FRO... Context" />
+                <marker date="1485966563000" expanded="true" signature="434:454" ph="SELECT * FRO... Review" />
+                <marker date="1485966563000" expanded="true" signature="3083:3104" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -1078,15 +1076,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="348">
+          <caret line="93" column="63" lean-forward="false" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#373#794#0" expanded="false" />
             <element signature="e#871#2558#0" expanded="false" />
             <element signature="e#2622#2687#0" expanded="false" />
-            <marker date="1485965570000" expanded="true" signature="434:454" ph="SELECT * FRO... Review" />
-            <marker date="1485965570000" expanded="true" signature="2771:2792" ph="SELECT * FRO... Context" />
+            <marker date="1485966563000" expanded="true" signature="434:454" ph="SELECT * FRO... Review" />
+            <marker date="1485966563000" expanded="true" signature="3083:3104" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>
