@@ -4,11 +4,12 @@ import sklearn.feature_extraction.text
 
 class Context:
     def process(self, db, vocabulary):
+        reviews = self.get_reviews(db)  # get user reviews
         db.create_context_db()
-        reviews = self.get_reviews(db)
-        self.form_global_db(db, vocabulary, reviews)
-        self.global_context(db)
-        self.local_context(vocabulary, db, reviews)
+        # fill the db where the aspects with 4-words substrs as context their context are were calculated
+        self.form_context_db(db, vocabulary, reviews)
+        self.global_context(db)  # calculate the global context
+        self.local_context(vocabulary, db, reviews)  # calculate the local context
 
     @staticmethod
     def get_reviews(db):
@@ -24,7 +25,7 @@ class Context:
         return reviews
 
     @staticmethod
-    def form_global_db(db, vocabulary, reviews):
+    def form_context_db(db, vocabulary, reviews):
         count = 0
         for aspect in vocabulary:
             print(count)
@@ -73,17 +74,19 @@ class Context:
         vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(ngram_size, ngram_size))
         # count_vect = CountVectorizer(preprocessor=lambda x: x, tokenizer=lambda x: x)
         aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
+        # load all the data from context db to context_for_aspects_dict
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
             context_for_aspects_dict[count] = [aspect, context]
             aspect_row = db.cursor_context.fetchone()
             count += 1
+        # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect1 = context_for_aspects_dict[i][0]
                 aspect2 = context_for_aspects_dict[j][0]
-                # the strs with many 4-words substrs which were calculated in form_global_db method for each aspect
+                # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
                 aspect1_context = context_for_aspects_dict[i][1]
                 aspect2_context = context_for_aspects_dict[j][1]
                 vectorizer.fit(aspect1_context)  # build ngram dictionary
@@ -97,7 +100,7 @@ class Context:
                 # model2 = self.unigram(tokens2)  # construct the unigram language model
                 # x2 = count_vect.fit_transform(doc[:-1] for doc in model2)
                 # calculate the kl-divergence for global context
-                kl_diver = self.kl_divergence(ngram1.toarray(), ngram2.toarray()) # send two unigram language models in vector form
+                kl_diver = self.kl_divergence(ngram1.toarray(), ngram2.toarray()) # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
 
