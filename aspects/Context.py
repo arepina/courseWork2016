@@ -10,6 +10,10 @@ class Context:
         self.form_context_db(db, vocabulary, reviews)
         self.global_context(db)  # calculate the global context
         self.local_context(vocabulary, db, reviews)  # calculate the local context
+        # В обоих случаях для каждого аспекта строится своя language model, а для пары две ее language
+        # model сравниваются через меру KL - divergence. Отличие в том, что
+        # для global берутся все слова из тех отзывов, которые включают
+        # данный аспект, в local же - только слова непосредственно вокруг аспекта.
 
     @staticmethod
     def get_reviews(db):
@@ -39,21 +43,21 @@ class Context:
                     words = review.split(' ')
                     aspect_indexes = np.where(np.array(words) == clear_aspect)[0]
                     for index in aspect_indexes:
-                        # todo what to do if there is no 2 left or no 2 right words make their str empty = _
+                        # if there is no 2 left or no 2 right words make their str as _BEGIN_SENTENCE_ and _END_SENTENCE_
                         if index - 1 < 0:
-                            left_1 = "_"
+                            left_1 = "_BEGIN_SENTENCE_"
                         else:
                             left_1 = words[index - 1]
                         if index - 2 < 0:
-                            left_2 = "_"
+                            left_2 = "_BEGIN_SENTENCE_"
                         else:
                             left_2 = words[index - 2]
                         if index + 1 > len(words) - 1:
-                            right_1 = "_"
+                            right_1 = "_END_SENTENCE_"
                         else:
                             right_1 = words[index + 1]
                         if index + 2 > len(words) - 1:
-                            right_2 = "_"
+                            right_2 = "_END_SENTENCE_"
                         else:
                             right_2 = words[index + 2]
                         if len(str_context) > 0:
