@@ -7,7 +7,7 @@ class Context:
         reviews = self.get_reviews(db)  # get user reviews
         db.create_context_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        self.form_context_db(db, vocabulary, reviews)
+        self.form_global_context_db(db, vocabulary, reviews)
         self.global_context(db)  # calculate the global context
         self.local_context(vocabulary, db, reviews)  # calculate the local context
         # В обоих случаях для каждого аспекта строится своя language model, а для пары две ее language
@@ -28,8 +28,7 @@ class Context:
             row_review = db.cursor_reviews_one_word.fetchone()
         return reviews
 
-    @staticmethod
-    def form_context_db(db, vocabulary, reviews):
+    def form_global_context_db(self, db, vocabulary, reviews):
         count = 0
         for aspect in vocabulary:
             print(count)
@@ -37,34 +36,75 @@ class Context:
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
-                # todo what to do if aspect parts are held in different places of review
-                if clear_aspect in review:
-                    # try to find every 2 left and 2 right words for aspect
-                    words = review.split(' ')
-                    aspect_indexes = np.where(np.array(words) == clear_aspect)[0]
-                    for index in aspect_indexes:
-                        # if there is no 2 left or no 2 right words make their str as _BEGIN_SENTENCE_ and _END_SENTENCE_
-                        if index - 1 < 0:
-                            left_1 = "_BEGIN_SENTENCE_"
-                        else:
-                            left_1 = words[index - 1]
-                        if index - 2 < 0:
-                            left_2 = "_BEGIN_SENTENCE_"
-                        else:
-                            left_2 = words[index - 2]
-                        if index + 1 > len(words) - 1:
-                            right_1 = "_END_SENTENCE_"
-                        else:
-                            right_1 = words[index + 1]
-                        if index + 2 > len(words) - 1:
-                            right_2 = "_END_SENTENCE_"
-                        else:
-                            right_2 = words[index + 2]
-                        if len(str_context) > 0:
-                            str_context += " "
-                        str_context += left_2 + " " + left_1 + " " + right_1 + " " + right_2
+                clear_aspect_words = clear_aspect.split(" ")
+                if len(clear_aspect_words) == 1: # the aspect is only 1 word
+                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
+                else:  # the aspect consists of several words
+                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
             db.add_context(clear_aspect, str_context)
             db.conn_context.commit()
+
+    def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context):
+        is_all_aspect_words_in_review = True
+        for word in clear_aspect_words:
+            if word not in review:
+                is_all_aspect_words_in_review = False
+        if is_all_aspect_words_in_review:
+            # if aspect parts are held in different places of review take the left and the right word
+            left_aspect_part = clear_aspect_words[0]
+            right_aspect_part = clear_aspect_words[len(clear_aspect_words) - 1]
+            words = review.split(' ')
+            left_aspect_part_index = np.where(np.array(words) == left_aspect_part)[0][0]
+            right_aspect_part_index = np.where(np.array(words) == right_aspect_part)[0][0]
+            left = self.check_left_index(left_aspect_part_index, words)
+            right = self.check_right_index(right_aspect_part_index, words)
+            if len(str_context) > 0:
+                str_context += " "
+            str_context += left + " " + right
+        return str_context
+
+    def is_one_word_aspect_in_review(self, aspect, review, str_context):
+        if aspect in review:
+            # try to find every 2 left and 2 right words for aspect
+            words = review.split(' ')
+            aspect_indexes = np.where(np.array(words) == aspect)[0]
+            # find 2 left and 2 right word for each aspect occurence
+            for index in aspect_indexes:
+                str_context = self.form_str_context(index, words, str_context)
+        return str_context
+
+    def form_str_context(self, index, words, str_context):
+        # if there is no 2 left or no 2 right words make their str as _BEGIN_SENTENCE_ and _END_SENTENCE_
+        left = self.check_left_index(index, words)
+        right = self.check_right_index(index, words)
+        if len(str_context) > 0:
+            str_context += " "
+        str_context += left + " " + right
+        return str_context
+
+    @staticmethod
+    def check_left_index(index, words):
+        if index - 1 < 0:
+            left_1 = "_BEGIN_SENTENCE_"
+        else:
+            left_1 = words[index - 1]
+        if index - 2 < 0:
+            left_2 = "_BEGIN_SENTENCE_"
+        else:
+            left_2 = words[index - 2]
+        return left_2 + " " + left_1
+
+    @staticmethod
+    def check_right_index(index, words):
+        if index + 1 > len(words) - 1:
+            right_1 = "_END_SENTENCE_"
+        else:
+            right_1 = words[index + 1]
+        if index + 2 > len(words) - 1:
+            right_2 = "_END_SENTENCE_"
+        else:
+            right_2 = words[index + 2]
+        return right_1 + " " + right_2
 
     def local_context(self, vocabulary, db, reviews):
         # todo calculate the kl-divergence for local context
