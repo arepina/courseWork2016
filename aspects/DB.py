@@ -105,7 +105,7 @@ class DB:
 
     def create_context_local_db(self):
         self.cursor_local_context.execute('''CREATE TABLE IF NOT EXISTS Context
-                        (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
+                        (review_num INT, aspect TEXT, ngram TEXT)''')
         self.conn_local_context.commit()
 
     def create_context_db(self):
@@ -173,10 +173,10 @@ class DB:
             'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
             (aspect1, aspect2, kl_divergence))
 
-    def add_context_local(self, aspect1, aspect2, kl_divergence):
+    def add_context_local(self, review_num, aspect, ngram):
         self.cursor_local_context.execute(
-            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
-            (aspect1, aspect2, kl_divergence))
+            'INSERT INTO Context (review_num, aspect, ngram) VALUES (?, ?, ?)',
+            (review_num, aspect, ngram))
 
     def add_context(self, aspect, context):
         self.cursor_context.execute(
