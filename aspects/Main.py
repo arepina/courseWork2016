@@ -22,9 +22,9 @@ class Main:
         # self.aspects_process()
         # self.sentence_process()
         # self.split_process()
-        self.pmi_process()
-        # self.semantic_learning_process()
-        self.contextual_features()
+        # self.pmi_process()
+        self.semantic_learning_process()
+        # self.contextual_features()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API

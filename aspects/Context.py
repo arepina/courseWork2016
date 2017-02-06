@@ -3,16 +3,17 @@ import sklearn.feature_extraction.text
 
 
 class Context:
-    def process(self, db, vocabulary):
+    def process(self, db, vocabulary):  # todo think about vocabulary
         reviews = self.get_reviews(db)  # get user reviews
-        db.create_context_db()
+        db.create_context_local_prepare_db()
+        db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        self.form_global_context_db(db, vocabulary, reviews)
-        self.global_context(db, vocabulary)  # calculate the global context
-        self.form_local_context_db(vocabulary, db, reviews)
+        self.form_local_context_db(db, vocabulary, reviews)
         self.local_context(db, reviews)  # calculate the local context
+        self.form_global_context_db(db, reviews, vocabulary)
+        self.global_context(db, vocabulary, reviews)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
-        # for every language model combination. The differece between global and local contexts is that in global
+        # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review.
 
 
@@ -29,6 +30,22 @@ class Context:
             row_review = db.cursor_reviews_one_word.fetchone()
         return reviews
 
+    def form_local_context_db(self, db, vocabulary, reviews):
+        count = 0
+        for aspect in vocabulary:
+            print(count)
+            count += 1
+            clear_aspect = aspect.lower().replace("_", " ")
+            str_context = ""
+            for review in reviews:
+                clear_aspect_words = clear_aspect.split(" ")
+                if len(clear_aspect_words) == 1:  # the aspect is only 1 word
+                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
+                else:  # the aspect consists of several words
+                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
+            db.add_context_local_prepare(aspect, str_context)
+            db.conn_local_context_prepare.commit()
+
     def form_global_context_db(self, db, vocabulary, reviews):
         count = 0
         for aspect in vocabulary:
@@ -42,33 +59,15 @@ class Context:
                     str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
                 else:  # the aspect consists of several words
                     str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
-            db.add_context(clear_aspect, str_context)
-            db.conn_context.commit()
-
-    def form_local_context_db(self, vocabulary, db, reviews):
-        review_num = 0
-        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1),
-                                                                     vocabulary=vocabulary)
-        for review in reviews:  # find aspect in their local context for each review
-            for aspect in vocabulary:
-                str_context = ""
-                clear_aspect = aspect.lower().replace("_", " ")
-                clear_aspect_words = clear_aspect.split(" ")
-                if len(clear_aspect_words) == 1:  # the aspect is only 1 word
-                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
-                else:  # the aspect consists of several words
-                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
-                if len(str_context) != 0:
-                    ngram = vectorizer.fit_transform(str_context)  # get ngram
-                    db.add_context_local(review_num, aspect, str(ngram))
-                    db.conn_local_context.commit()
-            review_num += 1
+            db.add_context_global_prepare(aspect, str_context)
+            db.conn_global_context_prepare.commit()
 
     def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context):
         is_all_aspect_words_in_review = True
         for word in clear_aspect_words:
             if word not in review:
                 is_all_aspect_words_in_review = False
+                break
         if is_all_aspect_words_in_review:
             # if aspect parts are held in different places of review take the left and the right word
             left_aspect_part = clear_aspect_words[0]
@@ -88,7 +87,7 @@ class Context:
             # try to find every 2 left and 2 right words for aspect
             words = review.split(' ')
             aspect_indexes = np.where(np.array(words) == aspect)[0]
-            # find 2 left and 2 right word for each aspect occurence
+            # find 2 left and 2 right word for each aspect occurrence
             for index in aspect_indexes:
                 str_context = self.form_str_context(index, words, str_context)
         return str_context
@@ -126,31 +125,7 @@ class Context:
             right_2 = words[index + 2]
         return right_1 + " " + right_2
 
-    def local_context(self, db, reviews):
-        for review_num in range(len(reviews)):  # calculate the kl divergence for local aspect pairs
-            ngram_for_aspects_in_review = {}
-            count = 0
-            row_aspects_in_review = db.cursor_local_context.execute('SELECT * FROM Context WHERE review_num = ?',
-                                                                    (review_num,)).fetchone()
-            while row_aspects_in_review is not None:  # get all aspects and their ngrams for concrete review
-                ngram_for_aspects_in_review[count] = [row_aspects_in_review[0], row_aspects_in_review[2]]
-                count += 1
-                row_aspects_in_review = db.cursor_local_context.fetchone()
-            # look through all aspect pairs to calculate their kl_divergence
-            for i in range(len(ngram_for_aspects_in_review)):
-                for j in range(i + 1, len(ngram_for_aspects_in_review)):
-                    aspect1 = ngram_for_aspects_in_review[i][0]
-                    aspect2 = ngram_for_aspects_in_review[j][0]
-                    # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
-                    ngram1 = ngram_for_aspects_in_review[i][1]
-                    ngram2 = ngram_for_aspects_in_review[j][1]
-                    # calculate the kl-divergence for global context
-                    kl_diver = self.kl_divergence(ngram1.toarray(),
-                                                  ngram2.toarray())  # send 2 unigram language models in vector form
-                    # todo add the kl divergence to db and commit the data
-            review_num += 1
-
-    def global_context(self, db, vocabulary):
+    def local_context(self, db, vocabulary):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
@@ -164,6 +139,28 @@ class Context:
             context_for_aspects_dict[count] = [aspect, context]
             aspect_row = db.cursor_context.fetchone()
             count += 1
+        # look through all aspect pairs to calculate their kl_divergence
+        for i in range(len(context_for_aspects_dict)):
+            for j in range(i + 1, len(context_for_aspects_dict)):
+                aspect1 = context_for_aspects_dict[i][0]
+                aspect2 = context_for_aspects_dict[j][0]
+                # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
+                aspect1_context = context_for_aspects_dict[i][1]
+                aspect2_context = context_for_aspects_dict[j][1]
+                ngram1 = vectorizer.fit_transform(aspect1_context)  # get ngram
+                ngram2 = vectorizer.fit_transform(aspect2_context)  # get ngram
+                # calculate the kl-divergence for local context
+                kl_diver = self.kl_divergence(ngram1.toarray(),
+                                              ngram2.toarray())  # send 2 unigram language models in vector form
+                db.add_context_local(aspect1, aspect2, kl_diver)
+            db.conn_local_context.commit()
+
+    def global_context(self, db, vocabulary, reviews):
+        count = 0
+        context_for_aspects_dict = {}
+        db.create_context_global_db()
+        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1),
+                                                                     vocabulary=vocabulary)
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             for j in range(i + 1, len(context_for_aspects_dict)):

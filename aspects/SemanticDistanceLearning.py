@@ -94,11 +94,13 @@ class SemanticDistanceLearning:
 
     def process_semantic_distance_learning(self, db):
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
-        # todo change here later db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
-        row_sentence = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
+        row_sentence = db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
         import numpy as np
         w = np.array(self.calculate_distance(db))[0]  # will return a vector with two values
+        count = 0
         while row_review is not None:
+            print(count)
+            count += 1
             aspect1 = str(row_review[0])
             aspect2 = str(row_review[1])
             pmi_review = float(row_review[5])
@@ -107,4 +109,4 @@ class SemanticDistanceLearning:
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()
-        db.conn_semantic_distance.commit()
+            db.conn_semantic_distance.commit()

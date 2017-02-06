@@ -16,7 +16,8 @@ class DB:
     conn_pmi_ideal_sentence = None
     conn_path_weight = None
     conn_semantic_distance = None
-    conn_context = None
+    conn_local_context_prepare = None
+    conn_global_context_prepare = None
     conn_global_context = None
     conn_local_context = None
 
@@ -37,7 +38,8 @@ class DB:
     cursor_pmi_ideal_sentence = None
     cursor_path_weight = None
     cursor_semantic_distance = None
-    cursor_context = None
+    cursor_local_context_prepare = None
+    cursor_global_context_prepare = None
     cursor_global_context = None
     cursor_local_context = None
 
@@ -54,7 +56,8 @@ class DB:
     db_pmi_ideal_sentence_name = 'PMI_Ideal_Sentence.db'
     db_path_weight = "Path_Weight.db"
     db_semantic_distance = "Semantic_Distance.db"
-    db_context = "Context.db"
+    db_local_context_prepare = "Local_Context_Prepare.db"
+    db_global_context_prepare = "Global_Context_Prepare.db"
     db_global_context = "Global_Context.db"
     db_local_context = "Local_Context.db"
 
@@ -74,7 +77,8 @@ class DB:
         self.conn_pmi_ideal_sentence = sqlite3.connect(path + "/../db/" + self.db_pmi_ideal_sentence_name)
         self.conn_path_weight = sqlite3.connect(path + "/../db/" + self.db_path_weight)
         self.conn_semantic_distance = sqlite3.connect(path + "/../db/" + self.db_semantic_distance)
-        self.conn_context = sqlite3.connect(path + "/../db/" + self.db_context)
+        self.conn_local_context_prepare = sqlite3.connect(path + "/../db/" + self.db_local_context_prepare)
+        self.conn_global_context_prepare = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare)
         self.conn_global_context = sqlite3.connect(path + "/../db/" + self.db_global_context)
         self.conn_local_context = sqlite3.connect(path + "/../db/" + self.db_local_context)
 
@@ -94,7 +98,8 @@ class DB:
         self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
         self.cursor_path_weight = self.conn_path_weight.cursor()
         self.cursor_semantic_distance = self.conn_semantic_distance.cursor()
-        self.cursor_context = self.conn_context.cursor()
+        self.cursor_local_context_prepare = self.conn_local_context_prepare.cursor()
+        self.cursor_global_context_prepare = self.conn_global_context_prepare.cursor()
         self.cursor_global_context = self.conn_global_context.cursor()
         self.cursor_local_context = self.conn_local_context.cursor()
 
@@ -105,13 +110,18 @@ class DB:
 
     def create_context_local_db(self):
         self.cursor_local_context.execute('''CREATE TABLE IF NOT EXISTS Context
-                        (review_num INT, aspect TEXT, ngram TEXT)''')
+                        (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
         self.conn_local_context.commit()
 
-    def create_context_db(self):
-        self.cursor_context.execute('''CREATE TABLE IF NOT EXISTS Context
+    def create_context_local_prepare_db(self):
+        self.cursor_local_context_prepare.execute('''CREATE TABLE IF NOT EXISTS Context
                         (aspect TEXT, context TEXT)''')
-        self.conn_context.commit()
+        self.conn_local_context_prepare.commit()
+
+    def create_context_global_prepare_db(self):
+        self.cursor_global_context_prepare.execute('''CREATE TABLE IF NOT EXISTS Context
+                           (aspect TEXT, context TEXT)''')
+        self.conn_global_context_prepare.commit()
 
     def create_semantic_distance_db(self):
         self.cursor_semantic_distance.execute('''CREATE TABLE IF NOT EXISTS Distance
@@ -173,13 +183,18 @@ class DB:
             'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
             (aspect1, aspect2, kl_divergence))
 
-    def add_context_local(self, review_num, aspect, ngram):
+    def add_context_local(self, aspect1, aspect2, kl_divergence):
         self.cursor_local_context.execute(
-            'INSERT INTO Context (review_num, aspect, ngram) VALUES (?, ?, ?)',
-            (review_num, aspect, ngram))
+            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
+            (aspect1, aspect2, kl_divergence))
 
-    def add_context(self, aspect, context):
-        self.cursor_context.execute(
+    def add_context_local_prepare(self, aspect, context):
+        self.cursor_local_context_prepare.execute(
+            'INSERT INTO Context (aspect, context) VALUES (?, ?)',
+            (aspect, context))
+
+    def add_context_global_prepare(self, aspect, context):
+        self.cursor_global_context_prepare.execute(
             'INSERT INTO Context (aspect, context) VALUES (?, ?)',
             (aspect, context))
 
