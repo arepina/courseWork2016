@@ -158,11 +158,9 @@ class Context:
             db.conn_local_context.commit()
 
     def global_context(self, db, vocabulary):
-        count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
-        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1),
-                                                                     vocabulary=vocabulary)
+        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             for j in range(i + 1, len(context_for_aspects_dict)):
@@ -173,30 +171,11 @@ class Context:
                 aspect2_context = context_for_aspects_dict[j][1]
                 ngram1 = vectorizer.fit_transform(aspect1_context)  # get ngram
                 ngram2 = vectorizer.fit_transform(aspect2_context)  # get ngram
-                # tokens1 = nltk.word_tokenize(aspect1_context)  # we first tokenize the text corpus
-                # tokens2 = nltk.word_tokenize(aspect2_context)  # we first tokenize the text corpus
-                # model1 = self.unigram(tokens1)  # construct the unigram language model
-                # x1 = count_vect.fit_transform(doc[:-1] for doc in model1)
-                # model2 = self.unigram(tokens2)  # construct the unigram language model
-                # x2 = count_vect.fit_transform(doc[:-1] for doc in model2)
                 # calculate the kl-divergence for global context
                 kl_diver = self.kl_divergence(ngram1.toarray(),
                                               ngram2.toarray())  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
-
-    @staticmethod
-    def unigram(tokens):
-        model = np.collections.defaultdict(lambda: 0.01)
-        for f in tokens:
-            try:
-                model[f] += 1
-            except KeyError:
-                model[f] = 1
-                continue
-        for word in model:
-            model[word] /= float(len(model))
-        return model
 
     @staticmethod
     def kl_divergence(p, q):
