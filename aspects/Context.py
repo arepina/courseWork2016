@@ -9,13 +9,12 @@ class Context:
         db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         self.form_local_context_db(db, vocabulary, reviews)
-        self.local_context(db, reviews)  # calculate the local context
-        self.form_global_context_db(db, reviews, vocabulary)
-        self.global_context(db, vocabulary, reviews)  # calculate the global context
+        self.local_context(db, vocabulary)  # calculate the local context
+        self.form_global_context_db(db, vocabulary, reviews)
+        self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review.
-
 
     @staticmethod
     def get_reviews(db):
@@ -31,43 +30,41 @@ class Context:
         return reviews
 
     def form_local_context_db(self, db, vocabulary, reviews):
-        count = 0
         for aspect in vocabulary:
-            print(count)
-            count += 1
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
-                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
+                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, False)
                 else:  # the aspect consists of several words
-                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
-            db.add_context_local_prepare(aspect, str_context)
+                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context, False)
+            db.add_context_local_prepare(aspect, str_context)  # collect the 4 words context for each aspect occurrence
             db.conn_local_context_prepare.commit()
 
     def form_global_context_db(self, db, vocabulary, reviews):
-        count = 0
         for aspect in vocabulary:
-            print(count)
-            count += 1
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
-                    str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context)
+                    is_aspect_in_review = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, True)
                 else:  # the aspect consists of several words
-                    str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context)
-            db.add_context_global_prepare(aspect, str_context)
+                    is_aspect_in_review = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context,
+                                                                                True)
+                if is_aspect_in_review:  # collect all the reviews with the aspect
+                    db.add_context_global_prepare(aspect, review)
             db.conn_global_context_prepare.commit()
 
-    def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context):
+    def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context, is_global):
         is_all_aspect_words_in_review = True
         for word in clear_aspect_words:
             if word not in review:
                 is_all_aspect_words_in_review = False
                 break
+        if is_global:
+            return is_all_aspect_words_in_review
         if is_all_aspect_words_in_review:
             # if aspect parts are held in different places of review take the left and the right word
             left_aspect_part = clear_aspect_words[0]
@@ -82,7 +79,7 @@ class Context:
             str_context += left + " " + right
         return str_context
 
-    def is_one_word_aspect_in_review(self, aspect, review, str_context):
+    def is_one_word_aspect_in_review(self, aspect, review, str_context, is_global):
         if aspect in review:
             # try to find every 2 left and 2 right words for aspect
             words = review.split(' ')
@@ -90,6 +87,11 @@ class Context:
             # find 2 left and 2 right word for each aspect occurrence
             for index in aspect_indexes:
                 str_context = self.form_str_context(index, words, str_context)
+        if is_global:
+            if len(str_context) > 0:
+                return True
+            else:
+                return False
         return str_context
 
     def form_str_context(self, index, words, str_context):
@@ -155,7 +157,7 @@ class Context:
                 db.add_context_local(aspect1, aspect2, kl_diver)
             db.conn_local_context.commit()
 
-    def global_context(self, db, vocabulary, reviews):
+    def global_context(self, db, vocabulary):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()

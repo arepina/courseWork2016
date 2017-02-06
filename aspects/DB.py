@@ -120,7 +120,7 @@ class DB:
 
     def create_context_global_prepare_db(self):
         self.cursor_global_context_prepare.execute('''CREATE TABLE IF NOT EXISTS Context
-                           (aspect TEXT, context TEXT)''')
+                           (aspect TEXT, review TEXT)''')
         self.conn_global_context_prepare.commit()
 
     def create_semantic_distance_db(self):
@@ -193,10 +193,10 @@ class DB:
             'INSERT INTO Context (aspect, context) VALUES (?, ?)',
             (aspect, context))
 
-    def add_context_global_prepare(self, aspect, context):
+    def add_context_global_prepare(self, aspect, review):
         self.cursor_global_context_prepare.execute(
-            'INSERT INTO Context (aspect, context) VALUES (?, ?)',
-            (aspect, context))
+            'INSERT INTO Context (aspect, review) VALUES (?, ?)',
+            (aspect, review))
 
     def add_semantic_distance(self, aspect1, aspect2, distance):
         self.cursor_semantic_distance.execute(
