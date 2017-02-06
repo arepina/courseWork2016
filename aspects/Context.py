@@ -130,16 +130,16 @@ class Context:
     def local_context(self, db, vocabulary):
         count = 0
         context_for_aspects_dict = {}
-        db.create_context_global_db()
+        db.create_context_local_db()
         vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1),
                                                                      vocabulary=vocabulary)
-        aspect_row = db.cursor_context.execute('SELECT * FROM Context').fetchone()
+        aspect_row = db.cursor_local_context_prepare.execute('SELECT * FROM Context').fetchone()
         # load all the data from context db to context_for_aspects_dict
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
             context_for_aspects_dict[count] = [aspect, context]
-            aspect_row = db.cursor_context.fetchone()
+            aspect_row = db.cursor_local_context_prepare.fetchone()
             count += 1
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
@@ -158,9 +158,19 @@ class Context:
             db.conn_local_context.commit()
 
     def global_context(self, db, vocabulary):
+        count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
         vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+        # load all the data from context db to context_for_aspects_dict
+        for aspect in vocabulary:
+            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?', (aspect,)).fetchone()
+            context = ""
+            while aspect_row is not None:
+                context += str(aspect_row[1]) + " "
+                aspect_row = db.cursor_global_context_prepare.fetchone()
+            context_for_aspects_dict[count] = [aspect, context]
+            count += 1
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             for j in range(i + 1, len(context_for_aspects_dict)):

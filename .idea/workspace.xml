@@ -93,8 +93,8 @@
       <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="198" column="27" lean-forward="false" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
+            <state relative-caret-position="342">
+              <caret line="196" column="42" lean-forward="false" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="42" />
               <folding>
                 <marker date="1486401314000" expanded="true" signature="5334:5443" ph="CREATE TABLE... Context" />
                 <marker date="1486401314000" expanded="true" signature="5575:5684" ph="CREATE TABLE... Context" />
@@ -135,21 +135,20 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
+            <state relative-caret-position="273">
+              <caret line="180" column="64" lean-forward="true" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#1054#1475#0" expanded="false" />
-                <element signature="e#1547#2298#0" expanded="false" />
-                <element signature="e#2371#3246#0" expanded="false" />
                 <element signature="e#3356#4401#0" expanded="false" />
                 <element signature="e#4495#5040#0" expanded="false" />
                 <element signature="e#5109#5443#0" expanded="false" />
                 <element signature="e#5511#5775#0" expanded="false" />
                 <element signature="e#5844#6136#0" expanded="false" />
-                <element signature="e#6191#7936#0" expanded="false" />
-                <marker date="1486402083000" expanded="true" signature="1115:1135" ph="SELECT * FRO... Review" />
-                <marker date="1486402083000" expanded="true" signature="6506:6527" ph="SELECT * FRO... Context" />
+                <element signature="e#6191#7963#0" expanded="false" />
+                <marker date="1486404162000" expanded="true" signature="1115:1135" ph="SELECT * FRO... Review" />
+                <marker date="1486404162000" expanded="true" signature="6519:6540" ph="SELECT * FRO... Context" />
+                <marker date="1486404162000" expanded="true" signature="8390:8428" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -962,22 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="52" column="102" lean-forward="true" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="102" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="611:685" ph="CREATE TABLE... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="880:900" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1431:1474" ph="SELECT numbe... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="1585:1635" ph="INSERT INTO IDFHelper... " />
-            <marker date="1482233294000" expanded="true" signature="1776:1822" ph="UPDATE IDFHe... " />
-            <marker date="1482233294000" expanded="true" signature="2539:2562" ph="SELECT * FRO... IDFHelper" />
-            <marker date="1482233294000" expanded="true" signature="3496:3532" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -1041,8 +1024,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/DB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="198" column="27" lean-forward="false" selection-start-line="198" selection-start-column="27" selection-end-line="198" selection-end-column="27" />
+        <state relative-caret-position="342">
+          <caret line="196" column="42" lean-forward="false" selection-start-line="196" selection-start-column="13" selection-end-line="196" selection-end-column="42" />
           <folding>
             <marker date="1486401314000" expanded="true" signature="5334:5443" ph="CREATE TABLE... Context" />
             <marker date="1486401314000" expanded="true" signature="5575:5684" ph="CREATE TABLE... Context" />
@@ -1079,23 +1062,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="52" column="102" lean-forward="true" selection-start-line="52" selection-start-column="77" selection-end-line="52" selection-end-column="102" />
+          <folding>
+            <marker date="1482233294000" expanded="true" signature="611:685" ph="CREATE TABLE... IDFHelper" />
+            <marker date="1482233294000" expanded="true" signature="880:900" ph="SELECT * FRO... Review" />
+            <marker date="1482233294000" expanded="true" signature="1431:1474" ph="SELECT numbe... IDFHelper" />
+            <marker date="1482233294000" expanded="true" signature="1585:1635" ph="INSERT INTO IDFHelper... " />
+            <marker date="1482233294000" expanded="true" signature="1776:1822" ph="UPDATE IDFHe... " />
+            <marker date="1482233294000" expanded="true" signature="2539:2562" ph="SELECT * FRO... IDFHelper" />
+            <marker date="1482233294000" expanded="true" signature="3496:3532" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
+        <state relative-caret-position="273">
+          <caret line="180" column="64" lean-forward="true" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#1054#1475#0" expanded="false" />
-            <element signature="e#1547#2298#0" expanded="false" />
-            <element signature="e#2371#3246#0" expanded="false" />
             <element signature="e#3356#4401#0" expanded="false" />
             <element signature="e#4495#5040#0" expanded="false" />
             <element signature="e#5109#5443#0" expanded="false" />
             <element signature="e#5511#5775#0" expanded="false" />
             <element signature="e#5844#6136#0" expanded="false" />
-            <element signature="e#6191#7936#0" expanded="false" />
-            <marker date="1486402083000" expanded="true" signature="1115:1135" ph="SELECT * FRO... Review" />
-            <marker date="1486402083000" expanded="true" signature="6506:6527" ph="SELECT * FRO... Context" />
+            <element signature="e#6191#7963#0" expanded="false" />
+            <marker date="1486404162000" expanded="true" signature="1115:1135" ph="SELECT * FRO... Review" />
+            <marker date="1486404162000" expanded="true" signature="6519:6540" ph="SELECT * FRO... Context" />
+            <marker date="1486404162000" expanded="true" signature="8390:8428" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>
