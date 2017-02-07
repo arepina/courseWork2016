@@ -3,14 +3,16 @@ import sklearn.feature_extraction.text
 
 
 class Context:
-    def process(self, db, vocabulary):  # todo think about vocabulary
+    def process(self, db, vocabulary):
+        # todo think about vocabulary
+        # todo what to do if situation with many occurrence of 1 aspect in review?
         reviews = self.get_reviews(db)  # get user reviews
         db.create_context_local_prepare_db()
         db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         self.form_local_context_db(db, vocabulary, reviews)
-        self.local_context(db, vocabulary)  # calculate the local context
         self.form_global_context_db(db, vocabulary, reviews)
+        self.local_context(db, vocabulary)  # calculate the local context
         self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
@@ -26,14 +28,17 @@ class Context:
             com = str(row_review[5])
             review = adv + " " + dis + " " + com
             reviews.append(review.lower())
-            row_review = db.cursor_reviews_one_word.fetchone()
+            row_review = db.cursor_reviews.fetchone()
         return reviews
 
     def form_local_context_db(self, db, vocabulary, reviews):
+        count = 0
         for aspect in vocabulary:
+            print(count)
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
+                review = review.replace("\r", " ")
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
                     str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, False)
@@ -41,6 +46,7 @@ class Context:
                     str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context, False)
             db.add_context_local_prepare(aspect, str_context)  # collect the 4 words context for each aspect occurrence
             db.conn_local_context_prepare.commit()
+            count += 1
 
     def form_global_context_db(self, db, vocabulary, reviews):
         for aspect in vocabulary:
@@ -60,7 +66,7 @@ class Context:
     def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context, is_global):
         is_all_aspect_words_in_review = True
         for word in clear_aspect_words:
-            if word not in review:
+            if word not in review.split():
                 is_all_aspect_words_in_review = False
                 break
         if is_global:
@@ -80,7 +86,7 @@ class Context:
         return str_context
 
     def is_one_word_aspect_in_review(self, aspect, review, str_context, is_global):
-        if aspect in review:
+        if aspect in review.split():
             # try to find every 2 left and 2 right words for aspect
             words = review.split(' ')
             aspect_indexes = np.where(np.array(words) == aspect)[0]
@@ -103,29 +109,46 @@ class Context:
         str_context += left + " " + right
         return str_context
 
-    @staticmethod
-    def check_left_index(index, words):
+    def check_left_index(self, index, words):
         if index - 1 < 0:
             left_1 = "_BEGIN_SENTENCE_"
         else:
-            left_1 = words[index - 1]
+            left_1 = self.replacer(words[index - 1])
         if index - 2 < 0:
             left_2 = "_BEGIN_SENTENCE_"
         else:
-            left_2 = words[index - 2]
+            left_2 = self.replacer(words[index - 2])
         return left_2 + " " + left_1
 
-    @staticmethod
-    def check_right_index(index, words):
+    def check_right_index(self, index, words):
         if index + 1 > len(words) - 1:
             right_1 = "_END_SENTENCE_"
         else:
-            right_1 = words[index + 1]
+            right_1 = self.replacer(words[index + 1])
         if index + 2 > len(words) - 1:
             right_2 = "_END_SENTENCE_"
         else:
-            right_2 = words[index + 2]
+            right_2 = self.replacer(words[index + 2])
         return right_1 + " " + right_2
+
+    @staticmethod
+    def replacer(item):
+        item = item.replace(",", "")
+        item = item.replace(".", "")
+        item = item.replace("•", "")
+        item = item.replace(";", "")
+        item = item.replace("!", "")
+        item = item.replace("?", "")
+        item = item.replace(")", "")
+        item = item.replace("(", "")
+        item = item.replace("™", "")
+        item = item.replace("®", "")
+        item = item.replace("*", "")
+        item = item.replace("\"", "")
+        item = item.replace("—", "")
+        item = item.replace("~", "")
+        item = item.replace("'", "")
+        return item.lower()
 
     def local_context(self, db, vocabulary):
         count = 0
