@@ -11,9 +11,10 @@ class Context:
         db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         self.form_local_context_db(db, vocabulary, reviews)
+        print("finished part 1")
         self.form_global_context_db(db, vocabulary, reviews)
-        self.local_context(db, vocabulary)  # calculate the local context
-        self.global_context(db, vocabulary)  # calculate the global context
+        # self.local_context(db, vocabulary)  # calculate the local context
+        # self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review.
@@ -38,7 +39,8 @@ class Context:
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
-                review = review.replace("\r", " ")
+                review = self.replacer(review)
+                review = " ".join(review.split())
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
                     str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, False)
@@ -53,6 +55,8 @@ class Context:
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
+                review = self.replacer(review)
+                review = " ".join(review.split())
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
                     is_aspect_in_review = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, True)
@@ -133,10 +137,13 @@ class Context:
 
     @staticmethod
     def replacer(item):
+        item = item.replace("\r", " ")
+        item = item.replace("\t", " ")
         item = item.replace(",", "")
         item = item.replace(".", "")
         item = item.replace("•", "")
         item = item.replace(";", "")
+        item = item.replace(":", "")
         item = item.replace("!", "")
         item = item.replace("?", "")
         item = item.replace(")", "")
@@ -146,6 +153,7 @@ class Context:
         item = item.replace("*", "")
         item = item.replace("\"", "")
         item = item.replace("—", "")
+        item = item.replace("-", "")
         item = item.replace("~", "")
         item = item.replace("'", "")
         return item.lower()

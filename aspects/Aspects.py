@@ -121,6 +121,7 @@ class Aspects:
         item = item.replace(")", "")
         item = item.replace("(", "")
         item = item.replace("™", "")
+        item = item.replace(":", "")
         item = item.replace("®", "")
         item = item.replace("*", "")
         item = item.replace("\"", "")
