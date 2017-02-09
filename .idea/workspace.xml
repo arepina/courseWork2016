@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/Context.db" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Local_Context_Prepare.db" afterPath="$PROJECT_DIR$/db/Local_Context_Prepare.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Aspects.py" afterPath="$PROJECT_DIR$/aspects/Aspects.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,11 +77,12 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+            <state relative-caret-position="98">
+              <caret line="18" column="114" lean-forward="true" selection-start-line="18" selection-start-column="114" selection-end-line="18" selection-end-column="114" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#1181#1593#0" expanded="false" />
+                <element signature="e#1665#2579#0" expanded="false" />
                 <element signature="e#4881#5434#0" expanded="false" />
                 <element signature="e#5503#5837#0" expanded="false" />
                 <element signature="e#5893#6187#0" expanded="false" />
@@ -702,7 +698,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1440" height="797" extended-state="6" />
+    <frame x="-1" y="24" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1072,11 +1068,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        <state relative-caret-position="98">
+          <caret line="18" column="114" lean-forward="true" selection-start-line="18" selection-start-column="114" selection-end-line="18" selection-end-column="114" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
             <element signature="e#1181#1593#0" expanded="false" />
+            <element signature="e#1665#2579#0" expanded="false" />
             <element signature="e#4881#5434#0" expanded="false" />
             <element signature="e#5503#5837#0" expanded="false" />
             <element signature="e#5893#6187#0" expanded="false" />
