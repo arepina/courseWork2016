@@ -3,24 +3,28 @@ import sklearn.feature_extraction.text
 
 
 class Context:
-    def process(self, db, vocabulary):
+    def process(self, db, aspects):
+        vocabulary = {}
         # todo think about vocabulary
         # todo what to do if situation with many occurrence of 1 aspect in review?
-        reviews = self.get_reviews(db)  # get user reviews
-        db.create_context_local_prepare_db()
+        reviews = self.get_reviews_and_vocabulary(db, vocabulary)  # get user reviews
+        # db.create_context_local_prepare_db()
         db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        self.form_local_context_db(db, vocabulary, reviews)
-        print("finished part 1")
-        self.form_global_context_db(db, vocabulary, reviews)
+        # self.form_local_context_db(db, aspects, reviews)
+        self.form_global_context_db(db, aspects, reviews)
         # self.local_context(db, vocabulary)  # calculate the local context
         # self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review.
+        #
+        # в global контекстом считались все слова в документе с аспектом,
+        # в local контекстом считаются слова рядом с аспектом в документе.
+        # то есть надо посчитать какие слова и с какой частотой встречаются
+        # рядом с аспектом, это и будет нашим unigram model
 
-    @staticmethod
-    def get_reviews(db):
+    def get_reviews_and_vocabulary(self, db, vocabulary):
         reviews = []
         row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         while row_review is not None:
@@ -28,19 +32,21 @@ class Context:
             dis = str(row_review[4])
             com = str(row_review[5])
             review = adv + " " + dis + " " + com
-            reviews.append(review.lower())
+            review = self.replacer(review)
+            review = " ".join(review.split())
+            reviews.append(review)
+            words = review.split(" ")
+            vocabulary[words] += 1
             row_review = db.cursor_reviews.fetchone()
         return reviews
 
-    def form_local_context_db(self, db, vocabulary, reviews):
+    def form_local_context_db(self, db, aspects, reviews):
         count = 0
-        for aspect in vocabulary:
+        for aspect in aspects:
             print(count)
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
-                review = self.replacer(review)
-                review = " ".join(review.split())
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
                     str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, False)
@@ -50,13 +56,13 @@ class Context:
             db.conn_local_context_prepare.commit()
             count += 1
 
-    def form_global_context_db(self, db, vocabulary, reviews):
-        for aspect in vocabulary:
+    def form_global_context_db(self, db, aspects, reviews):
+        count = 0
+        for aspect in aspects:
+            print(count)
             clear_aspect = aspect.lower().replace("_", " ")
             str_context = ""
             for review in reviews:
-                review = self.replacer(review)
-                review = " ".join(review.split())
                 clear_aspect_words = clear_aspect.split(" ")
                 if len(clear_aspect_words) == 1:  # the aspect is only 1 word
                     is_aspect_in_review = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, True)
@@ -66,6 +72,7 @@ class Context:
                 if is_aspect_in_review:  # collect all the reviews with the aspect
                     db.add_context_global_prepare(aspect, review)
             db.conn_global_context_prepare.commit()
+            count += 1
 
     def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context, is_global):
         is_all_aspect_words_in_review = True
@@ -91,6 +98,8 @@ class Context:
 
     def is_one_word_aspect_in_review(self, aspect, review, str_context, is_global):
         if aspect in review.split():
+            if is_global:
+                return True
             # try to find every 2 left and 2 right words for aspect
             words = review.split(' ')
             aspect_indexes = np.where(np.array(words) == aspect)[0]
@@ -98,10 +107,7 @@ class Context:
             for index in aspect_indexes:
                 str_context = self.form_str_context(index, words, str_context)
         if is_global:
-            if len(str_context) > 0:
-                return True
-            else:
-                return False
+            return False
         return str_context
 
     def form_str_context(self, index, words, str_context):
@@ -195,7 +201,8 @@ class Context:
         vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         # load all the data from context db to context_for_aspects_dict
         for aspect in vocabulary:
-            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?', (aspect,)).fetchone()
+            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?',
+                                                                  (aspect,)).fetchone()
             context = ""
             while aspect_row is not None:
                 context += str(aspect_row[1]) + " "
