@@ -5,24 +5,17 @@ import sklearn.feature_extraction.text
 class Context:
     def process(self, db, aspects):
         vocabulary = {}
-        # todo think about vocabulary
-        # todo what to do if situation with many occurrence of 1 aspect in review?
         reviews = self.get_reviews_and_vocabulary(db, vocabulary)  # get user reviews
         # db.create_context_local_prepare_db()
-        db.create_context_global_prepare_db()
+        # db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         # self.form_local_context_db(db, aspects, reviews)
-        self.form_global_context_db(db, aspects, reviews)
-        # self.local_context(db, vocabulary)  # calculate the local context
-        # self.global_context(db, vocabulary)  # calculate the global context
+        # self.form_global_context_db(db, aspects, reviews)
+        self.local_context(db, vocabulary)  # calculate the local context
+        self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
-        # we take words from all the reviews and in local we consider only the words of concrete review.
-        #
-        # в global контекстом считались все слова в документе с аспектом,
-        # в local контекстом считаются слова рядом с аспектом в документе.
-        # то есть надо посчитать какие слова и с какой частотой встречаются
-        # рядом с аспектом, это и будет нашим unigram model
+        # we take words from all the reviews and in local we consider only the words of concrete review
 
     def get_reviews_and_vocabulary(self, db, vocabulary):
         reviews = []
