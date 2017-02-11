@@ -1,5 +1,5 @@
 import numpy as np
-import sklearn.feature_extraction.text
+from sklearn.feature_extraction.text import CountVectorizer
 
 
 class Context:
@@ -20,6 +20,7 @@ class Context:
     def get_reviews_and_vocabulary(self, db, vocabulary):
         reviews = []
         row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
+        count = 0
         while row_review is not None:
             adv = str(row_review[3])
             dis = str(row_review[4])
@@ -30,10 +31,9 @@ class Context:
             reviews.append(review)
             words = review.split(" ")
             for word in words:
-                if word in vocabulary:
-                    vocabulary[word] += 1
-                else:
-                    vocabulary[word] = 1
+                if word not in vocabulary:
+                    vocabulary[word] = count
+                    count += 1
             row_review = db.cursor_reviews.fetchone()
         return reviews
 
@@ -165,7 +165,7 @@ class Context:
         count = 0
         context_for_aspects_dict = {}
         db.create_context_local_db()
-        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         aspect_row = db.cursor_local_context_prepare.execute('SELECT * FROM Context').fetchone()
         # load all the data from context db to context_for_aspects_dict
         while aspect_row is not None:
@@ -196,7 +196,7 @@ class Context:
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
-        vectorizer = sklearn.feature_extraction.text.CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         # load all the data from context db to context_for_aspects_dict
         for aspect in vocabulary:
             aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?', (aspect,)).fetchone()
