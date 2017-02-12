@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -177,20 +179,28 @@ class Context:
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             print(i)
+            start = datetime.now()
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect1 = context_for_aspects_dict[i][0]
                 aspect2 = context_for_aspects_dict[j][0]
                 # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
                 aspect1_context = context_for_aspects_dict[i][1]
                 aspect2_context = context_for_aspects_dict[j][1]
-                from nltk import ngrams
-                ngram1 = vectorizer.fit_transform(ngrams(aspect1_context.split(), 4))  # get ngram
-                ngram2 = vectorizer.fit_transform(ngrams(aspect2_context.split(), 4))  # get ngram
+                ngram1 = vectorizer.fit_transform([aspect1_context]).toarray()  # get ngram
+                ngram2 = vectorizer.fit_transform([aspect2_context]).toarray()  # get ngram
+                # non_zero1 =  np.nonzero(ngram1)[1]
+                # new_ngram1 = [ngram1[0][x] for x in non_zero1]
+                # non_zero2 =  np.nonzero(ngram2)[1]
+                # new_ngram2 = [ngram2[0][x] for x in non_zero2]
+                new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1[0]]
+                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2[0]]
                 # calculate the kl-divergence for local context
-                kl_diver = self.kl_divergence(ngram1.toarray(),
-                                              ngram2.toarray())  # send 2 unigram language models in vector form
+                from scipy import stats
+                kl = stats.entropy(new_ngram1, new_ngram2, 2)
+                kl_diver = self.kl_divergence(new_ngram1, new_ngram2)  # send 2 unigram language models in vector form
                 db.add_context_local(aspect1, aspect2, kl_diver)
             db.conn_local_context.commit()
+            print(datetime.now() - start)
 
     def global_context(self, db, vocabulary):
         count = 0
@@ -199,33 +209,40 @@ class Context:
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         # load all the data from context db to context_for_aspects_dict
         for aspect in vocabulary:
-            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?', (aspect,)).fetchone()
+            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?',
+                                                                  (aspect,)).fetchone()
             context = ""
             while aspect_row is not None:
-                context += str(aspect_row[1]) + " "
+                context += str(aspect_row[1]) + "|||"
                 aspect_row = db.cursor_global_context_prepare.fetchone()
             context_for_aspects_dict[count] = [aspect, context]
             count += 1
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             print(i)
+            start = datetime.now()
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect1 = context_for_aspects_dict[i][0]
                 aspect2 = context_for_aspects_dict[j][0]
                 # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
                 aspect1_context = context_for_aspects_dict[i][1]
                 aspect2_context = context_for_aspects_dict[j][1]
-                from nltk import ngrams
-                ngram1 = vectorizer.fit_transform(ngrams(aspect1_context.split(), 4))  # get ngram
-                ngram2 = vectorizer.fit_transform(ngrams(aspect2_context.split(), 4))  # get ngram
+                ngram1 = vectorizer.fit_transform(aspect1_context.split("|||"))  # get ngram
+                ngram2 = vectorizer.fit_transform(aspect2_context.split("|||"))  # get ngram
                 # calculate the kl-divergence for global context
                 kl_diver = self.kl_divergence(ngram1.toarray(),
                                               ngram2.toarray())  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
+            print(datetime.now() - start)
 
     @staticmethod
     def kl_divergence(p, q):
         """ Compute KL divergence of two vectors, K(p || q)."""
         from cmath import log
         return sum(p[x] * log((p[x]) / (q[x])) for x in range(len(p)) if p[x] != 0.0 or p[x] != 0)
+
+
+
+
+

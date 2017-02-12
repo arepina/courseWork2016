@@ -100,6 +100,7 @@ class Main:
         context = Context()
         context.process(self.db, self.vocabulary)
 
+
 main = Main()
 
 
