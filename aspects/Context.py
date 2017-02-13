@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from scipy import stats
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 
@@ -13,8 +13,9 @@ class Context:
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
-        self.local_context(db, vocabulary)  # calculate the local context
-        # self.global_context(db, vocabulary)  # calculate the global context
+        # self.form_global_context_extra_db(db, aspects)
+        # self.local_context(db, vocabulary)  # calculate the local context
+        self.global_context(db, aspects, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
@@ -71,6 +72,22 @@ class Context:
                 if is_aspect_in_review:  # collect all the reviews with the aspect
                     db.add_context_global_prepare(aspect, review)
             db.conn_global_context_prepare.commit()
+            count += 1
+
+    @staticmethod
+    def form_global_context_extra_db(db, aspects):
+        db.create_context_global_prepare_extra_db()
+        count = 0
+        for aspect in aspects:
+            print(count)
+            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?',
+                                                                  (aspect,)).fetchone()
+            context = ""
+            while aspect_row is not None:
+                context += str(aspect_row[1]) + " "
+                aspect_row = db.cursor_global_context_prepare.fetchone()
+            db.add_context_global_prepare_extra(aspect, context)
+            db.conn_global_context_prepare_extra.commit()
             count += 1
 
     def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context, is_global):
@@ -177,72 +194,62 @@ class Context:
             aspect_row = db.cursor_local_context_prepare.fetchone()
             count += 1
         # look through all aspect pairs to calculate their kl_divergence
+        # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
         for i in range(len(context_for_aspects_dict)):
             print(i)
             start = datetime.now()
+            aspect1 = context_for_aspects_dict[i][0]
+            aspect1_context = context_for_aspects_dict[i][1]
+            ngram1 = self.add_one_smoothing(vectorizer.fit_transform([aspect1_context]).toarray()[0])  # get ngram
+            new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1]
             for j in range(i + 1, len(context_for_aspects_dict)):
-                aspect1 = context_for_aspects_dict[i][0]
                 aspect2 = context_for_aspects_dict[j][0]
-                # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
-                aspect1_context = context_for_aspects_dict[i][1]
                 aspect2_context = context_for_aspects_dict[j][1]
-                ngram1 = vectorizer.fit_transform([aspect1_context]).toarray()  # get ngram
-                ngram2 = vectorizer.fit_transform([aspect2_context]).toarray()  # get ngram
-                # non_zero1 =  np.nonzero(ngram1)[1]
-                # new_ngram1 = [ngram1[0][x] for x in non_zero1]
-                # non_zero2 =  np.nonzero(ngram2)[1]
-                # new_ngram2 = [ngram2[0][x] for x in non_zero2]
-                new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1[0]]
-                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2[0]]
+                ngram2 = self.add_one_smoothing(vectorizer.fit_transform([aspect2_context]).toarray()[0]) # get ngram
+                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2]
                 # calculate the kl-divergence for local context
-                from scipy import stats
-                kl = stats.entropy(new_ngram1, new_ngram2, 2)
-                kl_diver = self.kl_divergence(new_ngram1, new_ngram2)  # send 2 unigram language models in vector form
+                kl_diver = stats.entropy(np.array(new_ngram1), np.array(new_ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_local(aspect1, aspect2, kl_diver)
             db.conn_local_context.commit()
             print(datetime.now() - start)
 
-    def global_context(self, db, vocabulary):
+    def global_context(self, db, aspects, vocabulary):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
-        # load all the data from context db to context_for_aspects_dict
-        for aspect in vocabulary:
-            aspect_row = db.cursor_global_context_prepare.execute('SELECT * FROM Context WHERE aspect = ?',
-                                                                  (aspect,)).fetchone()
-            context = ""
-            while aspect_row is not None:
-                context += str(aspect_row[1]) + "|||"
-                aspect_row = db.cursor_global_context_prepare.fetchone()
+        # load all the data from context db
+        aspect_row = db.cursor_global_context_prepare_extra.execute('SELECT * FROM Context').fetchone()
+        while aspect_row is not None:
+            aspect = str(aspect_row[0])
+            context = str(aspect_row[1])
             context_for_aspects_dict[count] = [aspect, context]
+            aspect_row = db.cursor_global_context_prepare_extra.fetchone()
             count += 1
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             print(i)
             start = datetime.now()
+            aspect1 = context_for_aspects_dict[i][0]
+            aspect1_context = context_for_aspects_dict[i][1]
+            ngram1 = self.add_one_smoothing(vectorizer.fit_transform([aspect1_context]).toarray()[0])  # get ngram
+            new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1]
             for j in range(i + 1, len(context_for_aspects_dict)):
-                aspect1 = context_for_aspects_dict[i][0]
                 aspect2 = context_for_aspects_dict[j][0]
-                # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
-                aspect1_context = context_for_aspects_dict[i][1]
                 aspect2_context = context_for_aspects_dict[j][1]
-                ngram1 = vectorizer.fit_transform(aspect1_context.split("|||"))  # get ngram
-                ngram2 = vectorizer.fit_transform(aspect2_context.split("|||"))  # get ngram
+                ngram2 = self.add_one_smoothing(vectorizer.fit_transform([aspect2_context]).toarray()[0])  # get ngram
+                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2]
                 # calculate the kl-divergence for global context
-                kl_diver = self.kl_divergence(ngram1.toarray(),
-                                              ngram2.toarray())  # send 2 unigram language models in vector form
+                kl_diver = stats.entropy(np.array(new_ngram1), np.array(new_ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
             print(datetime.now() - start)
 
     @staticmethod
-    def kl_divergence(p, q):
-        """ Compute KL divergence of two vectors, K(p || q)."""
-        from cmath import log
-        return sum(p[x] * log((p[x]) / (q[x])) for x in range(len(p)) if p[x] != 0.0 or p[x] != 0)
-
-
-
-
-
+    def add_one_smoothing(list):
+        for i in range(len(list)):
+            if list[i] == 0:
+                list[i] = 1
+            else:
+                list[i] += 1
+        return list
