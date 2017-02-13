@@ -14,8 +14,8 @@ class Context:
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
         # self.form_global_context_extra_db(db, aspects)
-        # self.local_context(db, vocabulary)  # calculate the local context
-        self.global_context(db, aspects, vocabulary)  # calculate the global context
+        self.local_context(db, vocabulary)  # calculate the local context
+        # self.global_context(db, aspects, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
@@ -201,14 +201,18 @@ class Context:
             aspect1 = context_for_aspects_dict[i][0]
             aspect1_context = context_for_aspects_dict[i][1]
             ngram1 = self.add_one_smoothing(vectorizer.fit_transform([aspect1_context]).toarray()[0])  # get ngram
-            new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1]
+            divider = len(aspect1_context.split())
+            if divider != 0:
+                ngram1 = [x / divider for x in ngram1]
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect2 = context_for_aspects_dict[j][0]
                 aspect2_context = context_for_aspects_dict[j][1]
                 ngram2 = self.add_one_smoothing(vectorizer.fit_transform([aspect2_context]).toarray()[0]) # get ngram
-                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2]
+                divider = len(aspect2_context.split())
+                if divider != 0:
+                    ngram2 = [x / divider for x in ngram2]
                 # calculate the kl-divergence for local context
-                kl_diver = stats.entropy(np.array(new_ngram1), np.array(new_ngram2), 2)  # send 2 unigram language models in vector form
+                kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_local(aspect1, aspect2, kl_diver)
             db.conn_local_context.commit()
             print(datetime.now() - start)
@@ -233,14 +237,18 @@ class Context:
             aspect1 = context_for_aspects_dict[i][0]
             aspect1_context = context_for_aspects_dict[i][1]
             ngram1 = self.add_one_smoothing(vectorizer.fit_transform([aspect1_context]).toarray()[0])  # get ngram
-            new_ngram1 = [x / len(aspect1_context.split()) for x in ngram1]
+            divider = len(aspect1_context.split())
+            if divider != 0:
+                ngram1 = [x / divider for x in ngram1]
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect2 = context_for_aspects_dict[j][0]
                 aspect2_context = context_for_aspects_dict[j][1]
                 ngram2 = self.add_one_smoothing(vectorizer.fit_transform([aspect2_context]).toarray()[0])  # get ngram
-                new_ngram2 = [x / len(aspect2_context.split()) for x in ngram2]
+                divider = len(aspect2_context.split())
+                if divider != 0:
+                    ngram2 = [x / divider for x in ngram2]
                 # calculate the kl-divergence for global context
-                kl_diver = stats.entropy(np.array(new_ngram1), np.array(new_ngram2), 2)  # send 2 unigram language models in vector form
+                kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
             print(datetime.now() - start)
