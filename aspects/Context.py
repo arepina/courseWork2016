@@ -14,8 +14,8 @@ class Context:
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
         # self.form_global_context_extra_db(db, aspects)
-        self.local_context(db, vocabulary)  # calculate the local context
-        # self.global_context(db, aspects, vocabulary)  # calculate the global context
+        # self.local_context(db, vocabulary)  # calculate the local context
+        self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
@@ -193,6 +193,9 @@ class Context:
             context_for_aspects_dict[count] = [aspect, context]
             aspect_row = db.cursor_local_context_prepare.fetchone()
             count += 1
+        # context_for_aspects_dict_numpy = np.ndarray((len(context_for_aspects_dict), len(context_for_aspects_dict[0])))
+        # for index, val in enumerate(context_for_aspects_dict.values()):
+        #     context_for_aspects_dict_numpy[index] = val
         # look through all aspect pairs to calculate their kl_divergence
         # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
         for i in range(len(context_for_aspects_dict)):
@@ -217,7 +220,7 @@ class Context:
             db.conn_local_context.commit()
             print(datetime.now() - start)
 
-    def global_context(self, db, aspects, vocabulary):
+    def global_context(self, db, vocabulary):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
