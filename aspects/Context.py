@@ -14,7 +14,7 @@ class Context:
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
         # self.form_global_context_extra_db(db, aspects)
-        # self.local_context(db, vocabulary)  # calculate the local context
+        self.local_context(db, vocabulary)  # calculate the local context
         self.global_context(db, vocabulary)  # calculate the global context
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
@@ -181,21 +181,18 @@ class Context:
         return item.lower()
 
     def local_context(self, db, vocabulary):
-        count = 0
         context_for_aspects_dict = {}
         db.create_context_local_db()
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         aspect_row = db.cursor_local_context_prepare.execute('SELECT * FROM Context').fetchone()
         # load all the data from context db to context_for_aspects_dict
+        count = 0
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
-            context_for_aspects_dict[count] = [aspect, context]
+            context_for_aspects_dict[count] = np.array([aspect, context])
             aspect_row = db.cursor_local_context_prepare.fetchone()
             count += 1
-        # context_for_aspects_dict_numpy = np.ndarray((len(context_for_aspects_dict), len(context_for_aspects_dict[0])))
-        # for index, val in enumerate(context_for_aspects_dict.values()):
-        #     context_for_aspects_dict_numpy[index] = val
         # look through all aspect pairs to calculate their kl_divergence
         # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
         for i in range(len(context_for_aspects_dict)):
