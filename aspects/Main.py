@@ -4,11 +4,13 @@ from aspects.Aspects import Aspects
 from aspects.Context import Context
 from aspects.DB import DB
 from aspects.IdealAspectsDB import IdealAspectsDB
+from aspects.Lexical import Lexical
 from aspects.OneClassSVM import OneClassSVM
 from aspects.PMI import PMI
 from aspects.SemanticDistanceLearning import SemanticDistanceLearning
 from aspects.Sentence import Sentence
 from aspects.Splitter import Splitter
+from aspects.Syntactic import Syntactic
 
 
 class Main:
@@ -22,9 +24,11 @@ class Main:
         # self.aspects_process()
         # self.sentence_process()
         # self.split_process()
-        # self.pmi_process()
-        self.semantic_learning_process()
+        self.pmi_process()
+        # self.semantic_learning_process()
         # self.contextual_features()
+        self.lexical_features()
+        self.syntactic_features()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -100,6 +104,13 @@ class Main:
         context = Context()
         context.process(self.db, self.vocabulary)
 
+    def lexical_features(self):
+        lexical = Lexical()
+        lexical.process(self.vocabulary, self.db)
+
+    def syntactic_features(self):
+        syntactic = Syntactic()
+        syntactic.process(self.db, self.vocabulary, self.aspect)
 
 main = Main()
 

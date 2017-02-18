@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class SemanticDistanceLearning:
 
     def calculate_ground_truth_distance(self, db):
