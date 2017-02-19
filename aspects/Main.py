@@ -27,7 +27,7 @@ class Main:
         self.pmi_process()
         # self.semantic_learning_process()
         # self.contextual_features()
-        self.lexical_features()
+        # self.lexical_features()
         self.syntactic_features()
 
     def aspects_process(self):
