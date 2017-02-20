@@ -194,10 +194,7 @@ class Context:
             aspect_row = db.cursor_local_context_prepare.fetchone()
             count += 1
         ngram_prepared_dict = {}
-        start = datetime.now()
-        print("start")
         for i in range(len(context_for_aspects_dict)):
-            print(i)
             aspect = context_for_aspects_dict[i][0]
             aspect_context = context_for_aspects_dict[i][1]
             ngram = self.add_one_smoothing(vectorizer.fit_transform([aspect_context]).toarray()[0])  # get ngram
@@ -205,7 +202,6 @@ class Context:
             if divider != 0:
                 ngram = [x / divider for x in ngram]
             ngram_prepared_dict[aspect] = ngram
-        print(datetime.now() - start)
         # look through all aspect pairs to calculate their kl_divergence
         # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
         for i in range(len(context_for_aspects_dict)):
@@ -235,23 +231,24 @@ class Context:
             context_for_aspects_dict[count] = [aspect, context]
             aspect_row = db.cursor_global_context_prepare_extra.fetchone()
             count += 1
+        ngram_prepared_dict = {}
+        for i in range(len(context_for_aspects_dict)):
+            aspect = context_for_aspects_dict[i][0]
+            aspect_context = context_for_aspects_dict[i][1]
+            ngram = self.add_one_smoothing(vectorizer.fit_transform([aspect_context]).toarray()[0])  # get ngram
+            divider = len(aspect_context.split())
+            if divider != 0:
+                ngram = [x / divider for x in ngram]
+            ngram_prepared_dict[aspect] = ngram
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             print(i)
             start = datetime.now()
             aspect1 = context_for_aspects_dict[i][0]
-            aspect1_context = context_for_aspects_dict[i][1]
-            ngram1 = self.add_one_smoothing(vectorizer.fit_transform([aspect1_context]).toarray()[0])  # get ngram
-            divider = len(aspect1_context.split())
-            if divider != 0:
-                ngram1 = [x / divider for x in ngram1]
+            ngram1 = ngram_prepared_dict[aspect1]
             for j in range(i + 1, len(context_for_aspects_dict)):
                 aspect2 = context_for_aspects_dict[j][0]
-                aspect2_context = context_for_aspects_dict[j][1]
-                ngram2 = self.add_one_smoothing(vectorizer.fit_transform([aspect2_context]).toarray()[0])  # get ngram
-                divider = len(aspect2_context.split())
-                if divider != 0:
-                    ngram2 = [x / divider for x in ngram2]
+                ngram2 = ngram_prepared_dict[aspect2]
                 # calculate the kl-divergence for global context
                 kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)

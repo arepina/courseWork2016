@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Syntactic.py" afterPath="$PROJECT_DIR$/aspects/Syntactic.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="928">
-              <caret line="62" column="59" lean-forward="false" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
+            <state relative-caret-position="478">
+              <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -89,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="215" column="65" lean-forward="false" selection-start-line="210" selection-start-column="8" selection-end-line="215" selection-end-column="65" />
+            <state relative-caret-position="595">
+              <caret line="258" column="28" lean-forward="false" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <element signature="e#1219#1918#0" expanded="false" />
@@ -106,11 +106,11 @@
                 <element signature="e#6775#7069#0" expanded="false" />
                 <element signature="e#7126#7448#0" expanded="false" />
                 <element signature="e#7500#8227#0" expanded="false" />
-                <element signature="e#12480#12630#0" expanded="false" />
-                <marker date="1487406765000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
-                <marker date="1487406765000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
-                <marker date="1487406765000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
-                <marker date="1487406765000" expanded="true" signature="10756:10777" ph="SELECT * FRO... Context" />
+                <element signature="e#12322#12472#0" expanded="false" />
+                <marker date="1487617460000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
+                <marker date="1487617460000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
+                <marker date="1487617460000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
+                <marker date="1487617460000" expanded="true" signature="10643:10664" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -261,12 +261,12 @@
         <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
-        <option value="$PROJECT_DIR$/aspects/Context.py" />
         <option value="$PROJECT_DIR$/aspects/Lexical.py" />
         <option value="$PROJECT_DIR$/aspects/Syntatic.py" />
         <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/Syntactic.py" />
+        <option value="$PROJECT_DIR$/aspects/Context.py" />
       </list>
     </option>
   </component>
@@ -279,7 +279,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="800" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -299,6 +299,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -355,8 +357,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -729,7 +729,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1071,31 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="215" column="65" lean-forward="false" selection-start-line="210" selection-start-column="8" selection-end-line="215" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#1219#1918#0" expanded="false" />
-            <element signature="e#1987#2801#0" expanded="false" />
-            <element signature="e#2871#3809#0" expanded="false" />
-            <element signature="e#3888#4539#0" expanded="false" />
-            <element signature="e#4649#5702#0" expanded="false" />
-            <element signature="e#5796#6316#0" expanded="false" />
-            <element signature="e#6385#6719#0" expanded="false" />
-            <element signature="e#6775#7069#0" expanded="false" />
-            <element signature="e#7126#7448#0" expanded="false" />
-            <element signature="e#7500#8227#0" expanded="false" />
-            <element signature="e#12480#12630#0" expanded="false" />
-            <marker date="1487406765000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
-            <marker date="1487406765000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
-            <marker date="1487406765000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
-            <marker date="1487406765000" expanded="true" signature="10756:10777" ph="SELECT * FRO... Context" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1115,10 +1090,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="62" column="59" lean-forward="false" selection-start-line="62" selection-start-column="59" selection-end-line="62" selection-end-column="59" />
+        <state relative-caret-position="478">
+          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="258" column="28" lean-forward="false" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#1219#1918#0" expanded="false" />
+            <element signature="e#1987#2801#0" expanded="false" />
+            <element signature="e#2871#3809#0" expanded="false" />
+            <element signature="e#3888#4539#0" expanded="false" />
+            <element signature="e#4649#5702#0" expanded="false" />
+            <element signature="e#5796#6316#0" expanded="false" />
+            <element signature="e#6385#6719#0" expanded="false" />
+            <element signature="e#6775#7069#0" expanded="false" />
+            <element signature="e#7126#7448#0" expanded="false" />
+            <element signature="e#7500#8227#0" expanded="false" />
+            <element signature="e#12322#12472#0" expanded="false" />
+            <marker date="1487617460000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
+            <marker date="1487617460000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
+            <marker date="1487617460000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
+            <marker date="1487617460000" expanded="true" signature="10643:10664" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>
