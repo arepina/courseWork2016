@@ -46,27 +46,21 @@ class Syntactic:
             syntax_relations = data['annotations']['syntax-relation']
             aspect1_start_index = sentence.find(aspect1)
             aspect2_start_index = sentence.find(aspect2)
-            syntactic_paths_sum += self.find_path(aspect1_start_index, aspect2_start_index, syntax_relations)
+            aspect1_parent = self.get_parent(aspect1_start_index, syntax_relations)["value"]["parent"]["start"]
+            aspect2_parent = self.get_parent(aspect2_start_index, syntax_relations)["value"]["parent"]["start"]
+            if aspect1_parent == aspect2_start_index or aspect2_parent == aspect1_start_index:  # one aspect is parent to another
+                syntactic_paths_sum += 1
+            else:
+                syntactic_paths_sum += self.find_path(aspect1_parent, aspect2_parent, syntax_relations, 0)
         return syntactic_paths_sum / len(non_zero_sentences)
 
-    def find_path(self, aspect1_start_index, aspect2_start_index, syntax_relations):
-        path = 0
-        start_1 = aspect1_start_index
-        start_2 = aspect2_start_index
-        aspect1_parent = self.get_parent(start_1, syntax_relations)["value"]["parent"]["start"]
-        aspect2_parent = self.get_parent(start_2, syntax_relations)["value"]["parent"]["start"]
-        if aspect1_parent == aspect2_start_index or aspect2_parent == aspect1_start_index: # one aspect is parent to another
-            return 1
-        path += 2
+    def find_path(self, aspect1_parent, aspect2_parent, syntax_relations, path):
         while True:
+            path += 2
             if aspect1_parent == aspect2_parent:
                 return path
-            else:
-                path += 2
-            start_1 = aspect1_parent
-            start_2 = aspect2_parent
-            aspect1_parent = self.get_parent(start_1, syntax_relations)["value"]["parent"]["start"]
-            aspect2_parent = self.get_parent(start_2, syntax_relations)["value"]["parent"]["start"]
+            aspect1_parent = self.get_parent(aspect1_parent, syntax_relations)["value"]["parent"]["start"]
+            aspect2_parent = self.get_parent(aspect2_parent, syntax_relations)["value"]["parent"]["start"]
 
     @staticmethod
     def get_parent(start_index, syntax_relations):
