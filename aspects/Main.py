@@ -26,9 +26,9 @@ class Main:
         # self.split_process()
         self.pmi_process()
         # self.semantic_learning_process()
-        # self.contextual_features()
+        self.contextual_features()
         # self.lexical_features()
-        self.syntactic_features()
+        # self.syntactic_features()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API

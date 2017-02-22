@@ -14,8 +14,11 @@ class Context:
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
         # self.form_global_context_extra_db(db, aspects)
+        print("started")
         self.local_context(db, vocabulary)  # calculate the local context
-        self.global_context(db, vocabulary)  # calculate the global context
+        print("local finished")
+        # self.global_context(db, vocabulary)  # calculate the global context
+        # print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
@@ -187,21 +190,19 @@ class Context:
         aspect_row = db.cursor_local_context_prepare.execute('SELECT * FROM Context').fetchone()
         # load all the data from context db to context_for_aspects_dict
         count = 0
+        ngram_prepared_dict = {}
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
             context_for_aspects_dict[count] = np.array([aspect, context])
-            aspect_row = db.cursor_local_context_prepare.fetchone()
-            count += 1
-        ngram_prepared_dict = {}
-        for i in range(len(context_for_aspects_dict)):
-            aspect = context_for_aspects_dict[i][0]
-            aspect_context = context_for_aspects_dict[i][1]
-            ngram = self.add_one_smoothing(vectorizer.fit_transform([aspect_context]).toarray()[0])  # get ngram
-            divider = len(aspect_context.split())
+            ngram = self.add_one_smoothing(vectorizer.fit_transform([context]).toarray()[0])  # get ngram
+            divider = len(context.split())
             if divider != 0:
                 ngram = [x / divider for x in ngram]
             ngram_prepared_dict[aspect] = ngram
+            aspect_row = db.cursor_local_context_prepare.fetchone()
+            count += 1
+        print("local rows loaded")
         # look through all aspect pairs to calculate their kl_divergence
         # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
         for i in range(len(context_for_aspects_dict)):
@@ -225,21 +226,19 @@ class Context:
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
         # load all the data from context db
         aspect_row = db.cursor_global_context_prepare_extra.execute('SELECT * FROM Context').fetchone()
+        ngram_prepared_dict = {}
         while aspect_row is not None:
             aspect = str(aspect_row[0])
             context = str(aspect_row[1])
             context_for_aspects_dict[count] = [aspect, context]
-            aspect_row = db.cursor_global_context_prepare_extra.fetchone()
-            count += 1
-        ngram_prepared_dict = {}
-        for i in range(len(context_for_aspects_dict)):
-            aspect = context_for_aspects_dict[i][0]
-            aspect_context = context_for_aspects_dict[i][1]
-            ngram = self.add_one_smoothing(vectorizer.fit_transform([aspect_context]).toarray()[0])  # get ngram
-            divider = len(aspect_context.split())
+            ngram = self.add_one_smoothing(vectorizer.fit_transform([context]).toarray()[0])  # get ngram
+            divider = len(context.split())
             if divider != 0:
                 ngram = [x / divider for x in ngram]
             ngram_prepared_dict[aspect] = ngram
+            aspect_row = db.cursor_global_context_prepare_extra.fetchone()
+            count += 1
+        print("global rows loaded")
         # look through all aspect pairs to calculate their kl_divergence
         for i in range(len(context_for_aspects_dict)):
             print(i)

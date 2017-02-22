@@ -4,6 +4,7 @@
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -16,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1487502832092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1487762090153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Context.coverage" NAME="Context Coverage Results" MODIFIED="1486814356808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
@@ -61,8 +62,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="240">
+              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#970#2811#0" expanded="false" />
@@ -80,7 +81,7 @@
       <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
+            <state relative-caret-position="780">
               <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -92,25 +93,25 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="258" column="28" lean-forward="false" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
+            <state relative-caret-position="780">
+              <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#1219#1918#0" expanded="false" />
-                <element signature="e#1987#2801#0" expanded="false" />
-                <element signature="e#2871#3809#0" expanded="false" />
-                <element signature="e#3888#4539#0" expanded="false" />
-                <element signature="e#4649#5702#0" expanded="false" />
-                <element signature="e#5796#6316#0" expanded="false" />
-                <element signature="e#6385#6719#0" expanded="false" />
-                <element signature="e#6775#7069#0" expanded="false" />
-                <element signature="e#7126#7448#0" expanded="false" />
-                <element signature="e#7500#8227#0" expanded="false" />
-                <element signature="e#12322#12472#0" expanded="false" />
-                <marker date="1487617460000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
-                <marker date="1487617460000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
-                <marker date="1487617460000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
-                <marker date="1487617460000" expanded="true" signature="10643:10664" ph="SELECT * FRO... Context" />
+                <element signature="e#1313#2012#0" expanded="false" />
+                <element signature="e#2081#2895#0" expanded="false" />
+                <element signature="e#2965#3903#0" expanded="false" />
+                <element signature="e#3982#4633#0" expanded="false" />
+                <element signature="e#4743#5796#0" expanded="false" />
+                <element signature="e#5890#6410#0" expanded="false" />
+                <element signature="e#6479#6813#0" expanded="false" />
+                <element signature="e#6869#7163#0" expanded="false" />
+                <element signature="e#7220#7542#0" expanded="false" />
+                <element signature="e#7594#8321#0" expanded="false" />
+                <element signature="e#12125#12275#0" expanded="false" />
+                <marker date="1487761672000" expanded="true" signature="1374:1394" ph="SELECT * FRO... Review" />
+                <marker date="1487761672000" expanded="true" signature="4167:4205" ph="SELECT * FRO... Context" />
+                <marker date="1487761672000" expanded="true" signature="8585:8606" ph="SELECT * FRO... Context" />
+                <marker date="1487761672000" expanded="true" signature="10591:10612" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -264,8 +265,8 @@
         <option value="$PROJECT_DIR$/aspects/Lexical.py" />
         <option value="$PROJECT_DIR$/aspects/Syntatic.py" />
         <option value="$PROJECT_DIR$/aspects/DB.py" />
-        <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/Syntactic.py" />
+        <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/Context.py" />
       </list>
     </option>
@@ -738,19 +739,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42445055" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32473624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42445055" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -803,7 +804,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1213" />
+      <option name="time" value="1218" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -812,6 +813,8 @@
         <watch expression="corpus[np.array(non_zero_sentences_indexes)]" language="Python" />
         <watch expression="itemgetter(*non_zero_sentences_indexes)(corpus)" language="Python" />
         <watch expression="data['annotations']['syntax-relation'][1]" language="Python" />
+        <watch expression="count" language="Python" />
+        <watch expression="count" />
       </configuration>
     </watches-manager>
   </component>
@@ -1071,10 +1074,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <element signature="e#970#2811#0" expanded="false" />
@@ -1088,37 +1101,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="258" column="28" lean-forward="false" selection-start-line="258" selection-start-column="28" selection-end-line="258" selection-end-column="28" />
+        <state relative-caret-position="780">
+          <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#1219#1918#0" expanded="false" />
-            <element signature="e#1987#2801#0" expanded="false" />
-            <element signature="e#2871#3809#0" expanded="false" />
-            <element signature="e#3888#4539#0" expanded="false" />
-            <element signature="e#4649#5702#0" expanded="false" />
-            <element signature="e#5796#6316#0" expanded="false" />
-            <element signature="e#6385#6719#0" expanded="false" />
-            <element signature="e#6775#7069#0" expanded="false" />
-            <element signature="e#7126#7448#0" expanded="false" />
-            <element signature="e#7500#8227#0" expanded="false" />
-            <element signature="e#12322#12472#0" expanded="false" />
-            <marker date="1487617460000" expanded="true" signature="1280:1300" ph="SELECT * FRO... Review" />
-            <marker date="1487617460000" expanded="true" signature="4073:4111" ph="SELECT * FRO... Context" />
-            <marker date="1487617460000" expanded="true" signature="8491:8512" ph="SELECT * FRO... Context" />
-            <marker date="1487617460000" expanded="true" signature="10643:10664" ph="SELECT * FRO... Context" />
+            <element signature="e#1313#2012#0" expanded="false" />
+            <element signature="e#2081#2895#0" expanded="false" />
+            <element signature="e#2965#3903#0" expanded="false" />
+            <element signature="e#3982#4633#0" expanded="false" />
+            <element signature="e#4743#5796#0" expanded="false" />
+            <element signature="e#5890#6410#0" expanded="false" />
+            <element signature="e#6479#6813#0" expanded="false" />
+            <element signature="e#6869#7163#0" expanded="false" />
+            <element signature="e#7220#7542#0" expanded="false" />
+            <element signature="e#7594#8321#0" expanded="false" />
+            <element signature="e#12125#12275#0" expanded="false" />
+            <marker date="1487761672000" expanded="true" signature="1374:1394" ph="SELECT * FRO... Review" />
+            <marker date="1487761672000" expanded="true" signature="4167:4205" ph="SELECT * FRO... Context" />
+            <marker date="1487761672000" expanded="true" signature="8585:8606" ph="SELECT * FRO... Context" />
+            <marker date="1487761672000" expanded="true" signature="10591:10612" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>
