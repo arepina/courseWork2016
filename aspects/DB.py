@@ -209,7 +209,7 @@ class DB:
         self.conn_sentence.commit()
 
     def add_syntactic(self, aspect1, aspect2, syntactic_path):
-        self.cursor_lexical.execute(
+        self.cursor_syntactic.execute(
             'INSERT INTO Syntactic (aspect1, aspect2, syntactic_path) VALUES (?, ?, ?)',
             (aspect1, aspect2, syntactic_path))
 

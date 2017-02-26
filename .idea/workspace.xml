@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Syntactic.db" afterPath="$PROJECT_DIR$/db/Syntactic.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Syntactic.py" afterPath="$PROJECT_DIR$/aspects/Syntactic.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1487762090153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1488111081483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Context.coverage" NAME="Context Coverage Results" MODIFIED="1486814356808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
@@ -62,8 +64,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+            <state relative-caret-position="169">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#970#2811#0" expanded="false" />
@@ -78,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+            <state relative-caret-position="270">
+              <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -90,10 +92,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding>
+                <marker date="1486911815000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
+                <marker date="1486911815000" expanded="true" signature="7203:7224" ph="SELECT * FRO... Aspects" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Context.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
+            <state relative-caret-position="433">
               <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -120,46 +135,46 @@
       <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3180">
-              <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
+            <state relative-caret-position="169">
+              <caret line="211" column="29" lean-forward="false" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
               <folding>
-                <marker date="1487409538000" expanded="true" signature="6160:6269" ph="CREATE TABLE... Syntactic" />
-                <marker date="1487409538000" expanded="true" signature="6384:6494" ph="CREATE TABLE... Lexical" />
-                <marker date="1487409538000" expanded="true" signature="6621:6730" ph="CREATE TABLE... Context" />
-                <marker date="1487409538000" expanded="true" signature="6862:6971" ph="CREATE TABLE... Context" />
-                <marker date="1487409538000" expanded="true" signature="7118:7204" ph="CREATE TABLE... Context" />
-                <marker date="1487409538000" expanded="true" signature="7361:7449" ph="CREATE TABLE... Context" />
-                <marker date="1487409538000" expanded="true" signature="7619:7708" ph="CREATE TABLE... Context" />
-                <marker date="1487409538000" expanded="true" signature="7862:7956" ph="CREATE TABLE... Distance" />
-                <marker date="1487409538000" expanded="true" signature="8087:8189" ph="CREATE TABLE... Weight" />
-                <marker date="1487409538000" expanded="true" signature="8324:8453" ph="CREATE TABLE... PMI" />
-                <marker date="1487409538000" expanded="true" signature="8597:8726" ph="CREATE TABLE... PMI" />
-                <marker date="1487409538000" expanded="true" signature="8856:8985" ph="CREATE TABLE... PMI" />
-                <marker date="1487409538000" expanded="true" signature="9111:9240" ph="CREATE TABLE... PMI" />
-                <marker date="1487409538000" expanded="true" signature="9376:9508" ph="CREATE TABLE... Aspects" />
-                <marker date="1487409538000" expanded="true" signature="9648:9780" ph="CREATE TABLE... Reviews" />
-                <marker date="1487409538000" expanded="true" signature="9924:10003" ph="CREATE TABLE... Sentences" />
-                <marker date="1487409538000" expanded="true" signature="10127:10259" ph="CREATE TABLE... Aspects" />
-                <marker date="1487409538000" expanded="true" signature="10374:10453" ph="CREATE TABLE... Sentences" />
-                <marker date="1487409538000" expanded="true" signature="10608:10681" ph="INSERT INTO Syntactic... " />
-                <marker date="1487409538000" expanded="true" signature="10847:10921" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="11100:11170" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="11343:11413" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="11586:11637" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="11795:11845" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="12015:12066" ph="INSERT INTO Context... " />
-                <marker date="1487409538000" expanded="true" signature="12226:12292" ph="INSERT INTO Distance... " />
-                <marker date="1487409538000" expanded="true" signature="12459:12534" ph="INSERT INTO Weight... " />
-                <marker date="1487409538000" expanded="true" signature="12728:12826" ph="INSERT INTO PMI... " />
-                <marker date="1487409538000" expanded="true" signature="13033:13131" ph="INSERT INTO PMI... " />
-                <marker date="1487409538000" expanded="true" signature="13322:13420" ph="INSERT INTO PMI... " />
-                <marker date="1487409538000" expanded="true" signature="13615:13713" ph="INSERT INTO PMI... " />
-                <marker date="1487409538000" expanded="true" signature="13861:13916" ph="INSERT INTO Sentences... " />
-                <marker date="1487409538000" expanded="true" signature="14084:14203" ph="INSERT INTO Aspects... " />
-                <marker date="1487409538000" expanded="true" signature="14448:14567" ph="INSERT INTO Aspects... " />
-                <marker date="1487409538000" expanded="true" signature="14811:14930" ph="INSERT INTO Reviews... " />
-                <marker date="1487409538000" expanded="true" signature="15130:15200" ph="INSERT INTO Sentences... " />
-                <marker date="1487409538000" expanded="true" signature="15441:15477" ph="DELETE FROM " />
+                <marker date="1488111786000" expanded="true" signature="6160:6269" ph="CREATE TABLE... Syntactic" />
+                <marker date="1488111786000" expanded="true" signature="6384:6494" ph="CREATE TABLE... Lexical" />
+                <marker date="1488111786000" expanded="true" signature="6621:6730" ph="CREATE TABLE... Context" />
+                <marker date="1488111786000" expanded="true" signature="6862:6971" ph="CREATE TABLE... Context" />
+                <marker date="1488111786000" expanded="true" signature="7118:7204" ph="CREATE TABLE... Context" />
+                <marker date="1488111786000" expanded="true" signature="7361:7449" ph="CREATE TABLE... Context" />
+                <marker date="1488111786000" expanded="true" signature="7619:7708" ph="CREATE TABLE... Context" />
+                <marker date="1488111786000" expanded="true" signature="7862:7956" ph="CREATE TABLE... Distance" />
+                <marker date="1488111786000" expanded="true" signature="8087:8189" ph="CREATE TABLE... Weight" />
+                <marker date="1488111786000" expanded="true" signature="8324:8453" ph="CREATE TABLE... PMI" />
+                <marker date="1488111786000" expanded="true" signature="8597:8726" ph="CREATE TABLE... PMI" />
+                <marker date="1488111786000" expanded="true" signature="8856:8985" ph="CREATE TABLE... PMI" />
+                <marker date="1488111786000" expanded="true" signature="9111:9240" ph="CREATE TABLE... PMI" />
+                <marker date="1488111786000" expanded="true" signature="9376:9508" ph="CREATE TABLE... Aspects" />
+                <marker date="1488111786000" expanded="true" signature="9648:9780" ph="CREATE TABLE... Reviews" />
+                <marker date="1488111786000" expanded="true" signature="9924:10003" ph="CREATE TABLE... Sentences" />
+                <marker date="1488111786000" expanded="true" signature="10127:10259" ph="CREATE TABLE... Aspects" />
+                <marker date="1488111786000" expanded="true" signature="10374:10453" ph="CREATE TABLE... Sentences" />
+                <marker date="1488111786000" expanded="true" signature="10610:10683" ph="INSERT INTO Syntactic... " />
+                <marker date="1488111786000" expanded="true" signature="10849:10923" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="11102:11172" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="11345:11415" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="11588:11639" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="11797:11847" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="12017:12068" ph="INSERT INTO Context... " />
+                <marker date="1488111786000" expanded="true" signature="12228:12294" ph="INSERT INTO Distance... " />
+                <marker date="1488111786000" expanded="true" signature="12461:12536" ph="INSERT INTO Weight... " />
+                <marker date="1488111786000" expanded="true" signature="12730:12828" ph="INSERT INTO PMI... " />
+                <marker date="1488111786000" expanded="true" signature="13035:13133" ph="INSERT INTO PMI... " />
+                <marker date="1488111786000" expanded="true" signature="13324:13422" ph="INSERT INTO PMI... " />
+                <marker date="1488111786000" expanded="true" signature="13617:13715" ph="INSERT INTO PMI... " />
+                <marker date="1488111786000" expanded="true" signature="13863:13918" ph="INSERT INTO Sentences... " />
+                <marker date="1488111786000" expanded="true" signature="14086:14205" ph="INSERT INTO Aspects... " />
+                <marker date="1488111786000" expanded="true" signature="14450:14569" ph="INSERT INTO Aspects... " />
+                <marker date="1488111786000" expanded="true" signature="14813:14932" ph="INSERT INTO Reviews... " />
+                <marker date="1488111786000" expanded="true" signature="15132:15202" ph="INSERT INTO Sentences... " />
+                <marker date="1488111786000" expanded="true" signature="15443:15479" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -264,10 +279,10 @@
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
         <option value="$PROJECT_DIR$/aspects/Lexical.py" />
         <option value="$PROJECT_DIR$/aspects/Syntatic.py" />
-        <option value="$PROJECT_DIR$/aspects/DB.py" />
-        <option value="$PROJECT_DIR$/aspects/Syntactic.py" />
-        <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/Context.py" />
+        <option value="$PROJECT_DIR$/aspects/Main.py" />
+        <option value="$PROJECT_DIR$/aspects/Syntactic.py" />
+        <option value="$PROJECT_DIR$/aspects/DB.py" />
       </list>
     </option>
   </component>
@@ -278,9 +293,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -301,7 +315,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -358,6 +371,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -368,6 +382,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="SearchEverywhereHistoryKey" value="sy&#9;FILE&#9;file:///Volumes/Anastasia/Projects/courseWork2016/aspects/Synonyms.py" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -730,7 +745,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -743,7 +758,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42445055" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42438453" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -796,6 +811,21 @@
           <line>13</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Syntactic.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="1226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Syntactic.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="1231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/Syntactic.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="1234" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -804,17 +834,20 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1218" />
+      <option name="time" value="1235" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="len(np.nonzero(col1 * col2)[1])" language="Python" />
-        <watch expression="corpus[np.nonzero(col1*col2)[1]]" language="Python" />
-        <watch expression="corpus[np.array(non_zero_sentences_indexes)]" language="Python" />
-        <watch expression="itemgetter(*non_zero_sentences_indexes)(corpus)" language="Python" />
-        <watch expression="data['annotations']['syntax-relation'][1]" language="Python" />
-        <watch expression="count" language="Python" />
-        <watch expression="count" />
+        <watch expression="aspect1_start_index" />
+        <watch expression="aspect2_start_index" />
+        <watch expression="aspect1_parent" />
+        <watch expression="aspect2_parent" />
+        <watch expression="syntax_relations" />
+        <watch expression="sentence.find(aspect1)" />
+        <watch expression="re.search(r'\b(' + aspect1 + ')\b', sentence).start()" />
+        <watch expression=" re.search(r'\b(' + aspect1 + ')\b', sentence)" />
+        <watch expression="re.search(r'\b(%s)\b' % aspect1, sentence).start()" />
+        <watch expression="re.search(r'\b(%s)\b' % &quot;игр&quot;, &quot;buигр игр&quot;).start()" language="Python" />
       </configuration>
     </watches-manager>
   </component>
@@ -851,13 +884,6 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/utils/fixes.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd_vars.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/site-packages/sklearn/feature_extraction/text.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/utils/validation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -1014,52 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="213" column="45" lean-forward="false" selection-start-line="213" selection-start-column="45" selection-end-line="213" selection-end-column="45" />
-          <folding>
-            <marker date="1487409538000" expanded="true" signature="6160:6269" ph="CREATE TABLE... Syntactic" />
-            <marker date="1487409538000" expanded="true" signature="6384:6494" ph="CREATE TABLE... Lexical" />
-            <marker date="1487409538000" expanded="true" signature="6621:6730" ph="CREATE TABLE... Context" />
-            <marker date="1487409538000" expanded="true" signature="6862:6971" ph="CREATE TABLE... Context" />
-            <marker date="1487409538000" expanded="true" signature="7118:7204" ph="CREATE TABLE... Context" />
-            <marker date="1487409538000" expanded="true" signature="7361:7449" ph="CREATE TABLE... Context" />
-            <marker date="1487409538000" expanded="true" signature="7619:7708" ph="CREATE TABLE... Context" />
-            <marker date="1487409538000" expanded="true" signature="7862:7956" ph="CREATE TABLE... Distance" />
-            <marker date="1487409538000" expanded="true" signature="8087:8189" ph="CREATE TABLE... Weight" />
-            <marker date="1487409538000" expanded="true" signature="8324:8453" ph="CREATE TABLE... PMI" />
-            <marker date="1487409538000" expanded="true" signature="8597:8726" ph="CREATE TABLE... PMI" />
-            <marker date="1487409538000" expanded="true" signature="8856:8985" ph="CREATE TABLE... PMI" />
-            <marker date="1487409538000" expanded="true" signature="9111:9240" ph="CREATE TABLE... PMI" />
-            <marker date="1487409538000" expanded="true" signature="9376:9508" ph="CREATE TABLE... Aspects" />
-            <marker date="1487409538000" expanded="true" signature="9648:9780" ph="CREATE TABLE... Reviews" />
-            <marker date="1487409538000" expanded="true" signature="9924:10003" ph="CREATE TABLE... Sentences" />
-            <marker date="1487409538000" expanded="true" signature="10127:10259" ph="CREATE TABLE... Aspects" />
-            <marker date="1487409538000" expanded="true" signature="10374:10453" ph="CREATE TABLE... Sentences" />
-            <marker date="1487409538000" expanded="true" signature="10608:10681" ph="INSERT INTO Syntactic... " />
-            <marker date="1487409538000" expanded="true" signature="10847:10921" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="11100:11170" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="11343:11413" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="11586:11637" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="11795:11845" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="12015:12066" ph="INSERT INTO Context... " />
-            <marker date="1487409538000" expanded="true" signature="12226:12292" ph="INSERT INTO Distance... " />
-            <marker date="1487409538000" expanded="true" signature="12459:12534" ph="INSERT INTO Weight... " />
-            <marker date="1487409538000" expanded="true" signature="12728:12826" ph="INSERT INTO PMI... " />
-            <marker date="1487409538000" expanded="true" signature="13033:13131" ph="INSERT INTO PMI... " />
-            <marker date="1487409538000" expanded="true" signature="13322:13420" ph="INSERT INTO PMI... " />
-            <marker date="1487409538000" expanded="true" signature="13615:13713" ph="INSERT INTO PMI... " />
-            <marker date="1487409538000" expanded="true" signature="13861:13916" ph="INSERT INTO Sentences... " />
-            <marker date="1487409538000" expanded="true" signature="14084:14203" ph="INSERT INTO Aspects... " />
-            <marker date="1487409538000" expanded="true" signature="14448:14567" ph="INSERT INTO Aspects... " />
-            <marker date="1487409538000" expanded="true" signature="14811:14930" ph="INSERT INTO Reviews... " />
-            <marker date="1487409538000" expanded="true" signature="15130:15200" ph="INSERT INTO Sentences... " />
-            <marker date="1487409538000" expanded="true" signature="15441:15477" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -1067,27 +1047,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="74" column="79" lean-forward="true" selection-start-line="72" selection-start-column="8" selection-end-line="74" selection-end-column="79" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
+    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+        <state relative-caret-position="244">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1486911815000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
+            <marker date="1486911815000" expanded="true" signature="7203:7224" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        <state relative-caret-position="169">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <element signature="e#970#2811#0" expanded="false" />
@@ -1103,7 +1085,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="433">
           <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
@@ -1122,6 +1104,62 @@
             <marker date="1487761672000" expanded="true" signature="4167:4205" ph="SELECT * FRO... Context" />
             <marker date="1487761672000" expanded="true" signature="8585:8606" ph="SELECT * FRO... Context" />
             <marker date="1487761672000" expanded="true" signature="10591:10612" ph="SELECT * FRO... Context" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="211" column="29" lean-forward="false" selection-start-line="211" selection-start-column="29" selection-end-line="211" selection-end-column="29" />
+          <folding>
+            <marker date="1488111786000" expanded="true" signature="6160:6269" ph="CREATE TABLE... Syntactic" />
+            <marker date="1488111786000" expanded="true" signature="6384:6494" ph="CREATE TABLE... Lexical" />
+            <marker date="1488111786000" expanded="true" signature="6621:6730" ph="CREATE TABLE... Context" />
+            <marker date="1488111786000" expanded="true" signature="6862:6971" ph="CREATE TABLE... Context" />
+            <marker date="1488111786000" expanded="true" signature="7118:7204" ph="CREATE TABLE... Context" />
+            <marker date="1488111786000" expanded="true" signature="7361:7449" ph="CREATE TABLE... Context" />
+            <marker date="1488111786000" expanded="true" signature="7619:7708" ph="CREATE TABLE... Context" />
+            <marker date="1488111786000" expanded="true" signature="7862:7956" ph="CREATE TABLE... Distance" />
+            <marker date="1488111786000" expanded="true" signature="8087:8189" ph="CREATE TABLE... Weight" />
+            <marker date="1488111786000" expanded="true" signature="8324:8453" ph="CREATE TABLE... PMI" />
+            <marker date="1488111786000" expanded="true" signature="8597:8726" ph="CREATE TABLE... PMI" />
+            <marker date="1488111786000" expanded="true" signature="8856:8985" ph="CREATE TABLE... PMI" />
+            <marker date="1488111786000" expanded="true" signature="9111:9240" ph="CREATE TABLE... PMI" />
+            <marker date="1488111786000" expanded="true" signature="9376:9508" ph="CREATE TABLE... Aspects" />
+            <marker date="1488111786000" expanded="true" signature="9648:9780" ph="CREATE TABLE... Reviews" />
+            <marker date="1488111786000" expanded="true" signature="9924:10003" ph="CREATE TABLE... Sentences" />
+            <marker date="1488111786000" expanded="true" signature="10127:10259" ph="CREATE TABLE... Aspects" />
+            <marker date="1488111786000" expanded="true" signature="10374:10453" ph="CREATE TABLE... Sentences" />
+            <marker date="1488111786000" expanded="true" signature="10610:10683" ph="INSERT INTO Syntactic... " />
+            <marker date="1488111786000" expanded="true" signature="10849:10923" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="11102:11172" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="11345:11415" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="11588:11639" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="11797:11847" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="12017:12068" ph="INSERT INTO Context... " />
+            <marker date="1488111786000" expanded="true" signature="12228:12294" ph="INSERT INTO Distance... " />
+            <marker date="1488111786000" expanded="true" signature="12461:12536" ph="INSERT INTO Weight... " />
+            <marker date="1488111786000" expanded="true" signature="12730:12828" ph="INSERT INTO PMI... " />
+            <marker date="1488111786000" expanded="true" signature="13035:13133" ph="INSERT INTO PMI... " />
+            <marker date="1488111786000" expanded="true" signature="13324:13422" ph="INSERT INTO PMI... " />
+            <marker date="1488111786000" expanded="true" signature="13617:13715" ph="INSERT INTO PMI... " />
+            <marker date="1488111786000" expanded="true" signature="13863:13918" ph="INSERT INTO Sentences... " />
+            <marker date="1488111786000" expanded="true" signature="14086:14205" ph="INSERT INTO Aspects... " />
+            <marker date="1488111786000" expanded="true" signature="14450:14569" ph="INSERT INTO Aspects... " />
+            <marker date="1488111786000" expanded="true" signature="14813:14932" ph="INSERT INTO Reviews... " />
+            <marker date="1488111786000" expanded="true" signature="15132:15202" ph="INSERT INTO Sentences... " />
+            <marker date="1488111786000" expanded="true" signature="15443:15479" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="37" column="28" lean-forward="false" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
