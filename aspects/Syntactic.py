@@ -10,7 +10,10 @@ from aspects.PMI import PMI
 
 import re
 
-
+# 0 - 0:45:57.173771
+# 1 - 1:15:37.275200
+# 2 - 0:02:43.620486
+# 3 -
 class Syntactic:
     def process(self, db, vocabulary, aspect_class_object):
         db.create_syntactic_db()
@@ -25,10 +28,6 @@ class Syntactic:
             start = datetime.now()
             for j in range(i + 1, len(matrix_terms)):
                 print(j)
-                if j == 28:
-                    r = 42
-                if j == 1:
-                    r = 42
                 col1 = col_array[i]
                 col2 = col_array[j]
                 non_zero_sentences_indexes = np.nonzero(col1 * col2)[1]
