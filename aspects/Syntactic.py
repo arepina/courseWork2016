@@ -28,7 +28,6 @@ class Syntactic:
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
         col_array = PMI.create_col_array(matrix, len(matrix_terms))
         for i in range(len(matrix_terms)):
-            print(i)
             start = datetime.now()
             for j in range(i + 1, len(matrix_terms)):
                 print(j)
@@ -86,7 +85,6 @@ class Syntactic:
                 db.add_syntactic_ideal(matrix_terms[i], matrix_terms[j], syntactic)
             print(datetime.now() - start)
             db.conn_syntactic_ideal.commit()
-
 
     def calculate_syntactic(self, aspect1, aspect2, non_zero_sentences, db):
         divider = len(non_zero_sentences)
