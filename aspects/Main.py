@@ -111,8 +111,8 @@ class Main:
 
     def syntactic_features(self):
         syntactic = Syntactic()
-        syntactic.process_ideal(self.db)
-        # syntactic.process(self.db, self.vocabulary, self.aspect)
+        # syntactic.process_ideal(self.db)
+        syntactic.process(self.db, self.vocabulary, self.aspect)
 
 main = Main()
 

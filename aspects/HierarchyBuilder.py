@@ -1,18 +1,13 @@
-
 class HierarchyBuilder:
 
     def calculate_average_semantic_distance_ideal_tree(self, db):
-        row_review_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
-        row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
-        row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
-        while row_review_ideal is not None:
-            pmi_r = float(row_review_ideal[5])
-            pmi_s = float(row_sentence_ideal[5])
-            lexical = int(row_lexical_ideal[2])
-
-            row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
-            row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
-            row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
+        row_semantic_distance_ideal = db.cursor_semantic_distance_ideal.execute('SELECT * FROM Distance').fetchone()
+        avg = 0
+        count = 0
+        while row_semantic_distance_ideal is not None:
+            count += 1
+            avg += float(row_semantic_distance_ideal[2])
+            row_semantic_distance_ideal = db.cursor_semantic_distance_ideal.fetchone()
 
     def build_hierachy(self):
         # find free nodes

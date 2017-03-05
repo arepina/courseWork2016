@@ -26,6 +26,8 @@ class DB:
     conn_syntactic = None
     conn_syntactic_ideal = None
     conn_tree = None
+    conn_local_context_ideal = None
+    conn_global_context_ideal = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -48,6 +50,8 @@ class DB:
     cursor_global_context_prepare = None
     cursor_global_context_prepare_extra = None
     cursor_global_context = None
+    cursor_local_context_ideal = None
+    cursor_global_context_ideal = None
     cursor_local_context = None
     cursor_lexical = None
     cursor_lexical_ideal = None
@@ -78,6 +82,8 @@ class DB:
     db_syntactic = "Syntactic.db"
     db_syntactic_ideal = "Syntactic_Ideal.db"
     db_tree = "Tree.db"
+    db_local_context_ideal = "Local_Context_Ideal.db"
+    db_global_context_ideal = "Global_Context_Ideal.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -105,6 +111,8 @@ class DB:
         self.conn_tree = sqlite3.connect(path + "/../db/" + self.db_tree)
         self.conn_lexical_ideal = sqlite3.connect(path + "/../db/" + self.db_lexical_ideal)
         self.conn_syntactic_ideal = sqlite3.connect(path + "/../db/" + self.db_syntactic_ideal)
+        self.conn_local_context_ideal = sqlite3.connect(path + "/../db/" + self.db_local_context_ideal)
+        self.conn_global_context_ideal = sqlite3.connect(path + "/../db/" + self.db_global_context_ideal)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -132,6 +140,18 @@ class DB:
         self.cursor_syntactic = self.conn_syntactic.cursor()
         self.cursor_tree = self.conn_tree.cursor()
         self.cursor_syntactic_ideal = self.conn_syntactic_ideal.cursor()
+        self.cursor_local_context_ideal = self.conn_local_context_ideal.cursor()
+        self.cursor_global_context_ideal = self.conn_global_context_ideal.cursor()
+
+    def create_context_global_ideal_db(self):
+        self.cursor_global_context_ideal.execute('''CREATE TABLE IF NOT EXISTS Context
+                           (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
+        self.conn_global_context_ideal.commit()
+
+    def create_context_local_ideal_db(self):
+        self.cursor_local_context_ideal.execute('''CREATE TABLE IF NOT EXISTS Context
+                           (aspect1 TEXT, aspect2 TEXT, kl_divergence DOUBLE)''')
+        self.conn_local_context_ideal.commit()
 
     def create_tree_db(self):
         self.cursor_tree.execute('''CREATE TABLE IF NOT EXISTS Tree
@@ -185,7 +205,7 @@ class DB:
 
     def create_semantic_distance_db(self):
         self.cursor_semantic_distance.execute('''CREATE TABLE IF NOT EXISTS Distance
-                (aspect1 TEXT, aspect2 TEXT, distance INT)''')
+                (aspect1 TEXT, aspect2 TEXT, distance FLOAT)''')
         self.conn_semantic_distance.commit()
 
     def create_path_weight_db(self):
@@ -262,6 +282,16 @@ class DB:
         self.cursor_lexical_ideal.execute(
             'INSERT INTO Lexical (aspect1, aspect2, length_difference) VALUES (?, ?, ?)',
             (aspect1, aspect2, length_difference))
+
+    def add_context_global_ideal(self, aspect1, aspect2, kl_divergence):
+        self.cursor_global_context_ideal.execute(
+            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
+            (aspect1, aspect2, kl_divergence))
+
+    def add_context_local_ideal(self, aspect1, aspect2, kl_divergence):
+        self.cursor_local_context_ideal.execute(
+            'INSERT INTO Context (aspect1, aspect2, kl_divergence) VALUES (?, ?, ?)',
+            (aspect1, aspect2, kl_divergence))
 
     def add_context_global(self, aspect1, aspect2, kl_divergence):
         self.cursor_global_context.execute(

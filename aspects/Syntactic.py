@@ -22,7 +22,7 @@ class Syntactic:
         db.create_syntactic_db()
         # db.create_tree_db()  # load syntactic trees from api ispras
         corpus = PMI.get_all_sentences_corpus(db)
-        self.build_tree(corpus, aspect_class_object, db)
+        # self.build_tree(corpus, aspect_class_object, db)
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
@@ -45,8 +45,9 @@ class Syntactic:
                         syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences, db)
                 db.add_syntactic(matrix_terms[i], matrix_terms[j], syntactic)
             print(datetime.now() - start)
-            if i % 1000 == 0:
+            if i % 500 == 0:
                 db.conn_syntactic.commit()
+        db.conn_syntactic.commit()
 
     def process_ideal(self, db):
         db.create_syntactic_ideal_db()
