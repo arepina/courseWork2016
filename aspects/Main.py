@@ -24,7 +24,7 @@ class Main:
         # self.aspects_process()
         # self.sentence_process()
         # self.split_process()
-        self.pmi_process()
+        # self.pmi_process()
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
@@ -97,8 +97,8 @@ class Main:
         semantic_learning = SemanticDistanceLearning()
         # self.db.create_path_weight_db()
         # semantic_learning.calculate_ground_truth_distance(self.db)
-        self.db.create_semantic_distance_db()
-        semantic_learning.process_semantic_distance_learning(self.db)
+        semantic_learning.process_semantic_distance_learning_ideal(self.db)
+        # semantic_learning.process_semantic_distance_learning(self.db)
 
     def contextual_features(self):
         context = Context()

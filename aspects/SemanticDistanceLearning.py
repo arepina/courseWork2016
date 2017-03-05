@@ -2,7 +2,6 @@ import numpy as np
 
 
 class SemanticDistanceLearning:
-
     def calculate_ground_truth_distance(self, db):
         import os
         path = os.getcwd()
@@ -19,7 +18,8 @@ class SemanticDistanceLearning:
             print(filename)
             file_content = str(all_files_content[count]).split(";")  # list with ideal aspects for concrete topic
             file_content[0] = file_content[0][2:]
-            file_content[len(file_content) - 1] = file_content[len(file_content) - 1][:len(file_content[len(file_content) - 1]) - 2]
+            file_content[len(file_content) - 1] = file_content[len(file_content) - 1][
+                                                  :len(file_content[len(file_content) - 1]) - 2]
             for i in range(0, len(file_content)):
                 node = file_content[i]
                 for j in range(i + 1, len(file_content)):
@@ -101,7 +101,7 @@ class SemanticDistanceLearning:
         i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
         w = np.dot(np.power(np.dot(f.T, f) + nu * i, -1), np.dot(f.T, d))
-        return w
+        return w  # [-3.16566918 -4.77040853  1.81054205 -2.31519052]
 
     @staticmethod
     def vector_with_ground_truth_distances(db):
@@ -113,11 +113,12 @@ class SemanticDistanceLearning:
         return vector
 
     def process_semantic_distance_learning(self, db):
+        db.create_semantic_distance_db()
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
         row_sentence = db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
         row_lexical = db.cursor_lexical.execute('SELECT * FROM Lexical').fetchone()
         # row_syntactic = db.cursor_syntactic.execute('SELECT * FROM Syntactic').fetchone()
-        w = np.array(self.calculate_distance(db))[0]  # will return a vector with two values
+        w = np.array(self.calculate_distance(db))[0]  # will return a vector with feature values
         count = 0
         while row_review is not None:
             print(count)
@@ -128,10 +129,48 @@ class SemanticDistanceLearning:
             pmi_sentence = float(row_sentence[5])
             lexical = int(row_lexical[2])
             # syntactic = int(row_syntactic[2])
-            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical #+ w[3] * syntactic
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical  # + w[3] * syntactic
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()
+            row_lexical = db.cursor_lexical.fetchone()
             if count % 1000 == 0:
                 db.conn_semantic_distance.commit()
         db.conn_semantic_distance.commit()
+
+    @staticmethod
+    def process_semantic_distance_learning_ideal(db):
+        db.create_semantic_distance_ideal_db()
+        row_review_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
+        row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
+        row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
+        # w = np.array(self.calculate_distance(db))[0]  # will return a vector with feature values
+        w = [-3.16566918, -4.77040853, 1.81054205, -2.31519052]  # have already calculated the values
+        count = 0
+        while row_review_ideal is not None:
+            print(count)
+            count += 1
+            aspect1 = str(row_review_ideal[0])
+            aspect2 = str(row_review_ideal[1])
+            pmi_review = float(row_review_ideal[5])
+            pmi_sentence = float(row_sentence_ideal[5])
+            lexical = int(row_lexical_ideal[2])
+            row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
+                'SELECT * FROM Syntactic WHERE aspect1 = ? AND aspect2 = ?',
+                (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
+            try:
+                syntactic = int(row_syntactic_ideal[2])
+            except:  # we can have (1,0) or (0,1) so need to find the correct one
+                try:
+                    row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
+                        'SELECT * FROM Syntactic WHERE aspect1 = ? AND aspect2 = ?',
+                        (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                    syntactic = int(row_syntactic_ideal[2])
+                except:
+                    syntactic = -1
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic  # + w[4] * context
+            db.add_semantic_distance_ideal(aspect1, aspect2, d)
+            row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
+            row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
+            row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
+            db.conn_semantic_distance_ideal.commit()

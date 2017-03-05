@@ -16,6 +16,7 @@ class DB:
     conn_pmi_ideal_sentence = None
     conn_path_weight = None
     conn_semantic_distance = None
+    conn_semantic_distance_ideal = None
     conn_local_context_prepare = None
     conn_global_context_prepare = None
     conn_global_context_prepare_extra = None
@@ -46,6 +47,7 @@ class DB:
     cursor_pmi_ideal_sentence = None
     cursor_path_weight = None
     cursor_semantic_distance = None
+    cursor_semantic_distance_ideal = None
     cursor_local_context_prepare = None
     cursor_global_context_prepare = None
     cursor_global_context_prepare_extra = None
@@ -72,6 +74,7 @@ class DB:
     db_pmi_ideal_sentence_name = 'PMI_Ideal_Sentence.db'
     db_path_weight = "Path_Weight.db"
     db_semantic_distance = "Semantic_Distance.db"
+    db_semantic_distance_ideal = "Semantic_Distance_Ideal.db"
     db_local_context_prepare = "Local_Context_Prepare.db"
     db_global_context_prepare = "Global_Context_Prepare.db"
     db_global_context_prepare_extra = "Global_Context_Prepare_Extra.db"
@@ -101,6 +104,7 @@ class DB:
         self.conn_pmi_ideal_sentence = sqlite3.connect(path + "/../db/" + self.db_pmi_ideal_sentence_name)
         self.conn_path_weight = sqlite3.connect(path + "/../db/" + self.db_path_weight)
         self.conn_semantic_distance = sqlite3.connect(path + "/../db/" + self.db_semantic_distance)
+        self.conn_semantic_distance_ideal = sqlite3.connect(path + "/../db/" + self.db_semantic_distance_ideal)
         self.conn_local_context_prepare = sqlite3.connect(path + "/../db/" + self.db_local_context_prepare)
         self.conn_global_context_prepare = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare)
         self.conn_global_context_prepare_extra = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare_extra)
@@ -130,6 +134,7 @@ class DB:
         self.cursor_pmi_ideal_sentence = self.conn_pmi_ideal_sentence.cursor()
         self.cursor_path_weight = self.conn_path_weight.cursor()
         self.cursor_semantic_distance = self.conn_semantic_distance.cursor()
+        self.cursor_semantic_distance_ideal = self.conn_semantic_distance_ideal.cursor()
         self.cursor_local_context_prepare = self.conn_local_context_prepare.cursor()
         self.cursor_global_context_prepare = self.conn_global_context_prepare.cursor()
         self.cursor_global_context_prepare_extra = self.conn_global_context_prepare_extra.cursor()
@@ -207,6 +212,11 @@ class DB:
         self.cursor_semantic_distance.execute('''CREATE TABLE IF NOT EXISTS Distance
                 (aspect1 TEXT, aspect2 TEXT, distance FLOAT)''')
         self.conn_semantic_distance.commit()
+
+    def create_semantic_distance_ideal_db(self):
+        self.cursor_semantic_distance_ideal.execute('''CREATE TABLE IF NOT EXISTS Distance
+                (aspect1 TEXT, aspect2 TEXT, distance FLOAT)''')
+        self.conn_semantic_distance_ideal.commit()
 
     def create_path_weight_db(self):
         self.cursor_path_weight.execute('''CREATE TABLE IF NOT EXISTS Weight
@@ -317,6 +327,11 @@ class DB:
         self.cursor_global_context_prepare_extra.execute(
             'INSERT INTO Context (aspect, context) VALUES (?, ?)',
             (aspect, context))
+
+    def add_semantic_distance_ideal(self, aspect1, aspect2, distance):
+        self.cursor_semantic_distance_ideal.execute(
+            'INSERT INTO Distance (aspect1, aspect2, distance) VALUES (?, ?, ?)',
+            (aspect1, aspect2, distance))
 
     def add_semantic_distance(self, aspect1, aspect2, distance):
         self.cursor_semantic_distance.execute(
