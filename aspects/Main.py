@@ -27,8 +27,8 @@ class Main:
         self.pmi_process()
         # self.semantic_learning_process()
         # self.contextual_features()
-        self.lexical_features()
-        # self.syntactic_features()
+        # self.lexical_features()
+        self.syntactic_features()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -106,12 +106,13 @@ class Main:
 
     def lexical_features(self):
         lexical = Lexical()
-        # lexical.process(self.vocabulary, self.db)
+        lexical.process(self.vocabulary, self.db)
         lexical.process_ideal(self.db)
 
     def syntactic_features(self):
         syntactic = Syntactic()
-        syntactic.process(self.db, self.vocabulary, self.aspect)
+        syntactic.process_ideal(self.db)
+        # syntactic.process(self.db, self.vocabulary, self.aspect)
 
 main = Main()
 

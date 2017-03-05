@@ -20,14 +20,13 @@ import re
 class Syntactic:
     def process(self, db, vocabulary, aspect_class_object):
         db.create_syntactic_db()
-        db.create_tree_db()
+        # db.create_tree_db()  # load syntactic trees from api ispras
         corpus = PMI.get_all_sentences_corpus(db)
         self.build_tree(corpus, aspect_class_object, db)
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
         col_array = PMI.create_col_array(matrix, len(matrix_terms))
-        # col_array = np.array(col_array)
         for i in range(len(matrix_terms)):
             print(i)
             start = datetime.now()
@@ -41,22 +40,60 @@ class Syntactic:
                 else:
                     non_zero_sentences = itemgetter(*non_zero_sentences_indexes)(corpus)
                     if len(non_zero_sentences_indexes) == 1:
-                        syntactic = self.find_path_for_sentence(non_zero_sentences, aspect_class_object,
-                                                                matrix_terms[i], matrix_terms[j], 0, 1)
+                        syntactic = self.find_path_for_sentence(non_zero_sentences, matrix_terms[i], matrix_terms[j], 0,
+                                                                1, db)
                     else:
-                        syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences,
-                                                             aspect_class_object)
+                        syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences, db)
                 db.add_syntactic(matrix_terms[i], matrix_terms[j], syntactic)
             print(datetime.now() - start)
             if i % 1000 == 0:
                 db.conn_syntactic.commit()
 
-    def calculate_syntactic(self, aspect1, aspect2, non_zero_sentences, aspect_class_object):
+    def process_ideal(self, db):
+        db.create_syntactic_ideal_db()
+        corpus = PMI.get_all_sentences_corpus(db)
+        row_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
+        vocabulary = []
+        while row_ideal is not None:
+            aspect1 = str(row_ideal[0])
+            aspect2 = str(row_ideal[1])
+            if aspect1 not in vocabulary:
+                vocabulary.append(aspect1)
+            if aspect2 not in vocabulary:
+                vocabulary.append(aspect2)
+            row_ideal = db.cursor_pmi_ideal_review.fetchone()
+        vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
+        matrix = vectorizer.fit_transform(corpus)
+        matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
+        col_array = PMI.create_col_array(matrix, len(matrix_terms))
+        for i in range(len(matrix_terms)):
+            print(i)
+            start = datetime.now()
+            for j in range(i + 1, len(matrix_terms)):
+                print(j)
+                col1 = col_array[i]
+                col2 = col_array[j]
+                non_zero_sentences_indexes = np.nonzero(col1 * col2)[1]
+                if len(non_zero_sentences_indexes) == 0:  # independent
+                    syntactic = -1
+                else:
+                    non_zero_sentences = itemgetter(*non_zero_sentences_indexes)(corpus)
+                    if len(non_zero_sentences_indexes) == 1:
+                        syntactic = self.find_path_for_sentence(non_zero_sentences, matrix_terms[i], matrix_terms[j], 0,
+                                                                1, db)
+                    else:
+                        syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences, db)
+                db.add_syntactic_ideal(matrix_terms[i], matrix_terms[j], syntactic)
+            print(datetime.now() - start)
+            db.conn_syntactic_ideal.commit()
+
+
+    def calculate_syntactic(self, aspect1, aspect2, non_zero_sentences, db):
         divider = len(non_zero_sentences)
         syntactic_paths_sum = 0
         for sentence in non_zero_sentences:
-            syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect_class_object, aspect1, aspect2,
-                                                              syntactic_paths_sum, divider)
+            syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect1, aspect2, syntactic_paths_sum, divider,
+                                                              db)
         return syntactic_paths_sum / divider
 
     def find_path(self, aspect1, aspect2, aspect1_parent, aspect2_parent, syntax_relations, aspect1_parents,
@@ -96,9 +133,9 @@ class Syntactic:
             if start_index == relation["start"]:
                 return relation
 
-    def find_path_for_sentence(self, sentence, aspect_class_object, aspect1, aspect2, syntactic_paths_sum, divider):
-        syntactic_tree = Aspects.syntatic_parsing(sentence, aspect_class_object)
-        data = json.loads(syntactic_tree)
+    def find_path_for_sentence(self, sentence, aspect1, aspect2, syntactic_paths_sum, divider, db):
+        row_syntactic_tree = db.cursor_tree.execute('SELECT * FROM Tree WHERE sentence = ?', (sentence,)).fetchone()
+        data = json.loads(str(row_syntactic_tree[1]))
         aspect_error_happened = False
         syntax_relations = data['annotations']['syntax-relation']
         try:
@@ -137,13 +174,11 @@ class Syntactic:
                 divider -= 1
         return syntactic_paths_sum
 
-    def build_tree(self, sentences, aspect_class_object, db):
+    @staticmethod
+    def build_tree(sentences, aspect_class_object, db):
         for sentence in sentences:
             row_sentence = db.cursor_tree.execute('SELECT * FROM Tree WHERE sentence = ?', (sentence,)).fetchone()
             if row_sentence is None:  # the sentence is not in db
                 syntactic_tree = Aspects.syntatic_parsing(sentence, aspect_class_object)
                 db.add_tree(sentence, syntactic_tree)
             db.conn_tree.commit()
-
-
-

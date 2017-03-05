@@ -24,6 +24,7 @@ class DB:
     conn_lexical = None
     conn_lexical_ideal = None
     conn_syntactic = None
+    conn_syntactic_ideal = None
     conn_tree = None
 
     cursor_aspects = None
@@ -51,6 +52,7 @@ class DB:
     cursor_lexical = None
     cursor_lexical_ideal = None
     cursor_syntactic = None
+    cursor_syntactic_ideal = None
     cursor_tree = None
 
     db_merged_name = 'Merged.db'
@@ -74,6 +76,7 @@ class DB:
     db_lexical = "Lexical.db"
     db_lexical_ideal = "Lexical_Ideal.db"
     db_syntactic = "Syntactic.db"
+    db_syntactic_ideal = "Syntactic_Ideal.db"
     db_tree = "Tree.db"
 
     def __init__(self):
@@ -101,6 +104,7 @@ class DB:
         self.conn_syntactic = sqlite3.connect(path + "/../db/" + self.db_syntactic)
         self.conn_tree = sqlite3.connect(path + "/../db/" + self.db_tree)
         self.conn_lexical_ideal = sqlite3.connect(path + "/../db/" + self.db_lexical_ideal)
+        self.conn_syntactic_ideal = sqlite3.connect(path + "/../db/" + self.db_syntactic_ideal)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -127,11 +131,17 @@ class DB:
         self.cursor_lexical_ideal = self.conn_lexical_ideal.cursor()
         self.cursor_syntactic = self.conn_syntactic.cursor()
         self.cursor_tree = self.conn_tree.cursor()
+        self.cursor_syntactic_ideal = self.conn_syntactic_ideal.cursor()
 
     def create_tree_db(self):
         self.cursor_tree.execute('''CREATE TABLE IF NOT EXISTS Tree
                         (sentence TEXT, tree TEXT)''')
         self.conn_tree.commit()
+
+    def create_syntactic_ideal_db(self):
+        self.cursor_syntactic_ideal.execute('''CREATE TABLE IF NOT EXISTS Syntactic
+                        (aspect1 TEXT, aspect2 TEXT, syntactic_path INT)''')
+        self.conn_syntactic_ideal.commit()
 
     def create_syntactic_db(self):
         self.cursor_syntactic.execute('''CREATE TABLE IF NOT EXISTS Syntactic
@@ -232,6 +242,11 @@ class DB:
         self.cursor_tree.execute(
             'INSERT INTO Tree (sentence, tree) VALUES (?, ?)',
             (sentence, tree))
+
+    def add_syntactic_ideal(self, aspect1, aspect2, syntactic_path):
+        self.cursor_syntactic_ideal.execute(
+            'INSERT INTO Syntactic (aspect1, aspect2, syntactic_path) VALUES (?, ?, ?)',
+            (aspect1, aspect2, syntactic_path))
 
     def add_syntactic(self, aspect1, aspect2, syntactic_path):
         self.cursor_syntactic.execute(
