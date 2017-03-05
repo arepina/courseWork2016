@@ -10,14 +10,19 @@ from aspects.PMI import PMI
 
 import re
 
+
 # 0 - 0:45:57.173771
 # 1 - 1:15:37.275200
 # 2 - 0:02:43.620486
-# 3 -
+# 3 - 0:05:25.984913
+# 4 - 0:02:17.196288
+# 5 - 0:02:38.344920
 class Syntactic:
     def process(self, db, vocabulary, aspect_class_object):
         db.create_syntactic_db()
+        db.create_tree_db()
         corpus = PMI.get_all_sentences_corpus(db)
+        self.build_tree(corpus, aspect_class_object, db)
         vectorizer = CountVectorizer(min_df=5, max_df=0.8, vocabulary=vocabulary)
         matrix = vectorizer.fit_transform(corpus)
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
@@ -36,9 +41,11 @@ class Syntactic:
                 else:
                     non_zero_sentences = itemgetter(*non_zero_sentences_indexes)(corpus)
                     if len(non_zero_sentences_indexes) == 1:
-                        syntactic = self.find_path_for_sentence(non_zero_sentences, aspect_class_object, matrix_terms[i], matrix_terms[j], 0, 1)
+                        syntactic = self.find_path_for_sentence(non_zero_sentences, aspect_class_object,
+                                                                matrix_terms[i], matrix_terms[j], 0, 1)
                     else:
-                        syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences, aspect_class_object)
+                        syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences,
+                                                             aspect_class_object)
                 db.add_syntactic(matrix_terms[i], matrix_terms[j], syntactic)
             print(datetime.now() - start)
             if i % 1000 == 0:
@@ -48,7 +55,8 @@ class Syntactic:
         divider = len(non_zero_sentences)
         syntactic_paths_sum = 0
         for sentence in non_zero_sentences:
-            syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect_class_object, aspect1, aspect2, syntactic_paths_sum, divider)
+            syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect_class_object, aspect1, aspect2,
+                                                              syntactic_paths_sum, divider)
         return syntactic_paths_sum / divider
 
     def find_path(self, aspect1, aspect2, aspect1_parent, aspect2_parent, syntax_relations, aspect1_parents,
@@ -69,7 +77,6 @@ class Syntactic:
                 return len(aspect2_parents)
             if aspect1_parent == "" and aspect2_parent == "":  # the words don't have intersection at all
                 return max(len(aspect1_parents), len(aspect2_parents))
-                # TODO: !!!!!!!!!!!!!!!!!!
             try:
                 if aspect1_parent != "":
                     aspect1_parent = self.get_parent(aspect1_parent, syntax_relations)["value"]["parent"]["start"]
@@ -129,3 +136,14 @@ class Syntactic:
             else:
                 divider -= 1
         return syntactic_paths_sum
+
+    def build_tree(self, sentences, aspect_class_object, db):
+        for sentence in sentences:
+            row_sentence = db.cursor_tree.execute('SELECT * FROM Tree WHERE sentence = ?', (sentence,)).fetchone()
+            if row_sentence is None:  # the sentence is not in db
+                syntactic_tree = Aspects.syntatic_parsing(sentence, aspect_class_object)
+                db.add_tree(sentence, syntactic_tree)
+            db.conn_tree.commit()
+
+
+

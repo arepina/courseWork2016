@@ -67,20 +67,25 @@ class SemanticDistanceLearning:
     def calculate_distance(self, db):
         row_review_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
         row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
-        pmis_arr = []
+        row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
+        features_arr = []
         import numpy as np
         while row_review_ideal is not None:
-            all_pmis = []
+            pair_features = []
             pmi_r = float(row_review_ideal[5])
             pmi_s = float(row_sentence_ideal[5])
-            all_pmis.append(pmi_r)
-            all_pmis.append(pmi_s)
-            pmis_arr.append(all_pmis)
+            lexical = int(row_lexical_ideal[2])
+            pair_features.append(pmi_r)
+            pair_features.append(pmi_s)
+            pair_features.append(lexical)
+            features_arr.append(pair_features)
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
-        f = np.array(pmis_arr)  # pmi's vector
+            row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
+        f = np.array(features_arr)  # features's vector
         d = np.array(self.vector_with_ground_truth_distances(db))
-        matrix_size = 2
+        # todo 2 or 3???? matrix size
+        matrix_size = 3
         i = np.matrix(np.identity(matrix_size))  # identity metric
         nu = 0.4
         w = np.dot(np.power(np.dot(f.T, f) + nu * i, -1), np.dot(f.T, d))
@@ -98,6 +103,7 @@ class SemanticDistanceLearning:
     def process_semantic_distance_learning(self, db):
         row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
         row_sentence = db.cursor_pmi_sentence.execute('SELECT * FROM PMI').fetchone()
+        row_lexical = db.cursor_lexical.execute('SELECT * FROM Lexical').fetchone()
         import numpy as np
         w = np.array(self.calculate_distance(db))[0]  # will return a vector with two values
         count = 0
@@ -108,8 +114,11 @@ class SemanticDistanceLearning:
             aspect2 = str(row_review[1])
             pmi_review = float(row_review[5])
             pmi_sentence = float(row_sentence[5])
-            d = w[0] * pmi_review + w[1] * pmi_sentence
+            lexical = int(row_lexical[2])
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()
-            db.conn_semantic_distance.commit()
+            if count % 1000 == 0:
+                db.conn_semantic_distance.commit()
+        db.conn_semantic_distance.commit()
