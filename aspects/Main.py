@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from aspects.Aspects import Aspects
 from aspects.Context import Context
 from aspects.DB import DB
+from aspects.HierarchyBuilder import HierarchyBuilder
 from aspects.IdealAspectsDB import IdealAspectsDB
 from aspects.Lexical import Lexical
 from aspects.OneClassSVM import OneClassSVM
@@ -27,8 +28,9 @@ class Main:
         # self.pmi_process()
         # self.contextual_features()
         # self.lexical_features()
-        # self.syntactic_features()
-        self.semantic_learning_process()
+        self.syntactic_features()
+        # self.semantic_learning_process()
+        # self.hierarchy()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -111,8 +113,15 @@ class Main:
 
     def syntactic_features(self):
         syntactic = Syntactic()
-        syntactic.process_ideal(self.db)
+        # syntactic.process_ideal(self.db)
         syntactic.process(self.db, self.vocabulary, self.aspect)
+
+    def hierarchy(self):
+        h = HierarchyBuilder()
+        average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)
+        # h.process_ideal(self.db)
+        h.process(self.db, average_semantic_distance_ideal)
+
 
 main = Main()
 

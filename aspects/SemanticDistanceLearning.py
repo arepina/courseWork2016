@@ -129,7 +129,7 @@ class SemanticDistanceLearning:
             pmi_sentence = float(row_sentence[5])
             lexical = int(row_lexical[2])
             # syntactic = int(row_syntactic[2])
-            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical  # + w[3] * syntactic
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical  # + w[3] * syntactic + w[4] * context
             db.add_semantic_distance(aspect1, aspect2, d)
             row_review = db.cursor_pmi_review.fetchone()
             row_sentence = db.cursor_pmi_sentence.fetchone()
