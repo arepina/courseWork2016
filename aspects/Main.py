@@ -28,7 +28,7 @@ class Main:
         # self.split_process()
         # self.frequent()
         self.pmi_process()
-        # self.contextual_features()
+        self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
         # self.semantic_learning_process()
@@ -79,8 +79,8 @@ class Main:
         # pmi_ideal(pmi, reviews_corpus, sentences_corpus)  # ideal
         # self.vocabulary = pmi.get_vocabulary(self.db)
         self.vocabulary = pmi.get_frequent_vocabulary(self.db)
-        self.pmi_review(pmi, reviews_corpus, self.vocabulary)
-        self.pmi_sentence(pmi, sentences_corpus, self.vocabulary)
+        # self.pmi_review(pmi, reviews_corpus, self.vocabulary)
+        # self.pmi_sentence(pmi, sentences_corpus, self.vocabulary)
 
     def pmi_review(self, pmi, reviews_corpus, vocabulary):
         self.db.create_pmi_review_db()

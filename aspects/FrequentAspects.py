@@ -14,6 +14,7 @@ class FrequentAspects:
             if len(adv) != 0:
                 words = adv.split(";")
                 for word in words:
+                    word = self.replacer(word)
                     if word not in dict:
                         dict[word] = 1
                     else:
@@ -21,6 +22,7 @@ class FrequentAspects:
             if len(dis) != 0:
                 words = dis.split(";")
                 for word in words:
+                    word = self.replacer(word)
                     if word not in dict:
                         dict[word] = 1
                     else:
@@ -28,6 +30,7 @@ class FrequentAspects:
             if len(com) != 0:
                 words = com.split(";")
                 for word in words:
+                    word = self.replacer(word)
                     if word not in dict:
                         dict[word] = 1
                     else:
@@ -39,8 +42,7 @@ class FrequentAspects:
         count = 0
         for word in sorted_dict:
             if count < 1000:
-                added_word = self.replacer(word[0])
-                db.add_frequent(added_word, word[1])
+                db.add_frequent(word[0], word[1])
             else:
                 break
             count += 1
@@ -63,8 +65,6 @@ class FrequentAspects:
         item = item.replace("®", "")
         item = item.replace("*", "")
         item = item.replace("\"", "")
-        item = item.replace("—", "")
-        item = item.replace("-", "")
         item = item.replace("~", "")
         item = item.replace("'", "")
         return item.lower()

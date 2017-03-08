@@ -11,12 +11,6 @@ from aspects.PMI import PMI
 import re
 
 
-# 0 - 0:45:57.173771
-# 1 - 1:15:37.275200
-# 2 - 0:02:43.620486
-# 3 - 0:05:25.984913
-# 4 - 0:02:17.196288
-# 5 - 0:02:38.344920
 class Syntactic:
     def process(self, db, vocabulary, aspect_class_object):
         db.create_syntactic_db()
@@ -27,6 +21,7 @@ class Syntactic:
         matrix = vectorizer.fit_transform(corpus)
         matrix_terms = np.array(vectorizer.get_feature_names())  # unique aspects - keys
         col_array = PMI.create_col_array(matrix, len(matrix_terms))
+        col_array = np.array(col_array)
         for i in range(len(matrix_terms)):
             start = datetime.now()
             for j in range(i + 1, len(matrix_terms)):
@@ -45,7 +40,7 @@ class Syntactic:
                         syntactic = self.calculate_syntactic(matrix_terms[i], matrix_terms[j], non_zero_sentences, db)
                 db.add_syntactic(matrix_terms[i], matrix_terms[j], syntactic)
             print(datetime.now() - start)
-            if i % 500 == 0:
+            if i % 100 == 0:
                 db.conn_syntactic.commit()
         db.conn_syntactic.commit()
 

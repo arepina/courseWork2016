@@ -107,10 +107,13 @@ class PMI:
     @staticmethod
     def get_frequent_vocabulary(db):
         vocabulary = {}
+        count = 0
         row_aspect = db.cursor_frequent.execute('SELECT * FROM Frequent').fetchone()
         while row_aspect is not None:
-            vocabulary[row_aspect[0]] = row_aspect[1]
+            vocabulary[row_aspect[0]] = count
             row_aspect = db.cursor_frequent.fetchone()
+            count += 1
+        return vocabulary
 
     def one_word_aspects(self, ideal, db):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
@@ -220,7 +223,8 @@ class PMI:
                     db.add_pmi_ideal_sentence(matrix_terms[i], matrix_terms[j], final_matrix[1][i], final_matrix[1][j],
                                               both_num, pmi_val)
             print(datetime.now() - start)
-            if count % 1000 == 0:
+            if count % 100 == 0:
+                db.conn_pmi_review.commit()
                 db.conn_pmi_sentence.commit()
 
     @staticmethod

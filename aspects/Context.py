@@ -6,24 +6,24 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 class Context:
     def process(self, db, aspects):
-        vocabulary = {}
-        reviews = self.get_reviews_and_vocabulary(db, vocabulary)  # get user reviews
-        # db.create_context_local_prepare_db()
-        # db.create_context_global_prepare_db()
+        all_aspects_words = {}
+        reviews = self.get_reviews_and_vocabulary(db, all_aspects_words)  # get user reviews
+        db.create_context_local_prepare_db()
+        db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
         # self.form_local_context_db(db, aspects, reviews)
         # self.form_global_context_db(db, aspects, reviews)
         # self.form_global_context_extra_db(db, aspects)
         print("started")
-        # self.local_context(db, vocabulary)  # calculate the local context
-        # print("local finished")
-        self.global_context(db, vocabulary)  # calculate the global context
-        print("global finished")
+        self.local_context(db, all_aspects_words)  # calculate the local context
+        print("local finished")
+        # self.global_context(db, all_aspects_words)  # calculate the global context
+        # print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
 
-    def get_reviews_and_vocabulary(self, db, vocabulary):
+    def get_reviews_and_vocabulary(self, db, all_aspects_words):
         reviews = []
         row_review = db.cursor_reviews.execute('SELECT * FROM Review').fetchone()
         count = 0
@@ -37,8 +37,8 @@ class Context:
             reviews.append(review)
             words = review.split(" ")
             for word in words:
-                if word not in vocabulary:
-                    vocabulary[word] = count
+                if word not in all_aspects_words:
+                    all_aspects_words[word] = count
                     count += 1
             row_review = db.cursor_reviews.fetchone()
         return reviews
@@ -183,10 +183,10 @@ class Context:
         item = item.replace("'", "")
         return item.lower()
 
-    def local_context(self, db, vocabulary):
+    def local_context(self, db, all_aspects_words):
         context_for_aspects_dict = {}
         db.create_context_local_db()
-        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
         aspect_row = db.cursor_local_context_prepare.execute('SELECT * FROM Context').fetchone()
         # load all the data from context db to context_for_aspects_dict
         count = 0
@@ -219,11 +219,11 @@ class Context:
             db.conn_local_context.commit()
             print(datetime.now() - start)
 
-    def global_context(self, db, vocabulary):
+    def global_context(self, db, all_aspects_words):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
-        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
         # load all the data from context db
         aspect_row = db.cursor_global_context_prepare_extra.execute('SELECT * FROM Context').fetchone()
         ngram_prepared_dict = {}
