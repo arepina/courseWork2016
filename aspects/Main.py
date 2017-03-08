@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from aspects.Aspects import Aspects
 from aspects.Context import Context
 from aspects.DB import DB
+from aspects.FrequentAspects import FrequentAspects
 from aspects.HierarchyBuilder import HierarchyBuilder
 from aspects.IdealAspectsDB import IdealAspectsDB
 from aspects.Lexical import Lexical
@@ -30,7 +31,8 @@ class Main:
         # self.lexical_features()
         # self.syntactic_features()
         # self.semantic_learning_process()
-        self.hierarchy()
+        # self.hierarchy()
+        self.frequent()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -109,12 +111,16 @@ class Main:
     def lexical_features(self):
         lexical = Lexical()
         lexical.process(self.vocabulary, self.db)
-        lexical.process_ideal(self.db)
+        # lexical.process_ideal(self.db)
 
     def syntactic_features(self):
         syntactic = Syntactic()
         # syntactic.process_ideal(self.db)
         syntactic.process(self.db, self.vocabulary, self.aspect)
+
+    def frequent(self):
+        f = FrequentAspects()
+        f.process(self.db)
 
     def hierarchy(self):
         h = HierarchyBuilder()
