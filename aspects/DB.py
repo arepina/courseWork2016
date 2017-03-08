@@ -156,7 +156,7 @@ class DB:
         self.cursor_local_context_ideal = self.conn_local_context_ideal.cursor()
         self.cursor_global_context_ideal = self.conn_global_context_ideal.cursor()
         self.cursor_hierarchy = self.conn_hierarchy.cursor()
-        self.cursor_frequent = self.conn_frequent()
+        self.cursor_frequent = self.conn_frequent.cursor()
 
     def create_frequent_db(self):
         self.cursor_frequent.execute('''CREATE TABLE IF NOT EXISTS Frequent (word TEXT, number INT)''')

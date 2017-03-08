@@ -26,13 +26,13 @@ class Main:
         # self.aspects_process()
         # self.sentence_process()
         # self.split_process()
+        # self.frequent()
         # self.pmi_process()
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
         # self.semantic_learning_process()
         # self.hierarchy()
-        self.frequent()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
