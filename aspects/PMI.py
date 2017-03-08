@@ -104,6 +104,14 @@ class PMI:
             row = db.cursor_aspects_one_word.fetchone()
         return vocabulary
 
+    @staticmethod
+    def get_frequent_vocabulary(db):
+        vocabulary = {}
+        row_aspect = db.cursor_frequent.execute('SELECT * FROM Frequent').fetchone()
+        while row_aspect is not None:
+            vocabulary[row_aspect[0]] = row_aspect[1]
+            row_aspect = db.cursor_frequent.fetchone()
+
     def one_word_aspects(self, ideal, db):
         row_aspect = ideal.cursor_aspects.execute('SELECT * FROM IdealAspects').fetchone()
         count = 0
@@ -223,20 +231,3 @@ class PMI:
             col = np.array(matrix[:, i].T.toarray())
             array.append(col)
         return array
-
-    @staticmethod
-    def move_pmi_review_db_to_file(db):
-        row = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
-        f = open('pmi_review.txt', 'w')
-        count = 0
-        while row is not None:
-            count += 1
-            aspect1 = str(row[0])
-            aspect2 = str(row[1])
-            pmi_review = float(row[5])
-            s = aspect1 + ";" + aspect2 + ";" + str(pmi_review) + "\n"
-            f.write(s)
-            row = db.cursor_pmi_review.fetchone()
-            if count % 100000 == 0:
-                print(count)
-        f.close()

@@ -69,3 +69,4 @@ class FrequentAspects:
         item = item.replace("'", "")
         return item.lower()
 
+

@@ -27,7 +27,7 @@ class Main:
         # self.sentence_process()
         # self.split_process()
         # self.frequent()
-        # self.pmi_process()
+        self.pmi_process()
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
@@ -74,18 +74,18 @@ class Main:
 
     def pmi_process(self):
         pmi = PMI()
-        # reviews_corpus = pmi.get_all_reviews_corpus(self.db)  # reviews
-        # sentences_corpus = pmi.get_all_sentences_corpus(self.db)  # sentences
+        reviews_corpus = pmi.get_all_reviews_corpus(self.db)  # reviews
+        sentences_corpus = pmi.get_all_sentences_corpus(self.db)  # sentences
         # pmi_ideal(pmi, reviews_corpus, sentences_corpus)  # ideal
-        self.vocabulary = pmi.get_vocabulary(self.db)
-        # self.pmi_review(pmi, reviews_corpus, self.vocabulary)
-        # self.pmi_sentence(pmi, sentences_corpus, self.vocabulary)
+        # self.vocabulary = pmi.get_vocabulary(self.db)
+        self.vocabulary = pmi.get_frequent_vocabulary(self.db)
+        self.pmi_review(pmi, reviews_corpus, self.vocabulary)
+        self.pmi_sentence(pmi, sentences_corpus, self.vocabulary)
 
     def pmi_review(self, pmi, reviews_corpus, vocabulary):
         self.db.create_pmi_review_db()
         pmi.calculate_pmi(reviews_corpus, 0, vocabulary, self.db)
         self.db.conn_pmi_review.commit()
-        pmi.move_pmi_review_db_to_file(self.db)
 
     def pmi_sentence(self, pmi, sentences_corpus, vocabulary):
         self.db.create_pmi_sentence_db()

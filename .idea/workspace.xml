@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/FrequentAspects.py" afterPath="$PROJECT_DIR$/aspects/FrequentAspects.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/PMI.py" afterPath="$PROJECT_DIR$/aspects/PMI.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,17 +62,34 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="377">
+              <caret line="82" column="8" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#1133#2974#0" expanded="false" />
-                <element signature="e#3016#3131#0" expanded="false" />
-                <element signature="e#3170#3294#0" expanded="false" />
-                <element signature="e#3819#4004#0" expanded="false" />
-                <element signature="e#4077#4220#0" expanded="false" />
-                <element signature="e#4294#4465#0" expanded="false" />
-                <element signature="e#4516#4821#0" expanded="false" />
+                <element signature="e#1131#2972#0" expanded="false" />
+                <element signature="e#3014#3129#0" expanded="false" />
+                <element signature="e#3168#3292#0" expanded="false" />
+                <element signature="e#4084#4227#0" expanded="false" />
+                <element signature="e#4301#4472#0" expanded="false" />
+                <element signature="e#4523#4828#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+              <folding>
+                <marker date="1488982669000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+                <marker date="1488982669000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+                <marker date="1488982669000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+                <marker date="1488982669000" expanded="true" signature="4178:4200" ph="SELECT * FRO... Frequent" />
+                <marker date="1488982669000" expanded="true" signature="4456:4482" ph="SELECT * FRO... IdealAspects" />
+                <marker date="1488982669000" expanded="true" signature="5382:5402" ph="SELECT * FRO... Review" />
+                <marker date="1488982669000" expanded="true" signature="5473:5494" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -192,9 +209,10 @@
         <entry file="file://$PROJECT_DIR$/aspects/FrequentAspects.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
               <folding>
-                <marker date="1488981856000" expanded="true" signature="140:161" ph="SELECT * FRO... Aspects" />
+                <element signature="e#1753#2480#0" expanded="false" />
+                <marker date="1488982645000" expanded="true" signature="140:161" ph="SELECT * FRO... Aspects" />
               </folding>
             </state>
           </provider>
@@ -288,7 +306,6 @@
         <option value="$PROJECT_DIR$/aspects/Synonyms.py" />
         <option value="$PROJECT_DIR$/aspects/_init_.py" />
         <option value="$PROJECT_DIR$/aspects/Main2.py" />
-        <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
         <option value="$PROJECT_DIR$/aspects/Lexical.py" />
         <option value="$PROJECT_DIR$/aspects/Syntatic.py" />
@@ -303,6 +320,7 @@
         <option value="$PROJECT_DIR$/aspects/HierarchyBuilder.py" />
         <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/FrequentAspects.py" />
+        <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/Main.py" />
       </list>
     </option>
@@ -1064,13 +1082,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Node.py" />
-    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="38" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
@@ -1276,26 +1287,42 @@
     <entry file="file://$PROJECT_DIR$/aspects/FrequentAspects.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
           <folding>
-            <marker date="1488981856000" expanded="true" signature="140:161" ph="SELECT * FRO... Aspects" />
+            <element signature="e#1753#2480#0" expanded="false" />
+            <marker date="1488982645000" expanded="true" signature="140:161" ph="SELECT * FRO... Aspects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding>
+            <marker date="1488982669000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+            <marker date="1488982669000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+            <marker date="1488982669000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+            <marker date="1488982669000" expanded="true" signature="4178:4200" ph="SELECT * FRO... Frequent" />
+            <marker date="1488982669000" expanded="true" signature="4456:4482" ph="SELECT * FRO... IdealAspects" />
+            <marker date="1488982669000" expanded="true" signature="5382:5402" ph="SELECT * FRO... Review" />
+            <marker date="1488982669000" expanded="true" signature="5473:5494" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="377">
+          <caret line="82" column="8" lean-forward="true" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#1133#2974#0" expanded="false" />
-            <element signature="e#3016#3131#0" expanded="false" />
-            <element signature="e#3170#3294#0" expanded="false" />
-            <element signature="e#3819#4004#0" expanded="false" />
-            <element signature="e#4077#4220#0" expanded="false" />
-            <element signature="e#4294#4465#0" expanded="false" />
-            <element signature="e#4516#4821#0" expanded="false" />
+            <element signature="e#1131#2972#0" expanded="false" />
+            <element signature="e#3014#3129#0" expanded="false" />
+            <element signature="e#3168#3292#0" expanded="false" />
+            <element signature="e#4084#4227#0" expanded="false" />
+            <element signature="e#4301#4472#0" expanded="false" />
+            <element signature="e#4523#4828#0" expanded="false" />
           </folding>
         </state>
       </provider>
