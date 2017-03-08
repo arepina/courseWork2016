@@ -28,9 +28,9 @@ class Main:
         # self.pmi_process()
         # self.contextual_features()
         # self.lexical_features()
-        self.syntactic_features()
+        # self.syntactic_features()
         # self.semantic_learning_process()
-        # self.hierarchy()
+        self.hierarchy()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -119,7 +119,6 @@ class Main:
     def hierarchy(self):
         h = HierarchyBuilder()
         average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)
-        # h.process_ideal(self.db)
         h.process(self.db, average_semantic_distance_ideal)
 
 

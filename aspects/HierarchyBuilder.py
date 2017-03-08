@@ -1,5 +1,7 @@
-class HierarchyBuilder:
+import codecs
 
+
+class HierarchyBuilder:
     @staticmethod
     def calculate_average_semantic_distance_ideal_tree(db):
         row_semantic_distance_ideal = db.cursor_semantic_distance_ideal.execute('SELECT * FROM Distance').fetchone()
@@ -16,17 +18,11 @@ class HierarchyBuilder:
         db.create_hierarchy_db()
         self.build_hierarchy(db, average_semantic_distance_ideal)
 
-    # def process_ideal(self, db):
-    #     db.create_hierarchy_ideal_db()
-    #     self.build_hierarchy_ideal(db)
-    #
-    # def build_hierarchy_ideal(self, db):
-    #     pass
-
     def build_hierarchy(self, db, average_semantic_distance_ideal):
         free_nodes = self.find_free_nodes()
         for node in free_nodes:
-            row_semantic_distance = db.cursor_semantic_distance.execute('SELECT * FROM Distance WHERE aspect1 = ? OR aspect2 = ?', (node, node,)).fetchone()
+            row_semantic_distance = db.cursor_semantic_distance.execute(
+                'SELECT * FROM Distance WHERE aspect1 = ? OR aspect2 = ?', (node, node,)).fetchone()
             while row_semantic_distance is not None:
                 # add as children those whose semantic distance is less them average distance in ideal tree
                 if row_semantic_distance[2] <= average_semantic_distance_ideal:
@@ -46,19 +42,14 @@ class HierarchyBuilder:
         path = os.getcwd()
         filenames = os.listdir(path + "/../productTrees/Tree")
         os.chdir(path + "/../productTrees/Tree")
+        filenames.remove(".DS_Store")
+        filenames.remove("Subcategories.txt")
         for filename in filenames:
-            with open(filename) as f:
-                lines = f.readlines()
-            max_ind = 2  # max index of file 
-            if 3 in lines:
-                max_ind = 3
-            for line in lines[0].split("\n"):
+            lines = codecs.open(filename, 'r', 'cp1251').readlines()
+            max_ind = 2  # max depth index of file
+            for line in lines:
                 arr = line.split(";")
-                for val in arr:
-                    if max_ind in arr and val not in free_nodes:  # the node is the free one for concrete file
-                        free_nodes.append(val)
+                arr[2] = arr[2].replace("\r\n", "")
+                if str(max_ind) in arr and arr[0] not in free_nodes:  # the node is the free one for concrete file
+                    free_nodes.append(arr[0])
         return free_nodes
-
-
-
-

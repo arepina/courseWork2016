@@ -30,7 +30,6 @@ class DB:
     conn_local_context_ideal = None
     conn_global_context_ideal = None
     conn_hierarchy = None
-    conn_hierarchy_ideal = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -63,7 +62,6 @@ class DB:
     cursor_syntactic_ideal = None
     cursor_tree = None
     cursor_hierarchy = None
-    cursor_hierarchy_ideal = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -92,7 +90,6 @@ class DB:
     db_local_context_ideal = "Local_Context_Ideal.db"
     db_global_context_ideal = "Global_Context_Ideal.db"
     db_hierarchy = "Hierarchy.db"
-    db_hierarchy_ideal = "Hierarchy_Ideal.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -124,7 +121,6 @@ class DB:
         self.conn_local_context_ideal = sqlite3.connect(path + "/../db/" + self.db_local_context_ideal)
         self.conn_global_context_ideal = sqlite3.connect(path + "/../db/" + self.db_global_context_ideal)
         self.conn_hierarchy = sqlite3.connect(path + "/../db/" + self.db_hierarchy)
-        self.conn_hierarchy_ideal = sqlite3.connect(path + "/../db/" + self.db_hierarchy_ideal)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -156,11 +152,7 @@ class DB:
         self.cursor_local_context_ideal = self.conn_local_context_ideal.cursor()
         self.cursor_global_context_ideal = self.conn_global_context_ideal.cursor()
         self.cursor_hierarchy = self.conn_hierarchy.cursor()
-        self.cursor_hierarchy_ideal = self.conn_hierarchy_ideal.cursor()
 
-    def create_hierarchy_ideal_db(self):
-        self.cursor_hierarchy_ideal.execute('''CREATE TABLE IF NOT EXISTS Hierarchy (parent TEXT, child TEXT)''')
-        self.conn_hierarchy_ideal.commit()
 
     def create_hierarchy_db(self):
         self.cursor_hierarchy.execute('''CREATE TABLE IF NOT EXISTS Hierarchy (parent TEXT, child TEXT)''')
@@ -268,9 +260,6 @@ class DB:
     def create_sentence_db(self):
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
-
-    def add_hierarchy_ideal(self, parent, child):
-        self.cursor_hierarchy_ideal.execute('INSERT INTO Hierarchy (parent, child) VALUES (?, ?)', (parent, child))
 
     def add_hierarchy(self, parent, child):
         self.cursor_hierarchy.execute('INSERT INTO Hierarchy (parent, child) VALUES (?, ?)', (parent, child))
