@@ -16,9 +16,9 @@ class Context:
         self.form_global_context_db(db, aspects, reviews, 0)
         self.form_global_context_extra_db(db, aspects)
         print("started")
-        self.local_context(db, all_aspects_words, 0)  # calculate the local context
+        self.local_context(db, all_aspects_words)  # calculate the local context
         print("local finished")
-        self.global_context(db, all_aspects_words, 0)  # calculate the global context
+        self.global_context(db, all_aspects_words)  # calculate the global context
         print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
@@ -31,14 +31,14 @@ class Context:
         db.create_context_local_prepare_ideal_db()
         db.create_context_global_prepare_ideal_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        self.form_local_context_db(db, aspects, reviews, 1)
-        self.form_global_context_db(db, aspects, reviews, 1)
-        self.form_global_context_extra_ideal_db(db, aspects)
+        # self.form_local_context_db(db, aspects, reviews, 1)
+        # self.form_global_context_db(db, aspects, reviews, 1)
+        # self.form_global_context_extra_ideal_db(db, aspects)
         print("started")
-        self.local_context(db, all_aspects_words, 1)  # calculate the local context
+        self.local_context_ideal(db, all_aspects_words)  # calculate the local context
         print("local finished")
-        self.global_context(db, all_aspects_words, 1)  # calculate the global context
-        print("global finished")
+        # self.global_context_ideal(db, all_aspects_words)  # calculate the global context
+        # print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
@@ -48,18 +48,17 @@ class Context:
         import os
         dict = {}
         path = os.getcwd()
-        filenames = os.listdir(path + "/../productTrees/Tree")
-        os.chdir(path + "/../productTrees/Tree")
+        filenames = os.listdir(path + "/../productTrees/Subcategories")
+        os.chdir(path + "/../productTrees/Subcategories")
         filenames.remove(".DS_Store")
         filenames.remove("Subcategories.txt")
         count = 0
         for filename in filenames:
-            lines = codecs.open(filename, 'r', 'cp1251').readlines()
-            for line in lines:
-                arr = line.split(";")
-                arr[2] = arr[2].replace("\r\n", "")
-                if arr[0] not in dict:
-                    dict[arr[0]] = count
+            line = codecs.open(filename, 'r', 'cp1251').readlines()[0]
+            words = line.split(";")
+            for word in words:
+                if word not in dict:
+                    dict[word] = count
                     count += 1
         return dict
 
@@ -249,7 +248,7 @@ class Context:
         item = item.replace("'", "")
         return item.lower()
 
-    def local_context(self, db, all_aspects_words, which_part):
+    def local_context(self, db, all_aspects_words):
         context_for_aspects_dict = {}
         db.create_context_local_db()
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
@@ -285,7 +284,44 @@ class Context:
             db.conn_local_context.commit()
             print(datetime.now() - start)
 
-    def global_context(self, db, all_aspects_words, which_part):
+    def local_context_ideal(self, db, all_aspects_words):
+        context_for_aspects_dict = {}
+        db.create_context_local_ideal_db()
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
+        aspect_row = db.cursor_local_context_prepare_ideal.execute('SELECT * FROM Context').fetchone()
+        # load all the data from context db to context_for_aspects_dict
+        count = 0
+        ngram_prepared_dict = {}
+        while aspect_row is not None:
+            aspect = str(aspect_row[0])
+            context = str(aspect_row[1])
+            context_for_aspects_dict[count] = np.array([aspect, context])
+            ngram = self.add_one_smoothing(vectorizer.fit_transform([context]).toarray()[0])  # get ngram
+            divider = len(context.split())
+            if divider != 0:
+                ngram = [x / divider for x in ngram]
+            ngram_prepared_dict[aspect] = ngram
+            aspect_row = db.cursor_local_context_prepare_ideal.fetchone()
+            count += 1
+        print("local rows loaded")
+        # look through all aspect pairs to calculate their kl_divergence
+        # the strs with many 4-words substrs which were calculated in form_context_db method for each aspect
+        for i in range(len(context_for_aspects_dict)):
+            print(i)
+            start = datetime.now()
+            aspect1 = context_for_aspects_dict[i][0]
+            ngram1 = ngram_prepared_dict[aspect1]
+            for j in range(i + 1, len(context_for_aspects_dict)):
+                aspect2 = context_for_aspects_dict[j][0]
+                ngram2 = ngram_prepared_dict[aspect2]
+                # calculate the kl-divergence for local context
+                kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2),
+                                         2)  # send 2 unigram language models in vector form
+                db.add_context_local_ideal(aspect1, aspect2, kl_diver)
+            db.conn_local_context_ideal.commit()
+            print(datetime.now() - start)
+
+    def global_context(self, db, all_aspects_words):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
@@ -318,6 +354,41 @@ class Context:
                 kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2), 2)  # send 2 unigram language models in vector form
                 db.add_context_global(aspect1, aspect2, kl_diver)
             db.conn_global_context.commit()
+            print(datetime.now() - start)
+
+    def global_context_ideal(self, db, all_aspects_words):
+        count = 0
+        context_for_aspects_dict = {}
+        db.create_context_global_ideal_db()
+        vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
+        # load all the data from context db
+        aspect_row = db.cursor_global_context_prepare_extra_ideal.execute('SELECT * FROM Context').fetchone()
+        ngram_prepared_dict = {}
+        while aspect_row is not None:
+            aspect = str(aspect_row[0])
+            context = str(aspect_row[1])
+            context_for_aspects_dict[count] = [aspect, context]
+            ngram = self.add_one_smoothing(vectorizer.fit_transform([context]).toarray()[0])  # get ngram
+            divider = len(context.split())
+            if divider != 0:
+                ngram = [x / divider for x in ngram]
+            ngram_prepared_dict[aspect] = ngram
+            aspect_row = db.cursor_global_context_prepare_extra_ideal.fetchone()
+            count += 1
+        print("global rows loaded")
+        # look through all aspect pairs to calculate their kl_divergence
+        for i in range(len(context_for_aspects_dict)):
+            print(i)
+            start = datetime.now()
+            aspect1 = context_for_aspects_dict[i][0]
+            ngram1 = ngram_prepared_dict[aspect1]
+            for j in range(i + 1, len(context_for_aspects_dict)):
+                aspect2 = context_for_aspects_dict[j][0]
+                ngram2 = ngram_prepared_dict[aspect2]
+                # calculate the kl-divergence for global context
+                kl_diver = stats.entropy(np.array(ngram1), np.array(ngram2), 2)  # send 2 unigram language models in vector form
+                db.add_context_global_ideal(aspect1, aspect2, kl_diver)
+            db.conn_global_context_ideal.commit()
             print(datetime.now() - start)
 
     @staticmethod
