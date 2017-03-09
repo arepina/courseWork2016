@@ -69,30 +69,54 @@ class SemanticDistanceLearning:
         row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
         row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
         features_arr = []
+        count = 0
         while row_review_ideal is not None:
+            print(count)
+            if count == 587:
+                r = 42
+            count += 1
             pair_features = []
             pmi_r = float(row_review_ideal[5])
             pmi_s = float(row_sentence_ideal[5])
             lexical = int(row_lexical_ideal[2])
+            print(row_lexical_ideal[0] + " " + row_lexical_ideal[1])
+            aspect1 = row_lexical_ideal[0].replace("_", " ")
+            aspect2 = row_lexical_ideal[1].replace("_", " ")
+            if aspect1 == "интерфейс разъемы и выходы":
+                aspect1 = "интерфейс, разъемы и выходы"
+            if aspect2 == "интерфейс разъемы и выходы":
+                aspect2 = "интерфейс, разъемы и выходы"
+            if aspect1 == "интерфейс разъемы и входы":
+                aspect1 = "интерфейс, разъемы и входы"
+            if aspect2 == "интерфейс разъемы и входы":
+                aspect2 = "интерфейс, разъемы и входы"
+            if aspect1 == "nas das хранилища данных":
+                aspect1 = "nas, das хранилища данных"
+            if aspect2 == "nas das хранилища данных":
+                aspect2 = "nas, das хранилища данных"
+            if aspect1 == "мыши и клавиатуры":
+                aspect1 = "клавиатуры"
+            if aspect2 == "мыши и клавиатуры":
+                aspect2 = "клавиатуры"
             # local
             row_local_ideal = db.cursor_local_context_ideal.execute('SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
-                (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
+                (aspect1, aspect2,)).fetchone()
             try:
                 local_context = float(row_local_ideal[2])
             except:  # we can have (1,0) or (0,1) so need to find the correct one
                 row_local_ideal = db.cursor_local_context_ideal.execute('SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
-                (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                (aspect2, aspect1,)).fetchone()
                 local_context = float(row_local_ideal[2])
             # global
             row_global_ideal = db.cursor_global_context_ideal.execute(
                 'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
-                (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
+                (aspect1, aspect2,)).fetchone()
             try:
                 global_context = float(row_global_ideal[2])
             except:  # we can have (1,0) or (0,1) so need to find the correct one
                 row_global_ideal = db.cursor_global_context_ideal.execute(
                     'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
-                    (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                    (aspect2, aspect1,)).fetchone()
                 global_context = float(row_global_ideal[2])
             # syntactic
             row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
@@ -179,20 +203,40 @@ class SemanticDistanceLearning:
             pmi_review = float(row_review_ideal[5])
             pmi_sentence = float(row_sentence_ideal[5])
             lexical = int(row_lexical_ideal[2])
+            # local
+            row_local_ideal = db.cursor_local_context_ideal.execute(
+                'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
+                (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
+            try:
+                local_context = float(row_local_ideal[2])
+            except:  # we can have (1,0) or (0,1) so need to find the correct one
+                row_local_ideal = db.cursor_local_context_ideal.execute(
+                    'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
+                    (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                local_context = float(row_local_ideal[2])
+            # global
+            row_global_ideal = db.cursor_global_context_ideal.execute(
+                'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
+                (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
+            try:
+                global_context = float(row_global_ideal[2])
+            except:  # we can have (1,0) or (0,1) so need to find the correct one
+                row_global_ideal = db.cursor_global_context_ideal.execute(
+                    'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
+                    (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                global_context = float(row_global_ideal[2])
+            # syntactic
             row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
                 'SELECT * FROM Syntactic WHERE aspect1 = ? AND aspect2 = ?',
                 (row_lexical_ideal[0], row_lexical_ideal[1],)).fetchone()
             try:
                 syntactic = int(row_syntactic_ideal[2])
             except:  # we can have (1,0) or (0,1) so need to find the correct one
-                try:
-                    row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
-                        'SELECT * FROM Syntactic WHERE aspect1 = ? AND aspect2 = ?',
-                        (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
-                    syntactic = int(row_syntactic_ideal[2])
-                except:
-                    syntactic = -1
-            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic  # + w[4] * context
+                row_syntactic_ideal = db.cursor_syntactic_ideal.execute(
+                    'SELECT * FROM Syntactic WHERE aspect1 = ? AND aspect2 = ?',
+                    (row_lexical_ideal[1], row_lexical_ideal[0],)).fetchone()
+                syntactic = int(row_syntactic_ideal[2])
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic + w[4] * local_context + w[5] * global_context
             db.add_semantic_distance_ideal(aspect1, aspect2, d)
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()

@@ -31,11 +31,11 @@ class Context:
         db.create_context_local_prepare_ideal_db()
         db.create_context_global_prepare_ideal_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        # self.form_local_context_db(db, aspects, reviews, 1)
-        # self.form_global_context_db(db, aspects, reviews, 1)
-        # self.form_global_context_extra_ideal_db(db, aspects)
-        # print("started")
-        # self.local_context_ideal(db, all_aspects_words)  # calculate the local context
+        self.form_local_context_db(db, aspects, reviews, 1)
+        self.form_global_context_db(db, aspects, reviews, 1)
+        self.form_global_context_extra_ideal_db(db, aspects)
+        print("started")
+        self.local_context_ideal(db, all_aspects_words)  # calculate the local context
         print("local finished")
         self.global_context_ideal(db, all_aspects_words)  # calculate the global context
         print("global finished")
@@ -43,8 +43,7 @@ class Context:
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
 
-    @staticmethod
-    def get_ideal_dict():
+    def get_ideal_dict(self):
         import os
         dict = {}
         path = os.getcwd()
@@ -57,8 +56,10 @@ class Context:
             line = codecs.open(filename, 'r', 'cp1251').readlines()[0]
             words = line.split(";")
             for word in words:
-                if word not in dict:
-                    dict[word] = count
+                low_word = word.lower().replace(",", " ").replace("  ", " ").replace(" ", "_")
+                # клавиатуры!!!! мыши и клавиатуры
+                if low_word not in dict:
+                    dict[low_word] = count
                     count += 1
         return dict
 

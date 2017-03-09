@@ -28,10 +28,10 @@ class Main:
         # self.split_process()
         # self.frequent()
         self.pmi_process()
-        self.contextual_features()
+        # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        # self.semantic_learning_process()
+        self.semantic_learning_process()
         # self.hierarchy()
 
     def aspects_process(self):
@@ -101,13 +101,13 @@ class Main:
         semantic_learning = SemanticDistanceLearning()
         # self.db.create_path_weight_db()
         # semantic_learning.calculate_ground_truth_distance(self.db)
-        # semantic_learning.process_semantic_distance_learning_ideal(self.db)
-        semantic_learning.process_semantic_distance_learning(self.db)
+        semantic_learning.process_semantic_distance_learning_ideal(self.db)
+        # semantic_learning.process_semantic_distance_learning(self.db)
 
     def contextual_features(self):
         context = Context()
-        # context.process(self.db, self.vocabulary)
-        context.process_ideal(self.db)
+        context.process(self.db, self.vocabulary)
+        # context.process_ideal(self.db)
 
     def lexical_features(self):
         lexical = Lexical()
