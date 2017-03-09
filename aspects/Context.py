@@ -1,3 +1,4 @@
+import codecs
 from datetime import datetime
 from scipy import stats
 import numpy as np
@@ -11,17 +12,56 @@ class Context:
         db.create_context_local_prepare_db()
         db.create_context_global_prepare_db()
         # fill the db where the aspects with 4-words substrs as context their context are were calculated
-        # self.form_local_context_db(db, aspects, reviews)
-        # self.form_global_context_db(db, aspects, reviews)
-        # self.form_global_context_extra_db(db, aspects)
-        # print("started")
-        # self.local_context(db, all_aspects_words)  # calculate the local context
+        self.form_local_context_db(db, aspects, reviews, 0)
+        self.form_global_context_db(db, aspects, reviews, 0)
+        self.form_global_context_extra_db(db, aspects)
+        print("started")
+        self.local_context(db, all_aspects_words, 0)  # calculate the local context
         print("local finished")
-        self.global_context(db, all_aspects_words)  # calculate the global context
+        self.global_context(db, all_aspects_words, 0)  # calculate the global context
         print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
+
+    def process_ideal(self, db):
+        aspects = self.get_ideal_dict()
+        all_aspects_words = {}
+        reviews = self.get_reviews_and_vocabulary(db, all_aspects_words)  # get user reviews
+        db.create_context_local_prepare_ideal_db()
+        db.create_context_global_prepare_ideal_db()
+        # fill the db where the aspects with 4-words substrs as context their context are were calculated
+        self.form_local_context_db(db, aspects, reviews, 1)
+        self.form_global_context_db(db, aspects, reviews, 1)
+        self.form_global_context_extra_ideal_db(db, aspects)
+        print("started")
+        self.local_context(db, all_aspects_words, 1)  # calculate the local context
+        print("local finished")
+        self.global_context(db, all_aspects_words, 1)  # calculate the global context
+        print("global finished")
+        # In both calculations we build language model for each aspect, then we calculate the KL - divergence
+        # for every language model combination. The difference between global and local contexts is that in global
+        # we take words from all the reviews and in local we consider only the words of concrete review
+
+    @staticmethod
+    def get_ideal_dict():
+        import os
+        dict = {}
+        path = os.getcwd()
+        filenames = os.listdir(path + "/../productTrees/Tree")
+        os.chdir(path + "/../productTrees/Tree")
+        filenames.remove(".DS_Store")
+        filenames.remove("Subcategories.txt")
+        count = 0
+        for filename in filenames:
+            lines = codecs.open(filename, 'r', 'cp1251').readlines()
+            for line in lines:
+                arr = line.split(";")
+                arr[2] = arr[2].replace("\r\n", "")
+                if arr[0] not in dict:
+                    dict[arr[0]] = count
+                    count += 1
+        return dict
 
     def get_reviews_and_vocabulary(self, db, all_aspects_words):
         reviews = []
@@ -43,7 +83,7 @@ class Context:
             row_review = db.cursor_reviews.fetchone()
         return reviews
 
-    def form_local_context_db(self, db, aspects, reviews):
+    def form_local_context_db(self, db, aspects, reviews, which_part):
         count = 0
         for aspect in aspects:
             print(count)
@@ -55,11 +95,15 @@ class Context:
                     str_context = self.is_one_word_aspect_in_review(clear_aspect, review, str_context, False)
                 else:  # the aspect consists of several words
                     str_context = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context, False)
-            db.add_context_local_prepare(aspect, str_context)  # collect the 4 words context for each aspect occurrence
-            db.conn_local_context_prepare.commit()
+            if which_part == 0:
+                db.add_context_local_prepare(aspect, str_context)  # collect the 4 words context for each aspect occurrence
+                db.conn_local_context_prepare.commit()
+            else:  # ideal aspects
+                db.add_context_local_prepare_ideal(aspect, str_context)  # collect the 4 words context for each aspect occurrence
+                db.conn_local_context_prepare_ideal.commit()
             count += 1
 
-    def form_global_context_db(self, db, aspects, reviews):
+    def form_global_context_db(self, db, aspects, reviews, which_part):
         count = 0
         for aspect in aspects:
             print(count)
@@ -73,8 +117,14 @@ class Context:
                     is_aspect_in_review = self.is_several_word_aspect_in_review(clear_aspect_words, review, str_context,
                                                                                 True)
                 if is_aspect_in_review:  # collect all the reviews with the aspect
-                    db.add_context_global_prepare(aspect, review)
-            db.conn_global_context_prepare.commit()
+                    if which_part == 0:
+                        db.add_context_global_prepare(aspect, review)
+                    else:
+                        db.add_context_global_prepare_ideal(aspect, review)
+            if which_part == 0:
+                db.conn_global_context_prepare.commit()
+            else:
+                db.conn_global_context_prepare_ideal.commit()
             count += 1
 
     @staticmethod
@@ -91,6 +141,22 @@ class Context:
                 aspect_row = db.cursor_global_context_prepare.fetchone()
             db.add_context_global_prepare_extra(aspect, context)
             db.conn_global_context_prepare_extra.commit()
+            count += 1
+
+    @staticmethod
+    def form_global_context_extra_ideal_db(db, aspects):
+        db.create_context_global_prepare_extra_ideal_db()
+        count = 0
+        for aspect in aspects:
+            print(count)
+            aspect_row = db.cursor_global_context_prepare_ideal.execute('SELECT * FROM Context WHERE aspect = ?',
+                                                                  (aspect,)).fetchone()
+            context = ""
+            while aspect_row is not None:
+                context += str(aspect_row[1]) + " "
+                aspect_row = db.cursor_global_context_prepare_ideal.fetchone()
+            db.add_context_global_prepare_extra_ideal(aspect, context)
+            db.conn_global_context_prepare_extra_ideal.commit()
             count += 1
 
     def is_several_word_aspect_in_review(self, clear_aspect_words, review, str_context, is_global):
@@ -183,7 +249,7 @@ class Context:
         item = item.replace("'", "")
         return item.lower()
 
-    def local_context(self, db, all_aspects_words):
+    def local_context(self, db, all_aspects_words, which_part):
         context_for_aspects_dict = {}
         db.create_context_local_db()
         vectorizer = CountVectorizer(ngram_range=(1, 1), vocabulary=all_aspects_words)
@@ -219,7 +285,7 @@ class Context:
             db.conn_local_context.commit()
             print(datetime.now() - start)
 
-    def global_context(self, db, all_aspects_words):
+    def global_context(self, db, all_aspects_words, which_part):
         count = 0
         context_for_aspects_dict = {}
         db.create_context_global_db()
@@ -262,3 +328,5 @@ class Context:
             else:
                 list[i] += 1
         return list
+
+

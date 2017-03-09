@@ -18,8 +18,11 @@ class DB:
     conn_semantic_distance = None
     conn_semantic_distance_ideal = None
     conn_local_context_prepare = None
+    conn_local_context_prepare_ideal = None
     conn_global_context_prepare = None
     conn_global_context_prepare_extra = None
+    conn_global_context_prepare_ideal = None
+    conn_global_context_prepare_extra_ideal = None
     conn_global_context = None
     conn_local_context = None
     conn_lexical = None
@@ -51,8 +54,11 @@ class DB:
     cursor_semantic_distance = None
     cursor_semantic_distance_ideal = None
     cursor_local_context_prepare = None
+    cursor_local_context_prepare_ideal = None
     cursor_global_context_prepare = None
     cursor_global_context_prepare_extra = None
+    cursor_global_context_prepare_ideal = None
+    cursor_global_context_prepare_extra_ideal = None
     cursor_global_context = None
     cursor_local_context_ideal = None
     cursor_global_context_ideal = None
@@ -80,8 +86,11 @@ class DB:
     db_semantic_distance = "Semantic_Distance.db"
     db_semantic_distance_ideal = "Semantic_Distance_Ideal.db"
     db_local_context_prepare = "Local_Context_Prepare.db"
+    db_local_context_prepare_ideal = "Local_Context_Prepare_Ideal.db"
     db_global_context_prepare = "Global_Context_Prepare.db"
     db_global_context_prepare_extra = "Global_Context_Prepare_Extra.db"
+    db_global_context_prepare_ideal = "Global_Context_Prepare_Ideal.db"
+    db_global_context_prepare_extra_ideal = "Global_Context_Prepare_Extra_Ideal.db"
     db_global_context = "Global_Context.db"
     db_local_context = "Local_Context.db"
     db_lexical = "Lexical.db"
@@ -112,8 +121,11 @@ class DB:
         self.conn_semantic_distance = sqlite3.connect(path + "/../db/" + self.db_semantic_distance)
         self.conn_semantic_distance_ideal = sqlite3.connect(path + "/../db/" + self.db_semantic_distance_ideal)
         self.conn_local_context_prepare = sqlite3.connect(path + "/../db/" + self.db_local_context_prepare)
+        self.conn_local_context_prepare_ideal = sqlite3.connect(path + "/../db/" + self.db_local_context_prepare_ideal)
         self.conn_global_context_prepare = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare)
         self.conn_global_context_prepare_extra = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare_extra)
+        self.conn_global_context_prepare_ideal = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare_ideal)
+        self.conn_global_context_prepare_extra_ideal = sqlite3.connect(path + "/../db/" + self.db_global_context_prepare_extra_ideal)
         self.conn_global_context = sqlite3.connect(path + "/../db/" + self.db_global_context)
         self.conn_local_context = sqlite3.connect(path + "/../db/" + self.db_local_context)
         self.conn_lexical = sqlite3.connect(path + "/../db/" + self.db_lexical)
@@ -144,8 +156,11 @@ class DB:
         self.cursor_semantic_distance = self.conn_semantic_distance.cursor()
         self.cursor_semantic_distance_ideal = self.conn_semantic_distance_ideal.cursor()
         self.cursor_local_context_prepare = self.conn_local_context_prepare.cursor()
+        self.cursor_local_context_prepare_ideal = self.conn_local_context_prepare_ideal.cursor()
         self.cursor_global_context_prepare = self.conn_global_context_prepare.cursor()
         self.cursor_global_context_prepare_extra = self.conn_global_context_prepare_extra.cursor()
+        self.cursor_global_context_prepare_ideal = self.conn_global_context_prepare_ideal.cursor()
+        self.cursor_global_context_prepare_extra_ideal = self.conn_global_context_prepare_extra_ideal.cursor()
         self.cursor_global_context = self.conn_global_context.cursor()
         self.cursor_local_context = self.conn_local_context.cursor()
         self.cursor_lexical = self.conn_lexical.cursor()
@@ -205,6 +220,19 @@ class DB:
     def create_context_local_prepare_db(self):
         self.cursor_local_context_prepare.execute('''CREATE TABLE IF NOT EXISTS Context (aspect TEXT, context TEXT)''')
         self.conn_local_context_prepare.commit()
+
+    def create_context_local_prepare_ideal_db(self):
+        self.cursor_local_context_prepare_ideal.execute('''CREATE TABLE IF NOT EXISTS Context (aspect TEXT, context TEXT)''')
+        self.conn_local_context_prepare_ideal.commit()
+
+    def create_context_global_prepare_ideal_db(self):
+        self.cursor_global_context_prepare_ideal.execute('''CREATE TABLE IF NOT EXISTS Context (aspect TEXT, review TEXT)''')
+        self.conn_global_context_prepare_ideal.commit()
+
+    def create_context_global_prepare_extra_ideal_db(self):
+        self.cursor_global_context_prepare_extra_ideal.execute(
+            '''CREATE TABLE IF NOT EXISTS Context (aspect TEXT, context TEXT)''')
+        self.conn_global_context_prepare_extra_ideal.commit()
 
     def create_context_global_prepare_db(self):
         self.cursor_global_context_prepare.execute('''CREATE TABLE IF NOT EXISTS Context (aspect TEXT, review TEXT)''')
@@ -312,6 +340,17 @@ class DB:
 
     def add_context_local_prepare(self, aspect, context):
         self.cursor_local_context_prepare.execute('INSERT INTO Context (aspect, context) VALUES (?, ?)', (aspect, context))
+
+    def add_context_local_prepare_ideal(self, aspect, context):
+        self.cursor_local_context_prepare_ideal.execute('INSERT INTO Context (aspect, context) VALUES (?, ?)', (aspect, context))
+
+    def add_context_global_prepare_ideal(self, aspect, review):
+        self.cursor_global_context_prepare_ideal.execute('INSERT INTO Context (aspect, review) VALUES (?, ?)',
+                                                   (aspect, review))
+
+    def add_context_global_prepare_extra_ideal(self, aspect, context):
+        self.cursor_global_context_prepare_extra_ideal.execute('INSERT INTO Context (aspect, context) VALUES (?, ?)',
+                                                         (aspect, context))
 
     def add_context_global_prepare(self, aspect, review):
         self.cursor_global_context_prepare.execute('INSERT INTO Context (aspect, review) VALUES (?, ?)', (aspect, review))

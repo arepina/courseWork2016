@@ -28,10 +28,10 @@ class Main:
         # self.split_process()
         # self.frequent()
         self.pmi_process()
-        # self.contextual_features()
+        self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        self.semantic_learning_process()
+        # self.semantic_learning_process()
         # self.hierarchy()
 
     def aspects_process(self):
@@ -106,7 +106,8 @@ class Main:
 
     def contextual_features(self):
         context = Context()
-        context.process(self.db, self.vocabulary)
+        # context.process(self.db, self.vocabulary)
+        context.process_ideal(self.db)
 
     def lexical_features(self):
         lexical = Lexical()
