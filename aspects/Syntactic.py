@@ -85,9 +85,15 @@ class Syntactic:
     def calculate_syntactic(self, aspect1, aspect2, non_zero_sentences, db):
         divider = len(non_zero_sentences)
         syntactic_paths_sum = 0
+        dict = {}
         for sentence in non_zero_sentences:
-            syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect1, aspect2, syntactic_paths_sum, divider,
-                                                              db)
+            if sentence in dict:
+                syntactic_paths_sum += dict[sentence]
+            else:
+                sum_before = syntactic_paths_sum
+                syntactic_paths_sum = self.find_path_for_sentence(sentence, aspect1, aspect2, syntactic_paths_sum, divider,
+                                                                  db)
+                dict[sentence] = syntactic_paths_sum - sum_before
         return syntactic_paths_sum / divider
 
     def find_path(self, aspect1, aspect2, aspect1_parent, aspect2_parent, syntax_relations, aspect1_parents,
