@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Local_Context_Ideal.db" afterPath="$PROJECT_DIR$/db/Local_Context_Ideal.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
     </list>
     <ignored path="courseWork2016.iws" />
@@ -15,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489081290338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489081636535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Context.coverage" NAME="Context Coverage Results" MODIFIED="1486814356808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
@@ -185,17 +186,17 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2670">
-              <caret line="390" column="40" lean-forward="false" selection-start-line="390" selection-start-column="40" selection-end-line="390" selection-end-column="40" />
+            <state relative-caret-position="-495">
+              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1489081541000" expanded="true" signature="3249:3269" ph="SELECT * FRO... Review" />
-                <marker date="1489081541000" expanded="true" signature="6608:6646" ph="SELECT * FRO... Context" />
-                <marker date="1489081541000" expanded="true" signature="7356:7394" ph="SELECT * FRO... Context" />
-                <marker date="1489081541000" expanded="true" signature="11806:11827" ph="SELECT * FRO... Context" />
-                <marker date="1489081541000" expanded="true" signature="13773:13794" ph="SELECT * FRO... Context" />
-                <marker date="1489081541000" expanded="true" signature="15852:15873" ph="SELECT * FRO... Context" />
-                <marker date="1489081541000" expanded="true" signature="17692:17713" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="3251:3271" ph="SELECT * FRO... Review" />
+                <marker date="1489081861000" expanded="true" signature="6610:6648" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="7358:7396" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="11808:11829" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="13775:13796" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="15854:15875" ph="SELECT * FRO... Context" />
+                <marker date="1489081861000" expanded="true" signature="17694:17715" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -876,11 +877,6 @@
           <line>54</line>
           <option name="timeStamp" value="1296" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/Context.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="1351" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -889,7 +885,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1352" />
+      <option name="time" value="1355" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1254,25 +1250,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="109" column="8" lean-forward="false" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#1129#2970#0" expanded="false" />
-            <element signature="e#3012#3127#0" expanded="false" />
-            <element signature="e#3166#3290#0" expanded="false" />
-            <element signature="e#3327#3807#0" expanded="false" />
-            <element signature="e#3876#4013#0" expanded="false" />
-            <element signature="e#4086#4229#0" expanded="false" />
-            <element signature="e#4303#4474#0" expanded="false" />
-            <element signature="e#4525#4830#0" expanded="false" />
-            <element signature="e#5027#5137#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1354,19 +1331,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="109" column="8" lean-forward="false" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#1129#2970#0" expanded="false" />
+            <element signature="e#3012#3127#0" expanded="false" />
+            <element signature="e#3166#3290#0" expanded="false" />
+            <element signature="e#3327#3807#0" expanded="false" />
+            <element signature="e#3876#4013#0" expanded="false" />
+            <element signature="e#4086#4229#0" expanded="false" />
+            <element signature="e#4303#4474#0" expanded="false" />
+            <element signature="e#4525#4830#0" expanded="false" />
+            <element signature="e#5027#5137#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Context.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2670">
-          <caret line="390" column="40" lean-forward="false" selection-start-line="390" selection-start-column="40" selection-end-line="390" selection-end-column="40" />
+        <state relative-caret-position="-495">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1489081541000" expanded="true" signature="3249:3269" ph="SELECT * FRO... Review" />
-            <marker date="1489081541000" expanded="true" signature="6608:6646" ph="SELECT * FRO... Context" />
-            <marker date="1489081541000" expanded="true" signature="7356:7394" ph="SELECT * FRO... Context" />
-            <marker date="1489081541000" expanded="true" signature="11806:11827" ph="SELECT * FRO... Context" />
-            <marker date="1489081541000" expanded="true" signature="13773:13794" ph="SELECT * FRO... Context" />
-            <marker date="1489081541000" expanded="true" signature="15852:15873" ph="SELECT * FRO... Context" />
-            <marker date="1489081541000" expanded="true" signature="17692:17713" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="3251:3271" ph="SELECT * FRO... Review" />
+            <marker date="1489081861000" expanded="true" signature="6610:6648" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="7358:7396" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="11808:11829" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="13775:13796" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="15854:15875" ph="SELECT * FRO... Context" />
+            <marker date="1489081861000" expanded="true" signature="17694:17715" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>

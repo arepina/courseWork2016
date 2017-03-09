@@ -34,11 +34,11 @@ class Context:
         # self.form_local_context_db(db, aspects, reviews, 1)
         # self.form_global_context_db(db, aspects, reviews, 1)
         # self.form_global_context_extra_ideal_db(db, aspects)
-        print("started")
-        self.local_context_ideal(db, all_aspects_words)  # calculate the local context
-        print("local finished")
-        # self.global_context_ideal(db, all_aspects_words)  # calculate the global context
-        # print("global finished")
+        # print("started")
+        # self.local_context_ideal(db, all_aspects_words)  # calculate the local context
+        # print("local finished")
+        self.global_context_ideal(db, all_aspects_words)  # calculate the global context
+        print("global finished")
         # In both calculations we build language model for each aspect, then we calculate the KL - divergence
         # for every language model combination. The difference between global and local contexts is that in global
         # we take words from all the reviews and in local we consider only the words of concrete review
