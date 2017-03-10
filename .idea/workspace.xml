@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Global_Context_Ideal.db" afterPath="$PROJECT_DIR$/db/Global_Context_Ideal.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Global_Context_Prepare_Extra_Ideal.db" afterPath="$PROJECT_DIR$/db/Global_Context_Prepare_Extra_Ideal.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Global_Context_Prepare_Ideal.db" afterPath="$PROJECT_DIR$/db/Global_Context_Prepare_Ideal.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Local_Context_Ideal.db" afterPath="$PROJECT_DIR$/db/Local_Context_Ideal.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Local_Context_Prepare_Ideal.db" afterPath="$PROJECT_DIR$/db/Local_Context_Prepare_Ideal.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Semantic_Distance_Ideal.db" afterPath="$PROJECT_DIR$/db/Semantic_Distance_Ideal.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Context.py" afterPath="$PROJECT_DIR$/aspects/Context.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
     </list>
     <ignored path="courseWork2016.iws" />
@@ -23,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489088326329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489136421079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Context.coverage" NAME="Context Coverage Results" MODIFIED="1486814356808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
@@ -90,7 +85,7 @@
       <file leaf-file-name="Context.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Context.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="825">
               <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -112,37 +107,69 @@
       <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="99" column="37" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+            <state relative-caret-position="890">
+              <caret line="264" column="8" lean-forward="false" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="8" />
               <folding>
                 <element signature="e#112#1545#0" expanded="false" />
                 <element signature="e#1619#2690#0" expanded="false" />
-                <marker date="1489089472000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="2983:3004" ph="SELECT * FRO... Lexical" />
-                <marker date="1489089472000" expanded="true" signature="4493:4507" ph="SELECT * FRO... WHERE" />
-                <marker date="1489089472000" expanded="true" signature="4493:4548" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="4829:4884" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="5102:5157" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="5463:5518" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="5743:5800" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489089472000" expanded="true" signature="6126:6183" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489089472000" expanded="true" signature="7345:7365" ph="SELECT * FRO... Weight" />
-                <marker date="1489089472000" expanded="true" signature="7689:7706" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="7775:7792" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="7855:7876" ph="SELECT * FRO... Lexical" />
-                <marker date="1489089472000" expanded="true" signature="7943:7966" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489089472000" expanded="true" signature="8033:8054" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="8123:8144" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="9512:9529" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="9610:9627" ph="SELECT * FRO... PMI" />
-                <marker date="1489089472000" expanded="true" signature="9702:9723" ph="SELECT * FRO... Lexical" />
-                <marker date="1489089472000" expanded="true" signature="10300:10355" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="10683:10738" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="10986:11041" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="11373:11428" ph="SELECT * FRO... Context" />
-                <marker date="1489089472000" expanded="true" signature="11679:11736" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489089472000" expanded="true" signature="12062:12119" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489136459000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="2983:3004" ph="SELECT * FRO... Lexical" />
+                <marker date="1489136459000" expanded="true" signature="3678:3692" ph="SELECT * FRO... WHERE" />
+                <marker date="1489136459000" expanded="true" signature="3678:3733" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="4035:4090" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="4312:4367" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="4673:4728" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="4953:5010" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489136459000" expanded="true" signature="5336:5393" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489136459000" expanded="true" signature="6584:6604" ph="SELECT * FRO... Weight" />
+                <marker date="1489136459000" expanded="true" signature="6928:6945" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="7014:7031" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="7094:7115" ph="SELECT * FRO... Lexical" />
+                <marker date="1489136459000" expanded="true" signature="7182:7205" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489136459000" expanded="true" signature="7272:7293" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="7362:7383" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="8795:8843" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="9027:9075" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="9259:9307" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="9489:9537" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="9719:9767" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="9947:9995" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="10175:10223" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="10381:10429" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="10587:10635" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="10815:10863" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="11078:11126" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="11312:11360" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="11546:11594" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="11778:11826" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="12010:12058" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="12240:12288" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="12470:12518" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="12678:12726" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="12886:12934" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="13116:13164" ph="UPDATE Conte... " />
+                <marker date="1489136459000" expanded="true" signature="13521:13538" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="13619:13636" ph="SELECT * FRO... PMI" />
+                <marker date="1489136459000" expanded="true" signature="13711:13732" ph="SELECT * FRO... Lexical" />
+                <marker date="1489136459000" expanded="true" signature="14401:14456" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="14784:14839" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="15087:15142" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="15474:15529" ph="SELECT * FRO... Context" />
+                <marker date="1489136459000" expanded="true" signature="15780:15837" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489136459000" expanded="true" signature="16163:16220" ph="SELECT * FRO... Syntactic" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unnecessary.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="14" />
+              <folding>
+                <marker date="1482233294000" expanded="true" signature="1382:1465" ph="UPDATE Ideal... " />
               </folding>
             </state>
           </provider>
@@ -262,9 +289,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -285,6 +311,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,7 +386,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -733,7 +759,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1440" height="797" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -746,7 +772,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42266667" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42203987" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -801,13 +827,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py</url>
-          <line>196</line>
+          <line>270</line>
           <option name="timeStamp" value="1280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aspects/HierarchyBuilder.py</url>
           <line>54</line>
           <option name="timeStamp" value="1296" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py</url>
+          <line>264</line>
+          <option name="timeStamp" value="1369" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -817,7 +848,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1367" />
+      <option name="time" value="1370" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -957,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,9 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding>
-            <marker date="1488983173000" expanded="true" signature="140:161" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,7 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="1489" column="0" lean-forward="false" selection-start-line="1489" selection-start-column="0" selection-end-line="1489" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,10 +1044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="139" column="12" lean-forward="false" selection-start-line="139" selection-start-column="10" selection-end-line="139" selection-end-column="12" />
-          <folding>
-            <marker date="1488708307000" expanded="true" signature="702:722" ph="SELECT * FRO... Review" />
-            <marker date="1488708307000" expanded="true" signature="7203:7224" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,19 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding>
-            <marker date="1488708307000" expanded="true" signature="697:714" ph="SELECT * FRO... PMI" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="1382:1465" ph="UPDATE Ideal... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,14 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="96" column="22" lean-forward="false" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="e#2036#3974#0" expanded="false" />
-            <element signature="e#4802#6585#0" expanded="false" />
-            <element signature="e#6664#6778#0" expanded="false" />
-            <marker date="1489002766000" expanded="true" signature="2173:2190" ph="SELECT * FRO... PMI" />
-            <marker date="1489002766000" expanded="true" signature="6933:6970" ph="SELECT * FRO... Tree" />
-            <marker date="1489002766000" expanded="true" signature="9086:9123" ph="SELECT * FRO... Tree" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,9 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-          <folding>
-            <marker date="1484321218000" expanded="true" signature="116:142" ph="SELECT * FRO... IdealAspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,14 +1080,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="109:130" ph="SELECT * FRO... Reviews" />
-            <marker date="1482233294000" expanded="true" signature="487:553" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="885:957" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="1289:1351" ph="UPDATE Revie... " />
-            <marker date="1482233294000" expanded="true" signature="1606:1629" ph="SELECT * FRO... Sentences" />
-            <marker date="1482233294000" expanded="true" signature="2027:2079" ph="UPDATE Sente... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,11 +1087,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="140:160" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1688:1708" ph="SELECT * FRO... Review" />
-            <marker date="1482233294000" expanded="true" signature="1779:1800" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1134,15 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-75">
           <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
-          <folding>
-            <marker date="1488983399000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
-            <marker date="1488983399000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
-            <marker date="1488983399000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
-            <marker date="1488983399000" expanded="true" signature="4196:4218" ph="SELECT * FRO... Frequent" />
-            <marker date="1488983399000" expanded="true" signature="4515:4541" ph="SELECT * FRO... IdealAspects" />
-            <marker date="1488983399000" expanded="true" signature="5441:5461" ph="SELECT * FRO... Review" />
-            <marker date="1488983399000" expanded="true" signature="5532:5553" ph="SELECT * FRO... Aspects" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,10 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="15" />
-          <folding>
-            <marker date="1482233294000" expanded="true" signature="101:122" ph="SELECT * FRO... Aspects" />
-            <marker date="1482233294000" expanded="true" signature="924:944" ph="SELECT * FRO... Review" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1231,7 +1198,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#11720#13607#0" expanded="false" />
+            <element signature="e#13675#15633#0" expanded="false" />
+            <element signature="e#15696#17455#0" expanded="false" />
+            <marker date="1489089472000" expanded="true" signature="3379:3399" ph="SELECT * FRO... Review" />
+            <marker date="1489089472000" expanded="true" signature="6738:6776" ph="SELECT * FRO... Context" />
+            <marker date="1489089472000" expanded="true" signature="7486:7524" ph="SELECT * FRO... Context" />
+            <marker date="1489089472000" expanded="true" signature="11936:11957" ph="SELECT * FRO... Context" />
+            <marker date="1489089472000" expanded="true" signature="13903:13924" ph="SELECT * FRO... Context" />
+            <marker date="1489089472000" expanded="true" signature="15982:16003" ph="SELECT * FRO... Context" />
+            <marker date="1489089472000" expanded="true" signature="17822:17843" ph="SELECT * FRO... Context" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,59 +1241,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
+    <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state relative-caret-position="180">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="14" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#11720#13607#0" expanded="false" />
-            <element signature="e#13675#15633#0" expanded="false" />
-            <element signature="e#15696#17455#0" expanded="false" />
-            <marker date="1489089472000" expanded="true" signature="3379:3399" ph="SELECT * FRO... Review" />
-            <marker date="1489089472000" expanded="true" signature="6738:6776" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="7486:7524" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="11936:11957" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="13903:13924" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="15982:16003" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="17822:17843" ph="SELECT * FRO... Context" />
+            <marker date="1482233294000" expanded="true" signature="1382:1465" ph="UPDATE Ideal... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="99" column="37" lean-forward="false" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
+        <state relative-caret-position="890">
+          <caret line="264" column="8" lean-forward="false" selection-start-line="264" selection-start-column="8" selection-end-line="264" selection-end-column="8" />
           <folding>
             <element signature="e#112#1545#0" expanded="false" />
             <element signature="e#1619#2690#0" expanded="false" />
-            <marker date="1489089472000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="2983:3004" ph="SELECT * FRO... Lexical" />
-            <marker date="1489089472000" expanded="true" signature="4493:4507" ph="SELECT * FRO... WHERE" />
-            <marker date="1489089472000" expanded="true" signature="4493:4548" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="4829:4884" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="5102:5157" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="5463:5518" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="5743:5800" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489089472000" expanded="true" signature="6126:6183" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489089472000" expanded="true" signature="7345:7365" ph="SELECT * FRO... Weight" />
-            <marker date="1489089472000" expanded="true" signature="7689:7706" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="7775:7792" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="7855:7876" ph="SELECT * FRO... Lexical" />
-            <marker date="1489089472000" expanded="true" signature="7943:7966" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489089472000" expanded="true" signature="8033:8054" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="8123:8144" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="9512:9529" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="9610:9627" ph="SELECT * FRO... PMI" />
-            <marker date="1489089472000" expanded="true" signature="9702:9723" ph="SELECT * FRO... Lexical" />
-            <marker date="1489089472000" expanded="true" signature="10300:10355" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="10683:10738" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="10986:11041" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="11373:11428" ph="SELECT * FRO... Context" />
-            <marker date="1489089472000" expanded="true" signature="11679:11736" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489089472000" expanded="true" signature="12062:12119" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489136459000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="2983:3004" ph="SELECT * FRO... Lexical" />
+            <marker date="1489136459000" expanded="true" signature="3678:3692" ph="SELECT * FRO... WHERE" />
+            <marker date="1489136459000" expanded="true" signature="3678:3733" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="4035:4090" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="4312:4367" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="4673:4728" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="4953:5010" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489136459000" expanded="true" signature="5336:5393" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489136459000" expanded="true" signature="6584:6604" ph="SELECT * FRO... Weight" />
+            <marker date="1489136459000" expanded="true" signature="6928:6945" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="7014:7031" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="7094:7115" ph="SELECT * FRO... Lexical" />
+            <marker date="1489136459000" expanded="true" signature="7182:7205" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489136459000" expanded="true" signature="7272:7293" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="7362:7383" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="8795:8843" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="9027:9075" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="9259:9307" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="9489:9537" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="9719:9767" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="9947:9995" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="10175:10223" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="10381:10429" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="10587:10635" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="10815:10863" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="11078:11126" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="11312:11360" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="11546:11594" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="11778:11826" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="12010:12058" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="12240:12288" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="12470:12518" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="12678:12726" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="12886:12934" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="13116:13164" ph="UPDATE Conte... " />
+            <marker date="1489136459000" expanded="true" signature="13521:13538" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="13619:13636" ph="SELECT * FRO... PMI" />
+            <marker date="1489136459000" expanded="true" signature="13711:13732" ph="SELECT * FRO... Lexical" />
+            <marker date="1489136459000" expanded="true" signature="14401:14456" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="14784:14839" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="15087:15142" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="15474:15529" ph="SELECT * FRO... Context" />
+            <marker date="1489136459000" expanded="true" signature="15780:15837" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489136459000" expanded="true" signature="16163:16220" ph="SELECT * FRO... Syntactic" />
           </folding>
         </state>
       </provider>
