@@ -101,8 +101,8 @@ class Main:
         semantic_learning = SemanticDistanceLearning()
         # self.db.create_path_weight_db()
         # semantic_learning.calculate_ground_truth_distance(self.db)
-        semantic_learning.process_semantic_distance_learning_ideal(self.db)
-        # semantic_learning.process_semantic_distance_learning(self.db)
+        # semantic_learning.process_semantic_distance_learning_ideal(self.db)
+        semantic_learning.process_semantic_distance_learning(self.db)
 
     def contextual_features(self):
         context = Context()
@@ -125,7 +125,7 @@ class Main:
 
     def hierarchy(self):
         h = HierarchyBuilder()
-        average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)
+        average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)  # 51.71624897381593
         h.process(self.db, average_semantic_distance_ideal)
 
 

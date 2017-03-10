@@ -1,5 +1,7 @@
 import codecs
 
+import math
+
 
 class HierarchyBuilder:
     @staticmethod
@@ -25,13 +27,15 @@ class HierarchyBuilder:
                 'SELECT * FROM Distance WHERE aspect1 = ? OR aspect2 = ?', (node, node,)).fetchone()
             while row_semantic_distance is not None:
                 # add as children those whose semantic distance is less them average distance in ideal tree
-                if row_semantic_distance[2] <= average_semantic_distance_ideal:
+                if row_semantic_distance[2] <= math.sqrt(average_semantic_distance_ideal):
                     aspect1 = row_semantic_distance[0]
                     aspect2 = row_semantic_distance[1]
                     if aspect1 == node:
                         db.add_hierarchy(node, aspect2)
+                        free_nodes.append(aspect2)
                     else:
                         db.add_hierarchy(node, aspect1)
+                        free_nodes.append(aspect1)
                 row_semantic_distance = db.cursor_semantic_distance.fetchone()
             db.conn_hierarchy.commit()
 
