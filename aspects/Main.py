@@ -31,8 +31,8 @@ class Main:
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        self.semantic_learning_process()
-        # self.hierarchy()
+        # self.semantic_learning_process()
+        self.hierarchy()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
