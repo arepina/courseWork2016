@@ -9,7 +9,6 @@ class Aspects:
         "http://api.ispras.ru/texterra/v3.1/nlp/syntax?filtering=KEEPING&class=syntax-relation&apikey="
     url_pos = "http://api.ispras.ru/texterra/v3.1/nlp/pos?filtering=KEEPING&class=pos-token&apikey="
     url_sentence = "http://api.ispras.ru/texterra/v3.1/nlp/sentence?filtering=KEEPING&class=sentence&apikey="
-    texts = None
 
     def __init__(self):
         self.url_syntatic_parsing += self.api_key
@@ -63,8 +62,7 @@ class Aspects:
             return r.content.decode('utf8')
         except Exception:
             import sys
-            type, value, traceback = sys.exc_info()  # (<class 'requests.exceptions.ConnectionError'>, ConnectionError(ProtocolError('Connection aborted.', TimeoutError(10060, 'Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера', None, 10060, None)),), <traceback object at 0x0667AB48>)
-            print('Error opening %s: %s' % (value.filename, value.strerror))
+            type, value, traceback = sys.exc_info()
             return None
 
     def aspects_find(self, part, aspect):  # find aspects in each review part

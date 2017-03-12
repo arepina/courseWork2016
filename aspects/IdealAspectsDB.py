@@ -4,13 +4,10 @@ import os
 
 class IdealAspectsDB:
     conn_aspects = None
-    conn_aspects_trees = None
 
     cursor_aspects = None
     cursor_aspects_update = None
-    cursor_trees = None
 
-    db_aspects_name_trees = 'IdealAspects_Trees.db'
     db_aspects_name = 'IdealAspects_Ulmart.db'
 
     def __init__(self):
