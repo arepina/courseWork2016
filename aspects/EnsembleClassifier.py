@@ -4,13 +4,14 @@ from sklearn.ensemble import RandomForestRegressor
 
 class EnsembleClassifier:
     def __init__(self):
-        self.model = RandomForestRegressor(criterion='entropy', max_depth=8, min_samples_leaf=10, n_estimators=250)
+        # self.model = RandomForestClassifier(criterion='entropy', max_depth=8, min_samples_leaf=10, n_estimators=250)
+        self.model = RandomForestRegressor(criterion='mse', max_depth=8, min_samples_leaf=10, n_estimators=250)
 
-    def process(self,x_test, x_train, y_train):  # x_train - characteristic(6 item), y_train - semantic distance
-        self.model.fit(x_train, y_train)
+    def process(self,x_test):#, x_train, y_train):  # x_train - characteristic(6 item), y_train - semantic distance
+        # self.model.fit(x_train, y_train)
         from sklearn.externals import joblib
-        joblib.dump(self.model, "train_dump.pkl")
-        # self.model = joblib.load("train_dump.pkl")
+        # joblib.dump(self.model, "train_dump.pkl")
+        self.model = joblib.load("train_dump.pkl")
         return self.model.predict(x_test)
 
     @staticmethod

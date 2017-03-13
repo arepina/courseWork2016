@@ -32,9 +32,9 @@ class Main:
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        self.semantic_learning_process()
+        # self.semantic_learning_process()
         # self.hierarchy()
-        # self.ensemble_classifier()
+        self.ensemble_classifier()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -133,9 +133,9 @@ class Main:
 
     def ensemble_classifier(self):
         en = EnsembleClassifier()
-        x_train, y_train = en.get_train(self.db)
+        # x_train, y_train = en.get_train(self.db)
         x_test = en.get_test(self.db)
-        y_test = en.process(x_test, x_train, y_train)
+        y_test = en.process(x_test)#, x_train, y_train)
         r = 42
 
 main = Main()
