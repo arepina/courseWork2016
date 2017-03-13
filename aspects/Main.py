@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from aspects.Aspects import Aspects
 from aspects.Context import Context
 from aspects.DB import DB
+from aspects.EnsembleClassifier import EnsembleClassifier
 from aspects.FrequentAspects import FrequentAspects
 from aspects.HierarchyBuilder import HierarchyBuilder
 from aspects.IdealAspectsDB import IdealAspectsDB
@@ -32,7 +33,8 @@ class Main:
         # self.lexical_features()
         # self.syntactic_features()
         # self.semantic_learning_process()
-        self.hierarchy()
+        # self.hierarchy()
+        self.ensemble_classifier()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -129,6 +131,11 @@ class Main:
         average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)  # 51.71624897381593
         h.process(self.db, average_semantic_distance_ideal)
 
+    def ensemble_classifier(self):
+        en = EnsembleClassifier()
+        # x_train, y_train = en.get_train(self.db)
+        x_test = en.get_test(self.db)
+        y_test = en.process(x_test)
 
 main = Main()
 

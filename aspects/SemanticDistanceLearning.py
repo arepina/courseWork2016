@@ -179,6 +179,8 @@ class SemanticDistanceLearning:
         # [-5.18461655 - 7.25855449   2.49603811 - 1.12222121 - 2.20044153 41.45442079] 0
         # [ -5.18460385  -7.25854018   2.49603675  -1.12206601  -4.40758755  41.44959215] 10
         count = 0
+        data = {}
+        row = db.cursor_path_weight.execute('SELECT * FROM Weight').fetchone()
         while row_review_ideal is not None:
             print(count)
             count += 1
@@ -224,13 +226,18 @@ class SemanticDistanceLearning:
             if syntactic == -1:
                 syntactic = 0
             d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic + w[4] * local_context + w[5] * global_context
+            data[count] = [pmi_review ,pmi_sentence ,lexical ,syntactic , local_context ,global_context, row[3]]
+            row = db.cursor_path_weight.fetchone()
             # db.add_semantic_distance_ideal(row_lexical_ideal[0], row_lexical_ideal[1], d)
-            if pmi_review != 0:
-                r = 34
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
             row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
             # db.conn_semantic_distance_ideal.commit()
+        with open("out.csv", "w") as file:
+            import csv
+            writer = csv.writer(file, delimiter=';')
+            for item in data.items():
+                writer.writerow(item[1])
 
     @staticmethod
     def print_data(db):
