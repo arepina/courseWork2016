@@ -174,13 +174,10 @@ class SemanticDistanceLearning:
         row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
         row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
         # w = np.array(self.calculate_distance(db))[0]  # will return a vector with feature values
-        # w = [-5.18461604, -7.25855391, 2.49603805, -1.122215, -2.29888273, 41.45422735]  # 0.4
-        w = [-0.015, -0.025, 0.7, -1.122215, -100.628, 8.5]  # 0.4
+        w = [-5.18461604, -7.25855391, 2.49603805, -1.122215, -2.29888273, 41.45422735]  # 0.4
         # [-5.18461655 - 7.25855449   2.49603811 - 1.12222121 - 2.20044153 41.45442079] 0
         # [ -5.18460385  -7.25854018   2.49603675  -1.12206601  -4.40758755  41.44959215] 10
         count = 0
-        data = {}
-        row = db.cursor_path_weight.execute('SELECT * FROM Weight').fetchone()
         while row_review_ideal is not None:
             print(count)
             count += 1
@@ -189,7 +186,6 @@ class SemanticDistanceLearning:
             lexical = int(row_lexical_ideal[2])
             aspect1 = row_lexical_ideal[0].replace("_", " ")
             aspect2 = row_lexical_ideal[1].replace("_", " ")
-
             # local
             row_local_ideal = db.cursor_local_context_ideal.execute(
                 'SELECT * FROM Context WHERE aspect1 = ? AND aspect2 = ?',
@@ -226,18 +222,11 @@ class SemanticDistanceLearning:
             if syntactic == -1:
                 syntactic = 0
             d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic + w[4] * local_context + w[5] * global_context
-            data[count] = [pmi_review ,pmi_sentence ,lexical ,syntactic , local_context ,global_context, row[3]]
-            row = db.cursor_path_weight.fetchone()
-            # db.add_semantic_distance_ideal(row_lexical_ideal[0], row_lexical_ideal[1], d)
+            db.add_semantic_distance_ideal(row_lexical_ideal[0], row_lexical_ideal[1], d)
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
             row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
-            # db.conn_semantic_distance_ideal.commit()
-        with open("out.csv", "w") as file:
-            import csv
-            writer = csv.writer(file, delimiter=';')
-            for item in data.items():
-                writer.writerow(item[1])
+            db.conn_semantic_distance_ideal.commit()
 
     @staticmethod
     def print_data(db):
