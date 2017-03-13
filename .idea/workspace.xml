@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/EnsembleClassifier.py" afterPath="$PROJECT_DIR$/aspects/EnsembleClassifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Документация/ПЗ.docx" afterPath="$PROJECT_DIR$/docs/Документация/ПЗ.docx" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
