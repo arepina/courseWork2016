@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Документация/ПЗ.docx" afterPath="$PROJECT_DIR$/docs/Документация/ПЗ.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/DB.py" afterPath="$PROJECT_DIR$/aspects/DB.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/EnsembleClassifier.py" afterPath="$PROJECT_DIR$/aspects/EnsembleClassifier.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489419680470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
+    <SUITE FILE_PATH="coverage/courseWork2016$Main.coverage" NAME="Main Coverage Results" MODIFIED="1489510399414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Context.coverage" NAME="Context Coverage Results" MODIFIED="1486814356808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Unnecessary.coverage" NAME="Unnecessary Coverage Results" MODIFIED="1480865768850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/aspects" />
     <SUITE FILE_PATH="coverage/courseWork2016$Example.coverage" NAME="Example Coverage Results" MODIFIED="1480015926979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scikit" />
@@ -60,131 +63,132 @@
       <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/DB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
-              <caret line="336" column="12" lean-forward="false" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
+            <state relative-caret-position="133">
+              <caret line="309" column="241" lean-forward="false" selection-start-line="309" selection-start-column="241" selection-end-line="309" selection-end-column="241" />
               <folding>
-                <element signature="e#3782#9452#0" expanded="false" />
-                <element signature="e#9496#9627#0" expanded="false" />
-                <element signature="e#9672#9808#0" expanded="false" />
-                <element signature="e#9864#10045#0" expanded="false" />
-                <element signature="e#10100#10279#0" expanded="false" />
-                <element signature="e#10319#10441#0" expanded="false" />
-                <element signature="e#10492#10663#0" expanded="false" />
-                <element signature="e#10708#10867#0" expanded="false" />
-                <element signature="e#10910#11066#0" expanded="false" />
-                <element signature="e#11115#11283#0" expanded="false" />
-                <element signature="e#11333#11502#0" expanded="false" />
-                <element signature="e#11551#11718#0" expanded="false" />
-                <element signature="e#11775#11935#0" expanded="false" />
-                <element signature="e#11998#12170#0" expanded="false" />
-                <element signature="e#12234#12407#0" expanded="false" />
-                <element signature="e#12477#12676#0" expanded="false" />
-                <element signature="e#12734#12895#0" expanded="false" />
-                <element signature="e#12959#13133#0" expanded="false" />
-                <element signature="e#13186#13356#0" expanded="false" />
-                <element signature="e#13415#13597#0" expanded="false" />
-                <element signature="e#13644#13811#0" expanded="false" />
-                <element signature="e#13863#14080#0" expanded="false" />
-                <element signature="e#14134#14355#0" expanded="false" />
-                <element signature="e#14401#14606#0" expanded="false" />
-                <element signature="e#14654#14863#0" expanded="false" />
-                <element signature="e#14915#15135#0" expanded="false" />
-                <element signature="e#15187#15407#0" expanded="false" />
-                <element signature="e#15461#15619#0" expanded="false" />
-                <element signature="e#15662#15864#0" expanded="false" />
-                <element signature="e#15908#16046#0" expanded="false" />
-                <element signature="e#16098#16195#0" expanded="false" />
-                <element signature="e#16249#16350#0" expanded="false" />
-                <element signature="e#16400#16493#0" expanded="false" />
-                <element signature="e#16572#16732#0" expanded="false" />
-                <element signature="e#16805#16959#0" expanded="false" />
-                <element signature="e#17033#17189#0" expanded="false" />
-                <element signature="e#17269#17431#0" expanded="false" />
-                <element signature="e#17514#17675#0" expanded="false" />
-                <element signature="e#17757#17917#0" expanded="false" />
-                <element signature="e#17994#18149#0" expanded="false" />
-                <element signature="e#18225#18379#0" expanded="false" />
-                <element signature="e#18447#18562#0" expanded="false" />
-                <element signature="e#18636#18757#0" expanded="false" />
-                <element signature="e#18831#19002#0" expanded="false" />
-                <element signature="e#19083#19268#0" expanded="false" />
-                <element signature="e#19336#19450#0" expanded="false" />
-                <element signature="e#19525#19659#0" expanded="false" />
-                <element signature="e#19740#19895#0" expanded="false" />
-                <element signature="e#19970#20119#0" expanded="false" />
-                <element signature="e#20196#20356#0" expanded="false" />
-                <element signature="e#20447#20657#0" expanded="false" />
-                <element signature="e#20750#20962#0" expanded="false" />
-                <element signature="e#21047#21251#0" expanded="false" />
-                <element signature="e#21338#21544#0" expanded="false" />
-                <element signature="e#21601#21709#0" expanded="false" />
-                <element signature="e#21812#22041#0" expanded="false" />
-                <element signature="e#22154#22390#0" expanded="false" />
-                <element signature="e#22502#22738#0" expanded="false" />
-                <element signature="e#22804#22932#0" expanded="false" />
-                <element signature="e#23001#23060#0" expanded="false" />
-                <element signature="e#23109#23226#0" expanded="false" />
-                <marker date="1489080234000" expanded="true" signature="9528:9587" ph="CREATE TABLE... Hierarchy" />
-                <marker date="1489080234000" expanded="true" signature="9705:9767" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="9908:9993" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="10143:10228" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="10347:10405" ph="CREATE TABLE... Tree" />
-                <marker date="1489080234000" expanded="true" signature="10531:10616" ph="CREATE TABLE... Syntactic" />
-                <marker date="1489080234000" expanded="true" signature="10741:10826" ph="CREATE TABLE... Syntactic" />
-                <marker date="1489080234000" expanded="true" signature="10941:11027" ph="CREATE TABLE... Lexical" />
-                <marker date="1489080234000" expanded="true" signature="11152:11238" ph="CREATE TABLE... Lexical" />
-                <marker date="1489080234000" expanded="true" signature="11371:11456" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="11588:11673" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="11820:11882" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="12049:12111" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="12286:12347" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="12548:12610" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="12780:12841" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="13011:13073" ph="CREATE TABLE... Context" />
-                <marker date="1489080234000" expanded="true" signature="13227:13307" ph="CREATE TABLE... Distance" />
-                <marker date="1489080234000" expanded="true" signature="13462:13542" ph="CREATE TABLE... Distance" />
-                <marker date="1489080234000" expanded="true" signature="13679:13768" ph="CREATE TABLE... Weight" />
-                <marker date="1489080234000" expanded="true" signature="13713:13768" ph="CREATE TABLE... Weight" />
-                <marker date="1489080234000" expanded="true" signature="13903:14032" ph="CREATE TABLE... PMI" />
-                <marker date="1489080234000" expanded="true" signature="14176:14305" ph="CREATE TABLE... PMI" />
-                <marker date="1489080234000" expanded="true" signature="14435:14564" ph="CREATE TABLE... PMI" />
-                <marker date="1489080234000" expanded="true" signature="14690:14819" ph="CREATE TABLE... PMI" />
-                <marker date="1489080234000" expanded="true" signature="14955:15087" ph="CREATE TABLE... Aspects" />
-                <marker date="1489080234000" expanded="true" signature="15227:15359" ph="CREATE TABLE... Reviews" />
-                <marker date="1489080234000" expanded="true" signature="15503:15569" ph="CREATE TABLE... Sentences" />
-                <marker date="1489080234000" expanded="true" signature="15693:15825" ph="CREATE TABLE... Aspects" />
-                <marker date="1489080234000" expanded="true" signature="15940:16006" ph="CREATE TABLE... Sentences" />
-                <marker date="1489080234000" expanded="true" signature="16128:16177" ph="INSERT INTO Hierarchy... " />
-                <marker date="1489080234000" expanded="true" signature="16280:16331" ph="INSERT INTO Hierarchy... " />
-                <marker date="1489080234000" expanded="true" signature="16426:16473" ph="INSERT INTO Tree... " />
-                <marker date="1489080234000" expanded="true" signature="16609:16682" ph="INSERT INTO Syntactic... " />
-                <marker date="1489080234000" expanded="true" signature="16836:16909" ph="INSERT INTO Syntactic... " />
-                <marker date="1489080234000" expanded="true" signature="17062:17136" ph="INSERT INTO Lexical... " />
-                <marker date="1489080234000" expanded="true" signature="17304:17378" ph="INSERT INTO Lexical... " />
-                <marker date="1489080234000" expanded="true" signature="17556:17626" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="17798:17868" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="18030:18100" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="18260:18330" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="18490:18541" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="18685:18736" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="18881:18931" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="19139:19190" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="19380:19430" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="19575:19626" ph="INSERT INTO Context... " />
-                <marker date="1489080234000" expanded="true" signature="19785:19851" ph="INSERT INTO Distance... " />
-                <marker date="1489080234000" expanded="true" signature="20009:20075" ph="INSERT INTO Distance... " />
-                <marker date="1489080234000" expanded="true" signature="20229:20304" ph="INSERT INTO Weight... " />
-                <marker date="1489080234000" expanded="true" signature="20498:20596" ph="INSERT INTO PMI... " />
-                <marker date="1489080234000" expanded="true" signature="20803:20901" ph="INSERT INTO PMI... " />
-                <marker date="1489080234000" expanded="true" signature="21092:21190" ph="INSERT INTO PMI... " />
-                <marker date="1489080234000" expanded="true" signature="21385:21483" ph="INSERT INTO PMI... " />
-                <marker date="1489080234000" expanded="true" signature="21631:21686" ph="INSERT INTO Sentences... " />
-                <marker date="1489080234000" expanded="true" signature="21854:21958" ph="INSERT INTO Aspects... " />
-                <marker date="1489080234000" expanded="true" signature="22203:22307" ph="INSERT INTO Aspects... " />
-                <marker date="1489080234000" expanded="true" signature="22551:22655" ph="INSERT INTO Reviews... " />
-                <marker date="1489080234000" expanded="true" signature="22842:22883" ph="INSERT INTO Sentences... " />
-                <marker date="1489080234000" expanded="true" signature="22842:22897" ph="INSERT INTO Sentences... " />
-                <marker date="1489080234000" expanded="true" signature="23138:23174" ph="DELETE FROM " />
+                <element signature="e#10062#10193#0" expanded="false" />
+                <element signature="e#10238#10374#0" expanded="false" />
+                <element signature="e#10430#10611#0" expanded="false" />
+                <element signature="e#10666#10845#0" expanded="false" />
+                <element signature="e#10885#11007#0" expanded="false" />
+                <element signature="e#11058#11229#0" expanded="false" />
+                <element signature="e#11274#11433#0" expanded="false" />
+                <element signature="e#11476#11632#0" expanded="false" />
+                <element signature="e#11681#11849#0" expanded="false" />
+                <element signature="e#11899#12068#0" expanded="false" />
+                <element signature="e#12117#12284#0" expanded="false" />
+                <element signature="e#12341#12501#0" expanded="false" />
+                <element signature="e#12564#12736#0" expanded="false" />
+                <element signature="e#12800#12973#0" expanded="false" />
+                <element signature="e#13043#13242#0" expanded="false" />
+                <element signature="e#13300#13461#0" expanded="false" />
+                <element signature="e#13525#13699#0" expanded="false" />
+                <element signature="e#13752#13922#0" expanded="false" />
+                <element signature="e#13981#14163#0" expanded="false" />
+                <element signature="e#14210#14377#0" expanded="false" />
+                <element signature="e#14429#14646#0" expanded="false" />
+                <element signature="e#14700#14921#0" expanded="false" />
+                <element signature="e#14967#15172#0" expanded="false" />
+                <element signature="e#15220#15429#0" expanded="false" />
+                <element signature="e#15481#15701#0" expanded="false" />
+                <element signature="e#15753#15973#0" expanded="false" />
+                <element signature="e#16027#16185#0" expanded="false" />
+                <element signature="e#16228#16430#0" expanded="false" />
+                <element signature="e#16474#16612#0" expanded="false" />
+                <element signature="e#17136#17233#0" expanded="false" />
+                <element signature="e#17287#17388#0" expanded="false" />
+                <element signature="e#17438#17531#0" expanded="false" />
+                <element signature="e#17610#17770#0" expanded="false" />
+                <element signature="e#17843#17997#0" expanded="false" />
+                <element signature="e#18071#18227#0" expanded="false" />
+                <element signature="e#18307#18469#0" expanded="false" />
+                <element signature="e#18552#18713#0" expanded="false" />
+                <element signature="e#18795#18955#0" expanded="false" />
+                <element signature="e#19032#19187#0" expanded="false" />
+                <element signature="e#19263#19417#0" expanded="false" />
+                <element signature="e#19485#19600#0" expanded="false" />
+                <element signature="e#19674#19795#0" expanded="false" />
+                <element signature="e#19869#20040#0" expanded="false" />
+                <element signature="e#20121#20306#0" expanded="false" />
+                <element signature="e#20374#20488#0" expanded="false" />
+                <element signature="e#20563#20697#0" expanded="false" />
+                <element signature="e#20778#20933#0" expanded="false" />
+                <element signature="e#21008#21157#0" expanded="false" />
+                <element signature="e#21234#21394#0" expanded="false" />
+                <element signature="e#21485#21695#0" expanded="false" />
+                <element signature="e#21788#22000#0" expanded="false" />
+                <element signature="e#22085#22289#0" expanded="false" />
+                <element signature="e#22376#22582#0" expanded="false" />
+                <element signature="e#22639#22747#0" expanded="false" />
+                <element signature="e#22850#23079#0" expanded="false" />
+                <element signature="e#23192#23428#0" expanded="false" />
+                <element signature="e#23540#23776#0" expanded="false" />
+                <element signature="e#23842#23970#0" expanded="false" />
+                <element signature="e#24039#24098#0" expanded="false" />
+                <element signature="e#24147#24264#0" expanded="false" />
+                <marker date="1489509088000" expanded="true" signature="9773:9976" ph="CREATE TABLE... Frequent" />
+                <marker date="1489509088000" expanded="true" signature="10094:10153" ph="CREATE TABLE... Hierarchy" />
+                <marker date="1489509088000" expanded="true" signature="10271:10333" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="10474:10559" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="10709:10794" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="10913:10971" ph="CREATE TABLE... Tree" />
+                <marker date="1489509088000" expanded="true" signature="11097:11182" ph="CREATE TABLE... Syntactic" />
+                <marker date="1489509088000" expanded="true" signature="11307:11392" ph="CREATE TABLE... Syntactic" />
+                <marker date="1489509088000" expanded="true" signature="11507:11593" ph="CREATE TABLE... Lexical" />
+                <marker date="1489509088000" expanded="true" signature="11718:11804" ph="CREATE TABLE... Lexical" />
+                <marker date="1489509088000" expanded="true" signature="11937:12022" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="12154:12239" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="12386:12448" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="12615:12677" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="12852:12913" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="13114:13176" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="13346:13407" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="13577:13639" ph="CREATE TABLE... Context" />
+                <marker date="1489509088000" expanded="true" signature="13793:13873" ph="CREATE TABLE... Distance" />
+                <marker date="1489509088000" expanded="true" signature="14028:14108" ph="CREATE TABLE... Distance" />
+                <marker date="1489509088000" expanded="true" signature="14245:14334" ph="CREATE TABLE... Weight" />
+                <marker date="1489509088000" expanded="true" signature="14279:14334" ph="CREATE TABLE... Weight" />
+                <marker date="1489509088000" expanded="true" signature="14469:14598" ph="CREATE TABLE... PMI" />
+                <marker date="1489509088000" expanded="true" signature="14742:14871" ph="CREATE TABLE... PMI" />
+                <marker date="1489509088000" expanded="true" signature="15001:15130" ph="CREATE TABLE... PMI" />
+                <marker date="1489509088000" expanded="true" signature="15256:15385" ph="CREATE TABLE... PMI" />
+                <marker date="1489509088000" expanded="true" signature="15521:15653" ph="CREATE TABLE... Aspects" />
+                <marker date="1489509088000" expanded="true" signature="15793:15925" ph="CREATE TABLE... Reviews" />
+                <marker date="1489509088000" expanded="true" signature="16069:16135" ph="CREATE TABLE... Sentences" />
+                <marker date="1489509088000" expanded="true" signature="16259:16391" ph="CREATE TABLE... Aspects" />
+                <marker date="1489509088000" expanded="true" signature="16506:16572" ph="CREATE TABLE... Sentences" />
+                <marker date="1489509088000" expanded="true" signature="16797:16966" ph="INSERT INTO Frequent... " />
+                <marker date="1489509088000" expanded="true" signature="17166:17215" ph="INSERT INTO Hierarchy... " />
+                <marker date="1489509088000" expanded="true" signature="17318:17369" ph="INSERT INTO Hierarchy... " />
+                <marker date="1489509088000" expanded="true" signature="17464:17511" ph="INSERT INTO Tree... " />
+                <marker date="1489509088000" expanded="true" signature="17647:17720" ph="INSERT INTO Syntactic... " />
+                <marker date="1489509088000" expanded="true" signature="17874:17947" ph="INSERT INTO Syntactic... " />
+                <marker date="1489509088000" expanded="true" signature="18100:18174" ph="INSERT INTO Lexical... " />
+                <marker date="1489509088000" expanded="true" signature="18342:18416" ph="INSERT INTO Lexical... " />
+                <marker date="1489509088000" expanded="true" signature="18594:18664" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="18836:18906" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="19068:19138" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="19298:19368" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="19528:19579" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="19723:19774" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="19919:19969" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="20177:20228" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="20418:20468" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="20613:20664" ph="INSERT INTO Context... " />
+                <marker date="1489509088000" expanded="true" signature="20823:20889" ph="INSERT INTO Distance... " />
+                <marker date="1489509088000" expanded="true" signature="21047:21113" ph="INSERT INTO Distance... " />
+                <marker date="1489509088000" expanded="true" signature="21267:21342" ph="INSERT INTO Weight... " />
+                <marker date="1489509088000" expanded="true" signature="21536:21634" ph="INSERT INTO PMI... " />
+                <marker date="1489509088000" expanded="true" signature="21841:21939" ph="INSERT INTO PMI... " />
+                <marker date="1489509088000" expanded="true" signature="22130:22228" ph="INSERT INTO PMI... " />
+                <marker date="1489509088000" expanded="true" signature="22423:22521" ph="INSERT INTO PMI... " />
+                <marker date="1489509088000" expanded="true" signature="22669:22724" ph="INSERT INTO Sentences... " />
+                <marker date="1489509088000" expanded="true" signature="22892:22996" ph="INSERT INTO Aspects... " />
+                <marker date="1489509088000" expanded="true" signature="23241:23345" ph="INSERT INTO Aspects... " />
+                <marker date="1489509088000" expanded="true" signature="23589:23693" ph="INSERT INTO Reviews... " />
+                <marker date="1489509088000" expanded="true" signature="23880:23921" ph="INSERT INTO Sentences... " />
+                <marker date="1489509088000" expanded="true" signature="23880:23935" ph="INSERT INTO Sentences... " />
+                <marker date="1489509088000" expanded="true" signature="24176:24212" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -193,8 +197,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="136" column="37" lean-forward="true" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
+            <state relative-caret-position="204">
+              <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
                 <element signature="e#1224#3065#0" expanded="false" />
@@ -214,26 +218,28 @@
       <file leaf-file-name="EnsembleClassifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/EnsembleClassifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-                <marker date="1489421241000" expanded="true" signature="841:858" ph="SELECT * FRO... PMI" />
-                <marker date="1489421241000" expanded="true" signature="939:956" ph="SELECT * FRO... PMI" />
-                <marker date="1489421241000" expanded="true" signature="1031:1052" ph="SELECT * FRO... Lexical" />
-                <marker date="1489421241000" expanded="true" signature="1171:1191" ph="SELECT * FRO... Weight" />
-                <marker date="1489421241000" expanded="true" signature="1681:1736" ph="SELECT * FRO... Context" />
-                <marker date="1489421241000" expanded="true" signature="2038:2093" ph="SELECT * FRO... Context" />
-                <marker date="1489421241000" expanded="true" signature="2315:2370" ph="SELECT * FRO... Context" />
-                <marker date="1489421241000" expanded="true" signature="2676:2731" ph="SELECT * FRO... Context" />
-                <marker date="1489421241000" expanded="true" signature="2956:3013" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489421241000" expanded="true" signature="3339:3396" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489421241000" expanded="true" signature="4120:4137" ph="SELECT * FRO... PMI" />
-                <marker date="1489421241000" expanded="true" signature="4206:4223" ph="SELECT * FRO... PMI" />
-                <marker date="1489421241000" expanded="true" signature="4286:4307" ph="SELECT * FRO... Lexical" />
-                <marker date="1489421241000" expanded="true" signature="4374:4397" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489421241000" expanded="true" signature="4464:4485" ph="SELECT * FRO... Context" />
-                <marker date="1489421241000" expanded="true" signature="4554:4575" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="882:896" ph="SELECT * FRO... Weight" />
+                <marker date="1489510399000" expanded="true" signature="882:901" ph="SELECT * FRO... Ideal" />
+                <marker date="1489510399000" expanded="true" signature="1328:1345" ph="SELECT * FRO... PMI" />
+                <marker date="1489510399000" expanded="true" signature="1426:1443" ph="SELECT * FRO... PMI" />
+                <marker date="1489510399000" expanded="true" signature="1518:1539" ph="SELECT * FRO... Lexical" />
+                <marker date="1489510399000" expanded="true" signature="1616:1636" ph="SELECT * FRO... Weight" />
+                <marker date="1489510399000" expanded="true" signature="2126:2181" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="2483:2538" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="2760:2815" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="3121:3176" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="3401:3458" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489510399000" expanded="true" signature="3784:3841" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489510399000" expanded="true" signature="4595:4612" ph="SELECT * FRO... PMI" />
+                <marker date="1489510399000" expanded="true" signature="4681:4698" ph="SELECT * FRO... PMI" />
+                <marker date="1489510399000" expanded="true" signature="4761:4782" ph="SELECT * FRO... Lexical" />
+                <marker date="1489510399000" expanded="true" signature="4849:4872" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489510399000" expanded="true" signature="4939:4960" ph="SELECT * FRO... Context" />
+                <marker date="1489510399000" expanded="true" signature="5029:5050" ph="SELECT * FRO... Context" />
               </folding>
             </state>
           </provider>
@@ -243,7 +249,7 @@
         <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="160" column="77" lean-forward="true" selection-start-line="160" selection-start-column="77" selection-end-line="160" selection-end-column="77" />
+              <caret line="160" column="77" lean-forward="false" selection-start-line="160" selection-start-column="77" selection-end-line="160" selection-end-column="77" />
               <folding>
                 <element signature="e#2738#6350#0" expanded="false" />
                 <element signature="e#8558#12160#0" expanded="false" />
@@ -389,7 +395,6 @@
         <option value="$PROJECT_DIR$/productTrees/Tree/NAS, DAS хранилища данных.txt" />
         <option value="$PROJECT_DIR$/aspects/FrequentAspects.py" />
         <option value="$PROJECT_DIR$/aspects/Syntactic.py" />
-        <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/HierarchyBuilder.py" />
         <option value="$PROJECT_DIR$/aspects/Context.py" />
         <option value="$PROJECT_DIR$/aspects/Aspects.py" />
@@ -397,6 +402,7 @@
         <option value="$PROJECT_DIR$/aspects/PMI.py" />
         <option value="$PROJECT_DIR$/aspects/IdealAspectsDB.py" />
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
+        <option value="$PROJECT_DIR$/aspects/DB.py" />
         <option value="$PROJECT_DIR$/aspects/EnsembleClassifier.py" />
         <option value="$PROJECT_DIR$/aspects/Main.py" />
       </list>
@@ -409,9 +415,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="47" />
+    <option name="y" value="52" />
     <option name="width" value="1440" />
-    <option name="height" value="807" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -431,7 +437,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -488,7 +494,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -862,7 +868,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="47" width="1440" height="807" extended-state="0" />
+    <frame x="0" y="52" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -875,7 +881,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37105262" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37066665" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -933,16 +939,6 @@
           <line>24</line>
           <option name="timeStamp" value="1416" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/EnsembleClassifier.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="1423" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/Main.py</url>
-          <line>138</line>
-          <option name="timeStamp" value="1428" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -951,7 +947,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1429" />
+      <option name="time" value="1431" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1202,137 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="336" column="12" lean-forward="false" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
-          <folding>
-            <element signature="e#3782#9452#0" expanded="false" />
-            <element signature="e#9496#9627#0" expanded="false" />
-            <element signature="e#9672#9808#0" expanded="false" />
-            <element signature="e#9864#10045#0" expanded="false" />
-            <element signature="e#10100#10279#0" expanded="false" />
-            <element signature="e#10319#10441#0" expanded="false" />
-            <element signature="e#10492#10663#0" expanded="false" />
-            <element signature="e#10708#10867#0" expanded="false" />
-            <element signature="e#10910#11066#0" expanded="false" />
-            <element signature="e#11115#11283#0" expanded="false" />
-            <element signature="e#11333#11502#0" expanded="false" />
-            <element signature="e#11551#11718#0" expanded="false" />
-            <element signature="e#11775#11935#0" expanded="false" />
-            <element signature="e#11998#12170#0" expanded="false" />
-            <element signature="e#12234#12407#0" expanded="false" />
-            <element signature="e#12477#12676#0" expanded="false" />
-            <element signature="e#12734#12895#0" expanded="false" />
-            <element signature="e#12959#13133#0" expanded="false" />
-            <element signature="e#13186#13356#0" expanded="false" />
-            <element signature="e#13415#13597#0" expanded="false" />
-            <element signature="e#13644#13811#0" expanded="false" />
-            <element signature="e#13863#14080#0" expanded="false" />
-            <element signature="e#14134#14355#0" expanded="false" />
-            <element signature="e#14401#14606#0" expanded="false" />
-            <element signature="e#14654#14863#0" expanded="false" />
-            <element signature="e#14915#15135#0" expanded="false" />
-            <element signature="e#15187#15407#0" expanded="false" />
-            <element signature="e#15461#15619#0" expanded="false" />
-            <element signature="e#15662#15864#0" expanded="false" />
-            <element signature="e#15908#16046#0" expanded="false" />
-            <element signature="e#16098#16195#0" expanded="false" />
-            <element signature="e#16249#16350#0" expanded="false" />
-            <element signature="e#16400#16493#0" expanded="false" />
-            <element signature="e#16572#16732#0" expanded="false" />
-            <element signature="e#16805#16959#0" expanded="false" />
-            <element signature="e#17033#17189#0" expanded="false" />
-            <element signature="e#17269#17431#0" expanded="false" />
-            <element signature="e#17514#17675#0" expanded="false" />
-            <element signature="e#17757#17917#0" expanded="false" />
-            <element signature="e#17994#18149#0" expanded="false" />
-            <element signature="e#18225#18379#0" expanded="false" />
-            <element signature="e#18447#18562#0" expanded="false" />
-            <element signature="e#18636#18757#0" expanded="false" />
-            <element signature="e#18831#19002#0" expanded="false" />
-            <element signature="e#19083#19268#0" expanded="false" />
-            <element signature="e#19336#19450#0" expanded="false" />
-            <element signature="e#19525#19659#0" expanded="false" />
-            <element signature="e#19740#19895#0" expanded="false" />
-            <element signature="e#19970#20119#0" expanded="false" />
-            <element signature="e#20196#20356#0" expanded="false" />
-            <element signature="e#20447#20657#0" expanded="false" />
-            <element signature="e#20750#20962#0" expanded="false" />
-            <element signature="e#21047#21251#0" expanded="false" />
-            <element signature="e#21338#21544#0" expanded="false" />
-            <element signature="e#21601#21709#0" expanded="false" />
-            <element signature="e#21812#22041#0" expanded="false" />
-            <element signature="e#22154#22390#0" expanded="false" />
-            <element signature="e#22502#22738#0" expanded="false" />
-            <element signature="e#22804#22932#0" expanded="false" />
-            <element signature="e#23001#23060#0" expanded="false" />
-            <element signature="e#23109#23226#0" expanded="false" />
-            <marker date="1489080234000" expanded="true" signature="9528:9587" ph="CREATE TABLE... Hierarchy" />
-            <marker date="1489080234000" expanded="true" signature="9705:9767" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="9908:9993" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="10143:10228" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="10347:10405" ph="CREATE TABLE... Tree" />
-            <marker date="1489080234000" expanded="true" signature="10531:10616" ph="CREATE TABLE... Syntactic" />
-            <marker date="1489080234000" expanded="true" signature="10741:10826" ph="CREATE TABLE... Syntactic" />
-            <marker date="1489080234000" expanded="true" signature="10941:11027" ph="CREATE TABLE... Lexical" />
-            <marker date="1489080234000" expanded="true" signature="11152:11238" ph="CREATE TABLE... Lexical" />
-            <marker date="1489080234000" expanded="true" signature="11371:11456" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="11588:11673" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="11820:11882" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="12049:12111" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="12286:12347" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="12548:12610" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="12780:12841" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="13011:13073" ph="CREATE TABLE... Context" />
-            <marker date="1489080234000" expanded="true" signature="13227:13307" ph="CREATE TABLE... Distance" />
-            <marker date="1489080234000" expanded="true" signature="13462:13542" ph="CREATE TABLE... Distance" />
-            <marker date="1489080234000" expanded="true" signature="13679:13768" ph="CREATE TABLE... Weight" />
-            <marker date="1489080234000" expanded="true" signature="13713:13768" ph="CREATE TABLE... Weight" />
-            <marker date="1489080234000" expanded="true" signature="13903:14032" ph="CREATE TABLE... PMI" />
-            <marker date="1489080234000" expanded="true" signature="14176:14305" ph="CREATE TABLE... PMI" />
-            <marker date="1489080234000" expanded="true" signature="14435:14564" ph="CREATE TABLE... PMI" />
-            <marker date="1489080234000" expanded="true" signature="14690:14819" ph="CREATE TABLE... PMI" />
-            <marker date="1489080234000" expanded="true" signature="14955:15087" ph="CREATE TABLE... Aspects" />
-            <marker date="1489080234000" expanded="true" signature="15227:15359" ph="CREATE TABLE... Reviews" />
-            <marker date="1489080234000" expanded="true" signature="15503:15569" ph="CREATE TABLE... Sentences" />
-            <marker date="1489080234000" expanded="true" signature="15693:15825" ph="CREATE TABLE... Aspects" />
-            <marker date="1489080234000" expanded="true" signature="15940:16006" ph="CREATE TABLE... Sentences" />
-            <marker date="1489080234000" expanded="true" signature="16128:16177" ph="INSERT INTO Hierarchy... " />
-            <marker date="1489080234000" expanded="true" signature="16280:16331" ph="INSERT INTO Hierarchy... " />
-            <marker date="1489080234000" expanded="true" signature="16426:16473" ph="INSERT INTO Tree... " />
-            <marker date="1489080234000" expanded="true" signature="16609:16682" ph="INSERT INTO Syntactic... " />
-            <marker date="1489080234000" expanded="true" signature="16836:16909" ph="INSERT INTO Syntactic... " />
-            <marker date="1489080234000" expanded="true" signature="17062:17136" ph="INSERT INTO Lexical... " />
-            <marker date="1489080234000" expanded="true" signature="17304:17378" ph="INSERT INTO Lexical... " />
-            <marker date="1489080234000" expanded="true" signature="17556:17626" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="17798:17868" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="18030:18100" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="18260:18330" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="18490:18541" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="18685:18736" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="18881:18931" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="19139:19190" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="19380:19430" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="19575:19626" ph="INSERT INTO Context... " />
-            <marker date="1489080234000" expanded="true" signature="19785:19851" ph="INSERT INTO Distance... " />
-            <marker date="1489080234000" expanded="true" signature="20009:20075" ph="INSERT INTO Distance... " />
-            <marker date="1489080234000" expanded="true" signature="20229:20304" ph="INSERT INTO Weight... " />
-            <marker date="1489080234000" expanded="true" signature="20498:20596" ph="INSERT INTO PMI... " />
-            <marker date="1489080234000" expanded="true" signature="20803:20901" ph="INSERT INTO PMI... " />
-            <marker date="1489080234000" expanded="true" signature="21092:21190" ph="INSERT INTO PMI... " />
-            <marker date="1489080234000" expanded="true" signature="21385:21483" ph="INSERT INTO PMI... " />
-            <marker date="1489080234000" expanded="true" signature="21631:21686" ph="INSERT INTO Sentences... " />
-            <marker date="1489080234000" expanded="true" signature="21854:21958" ph="INSERT INTO Aspects... " />
-            <marker date="1489080234000" expanded="true" signature="22203:22307" ph="INSERT INTO Aspects... " />
-            <marker date="1489080234000" expanded="true" signature="22551:22655" ph="INSERT INTO Reviews... " />
-            <marker date="1489080234000" expanded="true" signature="22842:22883" ph="INSERT INTO Sentences... " />
-            <marker date="1489080234000" expanded="true" signature="22842:22897" ph="INSERT INTO Sentences... " />
-            <marker date="1489080234000" expanded="true" signature="23138:23174" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1354,6 +1219,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/ensemble/forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/HierarchyBuilder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1367,18 +1239,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/ensemble/forest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="160" column="77" lean-forward="true" selection-start-line="160" selection-start-column="77" selection-end-line="160" selection-end-column="77" />
+          <caret line="160" column="77" lean-forward="false" selection-start-line="160" selection-start-column="77" selection-end-line="160" selection-end-column="77" />
           <folding>
             <element signature="e#2738#6350#0" expanded="false" />
             <element signature="e#8558#12160#0" expanded="false" />
@@ -1414,36 +1278,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="309" column="241" lean-forward="false" selection-start-line="309" selection-start-column="241" selection-end-line="309" selection-end-column="241" />
+          <folding>
+            <element signature="e#10062#10193#0" expanded="false" />
+            <element signature="e#10238#10374#0" expanded="false" />
+            <element signature="e#10430#10611#0" expanded="false" />
+            <element signature="e#10666#10845#0" expanded="false" />
+            <element signature="e#10885#11007#0" expanded="false" />
+            <element signature="e#11058#11229#0" expanded="false" />
+            <element signature="e#11274#11433#0" expanded="false" />
+            <element signature="e#11476#11632#0" expanded="false" />
+            <element signature="e#11681#11849#0" expanded="false" />
+            <element signature="e#11899#12068#0" expanded="false" />
+            <element signature="e#12117#12284#0" expanded="false" />
+            <element signature="e#12341#12501#0" expanded="false" />
+            <element signature="e#12564#12736#0" expanded="false" />
+            <element signature="e#12800#12973#0" expanded="false" />
+            <element signature="e#13043#13242#0" expanded="false" />
+            <element signature="e#13300#13461#0" expanded="false" />
+            <element signature="e#13525#13699#0" expanded="false" />
+            <element signature="e#13752#13922#0" expanded="false" />
+            <element signature="e#13981#14163#0" expanded="false" />
+            <element signature="e#14210#14377#0" expanded="false" />
+            <element signature="e#14429#14646#0" expanded="false" />
+            <element signature="e#14700#14921#0" expanded="false" />
+            <element signature="e#14967#15172#0" expanded="false" />
+            <element signature="e#15220#15429#0" expanded="false" />
+            <element signature="e#15481#15701#0" expanded="false" />
+            <element signature="e#15753#15973#0" expanded="false" />
+            <element signature="e#16027#16185#0" expanded="false" />
+            <element signature="e#16228#16430#0" expanded="false" />
+            <element signature="e#16474#16612#0" expanded="false" />
+            <element signature="e#17136#17233#0" expanded="false" />
+            <element signature="e#17287#17388#0" expanded="false" />
+            <element signature="e#17438#17531#0" expanded="false" />
+            <element signature="e#17610#17770#0" expanded="false" />
+            <element signature="e#17843#17997#0" expanded="false" />
+            <element signature="e#18071#18227#0" expanded="false" />
+            <element signature="e#18307#18469#0" expanded="false" />
+            <element signature="e#18552#18713#0" expanded="false" />
+            <element signature="e#18795#18955#0" expanded="false" />
+            <element signature="e#19032#19187#0" expanded="false" />
+            <element signature="e#19263#19417#0" expanded="false" />
+            <element signature="e#19485#19600#0" expanded="false" />
+            <element signature="e#19674#19795#0" expanded="false" />
+            <element signature="e#19869#20040#0" expanded="false" />
+            <element signature="e#20121#20306#0" expanded="false" />
+            <element signature="e#20374#20488#0" expanded="false" />
+            <element signature="e#20563#20697#0" expanded="false" />
+            <element signature="e#20778#20933#0" expanded="false" />
+            <element signature="e#21008#21157#0" expanded="false" />
+            <element signature="e#21234#21394#0" expanded="false" />
+            <element signature="e#21485#21695#0" expanded="false" />
+            <element signature="e#21788#22000#0" expanded="false" />
+            <element signature="e#22085#22289#0" expanded="false" />
+            <element signature="e#22376#22582#0" expanded="false" />
+            <element signature="e#22639#22747#0" expanded="false" />
+            <element signature="e#22850#23079#0" expanded="false" />
+            <element signature="e#23192#23428#0" expanded="false" />
+            <element signature="e#23540#23776#0" expanded="false" />
+            <element signature="e#23842#23970#0" expanded="false" />
+            <element signature="e#24039#24098#0" expanded="false" />
+            <element signature="e#24147#24264#0" expanded="false" />
+            <marker date="1489509088000" expanded="true" signature="9773:9976" ph="CREATE TABLE... Frequent" />
+            <marker date="1489509088000" expanded="true" signature="10094:10153" ph="CREATE TABLE... Hierarchy" />
+            <marker date="1489509088000" expanded="true" signature="10271:10333" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="10474:10559" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="10709:10794" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="10913:10971" ph="CREATE TABLE... Tree" />
+            <marker date="1489509088000" expanded="true" signature="11097:11182" ph="CREATE TABLE... Syntactic" />
+            <marker date="1489509088000" expanded="true" signature="11307:11392" ph="CREATE TABLE... Syntactic" />
+            <marker date="1489509088000" expanded="true" signature="11507:11593" ph="CREATE TABLE... Lexical" />
+            <marker date="1489509088000" expanded="true" signature="11718:11804" ph="CREATE TABLE... Lexical" />
+            <marker date="1489509088000" expanded="true" signature="11937:12022" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="12154:12239" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="12386:12448" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="12615:12677" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="12852:12913" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="13114:13176" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="13346:13407" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="13577:13639" ph="CREATE TABLE... Context" />
+            <marker date="1489509088000" expanded="true" signature="13793:13873" ph="CREATE TABLE... Distance" />
+            <marker date="1489509088000" expanded="true" signature="14028:14108" ph="CREATE TABLE... Distance" />
+            <marker date="1489509088000" expanded="true" signature="14245:14334" ph="CREATE TABLE... Weight" />
+            <marker date="1489509088000" expanded="true" signature="14279:14334" ph="CREATE TABLE... Weight" />
+            <marker date="1489509088000" expanded="true" signature="14469:14598" ph="CREATE TABLE... PMI" />
+            <marker date="1489509088000" expanded="true" signature="14742:14871" ph="CREATE TABLE... PMI" />
+            <marker date="1489509088000" expanded="true" signature="15001:15130" ph="CREATE TABLE... PMI" />
+            <marker date="1489509088000" expanded="true" signature="15256:15385" ph="CREATE TABLE... PMI" />
+            <marker date="1489509088000" expanded="true" signature="15521:15653" ph="CREATE TABLE... Aspects" />
+            <marker date="1489509088000" expanded="true" signature="15793:15925" ph="CREATE TABLE... Reviews" />
+            <marker date="1489509088000" expanded="true" signature="16069:16135" ph="CREATE TABLE... Sentences" />
+            <marker date="1489509088000" expanded="true" signature="16259:16391" ph="CREATE TABLE... Aspects" />
+            <marker date="1489509088000" expanded="true" signature="16506:16572" ph="CREATE TABLE... Sentences" />
+            <marker date="1489509088000" expanded="true" signature="16797:16966" ph="INSERT INTO Frequent... " />
+            <marker date="1489509088000" expanded="true" signature="17166:17215" ph="INSERT INTO Hierarchy... " />
+            <marker date="1489509088000" expanded="true" signature="17318:17369" ph="INSERT INTO Hierarchy... " />
+            <marker date="1489509088000" expanded="true" signature="17464:17511" ph="INSERT INTO Tree... " />
+            <marker date="1489509088000" expanded="true" signature="17647:17720" ph="INSERT INTO Syntactic... " />
+            <marker date="1489509088000" expanded="true" signature="17874:17947" ph="INSERT INTO Syntactic... " />
+            <marker date="1489509088000" expanded="true" signature="18100:18174" ph="INSERT INTO Lexical... " />
+            <marker date="1489509088000" expanded="true" signature="18342:18416" ph="INSERT INTO Lexical... " />
+            <marker date="1489509088000" expanded="true" signature="18594:18664" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="18836:18906" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="19068:19138" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="19298:19368" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="19528:19579" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="19723:19774" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="19919:19969" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="20177:20228" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="20418:20468" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="20613:20664" ph="INSERT INTO Context... " />
+            <marker date="1489509088000" expanded="true" signature="20823:20889" ph="INSERT INTO Distance... " />
+            <marker date="1489509088000" expanded="true" signature="21047:21113" ph="INSERT INTO Distance... " />
+            <marker date="1489509088000" expanded="true" signature="21267:21342" ph="INSERT INTO Weight... " />
+            <marker date="1489509088000" expanded="true" signature="21536:21634" ph="INSERT INTO PMI... " />
+            <marker date="1489509088000" expanded="true" signature="21841:21939" ph="INSERT INTO PMI... " />
+            <marker date="1489509088000" expanded="true" signature="22130:22228" ph="INSERT INTO PMI... " />
+            <marker date="1489509088000" expanded="true" signature="22423:22521" ph="INSERT INTO PMI... " />
+            <marker date="1489509088000" expanded="true" signature="22669:22724" ph="INSERT INTO Sentences... " />
+            <marker date="1489509088000" expanded="true" signature="22892:22996" ph="INSERT INTO Aspects... " />
+            <marker date="1489509088000" expanded="true" signature="23241:23345" ph="INSERT INTO Aspects... " />
+            <marker date="1489509088000" expanded="true" signature="23589:23693" ph="INSERT INTO Reviews... " />
+            <marker date="1489509088000" expanded="true" signature="23880:23921" ph="INSERT INTO Sentences... " />
+            <marker date="1489509088000" expanded="true" signature="23880:23935" ph="INSERT INTO Sentences... " />
+            <marker date="1489509088000" expanded="true" signature="24176:24212" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/EnsembleClassifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
-            <marker date="1489421241000" expanded="true" signature="841:858" ph="SELECT * FRO... PMI" />
-            <marker date="1489421241000" expanded="true" signature="939:956" ph="SELECT * FRO... PMI" />
-            <marker date="1489421241000" expanded="true" signature="1031:1052" ph="SELECT * FRO... Lexical" />
-            <marker date="1489421241000" expanded="true" signature="1171:1191" ph="SELECT * FRO... Weight" />
-            <marker date="1489421241000" expanded="true" signature="1681:1736" ph="SELECT * FRO... Context" />
-            <marker date="1489421241000" expanded="true" signature="2038:2093" ph="SELECT * FRO... Context" />
-            <marker date="1489421241000" expanded="true" signature="2315:2370" ph="SELECT * FRO... Context" />
-            <marker date="1489421241000" expanded="true" signature="2676:2731" ph="SELECT * FRO... Context" />
-            <marker date="1489421241000" expanded="true" signature="2956:3013" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489421241000" expanded="true" signature="3339:3396" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489421241000" expanded="true" signature="4120:4137" ph="SELECT * FRO... PMI" />
-            <marker date="1489421241000" expanded="true" signature="4206:4223" ph="SELECT * FRO... PMI" />
-            <marker date="1489421241000" expanded="true" signature="4286:4307" ph="SELECT * FRO... Lexical" />
-            <marker date="1489421241000" expanded="true" signature="4374:4397" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489421241000" expanded="true" signature="4464:4485" ph="SELECT * FRO... Context" />
-            <marker date="1489421241000" expanded="true" signature="4554:4575" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="882:896" ph="SELECT * FRO... Weight" />
+            <marker date="1489510399000" expanded="true" signature="882:901" ph="SELECT * FRO... Ideal" />
+            <marker date="1489510399000" expanded="true" signature="1328:1345" ph="SELECT * FRO... PMI" />
+            <marker date="1489510399000" expanded="true" signature="1426:1443" ph="SELECT * FRO... PMI" />
+            <marker date="1489510399000" expanded="true" signature="1518:1539" ph="SELECT * FRO... Lexical" />
+            <marker date="1489510399000" expanded="true" signature="1616:1636" ph="SELECT * FRO... Weight" />
+            <marker date="1489510399000" expanded="true" signature="2126:2181" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="2483:2538" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="2760:2815" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="3121:3176" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="3401:3458" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489510399000" expanded="true" signature="3784:3841" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489510399000" expanded="true" signature="4595:4612" ph="SELECT * FRO... PMI" />
+            <marker date="1489510399000" expanded="true" signature="4681:4698" ph="SELECT * FRO... PMI" />
+            <marker date="1489510399000" expanded="true" signature="4761:4782" ph="SELECT * FRO... Lexical" />
+            <marker date="1489510399000" expanded="true" signature="4849:4872" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489510399000" expanded="true" signature="4939:4960" ph="SELECT * FRO... Context" />
+            <marker date="1489510399000" expanded="true" signature="5029:5050" ph="SELECT * FRO... Context" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="136" column="37" lean-forward="true" selection-start-line="136" selection-start-column="37" selection-end-line="136" selection-end-column="37" />
+        <state relative-caret-position="204">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
             <element signature="e#1224#3065#0" expanded="false" />

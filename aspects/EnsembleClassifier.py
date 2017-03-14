@@ -7,21 +7,34 @@ class EnsembleClassifier:
         # self.model = RandomForestClassifier(criterion='entropy', max_depth=8, min_samples_leaf=10, n_estimators=250)
         self.model = RandomForestRegressor(criterion='mse', max_depth=8, min_samples_leaf=10, n_estimators=250)
 
-    def process(self,x_test):#, x_train, y_train):  # x_train - characteristic(6 item), y_train - semantic distance
-        # self.model.fit(x_train, y_train)
-        from sklearn.externals import joblib
+    def process(self, x_test, x_train, y_train):  # x_train - characteristic(6 item), y_train - semantic distance
+        self.model.fit(x_train, y_train)
+        # from sklearn.externals import joblib
         # joblib.dump(self.model, "train_dump.pkl")
-        self.model = joblib.load("train_dump.pkl")
+        # self.model = joblib.load("train_dump.pkl")
         return self.model.predict(x_test)
 
     @staticmethod
     def get_train(db):
+        count = 0
+        x_train = []
+        y_train = []
+        row = db.cursor_ideal_full.execute('SELECT * FROM Ideal').fetchone()
+        while row is not None:
+            print(count)
+            count += 1
+            x_train.append([row[3], row[4], row[5], row[6], row[7], row[8]])
+            y_train.append(row[9])
+            row = db.cursor_ideal_full.fetchone()
+        return x_train, y_train
+
+    @staticmethod
+    def form_train(db):
+        db.create_ideal_full_db()
         row_review_ideal = db.cursor_pmi_ideal_review.execute('SELECT * FROM PMI').fetchone()
         row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
         row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
         count = 0
-        x_train = []
-        y_train = []
         row = db.cursor_path_weight.execute('SELECT * FROM Weight').fetchone()
         while row_review_ideal is not None:
             print(count)
@@ -66,13 +79,12 @@ class EnsembleClassifier:
                 syntactic = int(row_syntactic_ideal[2])
             if syntactic == -1:
                 syntactic = 0
-            x_train.append([pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context])
-            y_train.append(row[3])
+            db.add_ideal_full(row[0], row_lexical_ideal[0], row_lexical_ideal[1], pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, row[3])
             row = db.cursor_path_weight.fetchone()
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
             row_lexical_ideal = db.cursor_lexical_ideal.fetchone()
-        return x_train, y_train
+        db.conn_ideal_full.commit()
 
     @staticmethod
     def get_test(db):

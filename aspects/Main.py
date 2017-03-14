@@ -133,9 +133,10 @@ class Main:
 
     def ensemble_classifier(self):
         en = EnsembleClassifier()
-        # x_train, y_train = en.get_train(self.db)
+        # en.form_train(self.db)
+        x_train, y_train = en.get_train(self.db)
         x_test = en.get_test(self.db)
-        y_test = en.process(x_test)#, x_train, y_train)
+        y_test = en.process(x_test, x_train, y_train)
         r = 42
 
 main = Main()

@@ -34,6 +34,7 @@ class DB:
     conn_global_context_ideal = None
     conn_hierarchy = None
     conn_frequent = None
+    conn_ideal_full = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -70,6 +71,7 @@ class DB:
     cursor_tree = None
     cursor_hierarchy = None
     cursor_frequent = None
+    cursor_ideal_full = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -102,6 +104,7 @@ class DB:
     db_global_context_ideal = "Global_Context_Ideal.db"
     db_hierarchy = "Hierarchy.db"
     db_frequent = "Frequent.db"
+    db_ideal_full = "Ideal_Full.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -137,6 +140,7 @@ class DB:
         self.conn_global_context_ideal = sqlite3.connect(path + "/../db/" + self.db_global_context_ideal)
         self.conn_hierarchy = sqlite3.connect(path + "/../db/" + self.db_hierarchy)
         self.conn_frequent = sqlite3.connect(path + "/../db/" + self.db_frequent)
+        self.conn_ideal_full = sqlite3.connect(path + "/../db/" + self.db_ideal_full)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -172,6 +176,11 @@ class DB:
         self.cursor_global_context_ideal = self.conn_global_context_ideal.cursor()
         self.cursor_hierarchy = self.conn_hierarchy.cursor()
         self.cursor_frequent = self.conn_frequent.cursor()
+        self.cursor_ideal_full = self.conn_ideal_full.cursor()
+
+    def create_ideal_full_db(self):
+        self.cursor_ideal_full.execute('''CREATE TABLE IF NOT EXISTS Ideal (filename TEXT, aspect1 TEXT, aspect2 TEXT, pmi_review FLOAT, pmi_sentence FLOAT, lexical FLOAT, syntactic FLOAT, local_context FLOAT, global_context FLOAT, weight FLOAT)''')
+        self.conn_ideal_full.commit()
 
     def create_frequent_db(self):
         self.cursor_frequent.execute('''CREATE TABLE IF NOT EXISTS Frequent (word TEXT, number INT)''')
@@ -296,6 +305,9 @@ class DB:
     def create_sentence_db(self):
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_ideal_full(self, filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight):
+        self.cursor_ideal_full.execute('INSERT INTO Ideal (filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight,))
 
     def add_frequent(self, word, number):
         self.cursor_frequent.execute('INSERT INTO Frequent (word, number) VALUES (?, ?)', (word, number))
