@@ -229,6 +229,20 @@ class SemanticDistanceLearning:
             db.conn_semantic_distance_ideal.commit()
 
     @staticmethod
+    def create_semantic_distance_random_forest_classifier(db, y_test):
+        db.create_semantic_distance_real_db()
+        row_review = db.cursor_pmi_review.execute('SELECT * FROM PMI').fetchone()
+        count = 0
+        while row_review is not None:
+            print(count)
+            aspect1 = row_review[0]
+            aspect2 = row_review[1]
+            db.add_semantic_distance_real(aspect1, aspect2, y_test[count])
+            row_review = db.cursor_pmi_review.fetchone()
+            count += 1
+        db.conn_semantic_distance_real.commit()
+
+    @staticmethod
     def print_data(db):
         row_path_weight = db.cursor_path_weight.execute('SELECT * FROM Weight').fetchone()
         print("aspect1\t\taspect2\t\tsemantic\tweight")

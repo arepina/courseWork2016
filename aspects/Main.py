@@ -33,8 +33,8 @@ class Main:
         # self.lexical_features()
         # self.syntactic_features()
         # self.semantic_learning_process()
-        # self.hierarchy()
-        self.ensemble_classifier()
+        # self.ensemble_classifier()
+        self.hierarchy()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -128,8 +128,10 @@ class Main:
 
     def hierarchy(self):
         h = HierarchyBuilder()
-        average_semantic_distance_ideal = h.calculate_average_semantic_distance_ideal_tree(self.db)  # 51.71624897381593
-        h.process(self.db, average_semantic_distance_ideal)
+        # average_semantic_distance_ideal_calc = h.calculate_average_semantic_distance_ideal_tree(self.db)  # 51.71624897381593
+        average_semantic_distance_ideal_real = h.calculate_average_semantic_distance_ideal_tree_real(self.db) # 3.150705186533212
+        # h.process_article_algo(self.db, average_semantic_distance_ideal_calc)
+        h.process_random_classifier_algo(self.db, average_semantic_distance_ideal_real)
 
     def ensemble_classifier(self):
         en = EnsembleClassifier()
@@ -137,6 +139,8 @@ class Main:
         x_train, y_train = en.get_train(self.db)
         x_test = en.get_test(self.db)
         y_test = en.process(x_test, x_train, y_train)
+        # sem = SemanticDistanceLearning()
+        # sem.create_semantic_distance_random_forest_classifier(self.db, y_test)
         r = 42
 
 main = Main()

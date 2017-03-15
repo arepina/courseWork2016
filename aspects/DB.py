@@ -35,6 +35,8 @@ class DB:
     conn_hierarchy = None
     conn_frequent = None
     conn_ideal_full = None
+    conn_hierarchy_real = None
+    conn_semantic_distance_real = None
 
     cursor_aspects = None
     cursor_aspects2 = None
@@ -72,6 +74,8 @@ class DB:
     cursor_hierarchy = None
     cursor_frequent = None
     cursor_ideal_full = None
+    cursor_hierarchy_real = None
+    cursor_semantic_distance_real = None
 
     db_merged_name = 'Merged.db'
     db_aspects_name = 'Aspects.db'
@@ -105,6 +109,8 @@ class DB:
     db_hierarchy = "Hierarchy.db"
     db_frequent = "Frequent.db"
     db_ideal_full = "Ideal_Full.db"
+    db_hierarchy_real = "Hierarchy_Real.db"
+    db_semantic_distance_real = "Semantic_Distance_Real.db"
 
     def __init__(self):
         path = os.getcwd()
@@ -141,6 +147,8 @@ class DB:
         self.conn_hierarchy = sqlite3.connect(path + "/../db/" + self.db_hierarchy)
         self.conn_frequent = sqlite3.connect(path + "/../db/" + self.db_frequent)
         self.conn_ideal_full = sqlite3.connect(path + "/../db/" + self.db_ideal_full)
+        self.conn_hierarchy_real = sqlite3.connect(path + "/../db/" + self.db_hierarchy_real)
+        self.conn_semantic_distance_real = sqlite3.connect(path + "/../db/" + self.db_semantic_distance_real)
 
         self.cursor_merged = self.conn_merged.cursor()
         self.cursor_aspects = self.conn_aspects.cursor()
@@ -177,6 +185,17 @@ class DB:
         self.cursor_hierarchy = self.conn_hierarchy.cursor()
         self.cursor_frequent = self.conn_frequent.cursor()
         self.cursor_ideal_full = self.conn_ideal_full.cursor()
+        self.cursor_hierarchy_real = self.conn_hierarchy_real.cursor()
+        self.cursor_semantic_distance_real = self.conn_semantic_distance_real.cursor()
+
+    def create_semantic_distance_real_db(self):
+        self.cursor_semantic_distance_real.execute(
+            '''CREATE TABLE IF NOT EXISTS Distance (aspect1 TEXT, aspect2 TEXT, distance FLOAT)''')
+        self.conn_semantic_distance_real.commit()
+
+    def create_hierarchy_real_db(self):
+        self.cursor_hierarchy_real.execute('''CREATE TABLE IF NOT EXISTS Hierarchy (parent TEXT, child TEXT)''')
+        self.conn_hierarchy_real.commit()
 
     def create_ideal_full_db(self):
         self.cursor_ideal_full.execute('''CREATE TABLE IF NOT EXISTS Ideal (filename TEXT, aspect1 TEXT, aspect2 TEXT, pmi_review FLOAT, pmi_sentence FLOAT, lexical FLOAT, syntactic FLOAT, local_context FLOAT, global_context FLOAT, weight FLOAT)''')
@@ -305,6 +324,13 @@ class DB:
     def create_sentence_db(self):
         self.cursor_sentence.execute('''CREATE TABLE IF NOT EXISTS Sentences (article TEXT, sentence TEXT)''')
         self.conn_sentence.commit()
+
+    def add_semantic_distance_real(self, aspect1, aspect2, distance):
+        self.cursor_semantic_distance_real.execute('INSERT INTO Distance (aspect1, aspect2, distance) VALUES (?, ?, ?)',
+                                              (aspect1, aspect2, distance))
+
+    def add_hierarchy_real(self, parent, child):
+        self.cursor_hierarchy_real.execute('INSERT INTO Hierarchy (parent, child) VALUES (?, ?)', (parent, child))
 
     def add_ideal_full(self, filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight):
         self.cursor_ideal_full.execute('INSERT INTO Ideal (filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (filename, aspect1, aspect2, pmi_review, pmi_sentence, lexical, syntactic, local_context, global_context, weight,))
