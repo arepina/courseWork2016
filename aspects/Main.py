@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from aspects.Aspects import Aspects
 from aspects.Context import Context
 from aspects.DB import DB
-from aspects.EnsembleClassifier import EnsembleClassifier
+from aspects.RandomForest import RandomForest
 from aspects.FrequentAspects import FrequentAspects
 from aspects.HierarchyBuilder import HierarchyBuilder
 from aspects.IdealAspectsDB import IdealAspectsDB
@@ -32,9 +32,9 @@ class Main:
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        # self.semantic_learning_process()
+        self.semantic_learning_process()
         # self.ensemble_classifier()
-        self.hierarchy()
+        # self.hierarchy()
 
     def aspects_process(self):
         self.aspect.process(self.aspect, self.db)  # find aspects with the help of ISP RAS API
@@ -103,8 +103,8 @@ class Main:
         semantic_learning = SemanticDistanceLearning()
         # self.db.create_path_weight_db()
         # semantic_learning.calculate_ground_truth_distance(self.db)
-        # semantic_learning.process_semantic_distance_learning_ideal(self.db)
-        semantic_learning.process_semantic_distance_learning(self.db)
+        semantic_learning.process_semantic_distance_learning_ideal(self.db)
+        # semantic_learning.process_semantic_distance_learning(self.db)
         # semantic_learning.print_data(self.db)
 
     def contextual_features(self):
@@ -134,7 +134,7 @@ class Main:
         h.process_random_classifier_algo(self.db, average_semantic_distance_ideal_real)
 
     def ensemble_classifier(self):
-        en = EnsembleClassifier()
+        en = RandomForest()
         # en.form_train(self.db)
         x_train, y_train = en.get_train(self.db)
         x_test = en.get_test(self.db)

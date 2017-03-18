@@ -1,10 +1,8 @@
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import RandomForestRegressor
 
 
-class EnsembleClassifier:
+class RandomForest:
     def __init__(self):
-        # self.model = RandomForestClassifier(criterion='entropy', max_depth=8, min_samples_leaf=10, n_estimators=250)
         self.model = RandomForestRegressor(criterion='mse', max_depth=8, min_samples_leaf=10, n_estimators=250)
 
     def process(self, x_test, x_train, y_train):  # x_train - characteristic(6 item), y_train - semantic distance

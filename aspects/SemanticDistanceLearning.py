@@ -124,7 +124,7 @@ class SemanticDistanceLearning:
         d = np.array(self.vector_with_ground_truth_distances(db))
         matrix_size = 6  # the features num
         i = np.matrix(np.identity(matrix_size))  # identity metric
-        nu = 10
+        nu = 0.4
         w = np.dot(np.power(np.dot(f.T, f) + nu * i, -1), np.dot(f.T, d))
         return w  # [ -5.18461604  -7.25855391   2.49603805  -1.122215  -2.29888273 41.45422735]
 
