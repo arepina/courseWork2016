@@ -146,6 +146,7 @@ class SemanticDistanceLearning:
         row_local = db.cursor_local_context.execute('SELECT * FROM Context').fetchone()
         row_global = db.cursor_global_context.execute('SELECT * FROM Context').fetchone()
         # w = np.array(self.calculate_distance(db))[0]  # will return a vector with feature values
+        # w = [-7.17434844, -9.98536379, 2.89004706, -7.00041128, 102.75428241, 50.38338244, 22.32963088]  # bayes
         w = [-5.18461604, -7.25855391, 2.49603805, -1.122215, -2.29888273, 41.45422735]
         count = 0
         while row_review is not None:
@@ -174,6 +175,7 @@ class SemanticDistanceLearning:
         row_sentence_ideal = db.cursor_pmi_ideal_sentence.execute('SELECT * FROM PMI').fetchone()
         row_lexical_ideal = db.cursor_lexical_ideal.execute('SELECT * FROM Lexical').fetchone()
         # w = np.array(self.calculate_distance(db))[0]  # will return a vector with feature values
+        w = [-7.17434844, -9.98536379, 2.89004706, -7.00041128, 102.75428241, 50.38338244, 22.32963088] # bayes
         w = [-5.18461604, -7.25855391, 2.49603805, -1.122215, -2.29888273, 41.45422735]  # 0.4
         # [-5.18461655 - 7.25855449   2.49603811 - 1.12222121 - 2.20044153 41.45442079] 0
         # [ -5.18460385  -7.25854018   2.49603675  -1.12206601  -4.40758755  41.44959215] 10
@@ -221,7 +223,8 @@ class SemanticDistanceLearning:
                 syntactic = int(row_syntactic_ideal[2])
             if syntactic == -1:
                 syntactic = 0
-            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic + w[4] * local_context + w[5] * global_context
+            d = w[0] * pmi_review + w[1] * pmi_sentence + w[2] * lexical + w[3] * syntactic + w[4] * local_context + w[
+                                                                                                                         5] * global_context
             db.add_semantic_distance_ideal(row_lexical_ideal[0], row_lexical_ideal[1], d)
             row_review_ideal = db.cursor_pmi_ideal_review.fetchone()
             row_sentence_ideal = db.cursor_pmi_ideal_sentence.fetchone()
@@ -250,14 +253,13 @@ class SemanticDistanceLearning:
             from aspects.Context import Context
             aspect1 = Context.replacer(row_path_weight[1]).replace(" ", "_")
             aspect2 = Context.replacer(row_path_weight[2]).replace(" ", "_")
-            row_semantic = db.cursor_semantic_distance_ideal.execute('SELECT * FROM Distance WHERE aspect1 = ? AND aspect2 = ?',
-                    (aspect1, aspect2,)).fetchone()
+            row_semantic = db.cursor_semantic_distance_ideal.execute(
+                'SELECT * FROM Distance WHERE aspect1 = ? AND aspect2 = ?',
+                (aspect1, aspect2,)).fetchone()
             if row_semantic is None:
                 row_semantic = db.cursor_semantic_distance_ideal.execute(
                     'SELECT * FROM Distance WHERE aspect1 = ? AND aspect2 = ?',
                     (aspect2, aspect1,)).fetchone()
-            print('{:s}\t{:s}\t{:4.2f}\t{:4.2f}'.format(row_semantic[0], row_semantic[1], row_semantic[2], float(row_path_weight[3])))
+            print('{:s}\t{:s}\t{:4.2f}\t{:4.2f}'.format(row_semantic[0], row_semantic[1], row_semantic[2],
+                                                        float(row_path_weight[3])))
             row_path_weight = db.cursor_path_weight.fetchone()
-
-
-
