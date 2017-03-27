@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/Semantic_Distance.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/CourseWork2016.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/Алгоритмы.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/ПЗ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/ПИМИ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/РО.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/ТЗ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/ТП без кода.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Документация/ТП с кодом.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Semantic_Distance_Ideal.db" afterPath="$PROJECT_DIR$/db/Semantic_Distance_Ideal.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/ПЗ.docx" afterPath="$PROJECT_DIR$/docs/Documentation/ПЗ.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/РО.docx" afterPath="$PROJECT_DIR$/docs/Documentation/РО.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/ТП без кода.docx" afterPath="$PROJECT_DIR$/docs/Documentation/ТП без кода.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/ТП с кодом.docx" afterPath="$PROJECT_DIR$/docs/Documentation/ТП с кодом.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" afterPath="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,212 +61,152 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aspects/DB.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2715">
-              <caret line="327" column="67" lean-forward="false" selection-start-line="327" selection-start-column="41" selection-end-line="327" selection-end-column="67" />
-              <folding>
-                <element signature="e#4122#10303#0" expanded="false" />
-                <element signature="e#10361#10554#0" expanded="false" />
-                <element signature="e#10604#10750#0" expanded="false" />
-                <element signature="e#11119#11250#0" expanded="false" />
-                <element signature="e#11295#11431#0" expanded="false" />
-                <element signature="e#11487#11668#0" expanded="false" />
-                <element signature="e#11723#11902#0" expanded="false" />
-                <element signature="e#11942#12064#0" expanded="false" />
-                <element signature="e#12115#12286#0" expanded="false" />
-                <element signature="e#12331#12490#0" expanded="false" />
-                <element signature="e#12533#12689#0" expanded="false" />
-                <element signature="e#12738#12906#0" expanded="false" />
-                <element signature="e#12956#13125#0" expanded="false" />
-                <element signature="e#13174#13341#0" expanded="false" />
-                <element signature="e#13398#13558#0" expanded="false" />
-                <element signature="e#13621#13793#0" expanded="false" />
-                <element signature="e#13857#14030#0" expanded="false" />
-                <element signature="e#14100#14299#0" expanded="false" />
-                <element signature="e#14357#14518#0" expanded="false" />
-                <element signature="e#14582#14756#0" expanded="false" />
-                <element signature="e#14809#14979#0" expanded="false" />
-                <element signature="e#15038#15220#0" expanded="false" />
-                <element signature="e#15267#15434#0" expanded="false" />
-                <element signature="e#15486#15703#0" expanded="false" />
-                <element signature="e#15523#15658#0" expanded="false" />
-                <element signature="e#15757#15978#0" expanded="false" />
-                <element signature="e#15796#15931#0" expanded="false" />
-                <element signature="e#16024#16229#0" expanded="false" />
-                <element signature="e#16055#16190#0" expanded="false" />
-                <element signature="e#16277#16486#0" expanded="false" />
-                <element signature="e#16310#16445#0" expanded="false" />
-                <element signature="e#16538#16758#0" expanded="false" />
-                <element signature="e#16575#16713#0" expanded="false" />
-                <element signature="e#16810#17030#0" expanded="false" />
-                <element signature="e#16847#16985#0" expanded="false" />
-                <element signature="e#17084#17242#0" expanded="false" />
-                <element signature="e#17285#17487#0" expanded="false" />
-                <element signature="e#17313#17451#0" expanded="false" />
-                <element signature="e#17531#17669#0" expanded="false" />
-                <element signature="e#17996#18102#0" expanded="false" />
-                <element signature="e#18255#18574#0" expanded="false" />
-                <element signature="e#18626#18723#0" expanded="false" />
-                <element signature="e#18777#18878#0" expanded="false" />
-                <element signature="e#18928#19021#0" expanded="false" />
-                <element signature="e#19100#19260#0" expanded="false" />
-                <element signature="e#19333#19487#0" expanded="false" />
-                <element signature="e#19561#19717#0" expanded="false" />
-                <element signature="e#19797#19959#0" expanded="false" />
-                <element signature="e#20042#20203#0" expanded="false" />
-                <element signature="e#20285#20445#0" expanded="false" />
-                <element signature="e#20522#20677#0" expanded="false" />
-                <element signature="e#20753#20907#0" expanded="false" />
-                <element signature="e#20975#21090#0" expanded="false" />
-                <element signature="e#21164#21285#0" expanded="false" />
-                <element signature="e#21359#21530#0" expanded="false" />
-                <element signature="e#21611#21796#0" expanded="false" />
-                <element signature="e#21864#21978#0" expanded="false" />
-                <element signature="e#22053#22187#0" expanded="false" />
-                <element signature="e#22268#22423#0" expanded="false" />
-                <element signature="e#22498#22647#0" expanded="false" />
-                <element signature="e#22724#22884#0" expanded="false" />
-                <element signature="e#22975#23185#0" expanded="false" />
-                <element signature="e#23278#23490#0" expanded="false" />
-                <element signature="e#23575#23779#0" expanded="false" />
-                <element signature="e#23866#24072#0" expanded="false" />
-                <element signature="e#24129#24237#0" expanded="false" />
-                <element signature="e#24340#24569#0" expanded="false" />
-                <element signature="e#24682#24918#0" expanded="false" />
-                <element signature="e#25030#25266#0" expanded="false" />
-                <element signature="e#25332#25460#0" expanded="false" />
-                <element signature="e#25529#25588#0" expanded="false" />
-                <element signature="e#25637#25754#0" expanded="false" />
-                <marker date="1489573649000" expanded="true" signature="10420:10500" ph="CREATE TABLE... IF" />
-                <marker date="1489573649000" expanded="false" signature="10642:10704" ph="CREATE TABLE... IF" />
-                <marker date="1489573649000" expanded="false" signature="10830:11033" ph="CREATE TABLE... Frequent" />
-                <marker date="1489573649000" expanded="false" signature="11151:11210" ph="CREATE TABLE... Hierarchy" />
-                <marker date="1489573649000" expanded="false" signature="11328:11390" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="11531:11616" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="11766:11851" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="11970:12028" ph="CREATE TABLE... Tree" />
-                <marker date="1489573649000" expanded="false" signature="12154:12239" ph="CREATE TABLE... Syntactic" />
-                <marker date="1489573649000" expanded="false" signature="12364:12449" ph="CREATE TABLE... Syntactic" />
-                <marker date="1489573649000" expanded="false" signature="12564:12650" ph="CREATE TABLE... Lexical" />
-                <marker date="1489573649000" expanded="false" signature="12775:12861" ph="CREATE TABLE... Lexical" />
-                <marker date="1489573649000" expanded="false" signature="12994:13079" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="13211:13296" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="13443:13505" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="13672:13734" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="13909:13970" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="14171:14233" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="14403:14464" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="14634:14696" ph="CREATE TABLE... Context" />
-                <marker date="1489573649000" expanded="false" signature="14850:14930" ph="CREATE TABLE... Distance" />
-                <marker date="1489573649000" expanded="false" signature="15085:15165" ph="CREATE TABLE... Distance" />
-                <marker date="1489573649000" expanded="false" signature="15302:15391" ph="CREATE TABLE... Weight" />
-                <marker date="1489573649000" expanded="false" signature="15336:15391" ph="CREATE TABLE... Weight" />
-                <marker date="1489573649000" expanded="false" signature="15526:15655" ph="CREATE TABLE... PMI" />
-                <marker date="1489573649000" expanded="false" signature="15799:15928" ph="CREATE TABLE... PMI" />
-                <marker date="1489573649000" expanded="false" signature="16058:16187" ph="CREATE TABLE... PMI" />
-                <marker date="1489573649000" expanded="false" signature="16313:16442" ph="CREATE TABLE... PMI" />
-                <marker date="1489573649000" expanded="false" signature="16578:16710" ph="CREATE TABLE... Aspects" />
-                <marker date="1489573649000" expanded="false" signature="16850:16982" ph="CREATE TABLE... Reviews" />
-                <marker date="1489573649000" expanded="false" signature="17126:17192" ph="CREATE TABLE... Sentences" />
-                <marker date="1489573649000" expanded="false" signature="17316:17448" ph="CREATE TABLE... Aspects" />
-                <marker date="1489573649000" expanded="false" signature="17563:17629" ph="CREATE TABLE... Sentences" />
-                <marker date="1489573649000" expanded="true" signature="17793:17859" ph="INSERT INTO Distance... " />
-                <marker date="1489573649000" expanded="false" signature="18032:18083" ph="INSERT INTO Hierarchy... " />
-                <marker date="1489573649000" expanded="true" signature="18287:18456" ph="INSERT INTO Frequent... " />
-                <marker date="1489573649000" expanded="false" signature="18656:18705" ph="INSERT INTO Hierarchy... " />
-                <marker date="1489573649000" expanded="false" signature="18808:18859" ph="INSERT INTO Hierarchy... " />
-                <marker date="1489573649000" expanded="false" signature="18954:19001" ph="INSERT INTO Tree... " />
-                <marker date="1489573649000" expanded="false" signature="19137:19210" ph="INSERT INTO Syntactic... " />
-                <marker date="1489573649000" expanded="false" signature="19364:19437" ph="INSERT INTO Syntactic... " />
-                <marker date="1489573649000" expanded="false" signature="19590:19664" ph="INSERT INTO Lexical... " />
-                <marker date="1489573649000" expanded="false" signature="19832:19906" ph="INSERT INTO Lexical... " />
-                <marker date="1489573649000" expanded="false" signature="20084:20154" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="20326:20396" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="20558:20628" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="20788:20858" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="21018:21069" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="21213:21264" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="21409:21459" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="21667:21718" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="21908:21958" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="22103:22154" ph="INSERT INTO Context... " />
-                <marker date="1489573649000" expanded="false" signature="22313:22379" ph="INSERT INTO Distance... " />
-                <marker date="1489573649000" expanded="false" signature="22537:22603" ph="INSERT INTO Distance... " />
-                <marker date="1489573649000" expanded="false" signature="22757:22832" ph="INSERT INTO Weight... " />
-                <marker date="1489573649000" expanded="false" signature="23026:23124" ph="INSERT INTO PMI... " />
-                <marker date="1489573649000" expanded="false" signature="23331:23429" ph="INSERT INTO PMI... " />
-                <marker date="1489573649000" expanded="false" signature="23620:23718" ph="INSERT INTO PMI... " />
-                <marker date="1489573649000" expanded="false" signature="23913:24011" ph="INSERT INTO PMI... " />
-                <marker date="1489573649000" expanded="false" signature="24159:24214" ph="INSERT INTO Sentences... " />
-                <marker date="1489573649000" expanded="false" signature="24382:24486" ph="INSERT INTO Aspects... " />
-                <marker date="1489573649000" expanded="false" signature="24731:24835" ph="INSERT INTO Aspects... " />
-                <marker date="1489573649000" expanded="false" signature="25079:25183" ph="INSERT INTO Reviews... " />
-                <marker date="1489573649000" expanded="false" signature="25370:25411" ph="INSERT INTO Sentences... " />
-                <marker date="1489573649000" expanded="false" signature="25370:25425" ph="INSERT INTO Sentences... " />
-                <marker date="1489573649000" expanded="false" signature="25666:25702" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="107" column="8" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+            <state relative-caret-position="420">
+              <caret line="82" column="34" lean-forward="true" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
-                <element signature="e#1212#3053#0" expanded="false" />
-                <element signature="e#3095#3210#0" expanded="false" />
-                <element signature="e#3249#3373#0" expanded="false" />
-                <element signature="e#3410#3890#0" expanded="false" />
-                <element signature="e#3959#4096#0" expanded="false" />
-                <element signature="e#4169#4312#0" expanded="false" />
-                <element signature="e#5158#5268#0" expanded="false" />
-                <element signature="e#5312#5443#0" expanded="false" />
-                <element signature="e#5477#5525#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemanticDistanceLearning.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
+      <file leaf-file-name="PMI.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="164" column="54" lean-forward="true" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
+            <state relative-caret-position="421">
+              <caret line="87" column="48" lean-forward="true" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
               <folding>
-                <marker date="1489918618000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="2983:3004" ph="SELECT * FRO... Lexical" />
-                <marker date="1489918618000" expanded="true" signature="3560:3615" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="3917:3972" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="4194:4249" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="4555:4610" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="4835:4892" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489918618000" expanded="true" signature="5218:5275" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489918618000" expanded="true" signature="6464:6484" ph="SELECT * FRO... Weight" />
-                <marker date="1489918618000" expanded="true" signature="6808:6825" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="6894:6911" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="6974:6995" ph="SELECT * FRO... Lexical" />
-                <marker date="1489918618000" expanded="true" signature="7062:7085" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489918618000" expanded="true" signature="7152:7173" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="7242:7263" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="8776:8793" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="8874:8891" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="8966:8987" ph="SELECT * FRO... Lexical" />
-                <marker date="1489918618000" expanded="true" signature="9984:10039" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="10341:10396" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="10618:10673" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="10979:11034" ph="SELECT * FRO... Context" />
-                <marker date="1489918618000" expanded="true" signature="11259:11316" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489918618000" expanded="true" signature="11642:11699" ph="SELECT * FRO... Syntactic" />
-                <marker date="1489918618000" expanded="true" signature="12698:12715" ph="SELECT * FRO... PMI" />
-                <marker date="1489918618000" expanded="true" signature="13185:13205" ph="SELECT * FRO... Weight" />
-                <marker date="1489918618000" expanded="true" signature="13607:13663" ph="SELECT * FRO... Distance" />
-                <marker date="1489918618000" expanded="true" signature="13846:13902" ph="SELECT * FRO... Distance" />
+                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1488983399000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+                <marker date="1488983399000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+                <marker date="1488983399000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+                <marker date="1488983399000" expanded="true" signature="4196:4218" ph="SELECT * FRO... Frequent" />
+                <marker date="1488983399000" expanded="true" signature="4515:4541" ph="SELECT * FRO... IdealAspects" />
+                <marker date="1488983399000" expanded="true" signature="5441:5461" ph="SELECT * FRO... Review" />
+                <marker date="1488983399000" expanded="true" signature="5532:5553" ph="SELECT * FRO... Aspects" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <folding>
+                <element signature="e#480#600#0" expanded="false" />
+                <element signature="e#645#2184#0" expanded="false" />
+                <element signature="e#818#2151#0" expanded="false" />
+                <element signature="e#1052#1202#0" expanded="false" />
+                <element signature="e#1306#1459#0" expanded="false" />
+                <element signature="e#1563#1711#0" expanded="false" />
+                <element signature="e#2319#2813#0" expanded="false" />
+                <element signature="e#2336#2688#0" expanded="false" />
+                <element signature="e#2727#2813#0" expanded="false" />
+                <element signature="e#2901#3581#0" expanded="false" />
+                <element signature="e#3221#3553#0" expanded="false" />
+                <element signature="e#3280#3398#0" expanded="false" />
+                <element signature="e#3445#3553#0" expanded="false" />
+                <element signature="e#3650#3907#0" expanded="false" />
+                <element signature="e#3977#5044#0" expanded="false" />
+                <element signature="e#4309#4901#0" expanded="false" />
+                <element signature="e#4309#4367#0" expanded="false" />
+                <element signature="e#4614#4740#0" expanded="false" />
+                <element signature="e#4775#4901#0" expanded="false" />
+                <element signature="e#5096#5823#0" expanded="false" />
+                <element signature="e#5884#6160#0" expanded="false" />
+                <element signature="e#6040#6138#0" expanded="false" />
+                <element signature="e#6290#6594#0" expanded="false" />
+                <element signature="e#6664#7562#0" expanded="false" />
+                <element signature="e#6838#7526#0" expanded="false" />
+                <element signature="e#7630#7867#0" expanded="false" />
+                <element signature="e#7685#7841#0" expanded="false" />
+                <element signature="e#7772#7841#0" expanded="false" />
+                <marker date="1489247071000" expanded="false" signature="685:705" ph="SELECT * FRO... Review" />
+                <marker date="1489247071000" expanded="false" signature="6704:6725" ph="SELECT * FRO... Aspects" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneClassSVM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+              <folding>
+                <element signature="e#228#806#0" expanded="false" />
+                <element signature="e#298#403#0" expanded="false" />
+                <element signature="e#458#563#0" expanded="false" />
+                <element signature="e#618#723#0" expanded="false" />
+                <element signature="e#2020#2181#0" expanded="false" />
+                <element signature="e#2087#2151#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Splitter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Splitter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Syntactic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="13" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unnecessary.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryNames.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBase_Ulmart.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="8" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -292,9 +224,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>{}</find>
       <find>fit</find>
-      <find>voca</find>
       <find>print(datetime.now() - start)</find>
       <find>sen</find>
       <find>aspect_cl</find>
@@ -322,6 +252,8 @@
       <find>process_random_classifier_algo</find>
       <find>ideal</find>
       <find>cursor_ideal_full</find>
+      <find>onec</find>
+      <find>voca</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -382,8 +314,8 @@
         <option value="$PROJECT_DIR$/aspects/EnsembleClassifier.py" />
         <option value="$PROJECT_DIR$/aspects/Ensemble.py" />
         <option value="$PROJECT_DIR$/aspects/RandomForest.py" />
-        <option value="$PROJECT_DIR$/aspects/Main.py" />
         <option value="$PROJECT_DIR$/aspects/SemanticDistanceLearning.py" />
+        <option value="$PROJECT_DIR$/aspects/Main.py" />
       </list>
     </option>
   </component>
@@ -394,9 +326,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="52" />
+    <option name="y" value="50" />
     <option name="width" value="1440" />
-    <option name="height" value="797" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -416,6 +348,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -472,8 +406,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -847,7 +779,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="52" width="1440" height="797" extended-state="0" />
+    <frame x="0" y="50" width="1440" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -856,19 +788,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36933333" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32473624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36933333" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -914,11 +846,6 @@
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/aspects/Main.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="1451" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/aspects/HierarchyBuilder.py</url>
           <line>24</line>
           <option name="timeStamp" value="1452" />
@@ -931,7 +858,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="1461" />
+      <option name="time" value="1463" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1087,90 +1014,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/IDFHelper.py" />
     <entry file="file://$PROJECT_DIR$/aspects/Synonyms.py" />
-    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="111" column="21" lean-forward="false" selection-start-line="111" selection-start-column="17" selection-end-line="111" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="40" column="35" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Splitter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Lexical.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="177" column="53" lean-forward="false" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/ensemble/forest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1178,19 +1021,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Context.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="327" column="67" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="461" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/FrequentAspects.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="21" />
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/HierarchyBuilder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
-          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+          <caret line="23" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
             <marker date="1489573649000" expanded="true" signature="253:275" ph="SELECT * FRO... Distance" />
             <marker date="1489573649000" expanded="true" signature="1399:1421" ph="SELECT * FRO... Distance" />
             <marker date="1489573649000" expanded="true" signature="1399:1454" ph="SELECT * FRO... Distance" />
@@ -1205,229 +1068,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/codecs.py">
+    <entry file="file://$PROJECT_DIR$/aspects/IdealAspectsDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="23" column="24" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/DB.py">
+    <entry file="file://$PROJECT_DIR$/aspects/Lexical.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2715">
-          <caret line="327" column="67" lean-forward="false" selection-start-line="327" selection-start-column="41" selection-end-line="327" selection-end-column="67" />
-          <folding>
-            <element signature="e#4122#10303#0" expanded="false" />
-            <element signature="e#10361#10554#0" expanded="false" />
-            <element signature="e#10604#10750#0" expanded="false" />
-            <element signature="e#11119#11250#0" expanded="false" />
-            <element signature="e#11295#11431#0" expanded="false" />
-            <element signature="e#11487#11668#0" expanded="false" />
-            <element signature="e#11723#11902#0" expanded="false" />
-            <element signature="e#11942#12064#0" expanded="false" />
-            <element signature="e#12115#12286#0" expanded="false" />
-            <element signature="e#12331#12490#0" expanded="false" />
-            <element signature="e#12533#12689#0" expanded="false" />
-            <element signature="e#12738#12906#0" expanded="false" />
-            <element signature="e#12956#13125#0" expanded="false" />
-            <element signature="e#13174#13341#0" expanded="false" />
-            <element signature="e#13398#13558#0" expanded="false" />
-            <element signature="e#13621#13793#0" expanded="false" />
-            <element signature="e#13857#14030#0" expanded="false" />
-            <element signature="e#14100#14299#0" expanded="false" />
-            <element signature="e#14357#14518#0" expanded="false" />
-            <element signature="e#14582#14756#0" expanded="false" />
-            <element signature="e#14809#14979#0" expanded="false" />
-            <element signature="e#15038#15220#0" expanded="false" />
-            <element signature="e#15267#15434#0" expanded="false" />
-            <element signature="e#15486#15703#0" expanded="false" />
-            <element signature="e#15523#15658#0" expanded="false" />
-            <element signature="e#15757#15978#0" expanded="false" />
-            <element signature="e#15796#15931#0" expanded="false" />
-            <element signature="e#16024#16229#0" expanded="false" />
-            <element signature="e#16055#16190#0" expanded="false" />
-            <element signature="e#16277#16486#0" expanded="false" />
-            <element signature="e#16310#16445#0" expanded="false" />
-            <element signature="e#16538#16758#0" expanded="false" />
-            <element signature="e#16575#16713#0" expanded="false" />
-            <element signature="e#16810#17030#0" expanded="false" />
-            <element signature="e#16847#16985#0" expanded="false" />
-            <element signature="e#17084#17242#0" expanded="false" />
-            <element signature="e#17285#17487#0" expanded="false" />
-            <element signature="e#17313#17451#0" expanded="false" />
-            <element signature="e#17531#17669#0" expanded="false" />
-            <element signature="e#17996#18102#0" expanded="false" />
-            <element signature="e#18255#18574#0" expanded="false" />
-            <element signature="e#18626#18723#0" expanded="false" />
-            <element signature="e#18777#18878#0" expanded="false" />
-            <element signature="e#18928#19021#0" expanded="false" />
-            <element signature="e#19100#19260#0" expanded="false" />
-            <element signature="e#19333#19487#0" expanded="false" />
-            <element signature="e#19561#19717#0" expanded="false" />
-            <element signature="e#19797#19959#0" expanded="false" />
-            <element signature="e#20042#20203#0" expanded="false" />
-            <element signature="e#20285#20445#0" expanded="false" />
-            <element signature="e#20522#20677#0" expanded="false" />
-            <element signature="e#20753#20907#0" expanded="false" />
-            <element signature="e#20975#21090#0" expanded="false" />
-            <element signature="e#21164#21285#0" expanded="false" />
-            <element signature="e#21359#21530#0" expanded="false" />
-            <element signature="e#21611#21796#0" expanded="false" />
-            <element signature="e#21864#21978#0" expanded="false" />
-            <element signature="e#22053#22187#0" expanded="false" />
-            <element signature="e#22268#22423#0" expanded="false" />
-            <element signature="e#22498#22647#0" expanded="false" />
-            <element signature="e#22724#22884#0" expanded="false" />
-            <element signature="e#22975#23185#0" expanded="false" />
-            <element signature="e#23278#23490#0" expanded="false" />
-            <element signature="e#23575#23779#0" expanded="false" />
-            <element signature="e#23866#24072#0" expanded="false" />
-            <element signature="e#24129#24237#0" expanded="false" />
-            <element signature="e#24340#24569#0" expanded="false" />
-            <element signature="e#24682#24918#0" expanded="false" />
-            <element signature="e#25030#25266#0" expanded="false" />
-            <element signature="e#25332#25460#0" expanded="false" />
-            <element signature="e#25529#25588#0" expanded="false" />
-            <element signature="e#25637#25754#0" expanded="false" />
-            <marker date="1489573649000" expanded="true" signature="10420:10500" ph="CREATE TABLE... IF" />
-            <marker date="1489573649000" expanded="false" signature="10642:10704" ph="CREATE TABLE... IF" />
-            <marker date="1489573649000" expanded="false" signature="10830:11033" ph="CREATE TABLE... Frequent" />
-            <marker date="1489573649000" expanded="false" signature="11151:11210" ph="CREATE TABLE... Hierarchy" />
-            <marker date="1489573649000" expanded="false" signature="11328:11390" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="11531:11616" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="11766:11851" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="11970:12028" ph="CREATE TABLE... Tree" />
-            <marker date="1489573649000" expanded="false" signature="12154:12239" ph="CREATE TABLE... Syntactic" />
-            <marker date="1489573649000" expanded="false" signature="12364:12449" ph="CREATE TABLE... Syntactic" />
-            <marker date="1489573649000" expanded="false" signature="12564:12650" ph="CREATE TABLE... Lexical" />
-            <marker date="1489573649000" expanded="false" signature="12775:12861" ph="CREATE TABLE... Lexical" />
-            <marker date="1489573649000" expanded="false" signature="12994:13079" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="13211:13296" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="13443:13505" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="13672:13734" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="13909:13970" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="14171:14233" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="14403:14464" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="14634:14696" ph="CREATE TABLE... Context" />
-            <marker date="1489573649000" expanded="false" signature="14850:14930" ph="CREATE TABLE... Distance" />
-            <marker date="1489573649000" expanded="false" signature="15085:15165" ph="CREATE TABLE... Distance" />
-            <marker date="1489573649000" expanded="false" signature="15302:15391" ph="CREATE TABLE... Weight" />
-            <marker date="1489573649000" expanded="false" signature="15336:15391" ph="CREATE TABLE... Weight" />
-            <marker date="1489573649000" expanded="false" signature="15526:15655" ph="CREATE TABLE... PMI" />
-            <marker date="1489573649000" expanded="false" signature="15799:15928" ph="CREATE TABLE... PMI" />
-            <marker date="1489573649000" expanded="false" signature="16058:16187" ph="CREATE TABLE... PMI" />
-            <marker date="1489573649000" expanded="false" signature="16313:16442" ph="CREATE TABLE... PMI" />
-            <marker date="1489573649000" expanded="false" signature="16578:16710" ph="CREATE TABLE... Aspects" />
-            <marker date="1489573649000" expanded="false" signature="16850:16982" ph="CREATE TABLE... Reviews" />
-            <marker date="1489573649000" expanded="false" signature="17126:17192" ph="CREATE TABLE... Sentences" />
-            <marker date="1489573649000" expanded="false" signature="17316:17448" ph="CREATE TABLE... Aspects" />
-            <marker date="1489573649000" expanded="false" signature="17563:17629" ph="CREATE TABLE... Sentences" />
-            <marker date="1489573649000" expanded="true" signature="17793:17859" ph="INSERT INTO Distance... " />
-            <marker date="1489573649000" expanded="false" signature="18032:18083" ph="INSERT INTO Hierarchy... " />
-            <marker date="1489573649000" expanded="true" signature="18287:18456" ph="INSERT INTO Frequent... " />
-            <marker date="1489573649000" expanded="false" signature="18656:18705" ph="INSERT INTO Hierarchy... " />
-            <marker date="1489573649000" expanded="false" signature="18808:18859" ph="INSERT INTO Hierarchy... " />
-            <marker date="1489573649000" expanded="false" signature="18954:19001" ph="INSERT INTO Tree... " />
-            <marker date="1489573649000" expanded="false" signature="19137:19210" ph="INSERT INTO Syntactic... " />
-            <marker date="1489573649000" expanded="false" signature="19364:19437" ph="INSERT INTO Syntactic... " />
-            <marker date="1489573649000" expanded="false" signature="19590:19664" ph="INSERT INTO Lexical... " />
-            <marker date="1489573649000" expanded="false" signature="19832:19906" ph="INSERT INTO Lexical... " />
-            <marker date="1489573649000" expanded="false" signature="20084:20154" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="20326:20396" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="20558:20628" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="20788:20858" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="21018:21069" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="21213:21264" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="21409:21459" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="21667:21718" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="21908:21958" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="22103:22154" ph="INSERT INTO Context... " />
-            <marker date="1489573649000" expanded="false" signature="22313:22379" ph="INSERT INTO Distance... " />
-            <marker date="1489573649000" expanded="false" signature="22537:22603" ph="INSERT INTO Distance... " />
-            <marker date="1489573649000" expanded="false" signature="22757:22832" ph="INSERT INTO Weight... " />
-            <marker date="1489573649000" expanded="false" signature="23026:23124" ph="INSERT INTO PMI... " />
-            <marker date="1489573649000" expanded="false" signature="23331:23429" ph="INSERT INTO PMI... " />
-            <marker date="1489573649000" expanded="false" signature="23620:23718" ph="INSERT INTO PMI... " />
-            <marker date="1489573649000" expanded="false" signature="23913:24011" ph="INSERT INTO PMI... " />
-            <marker date="1489573649000" expanded="false" signature="24159:24214" ph="INSERT INTO Sentences... " />
-            <marker date="1489573649000" expanded="false" signature="24382:24486" ph="INSERT INTO Aspects... " />
-            <marker date="1489573649000" expanded="false" signature="24731:24835" ph="INSERT INTO Aspects... " />
-            <marker date="1489573649000" expanded="false" signature="25079:25183" ph="INSERT INTO Reviews... " />
-            <marker date="1489573649000" expanded="false" signature="25370:25411" ph="INSERT INTO Sentences... " />
-            <marker date="1489573649000" expanded="false" signature="25370:25425" ph="INSERT INTO Sentences... " />
-            <marker date="1489573649000" expanded="false" signature="25666:25702" ph="DELETE FROM " />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/RandomForest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="46" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="e#105#208#0" expanded="false" />
-            <element signature="e#332#558#0" expanded="false" />
-            <element signature="e#373#411#0" expanded="false" />
-            <element signature="e#609#1010#0" expanded="false" />
-            <element signature="e#781#978#0" expanded="false" />
-            <element signature="e#1529#4289#0" expanded="false" />
-            <element signature="e#2228#2473#0" expanded="false" />
-            <element signature="e#2864#3113#0" expanded="false" />
-            <element signature="e#3529#3800#0" expanded="false" />
-            <element signature="e#4975#5690#0" expanded="false" />
-            <marker date="1489858591000" expanded="false" signature="705:719" ph="SELECT * FRO... Weight" />
-            <marker date="1489858591000" expanded="false" signature="705:724" ph="SELECT * FRO... Ideal" />
-            <marker date="1489858591000" expanded="false" signature="1151:1168" ph="SELECT * FRO... PMI" />
-            <marker date="1489858591000" expanded="false" signature="1249:1266" ph="SELECT * FRO... PMI" />
-            <marker date="1489858591000" expanded="false" signature="1341:1362" ph="SELECT * FRO... Lexical" />
-            <marker date="1489858591000" expanded="false" signature="1439:1459" ph="SELECT * FRO... Weight" />
-            <marker date="1489858591000" expanded="false" signature="1949:2004" ph="SELECT * FRO... Context" />
-            <marker date="1489858591000" expanded="false" signature="2306:2361" ph="SELECT * FRO... Context" />
-            <marker date="1489858591000" expanded="false" signature="2583:2638" ph="SELECT * FRO... Context" />
-            <marker date="1489858591000" expanded="false" signature="2944:2999" ph="SELECT * FRO... Context" />
-            <marker date="1489858591000" expanded="false" signature="3224:3281" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489858591000" expanded="false" signature="3607:3664" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489858591000" expanded="false" signature="4418:4435" ph="SELECT * FRO... PMI" />
-            <marker date="1489858591000" expanded="false" signature="4504:4521" ph="SELECT * FRO... PMI" />
-            <marker date="1489858591000" expanded="false" signature="4584:4605" ph="SELECT * FRO... Lexical" />
-            <marker date="1489858591000" expanded="false" signature="4672:4695" ph="SELECT * FRO... Syntactic" />
-            <marker date="1489858591000" expanded="false" signature="4762:4783" ph="SELECT * FRO... Context" />
-            <marker date="1489858591000" expanded="false" signature="4852:4873" ph="SELECT * FRO... Context" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="29" />
+        <state relative-caret-position="360">
+          <caret line="24" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="107" column="8" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-            <element signature="e#1212#3053#0" expanded="false" />
-            <element signature="e#3095#3210#0" expanded="false" />
-            <element signature="e#3249#3373#0" expanded="false" />
-            <element signature="e#3410#3890#0" expanded="false" />
-            <element signature="e#3959#4096#0" expanded="false" />
-            <element signature="e#4169#4312#0" expanded="false" />
-            <element signature="e#5158#5268#0" expanded="false" />
-            <element signature="e#5312#5443#0" expanded="false" />
-            <element signature="e#5477#5525#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/SemanticDistanceLearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="164" column="54" lean-forward="true" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
+        <state relative-caret-position="45">
+          <caret line="3" column="30" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
           <folding>
             <marker date="1489918618000" expanded="true" signature="2793:2810" ph="SELECT * FRO... PMI" />
             <marker date="1489918618000" expanded="true" signature="2891:2908" ph="SELECT * FRO... PMI" />
@@ -1458,6 +1124,145 @@
             <marker date="1489918618000" expanded="true" signature="13185:13205" ph="SELECT * FRO... Weight" />
             <marker date="1489918618000" expanded="true" signature="13607:13663" ph="SELECT * FRO... Distance" />
             <marker date="1489918618000" expanded="true" signature="13846:13902" ph="SELECT * FRO... Distance" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Sentence.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Splitter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Syntactic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="13" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/productTrees/CategoryNames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/DataBase_Ulmart.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ulmart/Parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#480#600#0" expanded="false" />
+            <element signature="e#645#2184#0" expanded="false" />
+            <element signature="e#818#2151#0" expanded="false" />
+            <element signature="e#1052#1202#0" expanded="false" />
+            <element signature="e#1306#1459#0" expanded="false" />
+            <element signature="e#1563#1711#0" expanded="false" />
+            <element signature="e#2319#2813#0" expanded="false" />
+            <element signature="e#2336#2688#0" expanded="false" />
+            <element signature="e#2727#2813#0" expanded="false" />
+            <element signature="e#2901#3581#0" expanded="false" />
+            <element signature="e#3221#3553#0" expanded="false" />
+            <element signature="e#3280#3398#0" expanded="false" />
+            <element signature="e#3445#3553#0" expanded="false" />
+            <element signature="e#3650#3907#0" expanded="false" />
+            <element signature="e#3977#5044#0" expanded="false" />
+            <element signature="e#4309#4901#0" expanded="false" />
+            <element signature="e#4309#4367#0" expanded="false" />
+            <element signature="e#4614#4740#0" expanded="false" />
+            <element signature="e#4775#4901#0" expanded="false" />
+            <element signature="e#5096#5823#0" expanded="false" />
+            <element signature="e#5884#6160#0" expanded="false" />
+            <element signature="e#6040#6138#0" expanded="false" />
+            <element signature="e#6290#6594#0" expanded="false" />
+            <element signature="e#6664#7562#0" expanded="false" />
+            <element signature="e#6838#7526#0" expanded="false" />
+            <element signature="e#7630#7867#0" expanded="false" />
+            <element signature="e#7685#7841#0" expanded="false" />
+            <element signature="e#7772#7841#0" expanded="false" />
+            <marker date="1489247071000" expanded="false" signature="685:705" ph="SELECT * FRO... Review" />
+            <marker date="1489247071000" expanded="false" signature="6704:6725" ph="SELECT * FRO... Aspects" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="57" column="17" lean-forward="true" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+          <folding>
+            <element signature="e#228#806#0" expanded="false" />
+            <element signature="e#298#403#0" expanded="false" />
+            <element signature="e#458#563#0" expanded="false" />
+            <element signature="e#618#723#0" expanded="false" />
+            <element signature="e#2020#2181#0" expanded="false" />
+            <element signature="e#2087#2151#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="82" column="34" lean-forward="true" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/PMI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="87" column="48" lean-forward="true" selection-start-line="87" selection-start-column="48" selection-end-line="87" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1488983399000" expanded="true" signature="2142:2163" ph="SELECT * FRO... Reviews" />
+            <marker date="1488983399000" expanded="true" signature="2637:2660" ph="SELECT * FRO... Sentences" />
+            <marker date="1488983399000" expanded="true" signature="3010:3031" ph="SELECT * FRO... Aspects" />
+            <marker date="1488983399000" expanded="true" signature="4196:4218" ph="SELECT * FRO... Frequent" />
+            <marker date="1488983399000" expanded="true" signature="4515:4541" ph="SELECT * FRO... IdealAspects" />
+            <marker date="1488983399000" expanded="true" signature="5441:5461" ph="SELECT * FRO... Review" />
+            <marker date="1488983399000" expanded="true" signature="5532:5553" ph="SELECT * FRO... Aspects" />
           </folding>
         </state>
       </provider>
