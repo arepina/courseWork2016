@@ -1,3 +1,5 @@
+from cmath import log
+
 from sklearn.model_selection import train_test_split
 
 from aspects.Aspects import Aspects
@@ -141,7 +143,6 @@ class Main:
         y_test = en.process(x_test, x_train, y_train)
         # sem = SemanticDistanceLearning()
         # sem.create_semantic_distance_random_forest_classifier(self.db, y_test)
-        r = 42
 
 main = Main()
 
