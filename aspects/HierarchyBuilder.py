@@ -105,6 +105,35 @@ class HierarchyBuilder:
         return free_nodes
 
     @staticmethod
+    def count_ideal_aspects_from_frequent(db):
+        import os
+        free_nodes = []
+        path = os.getcwd()
+        filenames = os.listdir(path + "/../productTrees/Subcategories")
+        os.chdir(path + "/../productTrees/Subcategories")
+        filenames.remove(".DS_Store")
+        filenames.remove("Subcategories.txt")
+        for filename in filenames:
+            lines = codecs.open(filename, 'r', 'cp1251').readlines()
+            for line in lines:
+                line = line.replace("\n", "")
+                arr = line.split(";")
+                for item in arr:
+                    if str(item).lower() not in free_nodes:  # the node is the free one for concrete file
+                        free_nodes.append(str(item).lower())
+        row_frequent = db.cursor_frequent.execute('SELECT * FROM Frequent').fetchone()
+        frequent = []
+        while row_frequent is not None:
+            frequent.append(row_frequent[0])
+            row_frequent = db.cursor_frequent.fetchone()
+        count = 0
+        for node in free_nodes:
+            if node in frequent:
+                count+=1
+        print(count)
+
+
+    @staticmethod
     def calculate_average_semantic_distance_ideal_tree_real(db):
         row_semantic_distance_ideal = db.cursor_path_weight.execute('SELECT * FROM Weight').fetchone()
         avg = 0

@@ -34,8 +34,8 @@ class Main:
         # self.contextual_features()
         # self.lexical_features()
         # self.syntactic_features()
-        self.semantic_learning_process()
-        # self.ensemble_classifier()
+        # self.semantic_learning_process()
+        self.ensemble_classifier()
         # self.hierarchy()
 
     def aspects_process(self):
