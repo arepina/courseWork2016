@@ -144,6 +144,7 @@ class Main:
         # sem = SemanticDistanceLearning()
         # sem.create_semantic_distance_random_forest_classifier(self.db, y_test)
 
+
 main = Main()
 
 
