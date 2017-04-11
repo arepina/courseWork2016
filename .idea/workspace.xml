@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="058bf347-f45d-4adf-8815-ac5f93e43c54" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/Алгоритмы.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/ПЗ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/ПИМИ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/РО.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/ТЗ.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/ТП без кода.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Documentation/ТП с кодом.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/Репина А БПИ143.docx" afterPath="$PROJECT_DIR$/docs/Documentation/Репина А БПИ143.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Documentation/Репина А БПИ143.pdf" afterPath="$PROJECT_DIR$/docs/Documentation/Репина А БПИ143.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/Presentation/Построение иерархии аспектов по пользовательским отзывам об электронных устройствах .pptx" afterPath="$PROJECT_DIR$/docs/Presentation/Построение иерархии аспектов по пользовательским отзывам об электронных устройствах .pptx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aspects/Main.py" afterPath="$PROJECT_DIR$/aspects/Main.py" />
     </list>
     <ignored path="courseWork2016.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,8 +63,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aspects/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+            <state relative-caret-position="493">
+              <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -99,7 +92,7 @@
       <file leaf-file-name="Aspects.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-195">
+            <state relative-caret-position="225">
               <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding>
                 <marker date="1489247071000" expanded="true" signature="685:705" ph="SELECT * FRO... Review" />
@@ -220,9 +213,40 @@
       <file leaf-file-name="RandomForest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aspects/RandomForest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="75">
+              <caret line="5" column="111" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="111" />
+              <folding>
+                <marker date="1489858591000" expanded="true" signature="705:724" ph="SELECT * FRO... Ideal" />
+                <marker date="1489858591000" expanded="true" signature="1151:1168" ph="SELECT * FRO... PMI" />
+                <marker date="1489858591000" expanded="true" signature="1249:1266" ph="SELECT * FRO... PMI" />
+                <marker date="1489858591000" expanded="true" signature="1341:1362" ph="SELECT * FRO... Lexical" />
+                <marker date="1489858591000" expanded="true" signature="1439:1459" ph="SELECT * FRO... Weight" />
+                <marker date="1489858591000" expanded="true" signature="1949:2004" ph="SELECT * FRO... Context" />
+                <marker date="1489858591000" expanded="true" signature="2306:2361" ph="SELECT * FRO... Context" />
+                <marker date="1489858591000" expanded="true" signature="2583:2638" ph="SELECT * FRO... Context" />
+                <marker date="1489858591000" expanded="true" signature="2944:2999" ph="SELECT * FRO... Context" />
+                <marker date="1489858591000" expanded="true" signature="3224:3281" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489858591000" expanded="true" signature="3607:3664" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489858591000" expanded="true" signature="4418:4435" ph="SELECT * FRO... PMI" />
+                <marker date="1489858591000" expanded="true" signature="4504:4521" ph="SELECT * FRO... PMI" />
+                <marker date="1489858591000" expanded="true" signature="4584:4605" ph="SELECT * FRO... Lexical" />
+                <marker date="1489858591000" expanded="true" signature="4672:4695" ph="SELECT * FRO... Syntactic" />
+                <marker date="1489858591000" expanded="true" signature="4762:4783" ph="SELECT * FRO... Context" />
+                <marker date="1489858591000" expanded="true" signature="4852:4873" ph="SELECT * FRO... Context" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneClassSVM.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+              <folding>
+                <marker date="1482233294000" expanded="true" signature="101:122" ph="SELECT * FRO... Aspects" />
+                <marker date="1482233294000" expanded="true" signature="924:944" ph="SELECT * FRO... Review" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -341,9 +365,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="48" />
+    <option name="y" value="47" />
     <option name="width" value="1440" />
-    <option name="height" value="805" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -363,7 +387,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -421,6 +444,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -794,7 +818,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="48" width="1440" height="805" extended-state="0" />
+    <frame x="0" y="47" width="1440" height="807" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32083333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -803,19 +827,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290469" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46324787" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36675462" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40093786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32473624" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36675462" sideWeight="0.49394855" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1081,13 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Unnecessary.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1127,14 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="282" column="40" lean-forward="false" selection-start-line="282" selection-start-column="27" selection-end-line="282" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aspects/RandomForest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,7 +1266,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Aspects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
+        <state relative-caret-position="225">
           <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
           <folding>
             <marker date="1489247071000" expanded="true" signature="685:705" ph="SELECT * FRO... Review" />
@@ -1266,10 +1275,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/RandomForest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="111" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="111" />
+          <folding>
+            <marker date="1489858591000" expanded="true" signature="705:724" ph="SELECT * FRO... Ideal" />
+            <marker date="1489858591000" expanded="true" signature="1151:1168" ph="SELECT * FRO... PMI" />
+            <marker date="1489858591000" expanded="true" signature="1249:1266" ph="SELECT * FRO... PMI" />
+            <marker date="1489858591000" expanded="true" signature="1341:1362" ph="SELECT * FRO... Lexical" />
+            <marker date="1489858591000" expanded="true" signature="1439:1459" ph="SELECT * FRO... Weight" />
+            <marker date="1489858591000" expanded="true" signature="1949:2004" ph="SELECT * FRO... Context" />
+            <marker date="1489858591000" expanded="true" signature="2306:2361" ph="SELECT * FRO... Context" />
+            <marker date="1489858591000" expanded="true" signature="2583:2638" ph="SELECT * FRO... Context" />
+            <marker date="1489858591000" expanded="true" signature="2944:2999" ph="SELECT * FRO... Context" />
+            <marker date="1489858591000" expanded="true" signature="3224:3281" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489858591000" expanded="true" signature="3607:3664" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489858591000" expanded="true" signature="4418:4435" ph="SELECT * FRO... PMI" />
+            <marker date="1489858591000" expanded="true" signature="4504:4521" ph="SELECT * FRO... PMI" />
+            <marker date="1489858591000" expanded="true" signature="4584:4605" ph="SELECT * FRO... Lexical" />
+            <marker date="1489858591000" expanded="true" signature="4672:4695" ph="SELECT * FRO... Syntactic" />
+            <marker date="1489858591000" expanded="true" signature="4762:4783" ph="SELECT * FRO... Context" />
+            <marker date="1489858591000" expanded="true" signature="4852:4873" ph="SELECT * FRO... Context" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aspects/OneClassSVM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+          <folding>
+            <marker date="1482233294000" expanded="true" signature="101:122" ph="SELECT * FRO... Aspects" />
+            <marker date="1482233294000" expanded="true" signature="924:944" ph="SELECT * FRO... Review" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aspects/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
